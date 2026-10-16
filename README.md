@@ -34,7 +34,7 @@ Dev tokens are for local demos only. See `config/README.md` for real users.
 
 ## Screens
 
-Designed for a first-time, non-technical viewer: the answer comes first, labels use plain words, and every ad carries a coloured trust label (seen online / call planned / confirmed / old / location unclear). Team tools are hidden until someone signs in. Light and dark themes follow the device.
+Designed for a first-time, non-technical viewer: the answer comes first, labels use plain words, and every ad carries a coloured trust label (seen online / call planned / confirmed / old / location unclear). Team tools are hidden until someone signs in. The page always uses the light theme.
 
 | Tab | Answers | Screenshot |
 |---|---|---|

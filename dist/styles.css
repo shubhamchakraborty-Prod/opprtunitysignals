@@ -1,3 +1,4 @@
+/* Light theme only, by request: the page ignores the viewer's dark-mode setting. */
 /* Layout: answer-first summary band, then a working area (map beside a scannable job list) with a slide-over detail drawer.
    Palette drawn from the ConveGenius.AI mark: indigo ink and accent, teal for Sector 62, indigo for Sector 63; neutrals lean indigo. */
 :root{
@@ -9,29 +10,12 @@
   --map-bg:#e8ecf3;--map-road:#ffffff;--map-dash:#c6cddd;--map-62:#cfe9e4;--map-62-line:#8cc5bb;--map-63:#dddbf3;--map-63-line:#a9a5dc;
   --shadow-1:0 1px 2px rgba(22,26,51,.05),0 1px 1px rgba(22,26,51,.03);--shadow-2:0 12px 32px rgba(22,26,51,.10),0 2px 6px rgba(22,26,51,.06);
   --logo-chip:transparent;--pin-text:#ffffff;
+  color-scheme:light;
   --f-display:"Sora","Segoe UI",system-ui,-apple-system,sans-serif;
   --f-body:"Figtree","Segoe UI",system-ui,-apple-system,sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
   --r-sm:8px;--r-md:12px;--r-lg:18px;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0e1121;--surface:#161a2f;--surface-2:#1e2340;--surface-3:#262c4d;
-  --ink:#eceef8;--ink-2:#c3c7de;--muted:#9097b6;--line:#272d4b;--line-2:#343b60;
-  --accent:#8f8cf2;--accent-ink:#11132a;--accent-soft:#25264b;
-  --s62:#5ccaba;--s62-soft:#13302c;--s63:#9b97f3;--s63-soft:#25264b;
-  --ok:#62cc92;--ok-soft:#12301f;--warn:#e7b062;--warn-soft:#382a12;--bad:#f08b76;--bad-soft:#3a1b15;--old:#9097b6;--old-soft:#23283f;
-  --map-bg:#141830;--map-road:#1f2442;--map-dash:#343b60;--map-62:#16332f;--map-62-line:#2f7d72;--map-63:#26264b;--map-63-line:#5b57b5;
-  --shadow-1:0 1px 2px rgba(0,0,0,.4);--shadow-2:0 16px 40px rgba(0,0,0,.5);
-  --logo-chip:#ffffff;--pin-text:#0e1121;color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0e1121;--surface:#161a2f;--surface-2:#1e2340;--surface-3:#262c4d;
-  --ink:#eceef8;--ink-2:#c3c7de;--muted:#9097b6;--line:#272d4b;--line-2:#343b60;
-  --accent:#8f8cf2;--accent-ink:#11132a;--accent-soft:#25264b;
-  --s62:#5ccaba;--s62-soft:#13302c;--s63:#9b97f3;--s63-soft:#25264b;
-  --ok:#62cc92;--ok-soft:#12301f;--warn:#e7b062;--warn-soft:#382a12;--bad:#f08b76;--bad-soft:#3a1b15;--old:#9097b6;--old-soft:#23283f;
-  --map-bg:#141830;--map-road:#1f2442;--map-dash:#343b60;--map-62:#16332f;--map-62-line:#2f7d72;--map-63:#26264b;--map-63-line:#5b57b5;
-  --shadow-1:0 1px 2px rgba(0,0,0,.4);--shadow-2:0 16px 40px rgba(0,0,0,.5);
-  --logo-chip:#ffffff;--pin-text:#0e1121;color-scheme:dark}
 
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%}
