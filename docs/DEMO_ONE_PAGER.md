@@ -20,9 +20,9 @@ Help ITI and skilling planners see which occupations employers in Noida Sectors 
 
 | Label | Meaning |
 |---|---|
-| **Source fact** | What the advert or employer said, with date and link |
-| **Inference** | Our interpretation (occupation, relevant ITI trade, location reliability) |
-| **Recommendation** | The next step: plan, call the employer, or keep as context only |
+| **What the ad says** | Facts from the ad or the employer, with date and link |
+| **What we think** | Our reading (type of work, related ITI trade, how reliable the location is) |
+| **What to do next** | Plan, call the employer, or keep as background |
 
 A job advert is a signal, not a vacancy. An opening counts only after the employer confirms it and a second reviewer approves the record.
 
