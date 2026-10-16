@@ -12,6 +12,7 @@ import { FileStore } from './stores/file.js';
 import { loadSeed, ROOT } from './seed.js';
 import { loadUsers } from './auth.js';
 import { createApp } from './app.js';
+import { loadRegistry, govStatus, syncGovSources, startGovScheduler } from './gov/sync.js';
 
 const PORT = Number(process.env.PORT || 8080);
 const HOST = process.env.HOST || '127.0.0.1';
@@ -37,7 +38,13 @@ async function main() {
   const service = createService(/** @type {any} */ (store), { now: process.env.AS_OF ? () => /** @type {string} */ (process.env.AS_OF) : undefined, profiles: seed.profiles, geometry: seed.geometry });
   const users = loadUsers(USERS_FILE);
   if (!existsSync(join(STATIC_DIR, 'index.html'))) console.warn(`No built web app in ${STATIC_DIR}. Run "npm run build" first.`);
-  const server = createServer(createApp({ service, users, staticDir: STATIC_DIR }));
+  const registry = loadRegistry();
+  const gov = {
+    status: () => govStatus(store, registry),
+    sync: (only) => syncGovSources(store, registry, { only, force: true }),
+  };
+  if ((process.env.GOV_SYNC || (STORE === 'memory' ? 'off' : 'on')) === 'on') startGovScheduler(store, registry);
+  const server = createServer(createApp({ service, users, staticDir: STATIC_DIR, gov }));
   server.listen(PORT, HOST, () => {
     const addr = /** @type {import('node:net').AddressInfo} */ (server.address());
     console.log(`Noida 62/63 explorer on http://${HOST}:${addr.port}  (store=${STORE}, users=${users.length})`);

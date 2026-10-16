@@ -3,7 +3,7 @@
 //   dist/explorer-offline.html  single self-contained file (works from disk, no server)
 //   dist/vendor/leaflet/        bundled map library (tiles still need internet)
 import { build } from 'esbuild';
-import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadSeed } from '../src/server/seed.js';
@@ -18,6 +18,16 @@ const js = res.outputFiles[0].text;
 const css = readFileSync(join(root, 'web/styles.css'), 'utf8');
 const logo = readFileSync(join(root, 'web/assets/convegenius-logo.png'));
 const seed = loadSeed();
+// Government feeds: embed the last saved snapshot, or the registry status with no fetches yet.
+{
+  const snapFile = join(root, 'data/gov/snapshot.json');
+  if (existsSync(snapFile)) seed.gov = JSON.parse(readFileSync(snapFile, 'utf8'));
+  else {
+    const { govStatus, loadRegistry } = await import('../src/server/gov/sync.js');
+    const { MemoryStore } = await import('../src/core/store-memory.js');
+    seed.gov = await govStatus(new MemoryStore({}), loadRegistry(), { env: {} });
+  }
+}
 const seedJson = JSON.stringify(seed).replace(/</g, '\\u003c');
 const tpl = readFileSync(join(root, 'web/index.html'), 'utf8');
 

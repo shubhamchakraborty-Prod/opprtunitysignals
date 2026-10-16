@@ -45,6 +45,7 @@ Designed for a first-time, non-technical viewer: the answer comes first, labels 
 | Match a learner | Q4: five example learners, grouped into worth a call / needs more skills / not eligible as written | `03-match-a-learner.png` |
 | Next steps | Q2, Q7: ready for planning vs call these employers first, jobs per pass-out, management note | `04-next-steps.png` |
 | Workers' views | Q6: empty until consented interviews exist; ad conditions shown separately | `05-workers-views.png` |
+| Government data | Live status and latest figures from government APIs (MoSPI PLFS, data.gov.in), plus portals that need an agreement | `05b-government-data.png` |
 | Sources | Every ad linked to its page, freshness, how sure we are, CSV export | `06-sources.png` |
 | Review queue (team) | New uploads, employer calls, repeat ads, broken links, closed ads, approvals, change log | `07-review-queue.png` |
 | Record an employer call (team) | Dated notes, confirmed jobs, entry pay, start date, pre-screen, contact, legal basis | `08-record-employer-call.png` |
@@ -115,10 +116,15 @@ Field dictionary: `docs/EVIDENCE_MODEL.md`. Key rules enforced in code and tests
 | Works without tiles; schematic says not exact | `e2e AT1 + AT11`, offline file test |
 | Fact / inference / recommendation separated | `acceptance AT12` |
 
+## Government data feeds
+
+Scheduled fetches from official APIs with run logs, raw-response hashes and plain-language health. Setup, keys and safeguards: `docs/GOV_DATA_SOURCES.md`. Registry: `config/gov-sources.json`.
+
 ## Workers
 
 | Command | Purpose |
 |---|---|
+| `npm run gov:sync [-- --source id]` | Fetch government feeds now and save a snapshot for the offline builds |
 | `npm run ingest -- file.csv --label "Capture Nov 2026"` | Load rows (template: `data/templates/evidence_upload_template.csv`) into the review queue |
 | `npm run check-links [-- --apply]` | HEAD-only link check, honours robots.txt, 3 s per host; `--apply` raises `broken_link` flags. A 200 never marks a job as open. |
 | `npm run seed:build` | Rebuild `data/seed/evidence_records.json` from the v0 snapshot and the listed curation decisions |

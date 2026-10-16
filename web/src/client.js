@@ -66,6 +66,8 @@ function apiClient() {
     auditLog: () => req('GET', 'api/audit'),
     exportRegister: (f) => req('GET', 'api/export/register.csv' + q(f), undefined, true),
     managementNote: (f) => req('GET', 'api/export/management-note.md' + q(f), undefined, true),
+    govStatus: () => req('GET', 'api/gov/status'),
+    govSync: (source) => req('POST', 'api/gov/sync', { source }),
   };
 }
 
@@ -79,6 +81,8 @@ function localClient(seed) {
   return {
     mode: 'local',
     ...api,
+    govStatus: async () => seed.gov || { generated_at: null, feeds: [] },
+    govSync: async () => { throw new Error('Checking sources needs the live server.'); },
     /** Sandbox role switch: no credentials, nothing persisted. */
     async signIn(role) {
       actor = { id: 'sandbox-' + role, name: ROLE_LABELS[role], role };

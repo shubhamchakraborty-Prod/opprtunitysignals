@@ -8,7 +8,7 @@ export const PERMISSIONS = {
   employer_verifier: ['read:public', 'export:public', 'read:review', 'verify:submit', 'read:contacts', 'flag:source', 'queue:outreach'],
   administrator: [
     'read:public', 'export:public', 'read:review', 'ingest:csv', 'review:record', 'review:dedupe', 'flag:source', 'queue:outreach',
-    'verify:submit', 'verify:approve', 'read:contacts', 'interview:submit', 'interview:approve', 'admin:sentiment', 'admin:passouts', 'read:audit', 'expire:record',
+    'verify:submit', 'verify:approve', 'read:contacts', 'interview:submit', 'interview:approve', 'admin:sentiment', 'admin:passouts', 'admin:feeds', 'read:audit', 'expire:record',
   ],
 };
 

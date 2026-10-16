@@ -96,6 +96,18 @@ test('AT6 in the UI: verifier submits 3 openings, a second person approves, KPI 
   assert.deepEqual(page.errors, []);
 });
 
+test('Government data tab lists every tracked source with an honest status', async () => {
+  const page = await newPage(browser);
+  await page.goto(srv.url + '/?noguide&tab=feeds');
+  await page.waitForSelector('.feed');
+  assert.equal(await page.$$eval('.feed', (x) => x.length), 6);
+  const t = await text(page, '#feeds');
+  assert.match(t, /No government figures fetched yet/);
+  assert.match(t, /Needs API key/);
+  assert.match(t, /Needs data-sharing agreement/);
+  assert.deepEqual(page.errors, []);
+});
+
 test('offline single-file build works from disk without a server', async () => {
   const page = await newPage(browser);
   await page.goto(pathToFileURL(join(ROOT, 'dist/explorer-offline.html')).href + '?noguide');

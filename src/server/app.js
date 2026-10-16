@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { existsSync, statSync } from 'node:fs';
 import { join, normalize, extname } from 'node:path';
 import { authenticate } from './auth.js';
+import { requirePerm } from '../core/rbac.js';
 
 const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.png': 'image/png', '.json': 'application/json', '.svg': 'image/svg+xml', '.md': 'text/markdown; charset=utf-8', '.csv': 'text/csv; charset=utf-8' };
 const MAX_BODY = 2 * 1024 * 1024;
@@ -50,9 +51,9 @@ async function json(req) {
 const filtersFrom = (url) => Object.fromEntries(url.searchParams.entries());
 
 /**
- * @param {{service:any, users:any[], staticDir:string}} deps
+ * @param {{service:any, users:any[], staticDir:string, gov?:{status:()=>Promise<any>, sync:(only?:string|null)=>Promise<any>}}} deps
  */
-export function createApp({ service, users, staticDir }) {
+export function createApp({ service, users, staticDir, gov }) {
   /** @type {[string, RegExp, (ctx:any)=>Promise<any>][]} */
   const routes = [
     ['GET', /^\/api\/health$/, async () => ({ ok: true, mode: 'api', asOf: service.now() })],
@@ -76,6 +77,13 @@ export function createApp({ service, users, staticDir }) {
     ['POST', /^\/api\/interviews\/([\w.-]+)\/decision$/, async ({ actor, req, m }) => service.decideInterview(actor, m[1], await json(req))],
     ['POST', /^\/api\/settings\/sentiment$/, async ({ actor, req }) => service.setSentimentEnabled(actor, (await json(req)).enabled)],
     ['PUT', /^\/api\/passouts$/, async ({ actor, req }) => service.setPassouts(actor, (await json(req)).rows)],
+    ['GET', /^\/api\/gov\/status$/, async () => (gov ? gov.status() : { generated_at: new Date().toISOString(), feeds: [] })],
+    ['POST', /^\/api\/gov\/sync$/, async ({ actor, req }) => {
+      requirePerm(actor, 'admin:feeds');
+      if (!gov) throw Object.assign(new Error('Government data sync is not enabled on this server'), { status: 400 });
+      const body = await json(req);
+      return { results: await gov.sync(body.source || null), status: await gov.status() };
+    }],
     ['GET', /^\/api\/audit$/, async ({ actor, url }) => service.auditLog(actor, Math.min(1000, Number(url.searchParams.get('limit')) || 200))],
   ];
 

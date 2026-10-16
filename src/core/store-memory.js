@@ -3,7 +3,7 @@
 // base of the JSON-file store. Async interface matches the PostgreSQL store.
 import { clone } from './util.js';
 
-export const COLLECTIONS = ['records', 'verifications', 'interviews', 'passouts', 'flags'];
+export const COLLECTIONS = ['records', 'verifications', 'interviews', 'passouts', 'flags', 'gov_runs', 'gov_latest'];
 export const keyOf = (coll, obj) => (coll === 'records' ? obj.source_id : obj.id);
 
 export class MemoryStore {

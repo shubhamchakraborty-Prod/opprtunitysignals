@@ -11,13 +11,14 @@ import './views/plan.js';
 import './views/review.js';
 import './views/verify.js';
 import './views/register.js';
+import './views/feeds.js';
 import { openRoleDialog, openGuide, openHelp, closeModal } from './views/chrome.js';
 
 app.views.discover = renderExplore;
 app.views.syncFilters = syncFilterControls;
 app.views.select = select;
 
-const TABS = ['discover', 'compare', 'match', 'plan', 'voice', 'evidence', 'review', 'verify'];
+const TABS = ['discover', 'compare', 'match', 'plan', 'voice', 'feeds', 'evidence', 'review', 'verify'];
 
 app.actions.tab = (el) => {
   const tab = el.dataset.tab;

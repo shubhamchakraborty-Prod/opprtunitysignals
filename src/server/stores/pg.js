@@ -7,7 +7,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const TABLE = { records: 'evidence_records', verifications: 'verifications', interviews: 'interviews', passouts: 'passouts', flags: 'source_flags' };
+const TABLE = { records: 'evidence_records', verifications: 'verifications', interviews: 'interviews', passouts: 'passouts', flags: 'source_flags', gov_runs: 'gov_runs', gov_latest: 'gov_latest' };
 const KEY = { records: 'source_id' };
 const MIGRATIONS = join(dirname(fileURLToPath(import.meta.url)), '..', 'db', 'migrations');
 

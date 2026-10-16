@@ -26,7 +26,7 @@ try {
   await shot(page, join(out, '01b-job-detail.png'), false);
   await page.keyboard.press('Escape');
   await page.waitForTimeout(300);
-  const tabs = [['compare', '02-compare-62-and-63'], ['match', '03-match-a-learner'], ['plan', '04-next-steps'], ['voice', '05-workers-views'], ['evidence', '06-sources']];
+  const tabs = [['compare', '02-compare-62-and-63'], ['match', '03-match-a-learner'], ['plan', '04-next-steps'], ['voice', '05-workers-views'], ['feeds', '05b-government-data'], ['evidence', '06-sources']];
   for (const [t, name] of tabs) {
     await page.click(`.tab[data-tab=${t}]`);
     await page.waitForTimeout(300);

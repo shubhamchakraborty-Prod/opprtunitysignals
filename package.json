@@ -21,7 +21,8 @@
     "db:migrate": "node src/server/db/migrate.js",
     "db:seed": "node src/server/db/seed-pg.js",
     "check-links": "node src/server/worker/check-links.js",
-    "ingest": "node src/server/worker/ingest-csv.js"
+    "ingest": "node src/server/worker/ingest-csv.js",
+    "gov:sync": "node src/server/worker/gov-sync.js"
   },
   "dependencies": {
     "pg": "^8.23.1"

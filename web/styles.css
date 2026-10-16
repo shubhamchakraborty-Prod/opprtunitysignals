@@ -302,6 +302,16 @@ details.disclose>summary{cursor:pointer;font-weight:600;font-size:14px;color:var
 .theme-card h4{text-transform:capitalize;font-size:15px}
 .quote{font-size:14px;color:var(--ink-2);border-left:3px solid var(--s62);padding-left:10px;margin-top:8px}
 
+/* Government feeds */
+.feeds-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.feed{padding:18px;display:flex;flex-direction:column;gap:12px}
+.feed-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.feed-head h3{font-size:17px}
+.feed>p{color:var(--ink-2);font-size:14px}
+.runstrip{display:flex;gap:3px;align-items:center}
+.runstrip i{width:10px;height:18px;border-radius:3px;background:var(--ok)}
+.runstrip i.bad{background:var(--bad)}
+
 /* Forms, review */
 .form{display:flex;flex-direction:column;gap:16px}
 .form label,.form .lbl{display:block;font-weight:600;color:var(--ink-2);font-size:13px;margin-bottom:6px}
@@ -351,7 +361,7 @@ details.disclose>summary{cursor:pointer;font-weight:600;font-size:14px;color:var
 @media (max-width:720px){
   body{font-size:14px}
   .brand img{width:140px}.brand-copy{display:none}
-  .answers,.grid2,.grid3,.board,.match-list,.form-grid,.kv,.tile-grid,.needs{grid-template-columns:1fr}
+  .answers,.grid2,.grid3,.board,.feeds-grid,.match-list,.form-grid,.kv,.tile-grid,.needs{grid-template-columns:1fr}
   .profiles{grid-template-columns:repeat(2,minmax(0,1fr))}
   .answer .big{font-size:34px}
   .mapwrap{height:340px}
