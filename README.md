@@ -19,6 +19,16 @@ Not an official employment service. Not an authorised government programme.
 
 Requirements: Node 20+. PostgreSQL 14+ with PostGIS 3 only for `STORE=pg`.
 
+### Host on Netlify (static)
+
+| Way | Steps |
+|---|---|
+| Drag and drop | Open https://app.netlify.com/drop and drop the `dist` folder |
+| Connect GitHub | Add new site > Import from Git > this repo and branch. `netlify.toml` sets build `npm ci && npm run build`, publish `dist`, Node 22 |
+| Netlify CLI | `npm i -g netlify-cli`, `netlify login`, `netlify deploy --dir=dist --prod` |
+
+Netlify serves the app in offline mode with the built-in sample data: practice mode for team roles, nothing saved, Government data tab shows the last snapshot. Live sign-in, saving and scheduled government checks need the Node API server on a Node host (Render, Railway, a VM).
+
 ### Dev sign-in
 
 Unauthenticated visitors are **Observers**. Use "Team sign-in" (top right) and a dev token:
@@ -71,7 +81,7 @@ src/core/      shared domain logic (runs in browser and server, no dependencies)
   service.js     all use cases: RBAC, validation, four-eyes approval, audit
   note.js        management note (Markdown)
 src/server/    node:http API, bearer auth, file store, PostgreSQL/PostGIS store, workers
-web/           page template, styles (light and dark tokens) and view modules (bundled by esbuild)
+web/           page template, styles (light theme) and view modules (bundled by esbuild)
 data/source/   untouched v0 inputs (snapshot JSON, CSV register, prototype HTML)
 data/seed/     evidence-model seed built by scripts/build-seed.mjs
 test/          node:test suites and Playwright e2e
