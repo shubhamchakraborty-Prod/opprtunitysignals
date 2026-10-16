@@ -26,14 +26,16 @@ try {
   await shot(page, join(out, '01b-job-detail.png'), false);
   await page.keyboard.press('Escape');
   await page.waitForTimeout(300);
-  const tabs = [['compare', '02-compare-62-and-63'], ['match', '03-match-a-learner'], ['plan', '04-next-steps'], ['voice', '05-workers-views'], ['feeds', '05b-government-data'], ['evidence', '06-sources']];
+  const tabs = [['match', '02-match-a-learner'], ['trades', '03-iti-trades-and-skill-gaps'], ['compare', '04-compare-62-and-63'], ['plan', '05-next-steps'], ['upcoming', '06-coming-up'], ['regions', '07-kalyani-and-siliguri'], ['feeds', '08-government-data'], ['voice', '09-workers-views'], ['evidence', '10-sources']];
   for (const [t, name] of tabs) {
     await page.click(`.tab[data-tab=${t}]`);
     await page.waitForTimeout(300);
+    if (t === 'trades') { await page.click('[data-action=trade-open][data-trade="Electrician"]'); await page.waitForTimeout(200); }
+    if (t === 'regions') { await page.click('#regionSketch .fpin >> nth=0'); await page.waitForTimeout(200); }
     await shot(page, join(out, name + '.png'));
   }
   await signIn(page, 'dev-admin-token');
-  for (const [t, name] of [['review', '07-review-queue'], ['verify', '08-record-employer-call']]) {
+  for (const [t, name] of [['review', '11-review-queue'], ['verify', '12-record-employer-call']]) {
     await page.click(`.tab[data-tab=${t}]`);
     await page.waitForTimeout(500);
     await shot(page, join(out, name + '.png'));

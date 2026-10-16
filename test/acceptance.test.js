@@ -16,12 +16,12 @@ test('AT1 switching sector from Both to 62 or 63 updates every counter and the r
   const both = await service.analytics(actors.observer, F());
   const s62 = await service.analytics(actors.observer, F({ sector: '62' }));
   const s63 = await service.analytics(actors.observer, F({ sector: '63' }));
-  assert.equal(both.kpis.signalCount, 17);
-  assert.deepEqual([both.kpis.sector62, both.kpis.sector63], [8, 9]);
-  assert.deepEqual([s62.kpis.signalCount, s62.kpis.sector62, s62.kpis.sector63], [8, 8, 0]);
-  assert.deepEqual([s63.kpis.signalCount, s63.kpis.sector62, s63.kpis.sector63], [9, 0, 9]);
+  assert.equal(both.kpis.signalCount, 29);
+  assert.deepEqual([both.kpis.sector62, both.kpis.sector63], [10, 19]);
+  assert.deepEqual([s62.kpis.signalCount, s62.kpis.sector62, s62.kpis.sector63], [10, 10, 0]);
+  assert.deepEqual([s63.kpis.signalCount, s63.kpis.sector62, s63.kpis.sector63], [19, 0, 19]);
   const l62 = await service.listRecords(actors.observer, F({ sector: '62' }));
-  assert.ok(l62.length === 8 && l62.every((r) => r.sector === '62'));
+  assert.ok(l62.length === 10 && l62.every((r) => r.sector === '62'));
 });
 
 test('AT2 an adjacent-sector result from a category search is not counted as a Sector 63 vacancy', async () => {
@@ -31,10 +31,12 @@ test('AT2 an adjacent-sector result from a category search is not counted as a S
   assert.equal(rec.geo.scope_status, 'adjacent_or_unclear');
   assert.equal(rec.geo.claimed_sector, '63');
   const a = await service.analytics(actors.observer, F({ sector: '63' }));
-  assert.equal(a.kpis.sector63, 9, 'adjacent record must not raise the Sector 63 count');
+  assert.equal(a.kpis.sector63, 19, 'adjacent record must not raise the Sector 63 count');
   const withUnclear = await service.analytics(actors.observer, F({ sector: '63', includeUnclear: true }));
-  assert.equal(withUnclear.kpis.sector63, 9);
-  assert.equal(withUnclear.kpis.unclearShown, 1, 'listed separately when requested');
+  assert.equal(withUnclear.kpis.sector63, 19);
+  assert.equal(withUnclear.kpis.unclearShown, 2, 'fixture + real Sector 8 listing (SIG-029), listed separately when requested');
+  const real = (await service.getRecord(actors.observer, 'SIG-029')).record;
+  assert.equal(real.geo.scope_status, 'adjacent_or_unclear', 'a real Sector 8 ad returned by a Sector 63 search is not counted');
   assert.equal(explainRecord(rec, AS_OF).tier, 'context_only');
 });
 
@@ -49,8 +51,8 @@ test('AT3 a historical post is hidden by default and dated when shown', async ()
   assert.equal(h.published_at, '2026-02-24');
   assert.equal(h.published_at_basis, 'derived_from_post_id');
   const k = (await service.analytics(actors.observer, F({ includeHistorical: true }))).kpis;
-  assert.equal(k.signalCount, 17, 'historical posts are shown but never counted as current signals');
-  assert.equal(k.olderShown, 1);
+  assert.equal(k.signalCount, 29, 'historical and expired posts are shown but never counted as current signals');
+  assert.equal(k.olderShown, 2);
 });
 
 test('AT4 an employer-presence record never appears or counts as a vacancy', async () => {
@@ -58,7 +60,7 @@ test('AT4 an employer-presence record never appears or counts as a vacancy', asy
   const list = await service.listRecords(actors.observer, F({ includeHistorical: true, includeUnclear: true }));
   assert.ok(!list.some((r) => r.source_id === 'FIX-PRES'));
   const k = (await service.analytics(actors.observer, F())).kpis;
-  assert.equal(k.signalCount, 17);
+  assert.equal(k.signalCount, 29);
   assert.equal(k.confirmedOpenings, 0);
   const bad = { ...PRESENCE(), vacancy_claimed: 4 };
   assert.ok(validateRecord(bad).some((e) => /employer_presence/.test(e)));
@@ -71,13 +73,13 @@ test('AT5 two portals mirroring one post are marked possible duplicates and coun
   assert.equal(a.dedupe_cluster, b.dedupe_cluster);
   assert.equal(a.duplicate_status, 'possible_duplicate');
   const k = (await service.analytics(actors.observer, F({ sector: '63' }))).kpis;
-  assert.equal(k.sector63, 10, '9 seed records + 1 cluster, not +2');
+  assert.equal(k.sector63, 20, '19 seed records + 1 cluster, not +2');
   assert.equal(k.mirrorsCollapsed, 1);
   const q = await service.reviewQueue(actors.researcher);
   assert.equal(q.duplicates.length, 1);
   await service.resolveDuplicate(actors.researcher, a.dedupe_cluster, { decision: 'same_post', keep: 'FIX-MIR-A' });
   const after = (await service.analytics(actors.observer, F({ sector: '63' }))).kpis;
-  assert.equal(after.sector63, 10);
+  assert.equal(after.sector63, 20);
   assert.equal((await service.reviewQueue(actors.researcher)).duplicates.length, 0);
 });
 
@@ -85,7 +87,7 @@ test('AT6 an employer verifying 3 places raises the KPI by 3, never by the adver
   const { service } = makeService({ extra: [CLAIMS_FIVE()] });
   const before = (await service.analytics(actors.observer, F())).kpis;
   assert.equal(before.confirmedOpenings, 0);
-  assert.equal(before.claimedButUnverified, 10, 'SIG-014 claims 5 + fixture claims 5; shown as claims only');
+  assert.equal(before.claimedButUnverified, 62, 'claims in ads (5 + 20 + 2 + 30) + fixture 5; shown as claims only');
   const v = await service.submitVerification(actors.verifier, verificationPayload());
   const pending = (await service.analytics(actors.observer, F())).kpis;
   assert.equal(pending.confirmedOpenings, 0, 'not counted until a second person approves');

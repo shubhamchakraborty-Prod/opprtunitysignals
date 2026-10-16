@@ -1,0 +1,224 @@
+{
+ "note": "Suggested kinds of short course for each skill gap. These are pointers, not endorsements. Check current availability, fees and certification on Skill India Digital Hub (skillindiadigital.gov.in), at National Skill Training Institutes (NSTI) and ITIs, or with the named Sector Skill Council.",
+ "where": [
+  {
+   "label": "Skill India Digital Hub course search",
+   "url": "https://www.skillindiadigital.gov.in"
+  },
+  {
+   "label": "Bharat Skills (DGT) trades and short courses",
+   "url": "https://bharatskills.gov.in"
+  }
+ ],
+ "skills": {
+  "English communication": {
+   "course": "Workplace English and spoken English",
+   "provider": "Employability Skills module (DGT) or a spoken-English course on Skill India Digital Hub"
+  },
+  "English writing": {
+   "course": "Business English writing and email",
+   "provider": "Skill India Digital Hub; employability skills courses"
+  },
+  "Basic English": {
+   "course": "Basic spoken English",
+   "provider": "Employability Skills module (DGT)"
+  },
+  "Communication": {
+   "course": "Communication and workplace skills",
+   "provider": "Employability Skills module (DGT)"
+  },
+  "Customer handling": {
+   "course": "Customer service and voice process",
+   "provider": "IT-ITeS Sector Skill Council courses"
+  },
+  "Problem solving": {
+   "course": "Workplace problem solving",
+   "provider": "Employability Skills module (DGT)"
+  },
+  "Sales": {
+   "course": "Field and inside sales",
+   "provider": "Retail or IT-ITeS Sector Skill Council courses"
+  },
+  "IT knowledge": {
+   "course": "IT fundamentals for sales roles",
+   "provider": "Skill India Digital Hub"
+  },
+  "Digital marketing": {
+   "course": "Digital marketing fundamentals",
+   "provider": "Skill India Digital Hub; Google Skillshop"
+  },
+  "Google Ads": {
+   "course": "Google Ads certification",
+   "provider": "Google Skillshop (free)"
+  },
+  "Power BI": {
+   "course": "Power BI for reporting",
+   "provider": "Microsoft Learn (free) or a data-analytics course"
+  },
+  "Excel": {
+   "course": "Advanced Excel",
+   "provider": "Skill India Digital Hub; Microsoft Learn"
+  },
+  "Reporting": {
+   "course": "MIS reporting with Excel",
+   "provider": "Skill India Digital Hub"
+  },
+  "Computer basics": {
+   "course": "Digital literacy and computer basics",
+   "provider": "COPA short modules; Skill India Digital Hub"
+  },
+  "Typing": {
+   "course": "Typing speed practice (English and Hindi)",
+   "provider": "ITI COPA labs; free online tutors"
+  },
+  "Office administration": {
+   "course": "Office and front-desk administration",
+   "provider": "Management and Entrepreneurship SSC courses"
+  },
+  "Documentation": {
+   "course": "Documentation and record keeping",
+   "provider": "Employability Skills module (DGT)"
+  },
+  "Electrical basics": {
+   "course": "Basic electrical safety and circuits",
+   "provider": "Electrician or Wireman short modules at ITIs"
+  },
+  "Electrical wiring": {
+   "course": "Domestic and industrial wiring",
+   "provider": "Power Sector Skill Council; ITI short courses"
+  },
+  "Auto electrical wiring": {
+   "course": "Automotive electrical systems",
+   "provider": "Automotive Skills Development Council (ASDC)"
+  },
+  "Electronics testing": {
+   "course": "Electronics testing and multimeter / oscilloscope use",
+   "provider": "Electronics Sector Skills Council of India (ESSCI)"
+  },
+  "Electronics repair": {
+   "course": "Electronics repair and fault-finding",
+   "provider": "ESSCI courses"
+  },
+  "Soldering": {
+   "course": "Hand soldering (through-hole and SMD)",
+   "provider": "ESSCI electronics assembly courses"
+  },
+  "PCB assembly": {
+   "course": "PCB / SMT assembly operator",
+   "provider": "ESSCI electronics assembly courses"
+  },
+  "ESD handling": {
+   "course": "ESD-safe handling",
+   "provider": "Part of ESSCI assembly courses"
+  },
+  "Troubleshooting": {
+   "course": "Fault-finding practice in your trade",
+   "provider": "ITI or NSTI short courses"
+  },
+  "Installation and servicing": {
+   "course": "Installation and field service",
+   "provider": "ESSCI field technician or appliance service courses"
+  },
+  "Power supply systems": {
+   "course": "Inverter, UPS and power supply servicing",
+   "provider": "ESSCI or Power Sector Skill Council courses"
+  },
+  "Quality inspection": {
+   "course": "Quality inspection and basic metrology",
+   "provider": "Capital Goods Skill Council; NSTI short courses"
+  },
+  "Measurement": {
+   "course": "Measuring instruments and metrology",
+   "provider": "Capital Goods Skill Council; NSTI short courses"
+  },
+  "Machine safety": {
+   "course": "Industrial safety",
+   "provider": "ITI and NSTI short courses"
+  },
+  "Production processes": {
+   "course": "Production supervision and lean basics",
+   "provider": "Capital Goods Skill Council"
+  },
+  "Lathe operation": {
+   "course": "Conventional lathe practice",
+   "provider": "Turner or Machinist short modules at ITIs"
+  },
+  "Milling": {
+   "course": "Milling practice",
+   "provider": "Machinist short modules at ITIs"
+  },
+  "CNC basics": {
+   "course": "CNC operation and programming basics",
+   "provider": "NSTI or Capital Goods Skill Council CNC courses"
+  },
+  "Mechanical drawing": {
+   "course": "Reading engineering drawings",
+   "provider": "Draughtsman Mechanical short modules"
+  },
+  "CAD": {
+   "course": "AutoCAD / 2D-3D CAD",
+   "provider": "NSTI short courses; private CAD institutes"
+  },
+  "Fitting and assembly": {
+   "course": "Fitting and mechanical assembly",
+   "provider": "Fitter short modules at ITIs"
+  },
+  "Machine assembly": {
+   "course": "Machine and robotics assembly",
+   "provider": "Capital Goods Skill Council; Mechatronics short courses"
+  },
+  "Machine setting": {
+   "course": "Machine setting and changeover",
+   "provider": "Capital Goods Skill Council"
+  },
+  "Machine maintenance": {
+   "course": "Preventive maintenance of machines",
+   "provider": "Mechanic Machine Tool Maintenance short modules"
+  },
+  "Plant machinery": {
+   "course": "Plant machinery operation",
+   "provider": "Capital Goods Skill Council"
+  },
+  "Electrical maintenance": {
+   "course": "Electrical maintenance technician",
+   "provider": "Power Sector Skill Council"
+  },
+  "DG set operation": {
+   "course": "Diesel generator operation and maintenance",
+   "provider": "Power Sector Skill Council"
+  },
+  "Vehicle repair": {
+   "course": "Two- and three-wheeler service",
+   "provider": "Automotive Skills Development Council (ASDC)"
+  },
+  "EV basics": {
+   "course": "Electric vehicle service technician",
+   "provider": "ASDC electric vehicle courses"
+  },
+  "Picking": {
+   "course": "Warehouse picker and packer",
+   "provider": "Logistics Sector Skill Council"
+  },
+  "Packing": {
+   "course": "Warehouse picker and packer",
+   "provider": "Logistics Sector Skill Council"
+  },
+  "Installation": {
+   "course": "Installation and commissioning",
+   "provider": "Trade-specific short courses"
+  },
+  "Data annotation": {
+   "course": "Data Annotator (NCVET-approved qualification; Class 12 pass can enrol)",
+   "provider": "National Qualifications Register entry 13281; training partners on Skill India Digital Hub",
+   "url": "https://www.nqr.gov.in/qualifications/13281"
+  },
+  "Technical support": {
+   "course": "IT helpdesk and technical support",
+   "provider": "IT-ITeS Sector Skill Council courses; ICTSM short modules"
+  },
+  "AI tools": {
+   "course": "Using AI tools at work (prompting, checking AI output)",
+   "provider": "Introductory AI courses on Skill India Digital Hub"
+  }
+ }
+}

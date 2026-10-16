@@ -79,9 +79,36 @@ const records = src.map((s) => {
   return rec;
 });
 
+// Second capture: search-engine results from other job portals (pages not opened).
+const capture = JSON.parse(readFileSync(join(root, 'data/source/capture_2026-10-16_search.json'), 'utf8'));
+for (const c of capture.records) {
+  const rec = normalizeRecord({
+    ...c,
+    source_type: 'public_listing',
+    evidence_type: 'job_advertisement',
+    captured_at: capture.capture.date,
+    last_rechecked_at: capture.capture.date,
+    geo: { granularity: 'sector', basis: 'curator_transcribed', scope_status: 'in_scope', claimed_sector: c.sector, locality_text: null, lat: null, lon: null, geocode_verified: false, note: null, ...c.geo },
+    skills: c.skills.map((name) => ({ name, basis: 'curated' })),
+    shift: c.shift || { raw: null },
+    contract_type: c.contract_type || 'not_stated',
+    accessibility_restrictions: ['seen_in_search_results_only'],
+    confidence: { level: 'low', rationale: 'Seen only in search-engine results on 16 Oct 2026; the listing page was not opened. Recheck the page before use.' },
+    review: { state: 'approved', by: 'research-capture-2026-10-16', at: '2026-10-16T00:00:00Z', note: 'Captured from search results for display as observed public evidence; flagged for the team to open and recheck.' },
+    open_flags: ['other'],
+    inferences: c.inferences || [],
+  });
+  const errs = validateRecord(rec);
+  if (errs.length) throw new Error(`${c.source_id}: ${errs.join('; ')}`);
+  records.push(rec);
+}
+
 const clustered = assignClusters(records);
 writeFileSync(join(root, 'data/seed/evidence_records.json'), JSON.stringify(clustered, null, 2) + '\n');
 
-const flags = [{ id: 'FLG-SEED-017', source_id: 'SIG-017', type: 'possibly_closed', note: 'One captured listing indicated "no longer accepting applications". Recheck before outreach.', status: 'open', raised_by: 'prototype-v0-curator', raised_at: '2026-10-16T00:00:00Z' }];
+const flags = [
+  { id: 'FLG-SEED-017', source_id: 'SIG-017', type: 'possibly_closed', note: 'One captured listing indicated "no longer accepting applications". Recheck before outreach.', status: 'open', raised_by: 'prototype-v0-curator', raised_at: '2026-10-16T00:00:00Z' },
+  ...capture.records.map((c) => ({ id: 'FLG-CAP-' + c.source_id.slice(4), source_id: c.source_id, type: 'other', note: 'Captured from search-engine results only. Open the listing page, confirm the details and the location, then resolve this flag.', status: 'open', raised_by: 'research-capture-2026-10-16', raised_at: '2026-10-16T00:00:00Z' })),
+];
 writeFileSync(join(root, 'data/seed/source_flags.json'), JSON.stringify(flags, null, 2) + '\n');
 console.log(`Wrote ${clustered.length} records and ${flags.length} flag(s).`);

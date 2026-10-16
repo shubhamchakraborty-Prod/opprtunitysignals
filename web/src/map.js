@@ -1,5 +1,5 @@
-// Map: OpenStreetMap tiles via Leaflet when available, otherwise a clearly
-// labelled schematic fallback. Pins are grouped by employer, sector and
+// Map: OpenFreeMap street tiles (MapLibre, zoomable) when available, otherwise
+// a clearly labelled, zoomable schematic sketch. Pins are grouped by employer, sector and
 // location precision. Approximate (sector-level) and verified-address pins are
 // separate layers; employer presence is its own layer and never a vacancy.
 import { app } from './app.js';
@@ -7,12 +7,11 @@ import { esc, $, $$ } from './ui.js';
 import { isOlder, displaySector } from '../../src/core/filters.js';
 import { select } from './views/explore.js';
 import { renderDetail } from './views/explore.js';
+import { createStreetMap, attachSvgZoom } from './geo-map.js';
 
-const COLOURS = { '62': '#337e79', '63': '#625cb0' };
 const SCHEMATIC_CENTRES = { '62': [262, 218], '63': [482, 246] };
-let map = null;
-let markers = [];
-let tilesOk = false;
+/** @type {any} */
+let street = null;
 
 /** Group records so one employer at one precision is one pin. */
 export function groupRecords(records, kind) {
@@ -86,92 +85,63 @@ function renderSchematic(groups) {
   });
 }
 
-function renderLeaflet(groups) {
-  const L = window.L;
-  markers.forEach((m) => map.removeLayer(m));
-  markers = [];
-  for (const g of groups) {
+function streetPins(groups) {
+  return groups.map((g) => {
     const i = sectorIndex(groups, g);
     const verified = g.precise === 'verified';
     const r0 = g.records[0];
-    const loc = verified ? [r0.geo.lat, r0.geo.lon] : approxLatLng(g, i);
+    const [lat, lon] = verified ? [r0.geo.lat, r0.geo.lon] : approxLatLng(g, i);
     const older = g.records.every(isOlder);
-    const cls = ['marker', g.sector === '63' ? 'm63' : '', older ? 'older' : '', verified ? 'verified' : g.precise === 'presence' ? 'presence' : 'approx'].join(' ');
-    const badge = g.records.length > 1 ? `<span class="badge">${g.records.length}</span>` : '';
-    const icon = L.divIcon({ className: '', html: `<div class="${cls}" title="${esc(g.label)}">${g.precise === 'presence' ? 'P' : g.sector}${badge}</div>`, iconSize: [24, 24], iconAnchor: [12, 12] });
-    const m = L.marker(loc, { icon, keyboard: true, title: pinLabel(g), alt: pinLabel(g) }).addTo(map);
-    m.bindTooltip(esc(pinLabel(g)), { direction: 'top' });
-    m.on('click', () => activate(g));
-    markers.push(m);
-  }
+    return { lat, lon, g, label: pinLabel(g), count: g.records.length, text: g.precise === 'presence' ? 'P' : g.sector, cls: [g.sector === '63' ? 'm63' : '', older ? 'older' : '', verified ? 'verified' : g.precise === 'presence' ? 'presence' : 'approx'].join(' ') };
+  });
 }
 
 export function renderPins() {
   if (!app.data) return;
   const groups = currentGroups();
   renderSchematic(groups);
-  if (map && tilesOk) renderLeaflet(groups);
+  if (street) street.setPins(streetPins(groups), (p) => activate(p.g));
   const anyVerified = groups.some((g) => g.precise === 'verified');
-  $('#mapLabel').textContent = tilesOk
+  $('#mapLabel').textContent = street
     ? `Round dots show the sector, not the exact office.${anyVerified ? ' Square dots are checked addresses.' : ''}`
     : 'Sketch only. Dots show the sector, not the exact office.';
 }
 
 function useFallback(reason) {
-  tilesOk = false;
+  street = null;
   $('#leafletMap').style.display = 'none';
   $('#fallback').style.display = 'block';
   $('#fallbackReason').textContent = reason;
   renderPins();
 }
 
-function initLeaflet() {
-  const L = window.L;
-  const geo = app.data.geometry;
-  $('#leafletMap').style.display = 'block';
-  map = L.map('leafletMap', { zoomControl: true, scrollWheelZoom: false });
-  let loaded = 0, failed = 0;
-  const layer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 18 });
-  layer.on('tileload', () => {
-    loaded++;
-    if (!tilesOk) {
-      tilesOk = true;
-      $('#fallback').style.display = 'none';
-      renderPins();
-    }
-  });
-  layer.on('tileerror', () => {
-    failed++;
-    if (!loaded && failed >= 3) useFallback('The street map could not load (offline or blocked).');
-  });
-  layer.addTo(map);
-  for (const [sec, s] of Object.entries(geo.sectors)) {
-    L.circle(s.centre, { radius: s.radius_m, color: getComputedStyle(document.documentElement).getPropertyValue(sec === '62' ? '--s62' : '--s63').trim() || s.colour, weight: 1, dashArray: '5,6', fillOpacity: 0.05 }).addTo(map).bindTooltip(`Sector ${sec}: rough guide, not an official boundary`);
-  }
-  map.fitBounds(geo.fit_bounds, { padding: [22, 22] });
-  setTimeout(() => { if (!loaded) useFallback('The street map did not load in time (offline or blocked).'); }, 6000);
-}
-
-/** Load Leaflet from the bundled vendor copy; schematic stays usable throughout. */
+/** Street map from OpenFreeMap when reachable; the zoomable sketch otherwise. */
 export function initMap() {
   $('#fallback').style.display = 'block';
   $('#leafletMap').style.display = 'none';
+  attachSvgZoom(/** @type {any} */ ($('#fallback svg')), $('#fallback'));
   renderPins();
-  if (!navigator.onLine) return useFallback('This device is offline.');
-  if (window.__NO_STREET_MAP__) return useFallback(window.__NO_STREET_MAP__);
-  const css = document.createElement('link');
-  css.rel = 'stylesheet';
-  css.href = 'vendor/leaflet/leaflet.css';
-  document.head.appendChild(css);
-  const s = document.createElement('script');
-  s.src = 'vendor/leaflet/leaflet.js';
-  s.onload = () => {
-    try { initLeaflet(); } catch { useFallback('The interactive map could not start.'); }
-  };
-  s.onerror = () => useFallback('The map library could not be loaded.');
-  document.head.appendChild(s);
+  const geo = app.data.geometry;
+  const css = getComputedStyle(document.documentElement);
+  const el = $('#leafletMap');
+  el.style.display = 'block';
+  el.style.visibility = 'hidden';
+  createStreetMap(el, {
+    center: [(geo.fit_bounds[0][0] + geo.fit_bounds[1][0]) / 2, (geo.fit_bounds[0][1] + geo.fit_bounds[1][1]) / 2],
+    zoom: 14,
+    bounds: geo.fit_bounds,
+    areas: Object.entries(geo.sectors).map(([sec, a]) => ({ label: 'Sector ' + sec, centre: a.centre, radius_m: a.radius_m, colour: css.getPropertyValue(sec === '62' ? '--s62' : '--s63').trim() || a.colour })),
+  }).then((m) => {
+    street = m;
+    el.style.visibility = 'visible';
+    $('#fallback').style.display = 'none';
+    renderPins();
+  }).catch((e) => {
+    el.style.visibility = 'visible';
+    useFallback(e.message);
+  });
 }
 
 export function invalidateMap() {
-  if (map) setTimeout(() => map.invalidateSize(), 30);
+  if (street) setTimeout(() => street.resize(), 30);
 }

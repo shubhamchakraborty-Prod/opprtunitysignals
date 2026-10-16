@@ -1,0 +1,95 @@
+{
+  "note": "Announced projects that may create work in or near Noida. These are announcements and projections, not vacancies, and are never counted as jobs. Job numbers are the figures given by the company or government at announcement. Trades listed are our inference.",
+  "compiled_at": "2026-10-16",
+  "items": [
+    {
+      "id": "ANN-001",
+      "title": "Six Sense Mobility automotive electronics plant",
+      "who": "Six Sense Mobility",
+      "where": "Noida (sector not given in coverage)",
+      "distance": "In Noida; likely a short commute from Sector 62/63",
+      "stage": "Opened",
+      "announced": "2026-10",
+      "investment": "Over ₹15 crore",
+      "jobs_claimed": "About 300 engineering and manufacturing roles, as the company plans to triple its workforce over two years",
+      "sector_area": "Automotive electronics",
+      "trades": ["Electronics Mechanic", "Mechanic Auto Electrical and Electronics", "Technician Power Electronics Systems", "Fitter"],
+      "sources": [
+        { "label": "The Machine Maker", "url": "https://themachinemaker.com/news/six-sense-mobility-opens-%e2%82%b915-crore-noida-plant/" },
+        { "label": "Manufacturing Today India", "url": "https://www.manufacturingtodayindia.com/six-sense-mobility-opens-first-manufacturing-facility-in-noida" }
+      ],
+      "next_step": "Find the plant address and contact HR for entry roles and whether they take ITI apprentices."
+    },
+    {
+      "id": "ANN-002",
+      "title": "HCL-Foxconn semiconductor assembly and test unit (India Chip Pvt Ltd)",
+      "who": "HCL and Foxconn joint venture",
+      "where": "YEIDA, near Jewar airport, Gautam Buddh Nagar",
+      "distance": "Same district, far from Sector 62/63 (long daily commute)",
+      "stage": "Foundation stone laid 21 Feb 2026; expected to start in 2027",
+      "announced": "2026-02-21",
+      "investment": "About ₹3,700 crore",
+      "jobs_claimed": "About 2,000 jobs (minister); a state document cites 3,780 direct and indirect",
+      "sector_area": "Semiconductors",
+      "trades": ["Electronics Mechanic", "Instrument Mechanic", "Technician Power Electronics Systems", "Mechanic Machine Tool Maintenance", "Refrigeration and Air Conditioner Technician"],
+      "sources": [
+        { "label": "News On AIR", "url": "https://www.newsonair.gov.in/pm-modi-virtually-lays-foundation-stone-of-hcl-foxconn-joint-venture-project-india-chip-pvt-ltd" },
+        { "label": "Tribune: Cabinet approves ₹3,700 crore plant", "url": "https://www.tribuneindia.com/news/india/cabinet-approves-3700-cr-semiconductor-plant-in-up" },
+        { "label": "Pulse of Noida", "url": "https://pulseofnoida.com/city-progress/city-projects/hcl-foxconn-semiconductor-unit-yeida-noida-jewar-2485/" }
+      ],
+      "next_step": "Ask about technician hiring timelines for 2027 and cleanroom training requirements."
+    },
+    {
+      "id": "ANN-003",
+      "title": "Spark Minda auto component units",
+      "who": "Spark Minda",
+      "where": "YEIDA Sector 10 and Sector 24, Gautam Buddh Nagar",
+      "distance": "Same district, far from Sector 62/63",
+      "stage": "Ground-breaking held August 2026",
+      "announced": "2026-08",
+      "investment": "₹1,166 crore across two units",
+      "jobs_claimed": "About 6,440 jobs",
+      "sector_area": "Auto components",
+      "trades": ["Fitter", "Machinist", "Turner", "Mechanic Auto Electrical and Electronics", "Electronics Mechanic", "Plastic Processing Operator", "Welder"],
+      "sources": [
+        { "label": "Outlook Business", "url": "https://www.outlookbusiness.com/amp/story/corporate/expect-to-create-6440-jobs-via-1166-cr-investment-on-2-units-in-yeidaspark-minda" }
+      ],
+      "next_step": "Ask when production hiring starts and whether ITI pass-outs from Noida ITIs can be placed."
+    },
+    {
+      "id": "ANN-004",
+      "title": "Electronics Manufacturing Cluster (EMC 2.0)",
+      "who": "Government of India with YEIDA",
+      "where": "YEIDA, 200 acres, Gautam Buddh Nagar",
+      "distance": "Same district, far from Sector 62/63",
+      "stage": "Approved June 2025; completion expected by 2028",
+      "announced": "2025-06",
+      "investment": "₹417 crore cluster; about ₹2,500 crore expected from units",
+      "jobs_claimed": "About 15,000 jobs expected",
+      "sector_area": "Electronics manufacturing",
+      "trades": ["Electronics Mechanic", "Fitter", "Electrician", "Technician Electronic System Design and Repair", "Mechanic Consumer Electronic Appliances"],
+      "sources": [
+        { "label": "Business Standard", "url": "https://www.business-standard.com/industry/news/govt-approves-electronics-manufacturing-cluster-worth-417-crore-in-noida-125062500914_1.html" },
+        { "label": "India Expo Mart", "url": "https://indiaexpomart.com/greater-noida-becomes-electronics-hub-with-new-yeida-park/" }
+      ],
+      "next_step": "Track which companies take plots; Havells is named as an anchor unit in one report."
+    },
+    {
+      "id": "ANN-005",
+      "title": "Electronic components and circuits project, and a solar cell unit",
+      "who": "Announced by the Uttar Pradesh government",
+      "where": "Gautam Buddh Nagar (exact sites not given in coverage)",
+      "distance": "Not known",
+      "stage": "Foundation stone and approval announced June 2026",
+      "announced": "2026-06",
+      "investment": "About ₹7,000 crore (electronics) and ₹8,200 crore (solar cells)",
+      "jobs_claimed": "Not stated in the coverage found",
+      "sector_area": "Electronic components; solar",
+      "trades": ["Electronics Mechanic", "Solar Technician (Electrical)", "Electrician", "Fitter", "Instrument Mechanic"],
+      "sources": [
+        { "label": "Free Press Journal", "url": "https://www.freepressjournal.in/uttar-pradesh/noida-is-indias-biggest-investment-destination-says-cm-yogi-adityanath-inaugurates-2479-crore-development-projects-in-gautam-buddha-nagar-video" }
+      ],
+      "next_step": "Confirm company names and sites before treating as local demand."
+    }
+  ]
+}

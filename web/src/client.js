@@ -73,7 +73,7 @@ function apiClient() {
 
 function localClient(seed) {
   const store = new MemoryStore({ records: seed.records, flags: seed.flags, verifications: seed.verifications, interviews: seed.interviews, passouts: seed.passouts, settings: seed.settings });
-  const service = createService(store, { profiles: seed.profiles, geometry: seed.geometry });
+  const service = createService(store, { profiles: seed.profiles, geometry: seed.geometry, trades: seed.trades, courses: seed.courses, announcements: seed.announcements, regions: seed.regions });
   let actor = { id: 'sandbox-observer', name: 'Observer', role: 'observer' };
   const call = (m) => (...args) => service[m](actor, ...args);
   const methods = ['bootstrap', 'getRecord', 'reviewQueue', 'importCsv', 'reviewRecord', 'flagSource', 'resolveFlag', 'queueOutreach', 'expireRecord', 'resolveDuplicate', 'listVerifications', 'submitVerification', 'decideVerification', 'submitInterview', 'decideInterview', 'setSentimentEnabled', 'setPassouts', 'auditLog', 'exportRegister', 'managementNote'];

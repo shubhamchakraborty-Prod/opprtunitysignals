@@ -1,0 +1,1011 @@
+{
+ "note": "Compiled list of Craftsmen Training Scheme (CTS) trades by DGT trade name, grouped by sector. DGT revises trades every year; check the current list and syllabus at https://bharatskills.gov.in/home/cts before using in plans. Core skills are short summaries for matching, not the full syllabus.",
+ "source_url": "https://bharatskills.gov.in/home/cts",
+ "compiled_at": "2026-10-16",
+ "trades": [
+  {
+   "trade": "Mechanic Motor Vehicle",
+   "sector": "Automotive",
+   "core_skills": [
+    "Vehicle repair",
+    "Engine overhaul",
+    "Auto electrical wiring",
+    "Machine safety",
+    "Measurement"
+   ]
+  },
+  {
+   "trade": "Mechanic Diesel",
+   "sector": "Automotive",
+   "core_skills": [
+    "Diesel engine repair",
+    "Vehicle repair",
+    "Fuel systems",
+    "Measurement",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Mechanic Auto Electrical and Electronics",
+   "sector": "Automotive",
+   "core_skills": [
+    "Auto electrical wiring",
+    "Electrical basics",
+    "Electronics testing",
+    "Vehicle repair",
+    "Troubleshooting"
+   ]
+  },
+  {
+   "trade": "Mechanic Two and Three Wheeler",
+   "sector": "Automotive",
+   "core_skills": [
+    "Vehicle repair",
+    "Engine overhaul",
+    "Auto electrical wiring",
+    "Troubleshooting"
+   ]
+  },
+  {
+   "trade": "Mechanic Electric Vehicle",
+   "sector": "Automotive",
+   "core_skills": [
+    "EV basics",
+    "Battery systems",
+    "Auto electrical wiring",
+    "Vehicle repair",
+    "Electrical basics",
+    "Troubleshooting"
+   ]
+  },
+  {
+   "trade": "Mechanic Tractor",
+   "sector": "Automotive",
+   "core_skills": [
+    "Vehicle repair",
+    "Diesel engine repair",
+    "Hydraulics",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Mechanic Agricultural Machinery",
+   "sector": "Automotive",
+   "core_skills": [
+    "Vehicle repair",
+    "Hydraulics",
+    "Welding basics",
+    "Machine maintenance"
+   ]
+  },
+  {
+   "trade": "Mechanic Auto Body Repair",
+   "sector": "Automotive",
+   "core_skills": [
+    "Sheet metal work",
+    "Welding basics",
+    "Vehicle repair"
+   ]
+  },
+  {
+   "trade": "Mechanic Auto Body Painting",
+   "sector": "Automotive",
+   "core_skills": [
+    "Spray painting",
+    "Surface preparation",
+    "Vehicle repair"
+   ]
+  },
+  {
+   "trade": "Mechanic Repair and Maintenance of Heavy Vehicles",
+   "sector": "Automotive",
+   "core_skills": [
+    "Vehicle repair",
+    "Diesel engine repair",
+    "Hydraulics",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Mechanic Repair and Maintenance of Light Vehicles",
+   "sector": "Automotive",
+   "core_skills": [
+    "Vehicle repair",
+    "Engine overhaul",
+    "Auto electrical wiring"
+   ]
+  },
+  {
+   "trade": "Mechanic Repair and Maintenance of Two Wheelers",
+   "sector": "Automotive",
+   "core_skills": [
+    "Vehicle repair",
+    "Engine overhaul",
+    "Troubleshooting"
+   ]
+  },
+  {
+   "trade": "Fitter",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Fitting and assembly",
+    "Measurement",
+    "Mechanical drawing",
+    "Machine safety",
+    "Machine assembly",
+    "Quality inspection"
+   ]
+  },
+  {
+   "trade": "Turner",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Lathe operation",
+    "Measurement",
+    "Mechanical drawing",
+    "Machine safety",
+    "Quality inspection"
+   ]
+  },
+  {
+   "trade": "Machinist",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Lathe operation",
+    "Milling",
+    "CNC basics",
+    "Measurement",
+    "Mechanical drawing",
+    "Machine safety",
+    "Quality inspection"
+   ]
+  },
+  {
+   "trade": "Machinist Grinder",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Grinding",
+    "Measurement",
+    "Machine safety",
+    "Quality inspection"
+   ]
+  },
+  {
+   "trade": "Operator Advanced Machine Tool",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "CNC basics",
+    "Machine setting",
+    "Measurement",
+    "Machine safety",
+    "Quality inspection"
+   ]
+  },
+  {
+   "trade": "Tool and Die Maker (Press Tools, Jigs and Fixtures)",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Tool making",
+    "Milling",
+    "Grinding",
+    "Measurement",
+    "Mechanical drawing"
+   ]
+  },
+  {
+   "trade": "Tool and Die Maker (Dies and Moulds)",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Tool making",
+    "Milling",
+    "CNC basics",
+    "Measurement",
+    "Mechanical drawing"
+   ]
+  },
+  {
+   "trade": "Mechanic Machine Tool Maintenance",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Machine maintenance",
+    "Machine setting",
+    "Hydraulics",
+    "Fitting and assembly",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Technician Mechatronics",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Machine assembly",
+    "PLC basics",
+    "Sensors",
+    "Electrical basics",
+    "Hydraulics",
+    "Troubleshooting"
+   ]
+  },
+  {
+   "trade": "Mechanic Mechatronics",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Machine assembly",
+    "PLC basics",
+    "Electrical basics",
+    "Troubleshooting"
+   ]
+  },
+  {
+   "trade": "Additive Manufacturing Technician (3D Printing)",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "3D printing",
+    "CAD",
+    "Measurement",
+    "Quality inspection"
+   ]
+  },
+  {
+   "trade": "Refrigeration and Air Conditioner Technician",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Refrigeration systems",
+    "Electrical basics",
+    "Brazing",
+    "Installation and servicing",
+    "Troubleshooting"
+   ]
+  },
+  {
+   "trade": "Lift and Escalator Mechanic",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Installation and servicing",
+    "Electrical basics",
+    "Machine maintenance",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Welder",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Arc welding",
+    "Gas cutting",
+    "Welding basics",
+    "Machine safety",
+    "Mechanical drawing"
+   ]
+  },
+  {
+   "trade": "Welder (GMAW and GTAW)",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "MIG/TIG welding",
+    "Welding basics",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Welder (Pipe)",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Pipe welding",
+    "Welding basics",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Welder (Structural)",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Structural welding",
+    "Welding basics",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Welder (Fabrication and Fitting)",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Fabrication",
+    "Welding basics",
+    "Fitting and assembly",
+    "Measurement"
+   ]
+  },
+  {
+   "trade": "Sheet Metal Worker",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Sheet metal work",
+    "Measurement",
+    "Mechanical drawing",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Foundryman",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Moulding and casting",
+    "Machine safety",
+    "Quality inspection"
+   ]
+  },
+  {
+   "trade": "Forger and Heat Treater",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Forging",
+    "Heat treatment",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Pattern Maker",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Pattern making",
+    "Measurement",
+    "Mechanical drawing"
+   ]
+  },
+  {
+   "trade": "Marine Fitter",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Fitting and assembly",
+    "Welding basics",
+    "Mechanical drawing"
+   ]
+  },
+  {
+   "trade": "Plastic Processing Operator",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Injection moulding",
+    "Machine setting",
+    "Quality inspection",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Mechanic Lens and Prism Grinding",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Grinding",
+    "Measurement",
+    "Quality inspection"
+   ]
+  },
+  {
+   "trade": "Aeronautical Structure and Equipment Fitter",
+   "sector": "Capital Goods and Manufacturing",
+   "core_skills": [
+    "Fitting and assembly",
+    "Measurement",
+    "Mechanical drawing",
+    "Quality inspection"
+   ]
+  },
+  {
+   "trade": "Electrician",
+   "sector": "Electrical and Power",
+   "core_skills": [
+    "Electrical wiring",
+    "Electrical basics",
+    "Electrical maintenance",
+    "Motor and transformer basics",
+    "Machine safety",
+    "Troubleshooting"
+   ]
+  },
+  {
+   "trade": "Wireman",
+   "sector": "Electrical and Power",
+   "core_skills": [
+    "Electrical wiring",
+    "Electrical basics",
+    "Installation and servicing",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Electrician Power Distribution",
+   "sector": "Electrical and Power",
+   "core_skills": [
+    "Electrical wiring",
+    "Power distribution",
+    "Electrical maintenance",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Solar Technician (Electrical)",
+   "sector": "Electrical and Power",
+   "core_skills": [
+    "Solar installation",
+    "Electrical wiring",
+    "Electrical basics",
+    "Installation and servicing",
+    "Power supply systems"
+   ]
+  },
+  {
+   "trade": "Instrument Mechanic",
+   "sector": "Electrical and Power",
+   "core_skills": [
+    "Instrumentation",
+    "Electronics testing",
+    "Calibration",
+    "Measurement",
+    "Troubleshooting"
+   ]
+  },
+  {
+   "trade": "Electronics Mechanic",
+   "sector": "Electronics and Hardware",
+   "core_skills": [
+    "Electrical basics",
+    "Electronics testing",
+    "Soldering",
+    "PCB assembly",
+    "Electronics repair",
+    "Measurement",
+    "ESD handling",
+    "Troubleshooting"
+   ]
+  },
+  {
+   "trade": "Mechanic Consumer Electronic Appliances",
+   "sector": "Electronics and Hardware",
+   "core_skills": [
+    "Electronics repair",
+    "Electronics testing",
+    "Installation and servicing",
+    "Soldering",
+    "Troubleshooting"
+   ]
+  },
+  {
+   "trade": "Technician Power Electronics Systems",
+   "sector": "Electronics and Hardware",
+   "core_skills": [
+    "Power supply systems",
+    "Electronics testing",
+    "Soldering",
+    "Electrical basics",
+    "Troubleshooting"
+   ]
+  },
+  {
+   "trade": "Technician Electronic System Design and Repair",
+   "sector": "Electronics and Hardware",
+   "core_skills": [
+    "PCB assembly",
+    "Soldering",
+    "Electronics testing",
+    "Electronics repair",
+    "Troubleshooting"
+   ]
+  },
+  {
+   "trade": "Mechanic Medical Electronics",
+   "sector": "Electronics and Hardware",
+   "core_skills": [
+    "Electronics testing",
+    "Electronics repair",
+    "Calibration",
+    "Troubleshooting"
+   ]
+  },
+  {
+   "trade": "Smartphone Technician cum App Tester",
+   "sector": "Electronics and Hardware",
+   "core_skills": [
+    "Electronics repair",
+    "Soldering",
+    "Software testing",
+    "Troubleshooting"
+   ]
+  },
+  {
+   "trade": "Computer Operator and Programming Assistant (COPA)",
+   "sector": "IT and ITES",
+   "core_skills": [
+    "Computer basics",
+    "Typing",
+    "Excel",
+    "Office administration",
+    "Documentation",
+    "Reporting"
+   ]
+  },
+  {
+   "trade": "Information and Communication Technology System Maintenance",
+   "sector": "IT and ITES",
+   "core_skills": [
+    "Computer hardware",
+    "Networking",
+    "Troubleshooting",
+    "Computer basics",
+    "Installation and servicing"
+   ]
+  },
+  {
+   "trade": "Computer Hardware and Network Maintenance",
+   "sector": "IT and ITES",
+   "core_skills": [
+    "Computer hardware",
+    "Networking",
+    "Troubleshooting",
+    "Computer basics"
+   ]
+  },
+  {
+   "trade": "IoT Technician (Smart City)",
+   "sector": "IT and ITES",
+   "core_skills": [
+    "Sensors",
+    "Networking",
+    "Electronics testing",
+    "Installation and servicing"
+   ]
+  },
+  {
+   "trade": "IoT Technician (Smart Agriculture)",
+   "sector": "IT and ITES",
+   "core_skills": [
+    "Sensors",
+    "Networking",
+    "Electronics testing"
+   ]
+  },
+  {
+   "trade": "IoT Technician (Smart Healthcare)",
+   "sector": "IT and ITES",
+   "core_skills": [
+    "Sensors",
+    "Networking",
+    "Electronics testing"
+   ]
+  },
+  {
+   "trade": "Artificial Intelligence Programming Assistant",
+   "sector": "IT and ITES",
+   "core_skills": [
+    "Python basics",
+    "Computer basics",
+    "Data handling",
+    "Excel"
+   ]
+  },
+  {
+   "trade": "Multimedia Animation and Special Effects",
+   "sector": "IT and ITES",
+   "core_skills": [
+    "Graphic design",
+    "Animation",
+    "Computer basics"
+   ]
+  },
+  {
+   "trade": "Desktop Publishing Operator",
+   "sector": "IT and ITES",
+   "core_skills": [
+    "Graphic design",
+    "Typing",
+    "Computer basics",
+    "Documentation"
+   ]
+  },
+  {
+   "trade": "Office Assistant cum Computer Operator",
+   "sector": "IT and ITES",
+   "core_skills": [
+    "Computer basics",
+    "Typing",
+    "Office administration",
+    "Documentation",
+    "Communication"
+   ]
+  },
+  {
+   "trade": "Stenographer and Secretarial Assistant (English)",
+   "sector": "IT and ITES",
+   "core_skills": [
+    "Shorthand",
+    "Typing",
+    "English writing",
+    "Office administration",
+    "Documentation"
+   ]
+  },
+  {
+   "trade": "Stenographer and Secretarial Assistant (Hindi)",
+   "sector": "IT and ITES",
+   "core_skills": [
+    "Shorthand",
+    "Typing",
+    "Office administration",
+    "Documentation"
+   ]
+  },
+  {
+   "trade": "Secretarial Practice (English)",
+   "sector": "IT and ITES",
+   "core_skills": [
+    "Typing",
+    "English writing",
+    "Office administration",
+    "Documentation",
+    "Communication"
+   ]
+  },
+  {
+   "trade": "Draughtsman Civil",
+   "sector": "Construction and Civil",
+   "core_skills": [
+    "Civil drawing",
+    "CAD",
+    "Measurement",
+    "Surveying basics"
+   ]
+  },
+  {
+   "trade": "Draughtsman Mechanical",
+   "sector": "Construction and Civil",
+   "core_skills": [
+    "Mechanical drawing",
+    "CAD",
+    "Measurement"
+   ]
+  },
+  {
+   "trade": "Architectural Draughtsman",
+   "sector": "Construction and Civil",
+   "core_skills": [
+    "Civil drawing",
+    "CAD",
+    "Measurement"
+   ]
+  },
+  {
+   "trade": "Architectural Assistant",
+   "sector": "Construction and Civil",
+   "core_skills": [
+    "Civil drawing",
+    "CAD",
+    "Documentation"
+   ]
+  },
+  {
+   "trade": "Surveyor",
+   "sector": "Construction and Civil",
+   "core_skills": [
+    "Surveying basics",
+    "Measurement",
+    "CAD"
+   ]
+  },
+  {
+   "trade": "Plumber",
+   "sector": "Construction and Civil",
+   "core_skills": [
+    "Pipe fitting",
+    "Measurement",
+    "Installation and servicing",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Carpenter",
+   "sector": "Construction and Civil",
+   "core_skills": [
+    "Woodworking",
+    "Measurement",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Mason (Building Constructor)",
+   "sector": "Construction and Civil",
+   "core_skills": [
+    "Masonry",
+    "Measurement",
+    "Site safety"
+   ]
+  },
+  {
+   "trade": "Painter General",
+   "sector": "Construction and Civil",
+   "core_skills": [
+    "Spray painting",
+    "Surface preparation"
+   ]
+  },
+  {
+   "trade": "Interior Design and Decoration",
+   "sector": "Construction and Civil",
+   "core_skills": [
+    "Interior design",
+    "CAD",
+    "Measurement"
+   ]
+  },
+  {
+   "trade": "Attendant Operator (Chemical Plant)",
+   "sector": "Chemical and Process",
+   "core_skills": [
+    "Process operation",
+    "Plant machinery",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Laboratory Assistant (Chemical Plant)",
+   "sector": "Chemical and Process",
+   "core_skills": [
+    "Laboratory testing",
+    "Quality inspection",
+    "Documentation"
+   ]
+  },
+  {
+   "trade": "Maintenance Mechanic (Chemical Plant)",
+   "sector": "Chemical and Process",
+   "core_skills": [
+    "Machine maintenance",
+    "Fitting and assembly",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Instrument Mechanic (Chemical Plant)",
+   "sector": "Chemical and Process",
+   "core_skills": [
+    "Instrumentation",
+    "Calibration",
+    "Troubleshooting"
+   ]
+  },
+  {
+   "trade": "Electroplater",
+   "sector": "Chemical and Process",
+   "core_skills": [
+    "Electroplating",
+    "Quality inspection",
+    "Machine safety"
+   ]
+  },
+  {
+   "trade": "Sewing Technology",
+   "sector": "Apparel and Textiles",
+   "core_skills": [
+    "Industrial sewing",
+    "Garment construction",
+    "Quality inspection"
+   ]
+  },
+  {
+   "trade": "Dress Making",
+   "sector": "Apparel and Textiles",
+   "core_skills": [
+    "Garment construction",
+    "Pattern cutting",
+    "Industrial sewing"
+   ]
+  },
+  {
+   "trade": "Fashion Design and Technology",
+   "sector": "Apparel and Textiles",
+   "core_skills": [
+    "Fashion design",
+    "Pattern cutting",
+    "Garment construction"
+   ]
+  },
+  {
+   "trade": "Surface Ornamentation Techniques (Embroidery)",
+   "sector": "Apparel and Textiles",
+   "core_skills": [
+    "Embroidery",
+    "Industrial sewing"
+   ]
+  },
+  {
+   "trade": "Spinning Technician",
+   "sector": "Apparel and Textiles",
+   "core_skills": [
+    "Spinning",
+    "Machine maintenance",
+    "Quality inspection"
+   ]
+  },
+  {
+   "trade": "Weaving Technician for Silk and Woolen Fabrics",
+   "sector": "Apparel and Textiles",
+   "core_skills": [
+    "Weaving",
+    "Machine maintenance"
+   ]
+  },
+  {
+   "trade": "Textile Wet Processing Technician",
+   "sector": "Apparel and Textiles",
+   "core_skills": [
+    "Dyeing and finishing",
+    "Quality inspection"
+   ]
+  },
+  {
+   "trade": "Textile Mechatronics",
+   "sector": "Apparel and Textiles",
+   "core_skills": [
+    "Machine maintenance",
+    "Electrical basics",
+    "PLC basics"
+   ]
+  },
+  {
+   "trade": "Cosmetology",
+   "sector": "Beauty and Wellness",
+   "core_skills": [
+    "Beauty services",
+    "Customer handling",
+    "Hygiene and safety"
+   ]
+  },
+  {
+   "trade": "Basic Cosmetology",
+   "sector": "Beauty and Wellness",
+   "core_skills": [
+    "Beauty services",
+    "Hygiene and safety"
+   ]
+  },
+  {
+   "trade": "Hair and Skin Care",
+   "sector": "Beauty and Wellness",
+   "core_skills": [
+    "Beauty services",
+    "Customer handling"
+   ]
+  },
+  {
+   "trade": "Food Production (General)",
+   "sector": "Tourism, Hospitality and Food",
+   "core_skills": [
+    "Cooking",
+    "Food safety",
+    "Kitchen operations"
+   ]
+  },
+  {
+   "trade": "Food and Beverage Service Assistant",
+   "sector": "Tourism, Hospitality and Food",
+   "core_skills": [
+    "Food service",
+    "Customer handling",
+    "Communication"
+   ]
+  },
+  {
+   "trade": "Front Office Assistant",
+   "sector": "Tourism, Hospitality and Food",
+   "core_skills": [
+    "Customer handling",
+    "Computer basics",
+    "Communication",
+    "English communication"
+   ]
+  },
+  {
+   "trade": "Baker and Confectioner",
+   "sector": "Tourism, Hospitality and Food",
+   "core_skills": [
+    "Baking",
+    "Food safety"
+   ]
+  },
+  {
+   "trade": "Fruit and Vegetable Processing",
+   "sector": "Tourism, Hospitality and Food",
+   "core_skills": [
+    "Food processing",
+    "Food safety",
+    "Quality inspection"
+   ]
+  },
+  {
+   "trade": "Hospital House Keeping",
+   "sector": "Tourism, Hospitality and Food",
+   "core_skills": [
+    "Housekeeping",
+    "Hygiene and safety"
+   ]
+  },
+  {
+   "trade": "Travel and Tour Assistant",
+   "sector": "Tourism, Hospitality and Food",
+   "core_skills": [
+    "Customer handling",
+    "Computer basics",
+    "Communication"
+   ]
+  },
+  {
+   "trade": "Health Sanitary Inspector",
+   "sector": "Healthcare",
+   "core_skills": [
+    "Public health",
+    "Documentation",
+    "Inspection"
+   ]
+  },
+  {
+   "trade": "Dental Laboratory Equipment Technician",
+   "sector": "Healthcare",
+   "core_skills": [
+    "Dental lab work",
+    "Measurement",
+    "Quality inspection"
+   ]
+  },
+  {
+   "trade": "Physiotherapy Technician",
+   "sector": "Healthcare",
+   "core_skills": [
+    "Patient care",
+    "Exercise therapy basics"
+   ]
+  },
+  {
+   "trade": "Drone Technician",
+   "sector": "Aviation and Drones",
+   "core_skills": [
+    "Drone assembly",
+    "Electronics testing",
+    "Soldering",
+    "Troubleshooting"
+   ]
+  },
+  {
+   "trade": "Floriculture and Landscaping",
+   "sector": "Agriculture",
+   "core_skills": [
+    "Horticulture",
+    "Landscaping"
+   ]
+  },
+  {
+   "trade": "Fireman",
+   "sector": "Safety and Fire",
+   "core_skills": [
+    "Fire fighting",
+    "Site safety",
+    "First aid"
+   ]
+  },
+  {
+   "trade": "Fire Technology and Industrial Safety Management",
+   "sector": "Safety and Fire",
+   "core_skills": [
+    "Industrial safety",
+    "Fire fighting",
+    "Inspection"
+   ]
+  },
+  {
+   "trade": "Digital Photographer",
+   "sector": "Media",
+   "core_skills": [
+    "Photography",
+    "Photo editing",
+    "Computer basics"
+   ]
+  }
+ ]
+}

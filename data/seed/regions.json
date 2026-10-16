@@ -1,0 +1,45 @@
+{
+  "note": "Industry presence around Kalyani and Siliguri, West Bengal. These are places where industry is located, not job vacancies. Pin positions are approximate placements for orientation; check addresses with WBIIDC or the employer. Several sources are old and are dated on each item.",
+  "compiled_at": "2026-10-16",
+  "regions": [
+    {
+      "id": "kalyani",
+      "name": "Kalyani",
+      "district": "Nadia, West Bengal",
+      "centre": [22.975, 88.445],
+      "zoom": 12.5,
+      "bounds": [[22.93, 88.40], [23.01, 88.50]],
+      "summary": "Planned township north of Kolkata with three WBIIDC industrial parks, a large older industrial base in Gayespur, and a government ITI. Agro processing, chemicals, engineering and rail equipment show up most in official listings.",
+      "job_search": "Searched job portals on 16 Oct 2026 for ITI technician, fitter and electrician jobs in Kalyani. No current listings were found; the results were closed railway, PSU and research-institute notices elsewhere in the state.",
+      "sites": [
+        { "id": "K1", "name": "Kalyani Industrial Park, Phase I (WBIIDC)", "kind": "industrial_park", "lat": 22.982, "lon": 88.452, "what": "WBIIDC park at Chandmari Morh. An older listing gives 88 acres, 38 units, including Wales Distiller, Concept Rail Engineers, Synergy Industrial Services and Gapcon.", "sectors": ["Engineering", "Rail equipment", "Beverages"], "trades": ["Fitter", "Welder", "Machinist", "Electrician"], "source": { "label": "WBIIDC contact details and older Phase I page", "url": "https://wbiidc.wb.gov.in/contact-details", "date": "Older listing, date not shown" } },
+        { "id": "K2", "name": "Kalyani Industrial Park, Phase II (WBIIDC)", "kind": "industrial_park", "lat": 22.990, "lon": 88.460, "what": "134 acres, 20 industrial units, no land left. Agro-based: mustard oil, rice, dairy. Named units: Jyotirmoy Rice Mill, Nicco Biotech Ltd.", "sectors": ["Agro processing", "Food", "Biotech"], "trades": ["Fruit and Vegetable Processing", "Electrician", "Fitter", "Laboratory Assistant (Chemical Plant)"], "source": { "label": "WBIIDC: Kalyani Industrial Park Phase II", "url": "https://wbiidc.wb.gov.in/kalyani2", "date": "Current WBIIDC page" } },
+        { "id": "K3", "name": "Kalyani Industrial Park, Phase III (WBIIDC)", "kind": "industrial_park", "lat": 22.955, "lon": 88.430, "what": "Beside the Barrackpore-Kalyani Expressway near Kalyani township.", "sectors": ["Mixed industry"], "trades": ["Fitter", "Electrician"], "source": { "label": "WBIIDC industrial parks", "url": "https://wbiidc.wb.gov.in/growth-centres", "date": "Current WBIIDC page" } },
+        { "id": "K4", "name": "Gayespur industrial area", "kind": "industrial_cluster", "lat": 22.960, "lon": 88.475, "what": "Older industrial area with firms such as Tega India, Kolmark Chemicals and Phoenix Conveyor Belt India.", "sectors": ["Mining equipment", "Chemicals", "Conveyor belts"], "trades": ["Fitter", "Machinist", "Welder", "Attendant Operator (Chemical Plant)", "Electrician"], "source": { "label": "MSME Nadia district profile; company registry", "url": "https://www.dcmsme.gov.in/dips/nadia_wb.pdf", "date": "Dated MSME profile; registry page about 2 years old" } },
+        { "id": "K5", "name": "Large units named in the MSME district profile", "kind": "employer_group", "lat": 22.970, "lon": 88.440, "what": "Andrew Yule & Co., Kalyani Spinning Mill, Kalyani Breweries, Indian Oil Corporation, Telelink NICCO, EPCOS Ferrites. Some may have closed or changed since.", "sectors": ["Engineering", "Textiles", "Beverages", "Oil", "Electronics components"], "trades": ["Electronics Mechanic", "Electrician", "Fitter", "Spinning Technician"], "source": { "label": "MSME Nadia district profile", "url": "https://www.dcmsme.gov.in/dips/nadia_wb.pdf", "date": "Dated profile; check each unit is still operating" } },
+        { "id": "K6", "name": "Government ITI Kalyani", "kind": "training", "lat": 22.978, "lon": 88.437, "what": "Government ITI serving the Kalyani area. Training supply, not demand.", "sectors": ["Training"], "trades": [], "source": { "label": "WB Department of Technical Education, ITI Kalyani", "url": "https://iti.wb.gov.in/institute/tenders/kalyani", "date": "Notices dated May and June 2026" } }
+      ],
+      "announcements": []
+    },
+    {
+      "id": "siliguri",
+      "name": "Siliguri",
+      "district": "Darjeeling and Jalpaiguri, West Bengal",
+      "centre": [26.715, 88.41],
+      "zoom": 11.5,
+      "bounds": [[26.64, 88.30], [26.78, 88.50]],
+      "summary": "Gateway to the North-East with a WBIIDC park at Dabgram, a small-industry estate on Sevoke Road and a growing logistics belt at Phulbari and Bagdogra. Food and tea processing, feed, plastics, engineering and logistics lead.",
+      "job_search": "Searched job portals on 16 Oct 2026 for ITI technician, electrician and fitter jobs in Siliguri. No current listings were found; one portal page describes moderate electrician demand but shows no active employers.",
+      "sites": [
+        { "id": "S1", "name": "Dabgram Industrial Park (WBIIDC)", "kind": "industrial_park", "lat": 26.690, "lon": 88.455, "what": "Set up in 1984, about 8 km from Siliguri on SH-12A. 106 acres, 48 units: engineering, cattle and poultry feed, plastic and PVC, food and tea processing.", "sectors": ["Engineering", "Animal feed", "Plastics", "Food and tea processing"], "trades": ["Fitter", "Welder", "Plastic Processing Operator", "Electrician", "Fruit and Vegetable Processing"], "source": { "label": "WBIIDC: Dabgram Industrial Park", "url": "https://www.wbiidc.wb.gov.in/dabgram", "date": "Current WBIIDC page; unit count may be older" } },
+        { "id": "S2", "name": "Siliguri Industrial Estate, Sevoke Road", "kind": "industrial_cluster", "lat": 26.745, "lon": 88.440, "what": "Small-industry estate with engineering, fabrication and printing units.", "sectors": ["Engineering", "Fabrication", "Printing"], "trades": ["Fitter", "Welder (Fabrication and Fitting)", "Sheet Metal Worker", "Desktop Publishing Operator"], "source": { "label": "Industrial supplier listing (marketing page)", "url": "https://www.multitechindia.co.in/post/yuken-dealer-and-supplier-in-siliguri", "date": "Recent; claims not independently verified" } },
+        { "id": "S3", "name": "Phulbari logistics and private industry belt", "kind": "logistics", "lat": 26.665, "lon": 88.430, "what": "Private industry growing along SH-12A and the Eastern Bypass; warehousing described as a fast-growing logistics corridor.", "sectors": ["Logistics", "Warehousing", "Private industry"], "trades": ["Electrician", "Mechanic Motor Vehicle", "Computer Operator and Programming Assistant (COPA)"], "source": { "label": "SJDA Outline Development Plan, Siliguri", "url": "https://sjda.org/application/pdf/odp_siliguri.pdf", "date": "Undated planning document" } },
+        { "id": "S4", "name": "Bagdogra airport cargo and logistics", "kind": "logistics", "lat": 26.681, "lon": 88.328, "what": "Airport serving as a trade and logistics hub for the North-East; a perishable cargo complex was sanctioned.", "sectors": ["Air cargo", "Logistics", "Perishables"], "trades": ["Refrigeration and Air Conditioner Technician", "Electrician", "Computer Operator and Programming Assistant (COPA)"], "source": { "label": "West Bengal industrial infrastructure brochure", "url": "https://image.mfa.go.th/mfa/0/b3efD5AtCa/migrate_directory/information-20120627-115207-599586.pdf", "date": "About 2012" } },
+        { "id": "S5", "name": "Plastic engineering cluster (Jalpaiguri-Siliguri)", "kind": "industrial_cluster", "lat": 26.700, "lon": 88.470, "what": "An industry association lists 115+ member units in plastics and allied engineering.", "sectors": ["Plastics"], "trades": ["Plastic Processing Operator", "Fitter", "Electrician"], "source": { "label": "Jalpaiguri Siliguri Plastic Engineering Centre", "url": "https://www.indiamart.com/jalpaiguri-dabgram-industries/aboutus.html", "date": "Member count from 2014-15" } }
+      ],
+      "announcements": [
+        { "id": "S-ANN-1", "title": "Proposed industrial land near Dabgram (SJDA)", "where": "West of the Mahananda river near North Bengal Medical College", "stage": "Proposal, no date given", "detail": "About 1,000 acres proposed for acquisition, of which about 250 acres for industry, plus a 100-acre plot behind the Dabgram growth centre.", "lat": 26.705, "lon": 88.395, "source": { "label": "SJDA commercial opportunities", "url": "https://www.sjda.org/CommarcialOpportunity" } }
+      ]
+    }
+  ]
+}

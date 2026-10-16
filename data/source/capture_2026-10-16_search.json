@@ -1,0 +1,437 @@
+{
+  "capture": {
+    "date": "2026-10-16",
+    "method": "Web search-engine results for Naukri Group (JobHai), PlacementIndia, WorkIndia, TeamLease and LinkedIn posts. The listing pages themselves could not be opened from the capture environment, so every field below is transcribed from search-result text and must be rechecked on the page.",
+    "social_media": "Searched public LinkedIn posts for hiring in Sector 62/63. Found only IT and software posts about 4 to 5 years old; none were relevant or current, so none were added. Private groups and closed accounts were not searched.",
+    "personal_data": "Named HR contacts in listings were not recorded."
+  },
+  "records": [
+    {
+      "source_id": "SIG-019",
+      "platform": "JobHai (Naukri Group)",
+      "source_url": "https://www.jobhai.com/technician-electronics-technician-job-in-statcon-energiaa-private-limited-sector-63-noida-0-to-0-years-1785487288-8079819-jid",
+      "employer_identity": "Statcon Energiaa Private Limited",
+      "sector": "63",
+      "geo": {
+        "granularity": "address",
+        "basis": "curator_transcribed",
+        "locality_text": "B-81, Sector 63 (interview address; work is field-based)"
+      },
+      "role_title_raw": "Electronics Technician",
+      "canonical_occupation": "Field service technician (power electronics)",
+      "occupation_family": "Electronics & manufacturing",
+      "iti_trade_relevance": [
+        "Electronics Mechanic"
+      ],
+      "education": "Diploma or above",
+      "experience": "Fresher",
+      "experience_level": "Entry level",
+      "skills": [
+        "Electronics testing",
+        "Troubleshooting",
+        "Installation and servicing",
+        "Power supply systems"
+      ],
+      "shift": {
+        "raw": "Day shift, six working days, field-based. Male candidates only.",
+        "days_per_week": 6
+      },
+      "wage": "₹17,000–₹20,000 / month",
+      "vacancy_claimed": 20,
+      "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Repairs, installs and services power supply systems. PF and insurance mentioned. Listing restricts to male candidates.",
+      "inferences": [
+        {
+          "text": "Asks for a diploma or above, so ITI Electronics Mechanic pass-outs may not be accepted unless the employer agrees.",
+          "basis": "curator"
+        }
+      ]
+    },
+    {
+      "source_id": "SIG-020",
+      "platform": "JobHai (Naukri Group)",
+      "source_url": "https://www.jobhai.com/technician-iti-technician-job-in-daalchini-technologies-private-limited-sector-63-noida-0-to-6-plus-years-1784868308-8033350-jid",
+      "employer_identity": "Daalchini Technologies Private Limited",
+      "sector": "63",
+      "geo": {
+        "granularity": "sector",
+        "basis": "curator_transcribed"
+      },
+      "role_title_raw": "ITI Technician",
+      "canonical_occupation": "ITI technician (trade not specified)",
+      "occupation_family": "Electronics & manufacturing",
+      "iti_trade_relevance": [
+        "Any ITI trade (not specified)"
+      ],
+      "education": "ITI (from the job title)",
+      "experience": "0 to 6+ years",
+      "experience_level": "Entry level",
+      "skills": [],
+      "wage": "₹16,000–₹25,000 / month",
+      "vacancy_claimed": 2,
+      "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Open to all genders. Skills not shown in the search result.",
+      "inferences": [
+        {
+          "text": "The title asks for ITI but not a trade; ask the employer which trades they take.",
+          "basis": "curator"
+        }
+      ]
+    },
+    {
+      "source_id": "SIG-021",
+      "platform": "JobHai (Naukri Group)",
+      "source_url": "https://www.jobhai.com/electrician-iti-electrician-job-in-santa-eventz-and-exhibitions-private-limited-sector-63-noida-0-to-2-years-1785140993-8054071-jid",
+      "employer_identity": "Santa Eventz and Exhibitions Private Limited",
+      "sector": "63",
+      "geo": {
+        "granularity": "sector",
+        "basis": "curator_transcribed"
+      },
+      "role_title_raw": "ITI Electrician",
+      "canonical_occupation": "Electrician (events and exhibitions)",
+      "occupation_family": "Electrical & maintenance",
+      "iti_trade_relevance": [
+        "Electrician"
+      ],
+      "education": "ITI Electrician (from the job title)",
+      "experience": "0 to 2 years",
+      "experience_level": "Entry level",
+      "skills": [
+        "Electrical wiring",
+        "Electrical basics"
+      ],
+      "shift": {
+        "raw": "Male candidates only."
+      },
+      "wage": "₹15,000–₹19,000 / month (in-hand)",
+      "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Listing restricts to male candidates."
+    },
+    {
+      "source_id": "SIG-022",
+      "platform": "PlacementIndia",
+      "source_url": "https://www.placementindia.com/job-detail/robotics-assembly-technician-in-dsi-robotics-at-delhi-ncr-faridabad-gurgaon-1334086.htm",
+      "employer_identity": "DSI Robotics",
+      "sector": "63",
+      "geo": {
+        "granularity": "address",
+        "basis": "curator_transcribed",
+        "locality_text": "D-8, Sector 63"
+      },
+      "role_title_raw": "Robotics Assembly Technician / Robot Machine Fitter (ITI/Diploma)",
+      "canonical_occupation": "Mechanical fitter (robotics assembly)",
+      "occupation_family": "Mechanical & production",
+      "iti_trade_relevance": [
+        "Fitter"
+      ],
+      "education": "ITI / Diploma",
+      "experience": "Not stated",
+      "experience_level": "Mixed",
+      "skills": [
+        "Fitting and assembly",
+        "Machine assembly"
+      ],
+      "wage": "₹15,000–₹25,000 / month",
+      "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Fits and assembles robotic modules and automation machines. The listing is also tagged Delhi NCR, Faridabad and Gurgaon; the text gives D-8, Sector 63."
+    },
+    {
+      "source_id": "SIG-023",
+      "platform": "PlacementIndia",
+      "source_url": "https://www.placementindia.com/job-detail/pcb-technician-in-dsi-robotics-at-delhi-ncr-ghaziabad-greater-noida-1334026.htm",
+      "employer_identity": "DSI Robotics",
+      "sector": "63",
+      "geo": {
+        "granularity": "address",
+        "basis": "curator_transcribed",
+        "locality_text": "D-8, Sector 63"
+      },
+      "role_title_raw": "PCB Technician (hand soldering, ITI Electronics)",
+      "canonical_occupation": "PCB assembly and repair technician",
+      "occupation_family": "Electronics & manufacturing",
+      "iti_trade_relevance": [
+        "Electronics Mechanic"
+      ],
+      "education": "ITI / Diploma in Electronics, Electrical or related trade",
+      "experience": "2–3 years",
+      "experience_level": "Early career",
+      "skills": [
+        "Soldering",
+        "PCB assembly",
+        "Electronics testing"
+      ],
+      "wage": "₹15,000–₹22,000 / month",
+      "curator_note": "Seen in search results 16 Oct 2026 (page not opened). The page header says 12th pass and 2 to 5 years, which conflicts with the body text (ITI/Diploma, 2 to 3 years). Also tagged Ghaziabad and Greater Noida."
+    },
+    {
+      "source_id": "SIG-024",
+      "platform": "PlacementIndia",
+      "source_url": "https://www.placementindia.com/job-search/electrician-jobs-in-sector-63-noida.htm",
+      "employer_identity": "Gayatri Electric Vehicles Pvt. Ltd.",
+      "sector": "63",
+      "geo": {
+        "granularity": "sector",
+        "basis": "aggregator_label_only"
+      },
+      "role_title_raw": "Auto Electrician",
+      "canonical_occupation": "Auto electrician (electric vehicles)",
+      "occupation_family": "Automotive & EV",
+      "iti_trade_relevance": [
+        "Mechanic Auto Electrical and Electronics",
+        "Electrician"
+      ],
+      "education": "Not stated",
+      "experience": "1–3 years",
+      "experience_level": "Early career",
+      "skills": [
+        "Auto electrical wiring",
+        "Electrical basics"
+      ],
+      "wage": "₹3.3 lakh / year",
+      "curator_note": "Seen in search results 16 Oct 2026 (page not opened). The same post says they also hire welders, fitters and e-rickshaw / e-auto mechanics."
+    },
+    {
+      "source_id": "SIG-025",
+      "platform": "PlacementIndia",
+      "source_url": "https://www.placementindia.com/job-search/technician-jobs-in-sector-63-noida.htm",
+      "employer_identity": "Gayatri Electric Vehicles Pvt. Ltd.",
+      "sector": "63",
+      "geo": {
+        "granularity": "sector",
+        "basis": "aggregator_label_only"
+      },
+      "role_title_raw": "Auto Mechanic (e-rickshaw and e-auto)",
+      "canonical_occupation": "Electric vehicle mechanic",
+      "occupation_family": "Automotive & EV",
+      "iti_trade_relevance": [
+        "Mechanic Motor Vehicle",
+        "Mechanic Auto Electrical and Electronics"
+      ],
+      "education": "Not stated",
+      "experience": "1–5 years",
+      "experience_level": "Early career",
+      "skills": [
+        "Vehicle repair",
+        "EV basics"
+      ],
+      "wage": "₹3.5 lakh / year",
+      "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Described as an on-roll job, not on contract."
+    },
+    {
+      "source_id": "SIG-026",
+      "platform": "PlacementIndia",
+      "source_url": "https://www.placementindia.com/job-search/electrical-technician-jobs-in-sector-63-noida.htm",
+      "employer_identity": "Gayatri Electric Vehicles Pvt. Ltd.",
+      "sector": "63",
+      "geo": {
+        "granularity": "sector",
+        "basis": "aggregator_label_only"
+      },
+      "role_title_raw": "Electrical Maintenance",
+      "canonical_occupation": "Electrical maintenance technician",
+      "occupation_family": "Electrical & maintenance",
+      "iti_trade_relevance": [
+        "Electrician"
+      ],
+      "education": "Not stated",
+      "experience": "3–5 years",
+      "experience_level": "Experienced",
+      "skills": [
+        "Electrical maintenance",
+        "DG set operation"
+      ],
+      "wage": "₹3.8 lakh / year",
+      "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Manages electrical equipment including DG sets and machinery."
+    },
+    {
+      "source_id": "SIG-027",
+      "platform": "PlacementIndia",
+      "source_url": "https://www.placementindia.com/job-search/machine-operator-fresher-jobs-in-noida.htm",
+      "employer_identity": null,
+      "sector": "63",
+      "geo": {
+        "granularity": "sector",
+        "basis": "aggregator_label_only"
+      },
+      "role_title_raw": "Machine Operator (freshers)",
+      "canonical_occupation": "Machine operator / setter",
+      "occupation_family": "Mechanical & production",
+      "iti_trade_relevance": [
+        "Machinist",
+        "Fitter"
+      ],
+      "education": "10th pass (secondary school)",
+      "experience": "Fresher (0–1 year)",
+      "experience_level": "Entry level",
+      "skills": [
+        "Machine setting",
+        "Machine maintenance",
+        "Plant machinery"
+      ],
+      "wage": "₹2 lakh / year",
+      "vacancy_claimed": 30,
+      "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Employer not named in the listing. The same post appears on several PlacementIndia pages; recorded once."
+    },
+    {
+      "source_id": "SIG-028",
+      "platform": "WorkIndia",
+      "source_url": "https://www.workindia.in/labourer-jobs-in-sector-63-+-noida-delhi/",
+      "employer_identity": null,
+      "sector": "63",
+      "geo": {
+        "granularity": "sector",
+        "basis": "aggregator_label_only"
+      },
+      "role_title_raw": "Picker / Packer",
+      "canonical_occupation": "Warehouse picker and packer",
+      "occupation_family": "Logistics & warehouse",
+      "iti_trade_relevance": [],
+      "education": "Below 10th or 10th pass",
+      "experience": "Not stated",
+      "experience_level": "Entry level",
+      "skills": [
+        "Picking",
+        "Packing"
+      ],
+      "wage": "₹13,200–₹14,200 / month",
+      "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Posted in September 2026 according to the results. Employer not named."
+    },
+    {
+      "source_id": "SIG-029",
+      "platform": "JobHai (Naukri Group)",
+      "source_url": "https://www.jobhai.com/technician-electronics-technician-job-in-embro-sales-and-services-block-d-sector-8-noida-noida-0-to-2-years-1784561559-7988565-jid",
+      "employer_identity": "Embro Sales and Services",
+      "sector": "63",
+      "geo": {
+        "granularity": "locality",
+        "basis": "aggregator_label_only",
+        "locality_text": "Block D, Sector 8, Noida"
+      },
+      "role_title_raw": "Electronics Technician",
+      "canonical_occupation": "Electronics repair technician",
+      "occupation_family": "Electronics & manufacturing",
+      "iti_trade_relevance": [
+        "Electronics Mechanic"
+      ],
+      "education": "Not stated",
+      "experience": "0 to 2 years",
+      "experience_level": "Entry level",
+      "skills": [
+        "Electronics testing",
+        "Electronics repair"
+      ],
+      "wage": "Not stated",
+      "curator_note": "Returned by a search for Sector 63 electronics jobs, but the listing is in Block D, Sector 8. Kept only to show that search results include other areas; not counted."
+    },
+    {
+      "source_id": "SIG-030",
+      "platform": "TeamLease Jobs",
+      "source_url": "https://www.teamlease.com/jobs/customer-care-executive-jobs-in-noida-tech-mahindra-305329",
+      "employer_identity": "Tech Mahindra",
+      "sector": "62",
+      "geo": {
+        "granularity": "address",
+        "basis": "curator_transcribed",
+        "locality_text": "A-8, Knowledge Boulevard, Sector 62"
+      },
+      "role_title_raw": "Customer Support Associate (walk-in drive)",
+      "canonical_occupation": "Contact centre agent (voice)",
+      "occupation_family": "BPO & service",
+      "iti_trade_relevance": [],
+      "education": "Not stated",
+      "experience": "Freshers welcome",
+      "experience_level": "Entry level",
+      "skills": [
+        "English communication",
+        "Customer handling"
+      ],
+      "wage": "Not stated",
+      "verification_status": "expired",
+      "expiry": "2026-06-20",
+      "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Reposting sites give different walk-in dates (8 to 15 April 2026 and 9 to 20 June 2026). Both have passed. One reposting site gives ₹1.25 to 3 lakh a year."
+    },
+    {
+      "source_id": "SIG-031",
+      "platform": "Indeed",
+      "source_url": "https://in.indeed.com/q-queuebuster-jobs.html",
+      "employer_identity": "QueueBuster",
+      "sector": "62",
+      "geo": {
+        "granularity": "sector",
+        "basis": "curator_transcribed"
+      },
+      "role_title_raw": "Technical Support Engineer (fresher)",
+      "canonical_occupation": "Technical support engineer (POS software)",
+      "occupation_family": "IT & analytics",
+      "iti_trade_relevance": [
+        "Information and Communication Technology System Maintenance",
+        "COPA"
+      ],
+      "education": "Not stated",
+      "experience": "0–1 years",
+      "experience_level": "Entry level",
+      "skills": [
+        "Technical support",
+        "Troubleshooting",
+        "Computer basics",
+        "English communication"
+      ],
+      "wage": "₹2.4–₹3 lakh / year",
+      "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Indeed search page for the employer; location given as Noida Sector 62."
+    },
+    {
+      "source_id": "SIG-032",
+      "platform": "Macgence (company careers page)",
+      "source_url": "https://macgence.com/jobs/data-annotator-6-month-contract/",
+      "employer_identity": "Macgence AI",
+      "sector": "62",
+      "geo": {
+        "granularity": "sector",
+        "basis": "curator_transcribed"
+      },
+      "role_title_raw": "Data Annotator (6-month contract)",
+      "canonical_occupation": "AI data annotator",
+      "occupation_family": "IT & analytics",
+      "iti_trade_relevance": [
+        "COPA"
+      ],
+      "education": "Not stated",
+      "experience": "2 years in data annotation",
+      "experience_level": "Early career",
+      "skills": [
+        "Data annotation",
+        "Computer basics",
+        "English communication"
+      ],
+      "wage": "Not stated",
+      "contract_type": "fixed_term",
+      "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Six-month contract; immediate joiner preferred."
+    },
+    {
+      "source_id": "SIG-033",
+      "platform": "Vehant Technologies (company careers page)",
+      "source_url": "https://www.vehant.com/jobs/data-annotation/",
+      "employer_identity": "Vehant Technologies",
+      "sector": null,
+      "geo": {
+        "granularity": "citywide",
+        "basis": "aggregator_label_only",
+        "scope_status": "adjacent_or_unclear",
+        "claimed_sector": null,
+        "locality_text": "Noida (sector not given)"
+      },
+      "role_title_raw": "Data Annotation",
+      "canonical_occupation": "AI data annotator (video and image)",
+      "occupation_family": "IT & analytics",
+      "iti_trade_relevance": [
+        "COPA"
+      ],
+      "education": "12th pass (10+2)",
+      "experience": "0.6–3 years",
+      "experience_level": "Early career",
+      "skills": [
+        "Data annotation",
+        "Computer basics"
+      ],
+      "wage": "Not stated",
+      "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Minimum Class 12, basic computer skills and attention to detail. Located in Noida; sector not given, so not counted in 62 or 63."
+    }
+  ]
+}

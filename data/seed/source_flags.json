@@ -7,5 +7,140 @@
     "status": "open",
     "raised_by": "prototype-v0-curator",
     "raised_at": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "FLG-CAP-019",
+    "source_id": "SIG-019",
+    "type": "other",
+    "note": "Captured from search-engine results only. Open the listing page, confirm the details and the location, then resolve this flag.",
+    "status": "open",
+    "raised_by": "research-capture-2026-10-16",
+    "raised_at": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "FLG-CAP-020",
+    "source_id": "SIG-020",
+    "type": "other",
+    "note": "Captured from search-engine results only. Open the listing page, confirm the details and the location, then resolve this flag.",
+    "status": "open",
+    "raised_by": "research-capture-2026-10-16",
+    "raised_at": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "FLG-CAP-021",
+    "source_id": "SIG-021",
+    "type": "other",
+    "note": "Captured from search-engine results only. Open the listing page, confirm the details and the location, then resolve this flag.",
+    "status": "open",
+    "raised_by": "research-capture-2026-10-16",
+    "raised_at": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "FLG-CAP-022",
+    "source_id": "SIG-022",
+    "type": "other",
+    "note": "Captured from search-engine results only. Open the listing page, confirm the details and the location, then resolve this flag.",
+    "status": "open",
+    "raised_by": "research-capture-2026-10-16",
+    "raised_at": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "FLG-CAP-023",
+    "source_id": "SIG-023",
+    "type": "other",
+    "note": "Captured from search-engine results only. Open the listing page, confirm the details and the location, then resolve this flag.",
+    "status": "open",
+    "raised_by": "research-capture-2026-10-16",
+    "raised_at": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "FLG-CAP-024",
+    "source_id": "SIG-024",
+    "type": "other",
+    "note": "Captured from search-engine results only. Open the listing page, confirm the details and the location, then resolve this flag.",
+    "status": "open",
+    "raised_by": "research-capture-2026-10-16",
+    "raised_at": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "FLG-CAP-025",
+    "source_id": "SIG-025",
+    "type": "other",
+    "note": "Captured from search-engine results only. Open the listing page, confirm the details and the location, then resolve this flag.",
+    "status": "open",
+    "raised_by": "research-capture-2026-10-16",
+    "raised_at": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "FLG-CAP-026",
+    "source_id": "SIG-026",
+    "type": "other",
+    "note": "Captured from search-engine results only. Open the listing page, confirm the details and the location, then resolve this flag.",
+    "status": "open",
+    "raised_by": "research-capture-2026-10-16",
+    "raised_at": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "FLG-CAP-027",
+    "source_id": "SIG-027",
+    "type": "other",
+    "note": "Captured from search-engine results only. Open the listing page, confirm the details and the location, then resolve this flag.",
+    "status": "open",
+    "raised_by": "research-capture-2026-10-16",
+    "raised_at": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "FLG-CAP-028",
+    "source_id": "SIG-028",
+    "type": "other",
+    "note": "Captured from search-engine results only. Open the listing page, confirm the details and the location, then resolve this flag.",
+    "status": "open",
+    "raised_by": "research-capture-2026-10-16",
+    "raised_at": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "FLG-CAP-029",
+    "source_id": "SIG-029",
+    "type": "other",
+    "note": "Captured from search-engine results only. Open the listing page, confirm the details and the location, then resolve this flag.",
+    "status": "open",
+    "raised_by": "research-capture-2026-10-16",
+    "raised_at": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "FLG-CAP-030",
+    "source_id": "SIG-030",
+    "type": "other",
+    "note": "Captured from search-engine results only. Open the listing page, confirm the details and the location, then resolve this flag.",
+    "status": "open",
+    "raised_by": "research-capture-2026-10-16",
+    "raised_at": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "FLG-CAP-031",
+    "source_id": "SIG-031",
+    "type": "other",
+    "note": "Captured from search-engine results only. Open the listing page, confirm the details and the location, then resolve this flag.",
+    "status": "open",
+    "raised_by": "research-capture-2026-10-16",
+    "raised_at": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "FLG-CAP-032",
+    "source_id": "SIG-032",
+    "type": "other",
+    "note": "Captured from search-engine results only. Open the listing page, confirm the details and the location, then resolve this flag.",
+    "status": "open",
+    "raised_by": "research-capture-2026-10-16",
+    "raised_at": "2026-10-16T00:00:00Z"
+  },
+  {
+    "id": "FLG-CAP-033",
+    "source_id": "SIG-033",
+    "type": "other",
+    "note": "Captured from search-engine results only. Open the listing page, confirm the details and the location, then resolve this flag.",
+    "status": "open",
+    "raised_by": "research-capture-2026-10-16",
+    "raised_at": "2026-10-16T00:00:00Z"
   }
 ]

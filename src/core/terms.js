@@ -13,6 +13,7 @@ const RULES = [
   { key: 'self_commute', label: 'Self-commute (no transport)', re: /self[- ]commute|no cab|own conveyance|own vehicle/i },
   { key: 'field_work', label: 'Field / travel work', re: /field work|field sales|travel required/i },
   { key: 'incentive_pay', label: 'Incentive-linked pay', re: /incentive/i },
+  { key: 'gender_restricted', label: 'Open to one gender only', re: /male candidates only|female only|only male|only female|male only/i },
 ];
 
 /**

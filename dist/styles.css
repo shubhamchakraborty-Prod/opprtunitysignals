@@ -312,6 +312,36 @@ details.disclose>summary{cursor:pointer;font-weight:600;font-size:14px;color:var
 .runstrip i{width:10px;height:18px;border-radius:3px;background:var(--ok)}
 .runstrip i.bad{background:var(--bad)}
 
+/* Map controls (sketch zoom) and MapLibre markers */
+.zoom-ctl{position:absolute;right:12px;bottom:12px;z-index:5;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line-2);border-radius:10px;overflow:hidden;box-shadow:var(--shadow-1)}
+.zoom-ctl button{border:0;background:var(--surface);width:36px;height:34px;font-size:18px;line-height:1;color:var(--ink)}
+.zoom-ctl button+button{border-top:1px solid var(--line)}
+.zoom-ctl button:hover{background:var(--surface-2)}
+.fallback svg{cursor:grab;touch-action:none}
+button.marker{padding:0;cursor:pointer;font-family:var(--f-body)}
+.maplibregl-ctrl-attrib{font-size:11px}
+.kpin.k-park,.marker.k-park,.kdot.k-park{fill:var(--accent);background:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.kpin.k-cluster,.marker.k-cluster,.kdot.k-cluster{fill:var(--s62);background:var(--s62);box-shadow:0 0 0 1px var(--s62)}
+.kpin.k-employer,.marker.k-employer,.kdot.k-employer{fill:var(--s63);background:var(--s63);box-shadow:0 0 0 1px var(--s63)}
+.kpin.k-logistics,.marker.k-logistics,.kdot.k-logistics{fill:var(--warn);background:var(--warn);box-shadow:0 0 0 1px var(--warn)}
+.kpin.k-training,.marker.k-training,.kdot.k-training{fill:var(--ok);background:var(--ok);box-shadow:0 0 0 1px var(--ok)}
+.kpin.k-proposal,.marker.k-proposal,.kdot.k-proposal{fill:var(--old);background:var(--old);box-shadow:0 0 0 1px var(--old)}
+.kpin{stroke:var(--surface)}.kpin.sel{stroke:var(--warn)}
+.kdot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.region-side{display:flex;flex-direction:column;gap:14px;min-width:0}
+
+/* Trades */
+.trade-list{display:flex;flex-direction:column;gap:8px}
+details.disclose>.trade-list{margin-top:8px}
+.trade-row{all:unset;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;gap:12px;width:100%;padding:14px 16px;cursor:pointer;flex-wrap:wrap}
+.trade-row:focus-visible{outline:3px solid var(--accent);border-radius:var(--r-md)}
+.trade-row b{display:block;font-family:var(--f-display);font-size:15px}
+.trade-stats{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.trade.open{border-color:var(--accent)}
+.trade-detail{border-top:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:16px}
+ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;font-size:14px}
+.linktag{border:0;cursor:pointer}.linktag:hover{background:var(--accent-soft);color:var(--accent)}
+
 /* Forms, review */
 .form{display:flex;flex-direction:column;gap:16px}
 .form label,.form .lbl{display:block;font-weight:600;color:var(--ink-2);font-size:13px;margin-bottom:6px}

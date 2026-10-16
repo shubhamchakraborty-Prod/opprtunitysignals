@@ -48,7 +48,7 @@ export function makeService({ extra = [], seed = true, store: storeOpts = {} } =
   const s = loadSeed();
   const records = assignClusters([...(seed ? s.records.map(normalizeRecord) : []), ...extra]);
   const store = new MemoryStore({ records, flags: seed ? s.flags : [], settings: s.settings, ...storeOpts });
-  const service = createService(store, { now: () => AS_OF, profiles: s.profiles, geometry: s.geometry });
+  const service = createService(store, { now: () => AS_OF, profiles: s.profiles, geometry: s.geometry, trades: s.trades, courses: s.courses, announcements: s.announcements, regions: s.regions });
   return { store, service, seed: s };
 }
 

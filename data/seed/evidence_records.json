@@ -1979,5 +1979,1657 @@
       }
     ],
     "fixture": false
+  },
+  {
+    "source_id": "SIG-019",
+    "title": "Electronics Technician - Statcon Energiaa Private Limited",
+    "source_url": "https://www.jobhai.com/technician-electronics-technician-job-in-statcon-energiaa-private-limited-sector-63-noida-0-to-0-years-1785487288-8079819-jid",
+    "source_url_kind": "job_post",
+    "original_post_id": "8079819",
+    "platform": "JobHai (Naukri Group)",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Statcon Energiaa Private Limited",
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "address",
+      "basis": "curator_transcribed",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": "B-81, Sector 63 (interview address; work is field-based)",
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Electronics Technician",
+    "canonical_occupation": "Field service technician (power electronics)",
+    "occupation_family": "Electronics & manufacturing",
+    "iti_trade_relevance": [
+      "Electronics Mechanic"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Repairs, installs and services power supply systems. PF and insurance mentioned. Listing restricts to male candidates.",
+    "education": {
+      "raw": "Diploma or above",
+      "accepted": [
+        "diploma"
+      ],
+      "stated": true
+    },
+    "experience": {
+      "raw": "Fresher",
+      "min_months": 0,
+      "max_months": null,
+      "fresher_ok": true
+    },
+    "experience_level": "Entry level",
+    "skills": [
+      {
+        "name": "Electronics testing",
+        "basis": "curated"
+      },
+      {
+        "name": "Troubleshooting",
+        "basis": "curated"
+      },
+      {
+        "name": "Installation and servicing",
+        "basis": "curated"
+      },
+      {
+        "name": "Power supply systems",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": "Day shift, six working days, field-based. Male candidates only.",
+      "night_shift": null,
+      "days_per_week": 6
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 17000,
+      "max": 20000,
+      "period": "month",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹17,000–₹20,000 / month"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": 20,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-019",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "seen_in_search_results_only"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Seen only in search-engine results on 16 Oct 2026; the listing page was not opened. Recheck the page before use."
+    },
+    "review": {
+      "state": "approved",
+      "by": "research-capture-2026-10-16",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Captured from search results for display as observed public evidence; flagged for the team to open and recheck."
+    },
+    "open_flags": [
+      "other"
+    ],
+    "inferences": [
+      {
+        "text": "Asks for a diploma or above, so ITI Electronics Mechanic pass-outs may not be accepted unless the employer agrees.",
+        "basis": "curator"
+      }
+    ],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-020",
+    "title": "ITI Technician - Daalchini Technologies Private Limited",
+    "source_url": "https://www.jobhai.com/technician-iti-technician-job-in-daalchini-technologies-private-limited-sector-63-noida-0-to-6-plus-years-1784868308-8033350-jid",
+    "source_url_kind": "job_post",
+    "original_post_id": "8033350",
+    "platform": "JobHai (Naukri Group)",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Daalchini Technologies Private Limited",
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "sector",
+      "basis": "curator_transcribed",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "ITI Technician",
+    "canonical_occupation": "ITI technician (trade not specified)",
+    "occupation_family": "Electronics & manufacturing",
+    "iti_trade_relevance": [
+      "Any ITI trade (not specified)"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Open to all genders. Skills not shown in the search result.",
+    "education": {
+      "raw": "ITI (from the job title)",
+      "accepted": [
+        "iti_any"
+      ],
+      "stated": true
+    },
+    "experience": {
+      "raw": "0 to 6+ years",
+      "min_months": 0,
+      "max_months": null,
+      "fresher_ok": true
+    },
+    "experience_level": "Entry level",
+    "skills": [],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 16000,
+      "max": 25000,
+      "period": "month",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹16,000–₹25,000 / month"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": 2,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-020",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "seen_in_search_results_only"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Seen only in search-engine results on 16 Oct 2026; the listing page was not opened. Recheck the page before use."
+    },
+    "review": {
+      "state": "approved",
+      "by": "research-capture-2026-10-16",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Captured from search results for display as observed public evidence; flagged for the team to open and recheck."
+    },
+    "open_flags": [
+      "other"
+    ],
+    "inferences": [
+      {
+        "text": "The title asks for ITI but not a trade; ask the employer which trades they take.",
+        "basis": "curator"
+      }
+    ],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-021",
+    "title": "ITI Electrician - Santa Eventz and Exhibitions Private Limited",
+    "source_url": "https://www.jobhai.com/electrician-iti-electrician-job-in-santa-eventz-and-exhibitions-private-limited-sector-63-noida-0-to-2-years-1785140993-8054071-jid",
+    "source_url_kind": "job_post",
+    "original_post_id": "8054071",
+    "platform": "JobHai (Naukri Group)",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Santa Eventz and Exhibitions Private Limited",
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "sector",
+      "basis": "curator_transcribed",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "ITI Electrician",
+    "canonical_occupation": "Electrician (events and exhibitions)",
+    "occupation_family": "Electrical & maintenance",
+    "iti_trade_relevance": [
+      "Electrician"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Listing restricts to male candidates.",
+    "education": {
+      "raw": "ITI Electrician (from the job title)",
+      "accepted": [
+        "iti_electrician"
+      ],
+      "stated": true
+    },
+    "experience": {
+      "raw": "0 to 2 years",
+      "min_months": 0,
+      "max_months": 24,
+      "fresher_ok": true
+    },
+    "experience_level": "Entry level",
+    "skills": [
+      {
+        "name": "Electrical wiring",
+        "basis": "curated"
+      },
+      {
+        "name": "Electrical basics",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": "Male candidates only.",
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 15000,
+      "max": 19000,
+      "period": "month",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹15,000–₹19,000 / month (in-hand)"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-021",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "seen_in_search_results_only"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Seen only in search-engine results on 16 Oct 2026; the listing page was not opened. Recheck the page before use."
+    },
+    "review": {
+      "state": "approved",
+      "by": "research-capture-2026-10-16",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Captured from search results for display as observed public evidence; flagged for the team to open and recheck."
+    },
+    "open_flags": [
+      "other"
+    ],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-022",
+    "title": "Robotics Assembly Technician / Robot Machine Fitter (ITI/Diploma) - DSI Robotics",
+    "source_url": "https://www.placementindia.com/job-detail/robotics-assembly-technician-in-dsi-robotics-at-delhi-ncr-faridabad-gurgaon-1334086.htm",
+    "source_url_kind": "job_post",
+    "original_post_id": "1334086",
+    "platform": "PlacementIndia",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "DSI Robotics",
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "address",
+      "basis": "curator_transcribed",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": "D-8, Sector 63",
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Robotics Assembly Technician / Robot Machine Fitter (ITI/Diploma)",
+    "canonical_occupation": "Mechanical fitter (robotics assembly)",
+    "occupation_family": "Mechanical & production",
+    "iti_trade_relevance": [
+      "Fitter"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Fits and assembles robotic modules and automation machines. The listing is also tagged Delhi NCR, Faridabad and Gurgaon; the text gives D-8, Sector 63.",
+    "education": {
+      "raw": "ITI / Diploma",
+      "accepted": [
+        "iti_any",
+        "diploma"
+      ],
+      "stated": true
+    },
+    "experience": {
+      "raw": "Not stated",
+      "min_months": null,
+      "max_months": null,
+      "fresher_ok": null
+    },
+    "experience_level": "Mixed",
+    "skills": [
+      {
+        "name": "Fitting and assembly",
+        "basis": "curated"
+      },
+      {
+        "name": "Machine assembly",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 15000,
+      "max": 25000,
+      "period": "month",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹15,000–₹25,000 / month"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-022",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "seen_in_search_results_only"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Seen only in search-engine results on 16 Oct 2026; the listing page was not opened. Recheck the page before use."
+    },
+    "review": {
+      "state": "approved",
+      "by": "research-capture-2026-10-16",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Captured from search results for display as observed public evidence; flagged for the team to open and recheck."
+    },
+    "open_flags": [
+      "other"
+    ],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-023",
+    "title": "PCB Technician (hand soldering, ITI Electronics) - DSI Robotics",
+    "source_url": "https://www.placementindia.com/job-detail/pcb-technician-in-dsi-robotics-at-delhi-ncr-ghaziabad-greater-noida-1334026.htm",
+    "source_url_kind": "job_post",
+    "original_post_id": "1334026",
+    "platform": "PlacementIndia",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "DSI Robotics",
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "address",
+      "basis": "curator_transcribed",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": "D-8, Sector 63",
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "PCB Technician (hand soldering, ITI Electronics)",
+    "canonical_occupation": "PCB assembly and repair technician",
+    "occupation_family": "Electronics & manufacturing",
+    "iti_trade_relevance": [
+      "Electronics Mechanic"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Seen in search results 16 Oct 2026 (page not opened). The page header says 12th pass and 2 to 5 years, which conflicts with the body text (ITI/Diploma, 2 to 3 years). Also tagged Ghaziabad and Greater Noida.",
+    "education": {
+      "raw": "ITI / Diploma in Electronics, Electrical or related trade",
+      "accepted": [
+        "iti_electronics_mechanic",
+        "diploma"
+      ],
+      "stated": true
+    },
+    "experience": {
+      "raw": "2–3 years",
+      "min_months": 24,
+      "max_months": 36,
+      "fresher_ok": false
+    },
+    "experience_level": "Early career",
+    "skills": [
+      {
+        "name": "Soldering",
+        "basis": "curated"
+      },
+      {
+        "name": "PCB assembly",
+        "basis": "curated"
+      },
+      {
+        "name": "Electronics testing",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 15000,
+      "max": 22000,
+      "period": "month",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹15,000–₹22,000 / month"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-023",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "seen_in_search_results_only"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Seen only in search-engine results on 16 Oct 2026; the listing page was not opened. Recheck the page before use."
+    },
+    "review": {
+      "state": "approved",
+      "by": "research-capture-2026-10-16",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Captured from search results for display as observed public evidence; flagged for the team to open and recheck."
+    },
+    "open_flags": [
+      "other"
+    ],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-024",
+    "title": "Auto Electrician - Gayatri Electric Vehicles Pvt. Ltd.",
+    "source_url": "https://www.placementindia.com/job-search/electrician-jobs-in-sector-63-noida.htm",
+    "source_url_kind": "category_page",
+    "original_post_id": null,
+    "platform": "PlacementIndia",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Gayatri Electric Vehicles Pvt. Ltd.",
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "sector",
+      "basis": "aggregator_label_only",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Auto Electrician",
+    "canonical_occupation": "Auto electrician (electric vehicles)",
+    "occupation_family": "Automotive & EV",
+    "iti_trade_relevance": [
+      "Mechanic Auto Electrical and Electronics",
+      "Electrician"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Seen in search results 16 Oct 2026 (page not opened). The same post says they also hire welders, fitters and e-rickshaw / e-auto mechanics.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "1–3 years",
+      "min_months": 12,
+      "max_months": 36,
+      "fresher_ok": false
+    },
+    "experience_level": "Early career",
+    "skills": [
+      {
+        "name": "Auto electrical wiring",
+        "basis": "curated"
+      },
+      {
+        "name": "Electrical basics",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 330000,
+      "max": 330000,
+      "period": "year",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹3.3 lakh / year"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-024",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "seen_in_search_results_only"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Seen only in search-engine results on 16 Oct 2026; the listing page was not opened. Recheck the page before use."
+    },
+    "review": {
+      "state": "approved",
+      "by": "research-capture-2026-10-16",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Captured from search results for display as observed public evidence; flagged for the team to open and recheck."
+    },
+    "open_flags": [
+      "other"
+    ],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-025",
+    "title": "Auto Mechanic (e-rickshaw and e-auto) - Gayatri Electric Vehicles Pvt. Ltd.",
+    "source_url": "https://www.placementindia.com/job-search/technician-jobs-in-sector-63-noida.htm",
+    "source_url_kind": "category_page",
+    "original_post_id": null,
+    "platform": "PlacementIndia",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Gayatri Electric Vehicles Pvt. Ltd.",
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "sector",
+      "basis": "aggregator_label_only",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Auto Mechanic (e-rickshaw and e-auto)",
+    "canonical_occupation": "Electric vehicle mechanic",
+    "occupation_family": "Automotive & EV",
+    "iti_trade_relevance": [
+      "Mechanic Motor Vehicle",
+      "Mechanic Auto Electrical and Electronics"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Described as an on-roll job, not on contract.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "1–5 years",
+      "min_months": 12,
+      "max_months": 60,
+      "fresher_ok": false
+    },
+    "experience_level": "Early career",
+    "skills": [
+      {
+        "name": "Vehicle repair",
+        "basis": "curated"
+      },
+      {
+        "name": "EV basics",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 350000,
+      "max": 350000,
+      "period": "year",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹3.5 lakh / year"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-025",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "seen_in_search_results_only"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Seen only in search-engine results on 16 Oct 2026; the listing page was not opened. Recheck the page before use."
+    },
+    "review": {
+      "state": "approved",
+      "by": "research-capture-2026-10-16",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Captured from search results for display as observed public evidence; flagged for the team to open and recheck."
+    },
+    "open_flags": [
+      "other"
+    ],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-026",
+    "title": "Electrical Maintenance - Gayatri Electric Vehicles Pvt. Ltd.",
+    "source_url": "https://www.placementindia.com/job-search/electrical-technician-jobs-in-sector-63-noida.htm",
+    "source_url_kind": "category_page",
+    "original_post_id": null,
+    "platform": "PlacementIndia",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Gayatri Electric Vehicles Pvt. Ltd.",
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "sector",
+      "basis": "aggregator_label_only",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Electrical Maintenance",
+    "canonical_occupation": "Electrical maintenance technician",
+    "occupation_family": "Electrical & maintenance",
+    "iti_trade_relevance": [
+      "Electrician"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Manages electrical equipment including DG sets and machinery.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "3–5 years",
+      "min_months": 36,
+      "max_months": 60,
+      "fresher_ok": false
+    },
+    "experience_level": "Experienced",
+    "skills": [
+      {
+        "name": "Electrical maintenance",
+        "basis": "curated"
+      },
+      {
+        "name": "DG set operation",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 380000,
+      "max": 380000,
+      "period": "year",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹3.8 lakh / year"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-026",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "seen_in_search_results_only"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Seen only in search-engine results on 16 Oct 2026; the listing page was not opened. Recheck the page before use."
+    },
+    "review": {
+      "state": "approved",
+      "by": "research-capture-2026-10-16",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Captured from search results for display as observed public evidence; flagged for the team to open and recheck."
+    },
+    "open_flags": [
+      "other"
+    ],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-027",
+    "title": "Machine Operator (freshers)",
+    "source_url": "https://www.placementindia.com/job-search/machine-operator-fresher-jobs-in-noida.htm",
+    "source_url_kind": "category_page",
+    "original_post_id": null,
+    "platform": "PlacementIndia",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": null,
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "sector",
+      "basis": "aggregator_label_only",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Machine Operator (freshers)",
+    "canonical_occupation": "Machine operator / setter",
+    "occupation_family": "Mechanical & production",
+    "iti_trade_relevance": [
+      "Machinist",
+      "Fitter"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Employer not named in the listing. The same post appears on several PlacementIndia pages; recorded once.",
+    "education": {
+      "raw": "10th pass (secondary school)",
+      "accepted": [
+        "10th"
+      ],
+      "stated": true
+    },
+    "experience": {
+      "raw": "Fresher (0–1 year)",
+      "min_months": 0,
+      "max_months": 12,
+      "fresher_ok": true
+    },
+    "experience_level": "Entry level",
+    "skills": [
+      {
+        "name": "Machine setting",
+        "basis": "curated"
+      },
+      {
+        "name": "Machine maintenance",
+        "basis": "curated"
+      },
+      {
+        "name": "Plant machinery",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 200000,
+      "max": 200000,
+      "period": "year",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹2 lakh / year"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": 30,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-027",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "seen_in_search_results_only"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Seen only in search-engine results on 16 Oct 2026; the listing page was not opened. Recheck the page before use."
+    },
+    "review": {
+      "state": "approved",
+      "by": "research-capture-2026-10-16",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Captured from search results for display as observed public evidence; flagged for the team to open and recheck."
+    },
+    "open_flags": [
+      "other"
+    ],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-028",
+    "title": "Picker / Packer",
+    "source_url": "https://www.workindia.in/labourer-jobs-in-sector-63-+-noida-delhi/",
+    "source_url_kind": "category_page",
+    "original_post_id": null,
+    "platform": "WorkIndia",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": null,
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "sector",
+      "basis": "aggregator_label_only",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Picker / Packer",
+    "canonical_occupation": "Warehouse picker and packer",
+    "occupation_family": "Logistics & warehouse",
+    "iti_trade_relevance": [],
+    "source_text_excerpt": null,
+    "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Posted in September 2026 according to the results. Employer not named.",
+    "education": {
+      "raw": "Below 10th or 10th pass",
+      "accepted": [
+        "10th"
+      ],
+      "stated": true
+    },
+    "experience": {
+      "raw": "Not stated",
+      "min_months": null,
+      "max_months": null,
+      "fresher_ok": null
+    },
+    "experience_level": "Entry level",
+    "skills": [
+      {
+        "name": "Picking",
+        "basis": "curated"
+      },
+      {
+        "name": "Packing",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 13200,
+      "max": 14200,
+      "period": "month",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹13,200–₹14,200 / month"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-028",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "seen_in_search_results_only"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Seen only in search-engine results on 16 Oct 2026; the listing page was not opened. Recheck the page before use."
+    },
+    "review": {
+      "state": "approved",
+      "by": "research-capture-2026-10-16",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Captured from search results for display as observed public evidence; flagged for the team to open and recheck."
+    },
+    "open_flags": [
+      "other"
+    ],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-029",
+    "title": "Electronics Technician - Embro Sales and Services",
+    "source_url": "https://www.jobhai.com/technician-electronics-technician-job-in-embro-sales-and-services-block-d-sector-8-noida-noida-0-to-2-years-1784561559-7988565-jid",
+    "source_url_kind": "job_post",
+    "original_post_id": "7988565",
+    "platform": "JobHai (Naukri Group)",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Embro Sales and Services",
+    "recruiter_identity": null,
+    "sector": null,
+    "geo": {
+      "granularity": "locality",
+      "basis": "aggregator_label_only",
+      "scope_status": "adjacent_or_unclear",
+      "claimed_sector": "63",
+      "locality_text": "Block D, Sector 8, Noida",
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Electronics Technician",
+    "canonical_occupation": "Electronics repair technician",
+    "occupation_family": "Electronics & manufacturing",
+    "iti_trade_relevance": [
+      "Electronics Mechanic"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Returned by a search for Sector 63 electronics jobs, but the listing is in Block D, Sector 8. Kept only to show that search results include other areas; not counted.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "0 to 2 years",
+      "min_months": 0,
+      "max_months": 24,
+      "fresher_ok": true
+    },
+    "experience_level": "Entry level",
+    "skills": [
+      {
+        "name": "Electronics testing",
+        "basis": "curated"
+      },
+      {
+        "name": "Electronics repair",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": null,
+      "max": null,
+      "period": null,
+      "currency": "INR",
+      "incentives": false,
+      "stated": false,
+      "raw": "Not stated"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-029",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "seen_in_search_results_only"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Seen only in search-engine results on 16 Oct 2026; the listing page was not opened. Recheck the page before use."
+    },
+    "review": {
+      "state": "approved",
+      "by": "research-capture-2026-10-16",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Captured from search results for display as observed public evidence; flagged for the team to open and recheck."
+    },
+    "open_flags": [
+      "other"
+    ],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-030",
+    "title": "Customer Support Associate (walk-in drive) - Tech Mahindra",
+    "source_url": "https://www.teamlease.com/jobs/customer-care-executive-jobs-in-noida-tech-mahindra-305329",
+    "source_url_kind": "job_post",
+    "original_post_id": "305329",
+    "platform": "TeamLease Jobs",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Tech Mahindra",
+    "recruiter_identity": null,
+    "sector": "62",
+    "geo": {
+      "granularity": "address",
+      "basis": "curator_transcribed",
+      "scope_status": "in_scope",
+      "claimed_sector": "62",
+      "locality_text": "A-8, Knowledge Boulevard, Sector 62",
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Customer Support Associate (walk-in drive)",
+    "canonical_occupation": "Contact centre agent (voice)",
+    "occupation_family": "BPO & service",
+    "iti_trade_relevance": [],
+    "source_text_excerpt": null,
+    "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Reposting sites give different walk-in dates (8 to 15 April 2026 and 9 to 20 June 2026). Both have passed. One reposting site gives ₹1.25 to 3 lakh a year.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "Freshers welcome",
+      "min_months": 0,
+      "max_months": null,
+      "fresher_ok": true
+    },
+    "experience_level": "Entry level",
+    "skills": [
+      {
+        "name": "English communication",
+        "basis": "curated"
+      },
+      {
+        "name": "Customer handling",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": null,
+      "max": null,
+      "period": null,
+      "currency": "INR",
+      "incentives": false,
+      "stated": false,
+      "raw": "Not stated"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "expired",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-030",
+    "duplicate_status": "unique",
+    "expiry": "2026-06-20",
+    "accessibility_restrictions": [
+      "seen_in_search_results_only"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Seen only in search-engine results on 16 Oct 2026; the listing page was not opened. Recheck the page before use."
+    },
+    "review": {
+      "state": "approved",
+      "by": "research-capture-2026-10-16",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Captured from search results for display as observed public evidence; flagged for the team to open and recheck."
+    },
+    "open_flags": [
+      "other"
+    ],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-031",
+    "title": "Technical Support Engineer (fresher) - QueueBuster",
+    "source_url": "https://in.indeed.com/q-queuebuster-jobs.html",
+    "source_url_kind": "search_results_page",
+    "original_post_id": null,
+    "platform": "Indeed",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "QueueBuster",
+    "recruiter_identity": null,
+    "sector": "62",
+    "geo": {
+      "granularity": "sector",
+      "basis": "curator_transcribed",
+      "scope_status": "in_scope",
+      "claimed_sector": "62",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Technical Support Engineer (fresher)",
+    "canonical_occupation": "Technical support engineer (POS software)",
+    "occupation_family": "IT & analytics",
+    "iti_trade_relevance": [
+      "Information and Communication Technology System Maintenance",
+      "COPA"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Indeed search page for the employer; location given as Noida Sector 62.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "0–1 years",
+      "min_months": 0,
+      "max_months": 12,
+      "fresher_ok": true
+    },
+    "experience_level": "Entry level",
+    "skills": [
+      {
+        "name": "Technical support",
+        "basis": "curated"
+      },
+      {
+        "name": "Troubleshooting",
+        "basis": "curated"
+      },
+      {
+        "name": "Computer basics",
+        "basis": "curated"
+      },
+      {
+        "name": "English communication",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 240000,
+      "max": 300000,
+      "period": "year",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹2.4–₹3 lakh / year"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-031",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "seen_in_search_results_only"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Seen only in search-engine results on 16 Oct 2026; the listing page was not opened. Recheck the page before use."
+    },
+    "review": {
+      "state": "approved",
+      "by": "research-capture-2026-10-16",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Captured from search results for display as observed public evidence; flagged for the team to open and recheck."
+    },
+    "open_flags": [
+      "other"
+    ],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-032",
+    "title": "Data Annotator (6-month contract) - Macgence AI",
+    "source_url": "https://macgence.com/jobs/data-annotator-6-month-contract/",
+    "source_url_kind": "other_page",
+    "original_post_id": null,
+    "platform": "Macgence (company careers page)",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Macgence AI",
+    "recruiter_identity": null,
+    "sector": "62",
+    "geo": {
+      "granularity": "sector",
+      "basis": "curator_transcribed",
+      "scope_status": "in_scope",
+      "claimed_sector": "62",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Data Annotator (6-month contract)",
+    "canonical_occupation": "AI data annotator",
+    "occupation_family": "IT & analytics",
+    "iti_trade_relevance": [
+      "COPA"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Six-month contract; immediate joiner preferred.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "2 years in data annotation",
+      "min_months": 24,
+      "max_months": null,
+      "fresher_ok": false
+    },
+    "experience_level": "Early career",
+    "skills": [
+      {
+        "name": "Data annotation",
+        "basis": "curated"
+      },
+      {
+        "name": "Computer basics",
+        "basis": "curated"
+      },
+      {
+        "name": "English communication",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": null,
+      "max": null,
+      "period": null,
+      "currency": "INR",
+      "incentives": false,
+      "stated": false,
+      "raw": "Not stated"
+    },
+    "contract_type": "fixed_term",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-032",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "seen_in_search_results_only"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Seen only in search-engine results on 16 Oct 2026; the listing page was not opened. Recheck the page before use."
+    },
+    "review": {
+      "state": "approved",
+      "by": "research-capture-2026-10-16",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Captured from search results for display as observed public evidence; flagged for the team to open and recheck."
+    },
+    "open_flags": [
+      "other"
+    ],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-033",
+    "title": "Data Annotation - Vehant Technologies",
+    "source_url": "https://www.vehant.com/jobs/data-annotation/",
+    "source_url_kind": "other_page",
+    "original_post_id": null,
+    "platform": "Vehant Technologies (company careers page)",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Vehant Technologies",
+    "recruiter_identity": null,
+    "sector": null,
+    "geo": {
+      "granularity": "citywide",
+      "basis": "aggregator_label_only",
+      "scope_status": "adjacent_or_unclear",
+      "claimed_sector": null,
+      "locality_text": "Noida (sector not given)",
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Data Annotation",
+    "canonical_occupation": "AI data annotator (video and image)",
+    "occupation_family": "IT & analytics",
+    "iti_trade_relevance": [
+      "COPA"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Seen in search results 16 Oct 2026 (page not opened). Minimum Class 12, basic computer skills and attention to detail. Located in Noida; sector not given, so not counted in 62 or 63.",
+    "education": {
+      "raw": "12th pass (10+2)",
+      "accepted": [
+        "12th"
+      ],
+      "stated": true
+    },
+    "experience": {
+      "raw": "0.6–3 years",
+      "min_months": 7,
+      "max_months": 36,
+      "fresher_ok": false
+    },
+    "experience_level": "Early career",
+    "skills": [
+      {
+        "name": "Data annotation",
+        "basis": "curated"
+      },
+      {
+        "name": "Computer basics",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": null,
+      "max": null,
+      "period": null,
+      "currency": "INR",
+      "incentives": false,
+      "stated": false,
+      "raw": "Not stated"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-033",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "seen_in_search_results_only"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Seen only in search-engine results on 16 Oct 2026; the listing page was not opened. Recheck the page before use."
+    },
+    "review": {
+      "state": "approved",
+      "by": "research-capture-2026-10-16",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Captured from search results for display as observed public evidence; flagged for the team to open and recheck."
+    },
+    "open_flags": [
+      "other"
+    ],
+    "inferences": [],
+    "fixture": false
   }
 ]

@@ -16,7 +16,7 @@ export async function openService() {
   } else {
     store = new FileStore(process.env.DATA_FILE || join(ROOT, 'data', 'runtime', 'db.json'), seedData);
   }
-  const service = createService(/** @type {any} */ (store), { profiles: seed.profiles, geometry: seed.geometry });
+  const service = createService(/** @type {any} */ (store), { profiles: seed.profiles, geometry: seed.geometry, trades: seed.trades, courses: seed.courses, announcements: seed.announcements, regions: seed.regions });
   return { store, service, close: async () => { if ('close' in store) await /** @type {any} */ (store).close(); } };
 }
 

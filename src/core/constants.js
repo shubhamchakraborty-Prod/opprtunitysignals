@@ -124,10 +124,13 @@ export const OCCUPATION_FAMILIES = [
   'Administration',
   'Electronics & manufacturing',
   'Mechanical & production',
+  'Electrical & maintenance',
+  'Automotive & EV',
+  'Logistics & warehouse',
 ];
 
 /** Families where ITI technical trades are plausibly relevant (an inference rule). */
-export const TECHNICAL_FAMILIES = ['Electronics & manufacturing', 'Mechanical & production'];
+export const TECHNICAL_FAMILIES = ['Electronics & manufacturing', 'Mechanical & production', 'Electrical & maintenance', 'Automotive & EV'];
 
 export const EXPERIENCE_LEVELS = ['Entry level', 'Early career', 'Experienced', 'Mixed'];
 

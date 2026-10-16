@@ -1,7 +1,7 @@
 // Builds the web app into dist/:
 //   dist/index.html             served by the API server (strict CSP, linked assets)
 //   dist/explorer-offline.html  single self-contained file (works from disk, no server)
-//   dist/vendor/leaflet/        bundled map library (tiles still need internet)
+//   dist/vendor/maplibre/       bundled MapLibre GL (OpenFreeMap tiles still need internet)
 import { build } from 'esbuild';
 import { readFileSync, writeFileSync, mkdirSync, cpSync, rmSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -43,6 +43,7 @@ const artifact = fill(`<style>\n${css}\n</style>`, 'data:image/png;base64,' + lo
   .replace(/<!doctype html>\s*/i, '').replace(/<html[^>]*>\s*/i, '').replace(/<\/html>\s*/i, '').replace(/<head>\s*/i, '').replace(/<\/head>\s*/i, '').replace(/<body>\s*/i, '').replace(/<\/body>\s*/i, '')
   .replace(/<meta charset[^>]*>\s*/i, '').replace(/<meta name="viewport"[^>]*>\s*/i, '');
 writeFileSync(join(dist, 'artifact.html'), artifact);
-cpSync(join(root, 'node_modules/leaflet/dist'), join(dist, 'vendor/leaflet'), { recursive: true, filter: (s) => !s.endsWith('.map') && !s.includes('leaflet-src') });
+mkdirSync(join(dist, 'vendor/maplibre'), { recursive: true });
+for (const f of ['maplibre-gl.js', 'maplibre-gl.css', 'LICENSE.txt']) cpSync(join(root, 'node_modules/maplibre-gl/dist', f), join(dist, 'vendor/maplibre', f));
 cpSync(join(root, 'data/templates'), join(dist, 'templates'), { recursive: true });
 console.log(`Built dist/ (app.js ${(js.length / 1024).toFixed(0)} KB, offline file ${(readFileSync(join(dist, 'explorer-offline.html')).length / 1024).toFixed(0)} KB)`);

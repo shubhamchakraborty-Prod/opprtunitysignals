@@ -18,5 +18,9 @@ export function loadSeed() {
     settings: read('settings.json'),
     profiles: read('learner_profiles.json'),
     geometry: read('sector_geometry.json'),
+    trades: read('iti_trades.json'),
+    courses: read('course_map.json'),
+    announcements: read('announcements.json'),
+    regions: read('regions.json'),
   };
 }

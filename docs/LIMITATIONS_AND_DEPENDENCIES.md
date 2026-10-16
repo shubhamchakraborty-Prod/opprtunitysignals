@@ -9,6 +9,14 @@
 | Publication date of SIG-013 (11 Sep 2026) | Stated on the listing |
 | "5 openings" on SIG-014 | Advertiser's claim; not verified |
 
+## Captured from search results only (16 Oct 2026)
+
+| Item | Note |
+|---|---|
+| SIG-019 to SIG-033 (JobHai, PlacementIndia, WorkIndia, TeamLease, Indeed, Macgence, Vehant) | Fields transcribed from search-result text. The listing pages could not be opened from the capture environment. Each has an open review flag; open the page and confirm before outreach. |
+| Kalyani and Siliguri | No current ITI-level job ads found. Industry presence comes from WBIIDC, MSME and SJDA documents, some of them old (dated per item). |
+| Social media | Public LinkedIn posts searched; only old IT posts found. No private groups or closed accounts were searched. |
+
 ## Inferred (labelled as inference in the app)
 
 | Item | Note |
@@ -26,6 +34,10 @@
 | Five learner profiles (Electronics Mechanic, Fitter, Machinist, COPA, Class 12) | Authorised, aggregate ITI capability inventories, with approval |
 | Sector circles and schematic shapes | Approved boundary data if an official source is licensed |
 | Pin positions within a sector | Verified geocodes (square pins) recorded through employer verification |
+| Kalyani and Siliguri pin positions | Surveyed addresses from WBIIDC allotment records |
+| ITI trade list and core skills | Current DGT trade list and syllabus (bharatskills.gov.in) |
+| Course suggestions | Confirmed course listings with dates and fees from Skill India Digital Hub, NSTIs and Sector Skill Councils |
+| Trades linked to announced projects | Hiring plans confirmed by each company |
 | Synthetic test fixtures (`test/helpers.js`, `fixture: true`) | Never shown in the app; tests only |
 
 ## Not available yet (shown as "Not available" or empty, never estimated)

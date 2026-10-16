@@ -39,18 +39,21 @@ Designed for a first-time, non-technical viewer: the answer comes first, labels 
 | Tab | Answers | Screenshot |
 |---|---|---|
 | Quick start | Pick an area and the learner you are finding jobs for | `docs/screenshots/00-guided-start.png` |
-| Jobs map | Q1, Q3: summary cards, filters (area, learner, type of work), sketch or street map, job list | `01-jobs-map.png` |
-| Job details (drawer) | Q3, Q4: pay, requirements, "Is this a real, open job?" steps, who could do it, what the ad says / what we think / what to do next | `01b-job-detail.png` |
-| Compare 62 and 63 | Q1, Q5: type of work, skills, working conditions, what the ads leave out, trend refusal | `02-compare-62-and-63.png` |
-| Match a learner | Q4: five example learners, grouped into worth a call / needs more skills / not eligible as written | `03-match-a-learner.png` |
-| Next steps | Q2, Q7: ready for planning vs call these employers first, jobs per pass-out, management note | `04-next-steps.png` |
-| Workers' views | Q6: empty until consented interviews exist; ad conditions shown separately | `05-workers-views.png` |
-| Government data | Live status and latest figures from government APIs (MoSPI PLFS, data.gov.in), plus portals that need an agreement | `05b-government-data.png` |
-| Sources | Every ad linked to its page, freshness, how sure we are, CSV export | `06-sources.png` |
-| Review queue (team) | New uploads, employer calls, repeat ads, broken links, closed ads, approvals, change log | `07-review-queue.png` |
-| Record an employer call (team) | Dated notes, confirmed jobs, entry pay, start date, pre-screen, contact, legal basis | `08-record-employer-call.png` |
+| Jobs map | Summary cards, filters, zoomable OpenFreeMap street map (sketch when offline), job list | `01-jobs-map.png` |
+| Job details (drawer) | Pay, requirements, "Is this a real, open job?" steps, who could do it, fact / inference / next step | `01b-job-detail.png` |
+| Match a learner | Five example learners: worth a call / needs more skills / not eligible as written | `02-match-a-learner.png` |
+| ITI trades and skill gaps | 103 CTS trades mapped to local ads: extra skills needed, courses, bridge jobs outside the trade | `03-iti-trades-and-skill-gaps.png` |
+| Compare 62 and 63 | Type of work, skills, working conditions, what ads leave out, trend refusal | `04-compare-62-and-63.png` |
+| Next steps | Ready for planning vs call these employers first, jobs per pass-out, management note | `05-next-steps.png` |
+| Coming up | Announced projects (Six Sense Mobility, HCL-Foxconn, Spark Minda, EMC 2.0...) with likely trades; never counted as jobs | `06-coming-up.png` |
+| Kalyani and Siliguri | Industrial parks, clusters, logistics and ITIs on the same zoomable map; presence, not vacancies | `07-kalyani-and-siliguri.png` |
+| Government data | Live status and figures from government APIs | `08-government-data.png` |
+| Workers' views | Empty until consented interviews exist | `09-workers-views.png` |
+| Sources | Every ad linked to its page, freshness, confidence, CSV export | `10-sources.png` |
+| Review queue (team) | Uploads, employer calls, repeats, follow-ups, approvals, change log | `11-review-queue.png` |
+| Record an employer call (team) | Dated notes, confirmed jobs, entry pay, start, pre-screen, contact, legal basis | `12-record-employer-call.png` |
 
-Screenshots show the map sketch because street tiles were blocked in the capture environment; with internet access the OpenStreetMap layer loads.
+Screenshots show the zoomable sketch because street tiles were blocked in the capture environment. With internet access the OpenFreeMap street map loads (MapLibre GL, no API key; attribution OpenFreeMap © OpenMapTiles, data © OpenStreetMap contributors).
 
 ## Architecture
 
@@ -115,6 +118,16 @@ Field dictionary: `docs/EVIDENCE_MODEL.md`. Key rules enforced in code and tests
 | Source URL opens; broken source can be flagged | `acceptance AT10`, `e2e` |
 | Works without tiles; schematic says not exact | `e2e AT1 + AT11`, offline file test |
 | Fact / inference / recommendation separated | `acceptance AT12` |
+
+## Data added on 16 Oct 2026
+
+| Data | File | Notes |
+|---|---|---|
+| 15 more job ads (JobHai/Naukri Group, PlacementIndia, WorkIndia, TeamLease, Indeed, company careers pages) | `data/source/capture_2026-10-16_search.json` | Transcribed from search results; pages could not be opened from the capture environment. Low confidence, flagged in the review queue for the team to open and confirm. Social media: only old IT posts found; none added. |
+| 103 ITI (CTS) trades with sector and core skills | `data/seed/iti_trades.json` | Compiled list; check bharatskills.gov.in for the current list and syllabus |
+| Skill-to-course pointers | `data/seed/course_map.json` | Course types and providers to check, not endorsements |
+| Announced projects | `data/seed/announcements.json` | Announcements and projections with sources; never counted as jobs |
+| Kalyani and Siliguri industry | `data/seed/regions.json` | WBIIDC, MSME and SJDA sources, dated per item; approximate pin positions |
 
 ## Government data feeds
 

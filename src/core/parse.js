@@ -117,6 +117,12 @@ export function originalPostIdFromUrl(url) {
   if (m) return m[1];
   m = u.match(/jid-(\d+)/);
   if (m) return m[1];
+  m = u.match(/-(\d{5,})-jid$/);
+  if (m) return m[1];
+  m = u.match(/placementindia\.com\/job-detail\/.*-(\d+)\.htm/);
+  if (m) return m[1];
+  m = u.match(/teamlease\.com\/jobs\/.*-(\d+)$/);
+  if (m) return m[1];
   m = u.match(/[?&]jk=([a-f0-9]+)/i);
   if (m) return m[1];
   return null;
@@ -126,7 +132,8 @@ export function originalPostIdFromUrl(url) {
 export function urlKind(url) {
   const u = String(url ?? '');
   if (/linkedin\.com\/posts\//.test(u)) return 'social_post';
-  if (/linkedin\.com\/jobs\/view\//.test(u) || /jid-\d+/.test(u) || /[?&]jk=/.test(u)) return 'job_post';
+  if (/linkedin\.com\/jobs\/view\//.test(u) || /jid-\d+/.test(u) || /-\d{5,}-jid$/.test(u) || /[?&]jk=/.test(u) || /placementindia\.com\/job-detail\//.test(u) || /teamlease\.com\/jobs\/.*-\d+$/.test(u)) return 'job_post';
+  if (/placementindia\.com\/job-search\//.test(u) || /workindia\.in\/[a-z-]*jobs-in-/.test(u)) return 'category_page';
   if (/indeed\.[a-z.]+\/q-/.test(u)) return 'search_results_page';
   if (/apna\.co\/jobs\/[a-z-]*jobs-in-/.test(u)) return 'category_page';
   return 'other_page';

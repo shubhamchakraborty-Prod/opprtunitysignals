@@ -18,15 +18,15 @@ test('AT1 + AT11: sector switch updates counters, list and pins; schematic says 
   await page.waitForSelector('#jobCards .job');
   await page.waitForFunction(() => document.querySelector('#fallback').style.display === 'block' && document.querySelector('#leafletMap').style.display === 'none', null, { timeout: 10000 });
   assert.match(await text(page, '#fallbackBanner'), /not geographically exact/);
-  assert.equal(await text(page, '#mCount'), '17');
+  assert.equal(await text(page, '#mCount'), '29');
   const allPins = await pins(page);
   assert.ok(allPins.some((p) => /Sector 62/.test(p)) && allPins.some((p) => /Sector 63/.test(p)));
   await page.click('.seg[data-sector="62"]');
-  assert.deepEqual([await text(page, '#mCount'), await text(page, '#m62'), await text(page, '#m63')], ['8', '8', '0']);
+  assert.deepEqual([await text(page, '#mCount'), await text(page, '#m62'), await text(page, '#m63')], ['10', '10', '0']);
   assert.ok((await pins(page)).every((p) => /Sector 62/.test(p)));
-  assert.equal(await page.$$eval('#jobCards .job', (x) => x.length), 8);
+  assert.equal(await page.$$eval('#jobCards .job', (x) => x.length), 10);
   await page.click('.seg[data-sector="63"]');
-  assert.deepEqual([await text(page, '#mCount'), await text(page, '#m62'), await text(page, '#m63')], ['9', '0', '9']);
+  assert.deepEqual([await text(page, '#mCount'), await text(page, '#m62'), await text(page, '#m63')], ['19', '0', '19']);
   assert.ok((await pins(page)).every((p) => /Sector 63/.test(p)));
   assert.deepEqual(page.errors, []);
 });
@@ -35,14 +35,14 @@ test('AT3: historical post hidden by default, dated when shown', async () => {
   const page = await newPage(browser);
   await page.goto(srv.url + '/?noguide');
   await page.waitForSelector('#jobCards .job');
-  assert.ok(!(await text(page, '#jobCards')).includes('Electronics Technician'));
+  assert.ok(!(await text(page, '#jobCards')).includes('SMD soldering'));
   await page.click('#moreBtn');
   await page.check('#historic');
-  const card = page.locator('#jobCards .job', { hasText: 'Electronics Technician' });
+  const card = page.locator('#jobCards .job', { hasText: 'SMD soldering' });
   assert.match(await card.textContent(), /Old ad · Feb 2026/);
   await card.click();
   assert.match(await text(page, '#detailPanel'), /Posted around 24 Feb 2026/);
-  assert.equal(await text(page, '#mCount'), '17', 'historical shown but not counted');
+  assert.equal(await text(page, '#mCount'), '29', 'historical shown but not counted');
 });
 
 test('learner filter narrows every counter; team tabs hidden from the public', async () => {
@@ -96,6 +96,26 @@ test('AT6 in the UI: verifier submits 3 openings, a second person approves, KPI 
   assert.deepEqual(page.errors, []);
 });
 
+test('ITI trades tab maps the catalogue and shows bridge jobs with courses; map sketch zooms', async () => {
+  const page = await newPage(browser);
+  await page.goto(srv.url + '/?noguide&tab=trades');
+  await page.waitForSelector('.trade-row');
+  await page.click('[data-action=trade-open][data-trade="Electrician"]');
+  const t = await text(page, '.trade.open');
+  assert.match(t, /Jobs outside the trade a learner could reach/);
+  assert.match(t, /Technical Support Engineer/);
+  await page.click('.tab[data-tab=regions]');
+  await page.waitForSelector('#regionSketch .fpin');
+  assert.match(await text(page, '#regions'), /Dabgram|Kalyani Industrial Park/);
+  const before = await page.getAttribute('#regionSketch svg', 'viewBox');
+  await page.click('#regionSketch .zoom-ctl [data-z=in]');
+  assert.notEqual(await page.getAttribute('#regionSketch svg', 'viewBox'), before);
+  await page.click('[data-action=region][data-region=siliguri]');
+  await page.click('#regionSketch .fpin >> nth=0');
+  assert.match(await text(page, '#siteDetail'), /Presence, not a vacancy/);
+  assert.deepEqual(page.errors, []);
+});
+
 test('Government data tab lists every tracked source with an honest status', async () => {
   const page = await newPage(browser);
   await page.goto(srv.url + '/?noguide&tab=feeds');
@@ -113,6 +133,6 @@ test('offline single-file build works from disk without a server', async () => {
   await page.goto(pathToFileURL(join(ROOT, 'dist/explorer-offline.html')).href + '?noguide');
   await page.waitForSelector('#jobCards .job');
   assert.match(await text(page, '#modePill'), /Offline copy/);
-  assert.equal(await text(page, '#mCount'), '17');
+  assert.equal(await text(page, '#mCount'), '29');
   assert.deepEqual(page.errors, []);
 });

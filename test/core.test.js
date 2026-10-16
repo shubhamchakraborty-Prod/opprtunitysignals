@@ -136,11 +136,11 @@ test('CSV ingestion: template parses, rows go to pending review, invalid rows ar
   assert.ok(res.rejected[0].errors.some((e) => /source_url/.test(e)));
   const q = await service.reviewQueue(actors.researcher);
   assert.equal(q.pendingReview.length, 2);
-  assert.equal((await service.listRecords(actors.observer, {})).length, 17, 'unreviewed uploads are not public');
+  assert.equal((await service.listRecords(actors.observer, {})).length, 29, 'unreviewed uploads are not public');
   const adj = q.pendingReview.find((r) => r.role_title_raw === 'CNC Operator');
   assert.equal(adj.geo.scope_status, 'adjacent_or_unclear');
   await service.reviewRecord(actors.researcher, res.accepted[0], { decision: 'approve' });
-  assert.equal((await service.listRecords(actors.observer, {})).length, 18);
+  assert.equal((await service.listRecords(actors.observer, {})).length, 30);
   await assert.rejects(service.importCsv(actors.observer, csv), /cannot perform/);
 });
 
@@ -149,11 +149,36 @@ test('CSV export neutralises spreadsheet formulas', () => {
   assert.ok(out.includes(`"'=HYPERLINK(""x"")"`));
 });
 
-test('seed integrity: 18 records, 17 current, 1 historical, nothing employer-confirmed', () => {
+test('seed integrity: 33 records, 1 historical, 1 expired, nothing employer-confirmed', () => {
   const { seed } = makeService();
-  assert.equal(seed.records.length, 18);
+  assert.equal(seed.records.length, 33);
+  assert.equal(seed.records.filter((r) => r.verification_status === 'expired').length, 1);
   assert.equal(seed.records.filter((r) => r.verification_status === 'historical').length, 1);
   assert.equal(seed.records.filter((r) => r.verification_status === 'employer_confirmed').length, 0);
   assert.ok(seed.records.every((r) => !r.fixture));
   assert.ok(ADJACENT().fixture);
+});
+
+test('ITI trade map: every trade is mapped; named links and skill gaps come with courses', async () => {
+  const { mapCatalogue, bridgeJobs, bridgeSkillDemand, namesTrade } = await import('../src/core/trades.js');
+  const { comparisonBase } = await import('../src/core/analytics.js');
+  const { seed } = makeService();
+  const ads = comparisonBase(seed.records.map(normalizeRecord), 'all');
+  const m = mapCatalogue(seed.trades.trades, ads, seed.courses.skills);
+  assert.equal(m.length, seed.trades.trades.length);
+  assert.ok(m.length >= 100, 'catalogue lists 100+ CTS trades');
+  const em = m.find((x) => x.trade === 'Electronics Mechanic');
+  assert.ok(em.related.some((r) => r.source_id === 'SIG-019' && r.named));
+  const cos = m.find((x) => x.trade === 'Cosmetology');
+  assert.equal(cos.demand, 0, 'generic skills alone do not link unrelated trades');
+  const copa = seed.trades.trades.find((t) => /COPA/.test(t.trade));
+  assert.ok(namesTrade(normalizeRecord(seed.records.find((r) => r.source_id === 'SIG-006')), copa), 'COPA alias');
+  const elec = seed.trades.trades.find((t) => t.trade === 'Electrician');
+  const b = bridgeJobs(elec, ads, seed.courses.skills);
+  const ts = b.find((x) => x.source_id === 'SIG-031');
+  assert.ok(ts && ts.ready_as_fresher, 'tech support reachable by an Electrician fresher with bridge skills');
+  assert.ok(ts.gaps.every((g) => g.course), 'every bridge gap has a course pointer');
+  const exp = b.find((x) => x.source_id === 'SIG-005');
+  assert.ok(exp && /experience/.test(exp.blockers.join(' ')), 'experience is a blocker, not a course');
+  assert.equal(bridgeSkillDemand(ads, seed.courses.skills)[0].skill, 'English communication');
 });

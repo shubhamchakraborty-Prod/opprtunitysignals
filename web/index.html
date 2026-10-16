@@ -34,11 +34,14 @@
 
 <nav class="tabs" aria-label="Main sections" role="tablist">
   <button class="tab active" role="tab" data-tab="discover" aria-selected="true">Jobs map</button>
-  <button class="tab" role="tab" data-tab="compare" aria-selected="false">Compare 62 and 63</button>
   <button class="tab" role="tab" data-tab="match" aria-selected="false">Match a learner</button>
+  <button class="tab" role="tab" data-tab="trades" aria-selected="false">ITI trades and skill gaps</button>
+  <button class="tab" role="tab" data-tab="compare" aria-selected="false">Compare 62 and 63</button>
   <button class="tab" role="tab" data-tab="plan" aria-selected="false">Next steps</button>
-  <button class="tab" role="tab" data-tab="voice" aria-selected="false">Workers' views</button>
+  <button class="tab" role="tab" data-tab="upcoming" aria-selected="false">Coming up</button>
+  <button class="tab" role="tab" data-tab="regions" aria-selected="false">Kalyani and Siliguri</button>
   <button class="tab" role="tab" data-tab="feeds" aria-selected="false">Government data</button>
+  <button class="tab" role="tab" data-tab="voice" aria-selected="false">Workers' views</button>
   <button class="tab" role="tab" data-tab="evidence" aria-selected="false">Sources</button>
   <span class="tab-sep team-only" hidden></span><span class="tab-group-label team-only" hidden>Team</span>
   <button class="tab team-only" role="tab" data-tab="review" aria-selected="false" hidden>Review queue <span class="tab-count" id="reviewCount"></span></button>
@@ -67,11 +70,11 @@
 
   <div class="explore">
     <div class="card map-card">
-      <div class="card-head"><h2>Where the jobs are</h2><small>Tap a dot to see the jobs</small></div>
+      <div class="card-head"><h2>Where the jobs are</h2><small>Zoom with + and −, drag to move, tap a dot</small></div>
       <div class="mapwrap"><div class="fallback" id="fallback"><svg viewBox="0 0 700 380" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Simplified sketch of Noida Sectors 62 and 63, not geographically exact, with clickable job dots"><rect class="sch-bg" width="700" height="380"/><path class="sch-road" d="M-10 60L720 175M-20 260L720 310" stroke-width="34" fill="none"/><path class="sch-road" d="M330 -10L435 390M60 -10L148 390M560 -10L630 390" stroke-width="25" fill="none"/><path class="sch-dash" d="M-10 62L720 176M-20 260L720 310M330 -10L435 390M60 -10L148 390M560 -10L630 390" stroke-width="2" stroke-dasharray="5 5" fill="none"/><path class="sch-62" d="M162 94L312 117L343 287L188 273Z" stroke-width="2"/><path class="sch-63" d="M393 135L546 149L564 296L434 297Z" stroke-width="2"/><text class="sch-t62" x="190" y="140" font-size="17" font-weight="700">SECTOR 62</text><text class="sch-t63" x="428" y="172" font-size="17" font-weight="700">SECTOR 63</text><g id="svgPins"></g></svg><div class="fallback-banner" id="fallbackBanner"><strong>Simplified sketch - not geographically exact.</strong> <span id="fallbackReason">The street map has not loaded.</span></div></div><div id="leafletMap" class="map" aria-label="Street map of Noida Sector 62 and Sector 63"></div><div class="map-label" id="mapLabel">Dots show the sector, not the exact office.</div></div>
       <div class="map-foot">
         <div class="legend"><span><i style="background:var(--s62)"></i>Sector 62</span><span><i style="background:var(--s63)"></i>Sector 63</span><span><i style="background:var(--old)"></i>Old ad</span><span><i class="sq" style="background:var(--ink)"></i>Exact address checked</span><span><i style="background:var(--warn)"></i>Number = several jobs at one employer</span></div>
-        <details class="disclose"><summary>Map layers and credits</summary><div class="layer-toggles" role="group" aria-label="Map layers" style="margin-top:8px"><label class="check"><input type="checkbox" id="layerApprox" checked/> Jobs placed by sector</label><label class="check"><input type="checkbox" id="layerVerified" checked/> Exact addresses <span id="verifiedLayerCount"></span></label><label class="check"><input type="checkbox" id="layerPresence"/> Employers with no ad <span id="presenceLayerCount"></span></label></div><p style="margin-top:8px">Street map © OpenStreetMap contributors when it loads. Sector circles are rough guides, not official boundaries. Orientation reference: <a href="https://www.mapsofindia.com/maps/uttarpradesh/noida-city-map.htm" target="_blank" rel="noopener">Maps of India · Noida city map ↗</a> (not reproduced).</p></details>
+        <details class="disclose"><summary>Map layers and credits</summary><div class="layer-toggles" role="group" aria-label="Map layers" style="margin-top:8px"><label class="check"><input type="checkbox" id="layerApprox" checked/> Jobs placed by sector</label><label class="check"><input type="checkbox" id="layerVerified" checked/> Exact addresses <span id="verifiedLayerCount"></span></label><label class="check"><input type="checkbox" id="layerPresence"/> Employers with no ad <span id="presenceLayerCount"></span></label></div><p style="margin-top:8px">Street map: OpenFreeMap © OpenMapTiles, data © OpenStreetMap contributors, when it loads. Sector circles are rough guides, not official boundaries. Orientation reference: <a href="https://www.mapsofindia.com/maps/uttarpradesh/noida-city-map.htm" target="_blank" rel="noopener">Maps of India · Noida city map ↗</a> (not reproduced).</p></details>
       </div>
     </div>
     <div class="card"><div class="card-head"><h2 id="listHead">Job ads</h2><small id="listCount">0 shown</small></div><div id="jobCards" class="cards" aria-live="polite"></div></div>
@@ -81,6 +84,9 @@
 <section id="match" class="section hide" role="tabpanel"></section>
 <section id="plan" class="section hide" role="tabpanel"></section>
 <section id="voice" class="section hide" role="tabpanel"></section>
+<section id="trades" class="section hide" role="tabpanel"></section>
+<section id="upcoming" class="section hide" role="tabpanel"></section>
+<section id="regions" class="section hide" role="tabpanel"></section>
 <section id="feeds" class="section hide" role="tabpanel"></section>
 <section id="evidence" class="section hide" role="tabpanel"></section>
 <section id="review" class="section hide" role="tabpanel"></section>

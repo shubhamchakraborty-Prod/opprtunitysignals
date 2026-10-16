@@ -34,6 +34,9 @@ export const FAMILY_LABEL = {
   Administration: 'Office and admin',
   'Electronics & manufacturing': 'Electronics production',
   'Mechanical & production': 'Machines and production',
+  'Electrical & maintenance': 'Electrical work',
+  'Automotive & EV': 'Vehicle repair (EV)',
+  'Logistics & warehouse': 'Warehouse and packing',
 };
 export const familyLabel = (f) => FAMILY_LABEL[f] || f;
 
