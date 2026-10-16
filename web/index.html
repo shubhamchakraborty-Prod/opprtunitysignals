@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="ConveGenius.AI research pilot: public opportunity signals, employer verification and ITI planning evidence for Noida Sectors 62 and 63, with source links and transparent workforce-fit explanations."/>
+<title>Noida 62/63 | Industry Opportunity Explorer</title>
+<!--STYLES-->
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="app">
+<header class="top"><div class="brand"><img src="<!--LOGO-->" alt="ConveGenius.AI logo"/><span class="brand-line"></span><div class="brand-copy">Industry Opportunity Explorer<small>Noida · two-sector pilot</small></div></div><div class="topright"><span class="pill-outline" id="modePill">Research pilot</span><span class="date" id="scanDate">Source scan: 16 Oct 2026</span><button class="btn role-btn" id="roleBtn" aria-haspopup="dialog">Viewing as: Observer</button></div></header>
+<div class="sandbox-strip hide" id="sandboxStrip" role="status"></div>
+<main class="shell" id="main">
+<div class="eyebrow">Labour market intelligence / sector-level discovery</div>
+<div class="title-line"><div><h1>Where could people work <span>in Noida 62 and 63?</span></h1><p class="intro">Explore public hiring signals, see what skills they mention, and compare what these two neighbourhoods appear to need. Verified openings count only after an employer confirms them. No inferred vacancy totals or made-up sentiment scores.</p></div><div class="headline-controls"><button class="btn" id="guideBtn">Guided start</button><button class="btn" id="methodBtn">How to read this</button><button class="btn strong" id="exportBtn">Export filtered evidence ↓</button></div></div>
+<nav class="tabs" aria-label="Main sections" role="tablist">
+<button class="tab active" role="tab" data-tab="discover" aria-selected="true">Explore opportunities</button>
+<button class="tab" role="tab" data-tab="compare" aria-selected="false">Compare 62 vs 63</button>
+<button class="tab" role="tab" data-tab="match" aria-selected="false">Who could fit?</button>
+<button class="tab" role="tab" data-tab="voice" aria-selected="false">Worker &amp; employer voice</button>
+<button class="tab" role="tab" data-tab="plan" aria-selected="false">Planning &amp; outreach</button>
+<button class="tab" role="tab" data-tab="review" aria-selected="false">Source review <span class="tab-count" id="reviewCount"></span></button>
+<button class="tab" role="tab" data-tab="verify" aria-selected="false">Employer verification</button>
+<button class="tab" role="tab" data-tab="evidence" aria-selected="false">Source register</button>
+</nav>
+<section id="discover" class="section" role="tabpanel">
+<div class="deck"><aside class="filters" aria-label="Filters"><h2>Refine the opportunity view</h2>
+<div class="field"><label id="locLabel">Location</label><div class="sector-toggle" role="group" aria-labelledby="locLabel"><button class="seg active" data-sector="all" aria-pressed="true">Both</button><button class="seg" data-sector="62" aria-pressed="false">62</button><button class="seg" data-sector="63" aria-pressed="false">63</button></div></div>
+<div class="field"><label for="query">Search employer or role</label><input id="query" type="search" placeholder="e.g. electronics, Excel"/></div>
+<div class="field"><label for="family">Occupation group</label><select id="family"><option value="all">All occupations</option></select></div>
+<div class="field"><label for="career">Experience level</label><select id="career"><option value="all">All levels</option><option value="Entry level">Entry-level signals</option><option value="Early career">Early-career signals</option><option value="Experienced">Experienced signals</option></select></div>
+<div class="field"><label for="verification">Verification status</label><select id="verification"><option value="all">All statuses</option><option value="observed_public">Observed in public source</option><option value="pending_employer_check">Pending employer check</option><option value="employer_confirmed">Employer confirmed</option><option value="contradicted">Contradicted</option></select></div>
+<div class="field"><label class="checkline"><input id="historic" type="checkbox"/> Include older and expired signals</label></div>
+<div class="field"><label class="checkline"><input id="unclear" type="checkbox"/> List unclear or adjacent locations</label></div>
+<button class="reset" id="clearBtn">Reset filters</button><div class="divider"></div>
+<div class="help"><strong>First time here?</strong><p>1. Select a sector or occupation.<br/>2. Click a dot or job in the list.<br/>3. Read the facts, inferences and next step, then open the original source.</p><p>Grey-ringed pins are <strong>approximate sector-level groupings</strong>. Only square pins are verified workplace addresses.</p><button class="reset" id="guideLink">Open the guided start</button></div></aside>
+<div class="mainarea">
+<div class="metrics" aria-live="polite"><div class="metric"><div class="key">Public role signals in view</div><div class="num" id="mCount">0</div><div class="sub" id="mCountSub">Deduplicated sampled listings, not vacancies</div></div><div class="metric"><div class="key">Sector 62 signals</div><div class="num teal" id="m62">0</div><div class="sub" id="m62Sub">Within current filters</div></div><div class="metric"><div class="key">Sector 63 signals</div><div class="num" id="m63">0</div><div class="sub" id="m63Sub">Within current filters</div></div><div class="metric"><div class="key">Employer-confirmed openings</div><div class="num" id="mConfirmed">0</div><div class="sub" id="mConfirmedSub">No employer verification completed</div></div></div>
+<div class="maphead"><h2>Opportunity signals by area</h2><small>Clickable dots · grouped by employer and location precision</small></div>
+<div class="map-and-insight"><div class="map-panel"><div class="map-tools"><div class="legend"><span><i class="circ" style="background:#337e79"></i>Sector 62</span><span><i class="circ" style="background:#625cb0"></i>Sector 63</span><span><i class="circ" style="background:#a2aeb5"></i>Older signal</span><span><i class="sq-ico"></i>Verified address</span></div><div class="layer-toggles" role="group" aria-label="Map layers"><label><input type="checkbox" id="layerApprox" checked/> Sector-level (approx.)</label><label><input type="checkbox" id="layerVerified" checked/> Verified addresses <span id="verifiedLayerCount"></span></label><label><input type="checkbox" id="layerPresence"/> Employer presence <span id="presenceLayerCount"></span></label></div></div>
+<div class="mapwrap"><div class="fallback" id="fallback"><svg viewBox="0 0 700 380" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Schematic representation of Noida Sectors 62 and 63, not geographically exact, with clickable signal dots"><rect width="700" height="380" fill="#e8efee"/><path d="M-10 60L720 175M-20 260L720 310" stroke="#fff" stroke-width="34"/><path d="M330 -10L435 390M60 -10L148 390M560 -10L630 390" stroke="#fff" stroke-width="25"/><path d="M-10 62L720 176M-20 260L720 310M330 -10L435 390M60 -10L148 390M560 -10L630 390" stroke="#c4d4d5" stroke-width="2" stroke-dasharray="5 5"/><path d="M162 94L312 117L343 287L188 273Z" fill="#c9e0db" stroke="#90bbb1" stroke-width="2"/><path d="M393 135L546 149L564 296L434 297Z" fill="#d8d5eb" stroke="#aaa4d3" stroke-width="2"/><text x="200" y="147" font-size="18" fill="#43796f" font-weight="bold">SECTOR 62</text><text x="435" y="183" font-size="18" fill="#6a65a2" font-weight="bold">SECTOR 63</text><g id="svgPins"></g></svg><div class="fallback-banner" id="fallbackBanner"><strong>Schematic fallback - not geographically exact.</strong> <span id="fallbackReason">Street map tiles are not loaded.</span> Shapes and pin positions are illustrative.</div></div><div id="leafletMap" class="map" aria-label="Street map of Noida Sector 62 and Sector 63"></div><div class="map-label" id="mapLabel">Round pins are sector-level groupings, not precise employer addresses.</div></div><div class="map-foot">Base map: © OpenStreetMap contributors (ODbL) when tiles load. Sector circles are approximate visual guides, not official boundaries. Geographic reference: <a href="https://www.mapsofindia.com/maps/uttarpradesh/noida-city-map.htm" target="_blank" rel="noopener">Maps of India · Noida city map ↗</a>. The reference map is not reproduced or modified.</div></div>
+<aside class="insight" id="insightPanel"></aside></div>
+<div class="lower"><section class="section-panel" aria-labelledby="listHead"><div class="panel-head"><h3 id="listHead">Evidence-backed opportunities</h3><span class="count" id="listCount">0 results</span></div><div id="jobCards" class="cards" aria-live="polite"></div></section><section class="section-panel" id="detailPanel" aria-live="polite"></section></div>
+</div></div></section>
+<section id="compare" class="section hide" role="tabpanel"></section>
+<section id="match" class="section hide" role="tabpanel"></section>
+<section id="voice" class="section hide" role="tabpanel"></section>
+<section id="plan" class="section hide" role="tabpanel"></section>
+<section id="review" class="section hide" role="tabpanel"></section>
+<section id="verify" class="section hide" role="tabpanel"></section>
+<section id="evidence" class="section hide" role="tabpanel"></section>
+<footer class="page-foot"><span>© ConveGenius.AI · Internal research pilot · Not an official employment service</span><span id="footStats"></span></footer>
+</main>
+</div>
+<div class="modal-backdrop hide" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal" id="modalBody"></div></div>
+<div class="toast hide" id="toast" role="status" aria-live="polite"></div>
+<script id="seed" type="application/json"><!--SEED--></script>
+<!--SCRIPT-->
+</body>
+</html>

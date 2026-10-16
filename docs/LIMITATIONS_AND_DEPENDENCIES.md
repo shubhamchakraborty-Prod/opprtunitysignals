@@ -1,0 +1,49 @@
+# What is real, illustrative, or dependent on approved access
+
+## Real (source facts, 16 Oct 2026 snapshot)
+
+| Item | Basis |
+|---|---|
+| 18 records: employer and role names, advertised pay, experience, education where stated | Transcribed from public pages by the v0 curator |
+| Source URLs | Public pages; some are category or search pages, not individual posts |
+| Publication date of SIG-013 (11 Sep 2026) | Stated on the listing |
+| "5 openings" on SIG-014 | Advertiser's claim; not verified |
+
+## Inferred (labelled as inference in the app)
+
+| Item | Note |
+|---|---|
+| Canonical occupation and occupation group | Curator mapping; NCO-2015 codes not yet assigned |
+| ITI trade relevance (e.g. Lathe operator → Turner / Machinist) | Rule-based suggestion for outreach priority only |
+| Normalised skill names | Curated from adverts, not verbatim |
+| SIG-018 post date (c. 24 Feb 2026) | Derived from the LinkedIn activity ID, not read from the page |
+| Sector for Apna / Indeed records | Portal category or search label only; workplace may be nearby |
+
+## Illustrative (not evidence)
+
+| Item | Replace with |
+|---|---|
+| Five learner profiles (Electronics Mechanic, Fitter, Machinist, COPA, Class 12) | Authorised, aggregate ITI capability inventories, with approval |
+| Sector circles and schematic shapes | Approved boundary data if an official source is licensed |
+| Pin positions within a sector | Verified geocodes (square pins) recorded through employer verification |
+| Synthetic test fixtures (`test/helpers.js`, `fixture: true`) | Never shown in the app; tests only |
+
+## Not available yet (shown as "Not available" or empty, never estimated)
+
+| Output | Missing input | Who can provide |
+|---|---|---|
+| Employer-confirmed openings | Employer calls or visits, with consent basis and second-person approval | Employer verifier + administrator |
+| Demand coverage ratio | Expected ITI pass-outs by trade for Gautam Buddh Nagar | DGT / state directorate / ITI principals, under a data-sharing approval |
+| Worker and employer sentiment | Consented, attributed interviews | Research team with informed-consent protocol |
+| Requirement trends | A second comparable capture wave (same sources, both sectors, 10+ records each) | Researcher, next capture round |
+| Verified address layer | Employer-confirmed addresses checked against coordinates | Employer verifier |
+
+## Dependent on approved access or decisions
+
+| Item | Status |
+|---|---|
+| Portal connectors (Apna, Indeed, LinkedIn, Naukri, NCS) | Not built. Only with licence or written permission; no scraping, no gated or private social accounts, rate limits respected |
+| Production authentication | Dev bearer tokens only; replace with organisational SSO |
+| Hosting and data-protection review (DPDP Act 2023) | Required before collecting interview or contact data at scale |
+| Street map tiles | Public OpenStreetMap tiles need internet and fair use; a production deployment should use its own or a commercial tile provider |
+| Official boundaries | Not available; circles are approximate guides |

@@ -1,0 +1,1983 @@
+[
+  {
+    "source_id": "SIG-001",
+    "title": "Customer Support Executive (Voice) - Sookshm Information Services",
+    "source_url": "https://in.linkedin.com/jobs/view/customer-support-executive-voice-bpo-at-sookshm-information-services-pvt-ltd-4476240954",
+    "source_url_kind": "job_post",
+    "original_post_id": "4476240954",
+    "platform": "LinkedIn",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Sookshm Information Services",
+    "recruiter_identity": null,
+    "sector": "62",
+    "geo": {
+      "granularity": "sector",
+      "basis": "curator_transcribed",
+      "scope_status": "in_scope",
+      "claimed_sector": "62",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Customer Support Executive (Voice)",
+    "canonical_occupation": "Contact centre agent (voice)",
+    "occupation_family": "BPO & service",
+    "iti_trade_relevance": [],
+    "source_text_excerpt": null,
+    "curator_note": "The posting specifies 10+2 eligibility. Exact employer-confirmed hiring volume unavailable.",
+    "education": {
+      "raw": "12th pass",
+      "accepted": [
+        "12th"
+      ],
+      "stated": true
+    },
+    "experience": {
+      "raw": "Fresher / up to 6 months",
+      "min_months": 0,
+      "max_months": 6,
+      "fresher_ok": true
+    },
+    "experience_level": "Entry level",
+    "skills": [
+      {
+        "name": "English communication",
+        "basis": "curated"
+      },
+      {
+        "name": "Customer handling",
+        "basis": "curated"
+      },
+      {
+        "name": "Problem solving",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": null,
+      "max": null,
+      "period": null,
+      "currency": "INR",
+      "incentives": false,
+      "stated": false,
+      "raw": "Not stated"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-001",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "may_require_login"
+    ],
+    "confidence": {
+      "level": "medium",
+      "rationale": "Individual LinkedIn post with an ID and named employer; 10+2 eligibility stated. Sector transcribed by curator; not employer-confirmed."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-002",
+    "title": "International Chat Support Executive - iQor India",
+    "source_url": "https://in.indeed.com/q-bpo-l-noida-sector-62%2C-noida%2C-uttar-pradesh-jobs.html",
+    "source_url_kind": "search_results_page",
+    "original_post_id": null,
+    "platform": "Indeed",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "iQor India",
+    "recruiter_identity": null,
+    "sector": "62",
+    "geo": {
+      "granularity": "sector",
+      "basis": "aggregator_label_only",
+      "scope_status": "in_scope",
+      "claimed_sector": "62",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "International Chat Support Executive",
+    "canonical_occupation": "Chat support agent (international process)",
+    "occupation_family": "BPO & service",
+    "iti_trade_relevance": [],
+    "source_text_excerpt": null,
+    "curator_note": "Requires international chat or voice process experience.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "6+ months",
+      "min_months": 6,
+      "max_months": null,
+      "fresher_ok": false
+    },
+    "experience_level": "Early career",
+    "skills": [
+      {
+        "name": "English writing",
+        "basis": "curated"
+      },
+      {
+        "name": "Customer handling",
+        "basis": "curated"
+      },
+      {
+        "name": "Typing",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": null,
+      "max": null,
+      "period": null,
+      "currency": "INR",
+      "incentives": false,
+      "stated": false,
+      "raw": "Not stated"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-002",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "listing_page_changes_over_time"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Indeed search-results page, not an individual post. Sector comes only from the search label."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [],
+    "inferences": [
+      {
+        "text": "Prior international chat or voice process experience requested (transcribed note).",
+        "basis": "curator"
+      }
+    ],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-003",
+    "title": "Power BI & Operations Analyst - Kiara Infotech",
+    "source_url": "https://apna.co/jobs/jobs-in-sector-62-in-noida",
+    "source_url_kind": "category_page",
+    "original_post_id": null,
+    "platform": "Apna",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Kiara Infotech",
+    "recruiter_identity": null,
+    "sector": "62",
+    "geo": {
+      "granularity": "sector",
+      "basis": "aggregator_label_only",
+      "scope_status": "in_scope",
+      "claimed_sector": "62",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Power BI & Operations Analyst",
+    "canonical_occupation": "Business intelligence / reporting analyst",
+    "occupation_family": "IT & analytics",
+    "iti_trade_relevance": [],
+    "source_text_excerpt": null,
+    "curator_note": "Night shift appears in listing. Salary is advertised, not independently verified.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "5+ years",
+      "min_months": 60,
+      "max_months": null,
+      "fresher_ok": false
+    },
+    "experience_level": "Experienced",
+    "skills": [
+      {
+        "name": "Power BI",
+        "basis": "curated"
+      },
+      {
+        "name": "Excel",
+        "basis": "curated"
+      },
+      {
+        "name": "Reporting",
+        "basis": "curated"
+      },
+      {
+        "name": "English communication",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": "Night shift",
+      "night_shift": true,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 40000,
+      "max": 60000,
+      "period": "month",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹40,000–₹60,000 / month"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-003",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "listing_page_changes_over_time"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Apna category page; individual post not isolated. Sector from page label."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-004",
+    "title": "International Voice Process Agent - Acutementors India",
+    "source_url": "https://apna.co/jobs/full-time-jobs-in-sector-62-in-noida",
+    "source_url_kind": "category_page",
+    "original_post_id": null,
+    "platform": "Apna",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Acutementors India",
+    "recruiter_identity": null,
+    "sector": "62",
+    "geo": {
+      "granularity": "sector",
+      "basis": "aggregator_label_only",
+      "scope_status": "in_scope",
+      "claimed_sector": "62",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "International Voice Process Agent",
+    "canonical_occupation": "Contact centre agent (international voice)",
+    "occupation_family": "BPO & service",
+    "iti_trade_relevance": [],
+    "source_text_excerpt": null,
+    "curator_note": "Listing indicates night shift and strong English requirements.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "Any experience",
+      "min_months": 0,
+      "max_months": null,
+      "fresher_ok": true
+    },
+    "experience_level": "Entry level",
+    "skills": [
+      {
+        "name": "English communication",
+        "basis": "curated"
+      },
+      {
+        "name": "Customer handling",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": "Night shift",
+      "night_shift": true,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 22000,
+      "max": 35000,
+      "period": "month",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹22,000–₹35,000 / month"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-004",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "listing_page_changes_over_time"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Apna category page; individual post not isolated. Sector from page label."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-005",
+    "title": "Inside Sales Executive - Nextnation",
+    "source_url": "https://apna.co/jobs/jobs-in-sector-62-in-noida",
+    "source_url_kind": "category_page",
+    "original_post_id": null,
+    "platform": "Apna",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Nextnation",
+    "recruiter_identity": null,
+    "sector": "62",
+    "geo": {
+      "granularity": "sector",
+      "basis": "aggregator_label_only",
+      "scope_status": "in_scope",
+      "claimed_sector": "62",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Inside Sales Executive",
+    "canonical_occupation": "Inside sales executive",
+    "occupation_family": "Sales & business",
+    "iti_trade_relevance": [],
+    "source_text_excerpt": null,
+    "curator_note": "Inside sales is a transferable service occupation, not a technical ITI role.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "1+ year",
+      "min_months": 12,
+      "max_months": null,
+      "fresher_ok": false
+    },
+    "experience_level": "Early career",
+    "skills": [
+      {
+        "name": "English communication",
+        "basis": "curated"
+      },
+      {
+        "name": "Sales",
+        "basis": "curated"
+      },
+      {
+        "name": "Customer handling",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 21000,
+      "max": 35000,
+      "period": "month",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹21,000–₹35,000 / month"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-005",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "listing_page_changes_over_time"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Apna category page; individual post not isolated."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-006",
+    "title": "Office Assistant - Mentorvit Education Foundation",
+    "source_url": "https://apna.co/jobs/admin-back-office-computer-operator-and-full-time-jobs-in-sector-62-in-noida",
+    "source_url_kind": "category_page",
+    "original_post_id": null,
+    "platform": "Apna",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Mentorvit Education Foundation",
+    "recruiter_identity": null,
+    "sector": "62",
+    "geo": {
+      "granularity": "sector",
+      "basis": "aggregator_label_only",
+      "scope_status": "in_scope",
+      "claimed_sector": "62",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Office Assistant",
+    "canonical_occupation": "Office assistant",
+    "occupation_family": "Administration",
+    "iti_trade_relevance": [
+      "COPA"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Office operations role; verify tasks and qualifications with employer.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "Any experience",
+      "min_months": 0,
+      "max_months": null,
+      "fresher_ok": true
+    },
+    "experience_level": "Entry level",
+    "skills": [
+      {
+        "name": "Computer basics",
+        "basis": "curated"
+      },
+      {
+        "name": "Office administration",
+        "basis": "curated"
+      },
+      {
+        "name": "Communication",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 20000,
+      "max": 30000,
+      "period": "month",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹20,000–₹30,000 / month"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-006",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "listing_page_changes_over_time"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Apna category page; tasks and qualification not confirmed."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [],
+    "inferences": [
+      {
+        "text": "Office computing tasks may suit COPA pass-outs; duties unconfirmed.",
+        "basis": "curator"
+      }
+    ],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-007",
+    "title": "Executive Assistant - M.R. Engineers",
+    "source_url": "https://apna.co/jobs/admin-back-office-computer-operator-and-full-time-jobs-in-sector-62-in-noida",
+    "source_url_kind": "category_page",
+    "original_post_id": null,
+    "platform": "Apna",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "M.R. Engineers",
+    "recruiter_identity": null,
+    "sector": "62",
+    "geo": {
+      "granularity": "sector",
+      "basis": "aggregator_label_only",
+      "scope_status": "in_scope",
+      "claimed_sector": "62",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Executive Assistant",
+    "canonical_occupation": "Executive / administrative assistant",
+    "occupation_family": "Administration",
+    "iti_trade_relevance": [
+      "COPA"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Administrative listing; employer name alone does not imply an engineering job.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "Any experience",
+      "min_months": 0,
+      "max_months": null,
+      "fresher_ok": true
+    },
+    "experience_level": "Entry level",
+    "skills": [
+      {
+        "name": "Computer basics",
+        "basis": "curated"
+      },
+      {
+        "name": "English communication",
+        "basis": "curated"
+      },
+      {
+        "name": "Office administration",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 15000,
+      "max": 20000,
+      "period": "month",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹15,000–₹20,000 / month"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-007",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "listing_page_changes_over_time"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Apna category page; employer name does not imply an engineering role."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-008",
+    "title": "International BPO Executive - Radical Minds Technology",
+    "source_url": "https://apna.co/jobs/full-time-jobs-in-sector-62-in-noida",
+    "source_url_kind": "category_page",
+    "original_post_id": null,
+    "platform": "Apna",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Radical Minds Technology",
+    "recruiter_identity": null,
+    "sector": "62",
+    "geo": {
+      "granularity": "sector",
+      "basis": "aggregator_label_only",
+      "scope_status": "in_scope",
+      "claimed_sector": "62",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "International BPO Executive",
+    "canonical_occupation": "Contact centre agent (international)",
+    "occupation_family": "BPO & service",
+    "iti_trade_relevance": [],
+    "source_text_excerpt": null,
+    "curator_note": "Strong English specified; salary is posted range only.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "1+ year",
+      "min_months": 12,
+      "max_months": null,
+      "fresher_ok": false
+    },
+    "experience_level": "Early career",
+    "skills": [
+      {
+        "name": "English communication",
+        "basis": "curated"
+      },
+      {
+        "name": "Customer handling",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 30000,
+      "max": 51000,
+      "period": "month",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹30,000–₹51,000 / month"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-008",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "listing_page_changes_over_time"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Apna category page; individual post not isolated."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-009",
+    "title": "Production Engineer (Electrical / Electronics) - Fluortronix",
+    "source_url": "https://apna.co/jobs/production-manufacturing-engineering-jobs-in-sector-63-in-noida",
+    "source_url_kind": "category_page",
+    "original_post_id": null,
+    "platform": "Apna",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Fluortronix",
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "sector",
+      "basis": "aggregator_label_only",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Production Engineer (Electrical / Electronics)",
+    "canonical_occupation": "Production engineer (electrical / electronics)",
+    "occupation_family": "Electronics & manufacturing",
+    "iti_trade_relevance": [
+      "Electronics Mechanic",
+      "Electrician"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Listed in Sector 63. Employer confirmation needed for eligibility and openings.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "Any experience",
+      "min_months": 0,
+      "max_months": null,
+      "fresher_ok": true
+    },
+    "experience_level": "Entry level",
+    "skills": [
+      {
+        "name": "Electrical basics",
+        "basis": "curated"
+      },
+      {
+        "name": "Electronics testing",
+        "basis": "curated"
+      },
+      {
+        "name": "English communication",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 25000,
+      "max": 40000,
+      "period": "month",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹25,000–₹40,000 / month"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-009",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "listing_page_changes_over_time"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Apna Sector 63 category page; eligibility and openings unconfirmed."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [],
+    "inferences": [
+      {
+        "text": "Shop-floor electronics production may draw on ITI Electronics Mechanic or Electrician skills; the \"Engineer\" title may imply a diploma or degree.",
+        "basis": "curator"
+      }
+    ],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-010",
+    "title": "Junior Mechanical Design Engineer - Exeliq Tech Solutions",
+    "source_url": "https://apna.co/jobs/production-manufacturing-engineering-jobs-in-sector-63-in-noida",
+    "source_url_kind": "category_page",
+    "original_post_id": null,
+    "platform": "Apna",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Exeliq Tech Solutions",
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "sector",
+      "basis": "aggregator_label_only",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Junior Mechanical Design Engineer",
+    "canonical_occupation": "Junior mechanical design engineer / draughtsperson",
+    "occupation_family": "Mechanical & production",
+    "iti_trade_relevance": [
+      "Draughtsman (Mechanical)"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Role title suggests design work; software requirements must be employer-confirmed.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "Any experience",
+      "min_months": 0,
+      "max_months": null,
+      "fresher_ok": true
+    },
+    "experience_level": "Entry level",
+    "skills": [
+      {
+        "name": "Mechanical drawing",
+        "basis": "curated"
+      },
+      {
+        "name": "CAD",
+        "basis": "curated"
+      },
+      {
+        "name": "Basic English",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 22000,
+      "max": 30000,
+      "period": "month",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹22,000–₹30,000 / month"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-010",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "listing_page_changes_over_time"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Apna category page; CAD software requirement unconfirmed."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-011",
+    "title": "Lathe Machine Operator - EmiQual Foods",
+    "source_url": "https://apna.co/jobs/production-manufacturing-engineering-jobs-in-sector-63-in-noida",
+    "source_url_kind": "category_page",
+    "original_post_id": null,
+    "platform": "Apna",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "EmiQual Foods",
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "sector",
+      "basis": "aggregator_label_only",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Lathe Machine Operator",
+    "canonical_occupation": "Lathe machine operator",
+    "occupation_family": "Mechanical & production",
+    "iti_trade_relevance": [
+      "Turner",
+      "Machinist"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Published role listing in Sector 63; minimum 2 years experience.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "2+ years",
+      "min_months": 24,
+      "max_months": null,
+      "fresher_ok": false
+    },
+    "experience_level": "Experienced",
+    "skills": [
+      {
+        "name": "Lathe operation",
+        "basis": "curated"
+      },
+      {
+        "name": "Machine safety",
+        "basis": "curated"
+      },
+      {
+        "name": "Measurement",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 22000,
+      "max": 25000,
+      "period": "month",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹22,000–₹25,000 / month"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-011",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "listing_page_changes_over_time"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Apna Sector 63 category page; minimum 2 years experience transcribed."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-012",
+    "title": "Production Supervisor / Mechanical Engineer - EmiQual Foods",
+    "source_url": "https://apna.co/jobs/production-manufacturing-engineering-jobs-in-sector-63-in-noida",
+    "source_url_kind": "category_page",
+    "original_post_id": null,
+    "platform": "Apna",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "EmiQual Foods",
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "sector",
+      "basis": "aggregator_label_only",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Production Supervisor / Mechanical Engineer",
+    "canonical_occupation": "Production supervisor (mechanical)",
+    "occupation_family": "Mechanical & production",
+    "iti_trade_relevance": [
+      "Fitter"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Title and advertised salary transcribed from listing; exact duties need confirmation.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "1+ year",
+      "min_months": 12,
+      "max_months": null,
+      "fresher_ok": false
+    },
+    "experience_level": "Early career",
+    "skills": [
+      {
+        "name": "Production processes",
+        "basis": "curated"
+      },
+      {
+        "name": "Quality inspection",
+        "basis": "curated"
+      },
+      {
+        "name": "English communication",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 29000,
+      "max": 30000,
+      "period": "month",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹29,000–₹30,000 / month"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-012",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "listing_page_changes_over_time"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Apna category page; duties need confirmation."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [],
+    "inferences": [
+      {
+        "text": "Supervisory role; an experienced ITI Fitter might be considered, but this is not stated.",
+        "basis": "curator"
+      }
+    ],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-013",
+    "title": "In-process Quality Engineer - Ingar Electronics",
+    "source_url": "https://www.tymblhub.com/quality-engineer-jobs-in-noida-in-ingar-electronics-3-to-4-years-jid-439806",
+    "source_url_kind": "job_post",
+    "original_post_id": "439806",
+    "platform": "TymblHub",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": "2026-09-11",
+    "published_at_basis": "stated",
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Ingar Electronics",
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "sector",
+      "basis": "curator_transcribed",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "In-process Quality Engineer",
+    "canonical_occupation": "In-process quality inspector / engineer (electronics)",
+    "occupation_family": "Electronics & manufacturing",
+    "iti_trade_relevance": [
+      "Electronics Mechanic"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Published 11 Sep 2026. Experience requirement appears as 3–4 years in listing summary.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "3–4 years",
+      "min_months": 36,
+      "max_months": 48,
+      "fresher_ok": false
+    },
+    "experience_level": "Experienced",
+    "skills": [
+      {
+        "name": "Quality inspection",
+        "basis": "curated"
+      },
+      {
+        "name": "Electrical basics",
+        "basis": "curated"
+      },
+      {
+        "name": "Measurement",
+        "basis": "curated"
+      },
+      {
+        "name": "Documentation",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 230000,
+      "max": 300000,
+      "period": "year",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "₹2.3–₹3 lakh / year"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-013",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [],
+    "confidence": {
+      "level": "medium",
+      "rationale": "Individual post with a job ID and publication date (11 Sep 2026); sector transcribed by curator."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-014",
+    "title": "Business Development Executive / Manager - Earningzen Private Limited",
+    "source_url": "https://in.linkedin.com/jobs/view/business-development-executive-at-earningzen-private-limted-4467349255",
+    "source_url_kind": "job_post",
+    "original_post_id": "4467349255",
+    "platform": "LinkedIn",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Earningzen Private Limited",
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "sector",
+      "basis": "curator_transcribed",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Business Development Executive / Manager",
+    "canonical_occupation": "Business development executive",
+    "occupation_family": "Sales & business",
+    "iti_trade_relevance": [],
+    "source_text_excerpt": null,
+    "curator_note": "Posting says 5 openings. Employer-posted figure is not employer-confirmed by this prototype.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "Not stated",
+      "min_months": null,
+      "max_months": null,
+      "fresher_ok": null
+    },
+    "experience_level": "Mixed",
+    "skills": [
+      {
+        "name": "English communication",
+        "basis": "curated"
+      },
+      {
+        "name": "Sales",
+        "basis": "curated"
+      },
+      {
+        "name": "Customer handling",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": 500000,
+      "max": 800000,
+      "period": "year",
+      "currency": "INR",
+      "incentives": true,
+      "stated": true,
+      "raw": "₹5–₹8 lakh / year + incentives"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": 5,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-014",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "may_require_login"
+    ],
+    "confidence": {
+      "level": "medium",
+      "rationale": "Individual LinkedIn post with a named employer. The post claims 5 openings; not employer-confirmed."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-015",
+    "title": "PPC Executive (Google Ads) - Hireniti Virtual HR Services",
+    "source_url": "https://in.linkedin.com/jobs/view/ppc-executive-google-ads-at-hireniti-virtual-hr-services-4468588565",
+    "source_url_kind": "job_post",
+    "original_post_id": "4468588565",
+    "platform": "LinkedIn",
+    "source_type": "public_listing",
+    "evidence_type": "recruiter_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": null,
+    "recruiter_identity": "Hireniti Virtual HR Services",
+    "sector": "63",
+    "geo": {
+      "granularity": "sector",
+      "basis": "stated_in_listing",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "PPC Executive (Google Ads)",
+    "canonical_occupation": "Pay-per-click (Google Ads) executive",
+    "occupation_family": "IT & analytics",
+    "iti_trade_relevance": [],
+    "source_text_excerpt": null,
+    "curator_note": "Recruiter advertises Sector 63 office, six working days, and experience requirement.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "1–3 years",
+      "min_months": 12,
+      "max_months": 36,
+      "fresher_ok": false
+    },
+    "experience_level": "Early career",
+    "skills": [
+      {
+        "name": "Digital marketing",
+        "basis": "curated"
+      },
+      {
+        "name": "Google Ads",
+        "basis": "curated"
+      },
+      {
+        "name": "Reporting",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": "Six working days",
+      "night_shift": null,
+      "days_per_week": 6
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": null,
+      "max": 25000,
+      "period": "month",
+      "currency": "INR",
+      "incentives": false,
+      "stated": true,
+      "raw": "Up to ₹25,000 / month"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-015",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "may_require_login"
+    ],
+    "confidence": {
+      "level": "medium",
+      "rationale": "Recruiter post naming a Sector 63 office; the hiring employer is undisclosed."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-016",
+    "title": "IT Sales Executive / BDE - Bytelogic Technologies",
+    "source_url": "https://in.linkedin.com/jobs/view/urgent-hiring-it-sales-executive-bde-%E2%80%93-noida-at-bytelogic-technologies-4421791467",
+    "source_url_kind": "job_post",
+    "original_post_id": "4421791467",
+    "platform": "LinkedIn",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Bytelogic Technologies",
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "locality",
+      "basis": "stated_in_listing",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": "H Block, Sector 63",
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "IT Sales Executive / BDE",
+    "canonical_occupation": "IT sales executive (B2B international)",
+    "occupation_family": "Sales & business",
+    "iti_trade_relevance": [],
+    "source_text_excerpt": null,
+    "curator_note": "Specific location H Block, Sector 63; B2B international sales experience requested.",
+    "education": {
+      "raw": "Degree or equivalent practical experience",
+      "accepted": [
+        "degree"
+      ],
+      "stated": true
+    },
+    "experience": {
+      "raw": "2+ years",
+      "min_months": 24,
+      "max_months": null,
+      "fresher_ok": false
+    },
+    "experience_level": "Experienced",
+    "skills": [
+      {
+        "name": "English communication",
+        "basis": "curated"
+      },
+      {
+        "name": "Sales",
+        "basis": "curated"
+      },
+      {
+        "name": "IT knowledge",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": null,
+      "max": null,
+      "period": null,
+      "currency": "INR",
+      "incentives": false,
+      "stated": false,
+      "raw": "Not stated"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-016",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "may_require_login"
+    ],
+    "confidence": {
+      "level": "medium",
+      "rationale": "Individual post naming H Block, Sector 63."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-017",
+    "title": "Sales Executive (co-living) - SHFT-IN",
+    "source_url": "https://in.linkedin.com/jobs/view/hiring-freshers-sales-at-shft-in-4469424428",
+    "source_url_kind": "job_post",
+    "original_post_id": "4469424428",
+    "platform": "LinkedIn",
+    "source_type": "public_listing",
+    "evidence_type": "job_advertisement",
+    "captured_at": "2026-10-16",
+    "published_at": null,
+    "published_at_basis": null,
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "SHFT-IN",
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "sector",
+      "basis": "curator_transcribed",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Sales Executive (co-living)",
+    "canonical_occupation": "Sales executive (co-living)",
+    "occupation_family": "Sales & business",
+    "iti_trade_relevance": [],
+    "source_text_excerpt": null,
+    "curator_note": "One captured listing elsewhere indicates no longer accepting applications; availability must be reconfirmed.",
+    "education": {
+      "raw": "Not stated",
+      "accepted": [],
+      "stated": false
+    },
+    "experience": {
+      "raw": "6 months–1 year",
+      "min_months": 6,
+      "max_months": 12,
+      "fresher_ok": false
+    },
+    "experience_level": "Early career",
+    "skills": [
+      {
+        "name": "Communication",
+        "basis": "curated"
+      },
+      {
+        "name": "Sales",
+        "basis": "curated"
+      },
+      {
+        "name": "Customer handling",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": null,
+      "max": null,
+      "period": null,
+      "currency": "INR",
+      "incentives": false,
+      "stated": false,
+      "raw": "Not stated"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "observed_public",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-017",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "may_require_login"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "A captured copy said \"no longer accepting applications\"; availability must be reconfirmed."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [
+      "possibly_closed"
+    ],
+    "inferences": [],
+    "fixture": false
+  },
+  {
+    "source_id": "SIG-018",
+    "title": "Electronics Technician (SMD soldering) - Sisha Green Tech",
+    "source_url": "https://www.linkedin.com/posts/hardikrawal_hiring-electronicstechnician-solderingjobs-activity-7432088134256910337-4PcW",
+    "source_url_kind": "social_post",
+    "original_post_id": "7432088134256910337",
+    "platform": "LinkedIn",
+    "source_type": "public_listing",
+    "evidence_type": "historical_post",
+    "captured_at": "2026-10-16",
+    "published_at": "2026-02-24",
+    "published_at_basis": "derived_from_post_id",
+    "last_rechecked_at": "2026-10-16",
+    "employer_identity": "Sisha Green Tech",
+    "recruiter_identity": null,
+    "sector": "63",
+    "geo": {
+      "granularity": "sector",
+      "basis": "curator_transcribed",
+      "scope_status": "in_scope",
+      "claimed_sector": "63",
+      "locality_text": null,
+      "lat": null,
+      "lon": null,
+      "geocode_verified": false,
+      "note": null
+    },
+    "role_title_raw": "Electronics Technician (SMD soldering)",
+    "canonical_occupation": "Electronics technician (SMD soldering)",
+    "occupation_family": "Electronics & manufacturing",
+    "iti_trade_relevance": [
+      "Electronics Mechanic"
+    ],
+    "source_text_excerpt": null,
+    "curator_note": "Older social recruiting post. Historical occupational signal only, not an active vacancy.",
+    "education": {
+      "raw": "ITI Electronics / diploma / 12th",
+      "accepted": [
+        "12th",
+        "iti_electronics_mechanic",
+        "diploma"
+      ],
+      "stated": true
+    },
+    "experience": {
+      "raw": "Freshers with strong skills considered",
+      "min_months": 0,
+      "max_months": null,
+      "fresher_ok": true
+    },
+    "experience_level": "Entry level",
+    "skills": [
+      {
+        "name": "Soldering",
+        "basis": "curated"
+      },
+      {
+        "name": "PCB assembly",
+        "basis": "curated"
+      },
+      {
+        "name": "Electronics testing",
+        "basis": "curated"
+      },
+      {
+        "name": "ESD handling",
+        "basis": "curated"
+      }
+    ],
+    "certifications_required": [],
+    "shift": {
+      "raw": null,
+      "night_shift": null,
+      "days_per_week": null
+    },
+    "commute": {
+      "raw": null,
+      "transport_provided": null
+    },
+    "wage": {
+      "min": null,
+      "max": null,
+      "period": null,
+      "currency": "INR",
+      "incentives": false,
+      "stated": false,
+      "raw": "Not stated"
+    },
+    "contract_type": "not_stated",
+    "vacancy_claimed": null,
+    "verification_status": "historical",
+    "verification_contact": null,
+    "verified_at": null,
+    "vacancy_count_verified": null,
+    "start_date": null,
+    "verification_id": null,
+    "verified_roles": [],
+    "dedupe_cluster": "DC-SIG-018",
+    "duplicate_status": "unique",
+    "expiry": null,
+    "accessibility_restrictions": [
+      "may_require_login"
+    ],
+    "confidence": {
+      "level": "low",
+      "rationale": "Older social recruiting post. Occupational context only, not an active vacancy."
+    },
+    "review": {
+      "state": "approved",
+      "by": "prototype-v0-curator",
+      "at": "2026-10-16T00:00:00Z",
+      "note": "Curated in the v0 public-data snapshot; approved for display as observed public evidence only."
+    },
+    "open_flags": [],
+    "inferences": [
+      {
+        "text": "Post date about 24 Feb 2026, derived from the LinkedIn activity identifier, not read from the page.",
+        "basis": "curator"
+      }
+    ],
+    "fixture": false
+  }
+]

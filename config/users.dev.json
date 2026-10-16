@@ -1,0 +1,37 @@
+[
+  {
+    "id": "dev-observer",
+    "name": "Demo Observer",
+    "role": "observer",
+    "token_sha256": "08622ee8826693ad2abb4bb9c79060d02934f7f43a69947e31bee6bb3046e689",
+    "_dev_token_hint": "dev-observer-token"
+  },
+  {
+    "id": "dev-researcher",
+    "name": "Demo Researcher",
+    "role": "researcher",
+    "token_sha256": "b1a8b326a0243c8d9d0c5d1ea354f68b7a97cafdd2b0050efe9c5a6a97205c61",
+    "_dev_token_hint": "dev-researcher-token"
+  },
+  {
+    "id": "dev-verifier",
+    "name": "Demo Employer Verifier",
+    "role": "employer_verifier",
+    "token_sha256": "7b7448cba556f58597b216a1feb347713f44ce5d5efb8293c01571f54a12a62b",
+    "_dev_token_hint": "dev-verifier-token"
+  },
+  {
+    "id": "dev-admin",
+    "name": "Demo Administrator",
+    "role": "administrator",
+    "token_sha256": "1734d503f6aa6a047c36d113cbad769f719c93784b469b771c4c3e7c63adbefd",
+    "_dev_token_hint": "dev-admin-token"
+  },
+  {
+    "id": "dev-admin-2",
+    "name": "Demo Administrator (second approver)",
+    "role": "administrator",
+    "token_sha256": "e41b8e8035fc1cf0cddb724e418de0bb16730ac1ed147654db497a05d18904de",
+    "_dev_token_hint": "dev-admin-2-token"
+  }
+]

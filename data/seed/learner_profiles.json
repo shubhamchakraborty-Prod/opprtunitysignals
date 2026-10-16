@@ -1,0 +1,62 @@
+[
+  {
+    "id": "iti_electronics",
+    "label": "ITI Electronics Mechanic",
+    "illustrative": true,
+    "qualifications": ["10th", "iti_electronics_mechanic"],
+    "certifications": ["NCVT/SCVT trade certificate"],
+    "experience_months": 0,
+    "english": "basic",
+    "home_catchment": "Gautam Buddh Nagar",
+    "willing_to_relocate": false,
+    "skills": ["Electrical basics", "Electronics testing", "Soldering", "PCB assembly", "Quality inspection", "Measurement", "Machine safety", "ESD handling"]
+  },
+  {
+    "id": "iti_fitter",
+    "label": "ITI Fitter",
+    "illustrative": true,
+    "qualifications": ["10th", "iti_fitter"],
+    "certifications": ["NCVT/SCVT trade certificate"],
+    "experience_months": 0,
+    "english": "basic",
+    "home_catchment": "Gautam Buddh Nagar",
+    "willing_to_relocate": false,
+    "skills": ["Fitting and assembly", "Machine safety", "Measurement", "Quality inspection", "Production processes", "Mechanical drawing"]
+  },
+  {
+    "id": "iti_machinist",
+    "label": "ITI Machinist",
+    "illustrative": true,
+    "qualifications": ["10th", "iti_machinist"],
+    "certifications": ["NCVT/SCVT trade certificate"],
+    "experience_months": 0,
+    "english": "basic",
+    "home_catchment": "Gautam Buddh Nagar",
+    "willing_to_relocate": false,
+    "skills": ["Lathe operation", "Milling", "CNC basics", "Machine safety", "Measurement", "Mechanical drawing", "Quality inspection"]
+  },
+  {
+    "id": "iti_copa",
+    "label": "ITI COPA (Computer Operator and Programming Assistant)",
+    "illustrative": true,
+    "qualifications": ["10th", "iti_copa"],
+    "certifications": ["NCVT/SCVT trade certificate"],
+    "experience_months": 0,
+    "english": "functional",
+    "home_catchment": "Gautam Buddh Nagar",
+    "willing_to_relocate": false,
+    "skills": ["Computer basics", "Typing", "Excel", "Office administration", "Documentation", "Reporting"]
+  },
+  {
+    "id": "class12",
+    "label": "Class 12 pass candidate",
+    "illustrative": true,
+    "qualifications": ["10th", "12th"],
+    "certifications": [],
+    "experience_months": 0,
+    "english": "unknown",
+    "home_catchment": "Gautam Buddh Nagar",
+    "willing_to_relocate": false,
+    "skills": ["Communication", "Customer handling", "Problem solving", "Typing", "Computer basics"]
+  }
+]

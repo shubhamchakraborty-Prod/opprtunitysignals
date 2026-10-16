@@ -1,0 +1,37 @@
+{
+  "name": "noida-62-63-opportunity-explorer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Research-grade pilot: public hiring signals, employer verification and ITI planning evidence for Noida Sectors 62 and 63.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "seed:build": "node scripts/build-seed.mjs",
+    "build": "node scripts/build-web.mjs",
+    "docs:onepager": "node scripts/build-onepager.mjs",
+    "start": "node src/server/index.js",
+    "dev": "npm run build && node src/server/index.js",
+    "test": "node --test test/*.test.js",
+    "test:pg": "node --test test/pg-store.test.js",
+    "test:e2e": "npm run build && node --test test/e2e/*.test.mjs",
+    "typecheck": "tsc -p jsconfig.json",
+    "screenshots": "npm run build && node scripts/screenshots.mjs",
+    "db:migrate": "node src/server/db/migrate.js",
+    "db:seed": "node src/server/db/seed-pg.js",
+    "check-links": "node src/server/worker/check-links.js",
+    "ingest": "node src/server/worker/ingest-csv.js"
+  },
+  "dependencies": {
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/pg": "^8.23.1",
+    "esbuild": "^0.25.12",
+    "leaflet": "^1.9.4",
+    "playwright-core": "^1.56.1",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "approximate": true,
+  "note": "Approximate visual guides only. Centres were placed for orientation using public maps as a reference; they are not survey or official sector boundaries. Map data: OpenStreetMap contributors (ODbL) when tiles load.",
+  "reference_map": "https://www.mapsofindia.com/maps/uttarpradesh/noida-city-map.htm",
+  "sectors": {
+    "62": { "centre": [28.6195, 77.3689], "radius_m": 500, "colour": "#337e79" },
+    "63": { "centre": [28.6226, 77.3811], "radius_m": 500, "colour": "#625cb0" }
+  },
+  "fit_bounds": [[28.6137, 77.3606], [28.6308, 77.3890]]
+}
