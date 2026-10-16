@@ -9,7 +9,7 @@ import { select } from './views/explore.js';
 import { renderDetail } from './views/explore.js';
 
 const COLOURS = { '62': '#337e79', '63': '#625cb0' };
-const SCHEMATIC_CENTRES = { '62': [255, 205], '63': [471, 235] };
+const SCHEMATIC_CENTRES = { '62': [262, 218], '63': [482, 246] };
 let map = null;
 let markers = [];
 let tilesOk = false;
@@ -23,7 +23,7 @@ export function groupRecords(records, kind) {
     const precise = kind === 'presence' ? 'presence' : r.geo.geocode_verified ? 'verified' : 'approx';
     const who = (r.employer_identity || r.recruiter_identity || 'Undisclosed').trim();
     const key = `${precise}|${sector}|${who.toLowerCase()}`;
-    if (!groups.has(key)) groups.set(key, { key, precise, sector, employer: who, records: [], label: precise === 'verified' ? 'verified address' : precise === 'presence' ? 'employer presence (not a vacancy)' : 'sector-level, approximate' });
+    if (!groups.has(key)) groups.set(key, { key, precise, sector, employer: who, records: [], label: precise === 'verified' ? 'exact address checked' : precise === 'presence' ? 'employer with no job ad' : 'placed by sector, not exact' });
     groups.get(key).records.push(r);
   }
   return [...groups.values()];
@@ -57,7 +57,7 @@ function activate(g) {
 
 function pinLabel(g) {
   const n = g.records.length;
-  return `${g.employer}: ${n} record${n > 1 ? 's' : ''}, Sector ${g.sector}, ${g.label}`;
+  return `${g.employer}: ${n} job ad${n > 1 ? 's' : ''}, Sector ${g.sector}, ${g.label}`;
 }
 
 function renderSchematic(groups) {
@@ -70,13 +70,14 @@ function renderSchematic(groups) {
     const c = SCHEMATIC_CENTRES[g.sector];
     const x = c[0] + Math.cos(t) * rad, y = c[1] + Math.sin(t) * rad;
     const older = g.records.every(isOlder);
-    const fill = g.precise === 'presence' ? '#ffffff' : older ? '#9caab1' : g.precise === 'verified' ? '#172c41' : COLOURS[g.sector];
+    const fill = g.precise === 'presence' ? 'ppres' : older ? 'pold' : g.precise === 'verified' ? 'pver' : 'p' + g.sector;
     const sel = g.records.some((r) => r.source_id === app.state.selected) || app.state.selectedGroup?.key === g.key;
+    const ring = `ring ${sel ? 'sel' : ''} ${g.precise === 'presence' ? 'pres' : ''}`;
     const shape = g.precise === 'verified'
-      ? `<rect x="${x - 10}" y="${y - 10}" width="20" height="20" fill="${fill}" stroke="${sel ? '#f0a33a' : '#fff'}" stroke-width="3"/>`
-      : `<circle cx="${x}" cy="${y}" r="11" fill="${fill}" stroke="${sel ? '#f0a33a' : g.precise === 'presence' ? '#8d9aa2' : '#fff'}" stroke-width="3" ${g.precise === 'approx' ? '' : ''}/>`;
-    const badge = g.records.length > 1 ? `<circle cx="${x + 10}" cy="${y - 9}" r="7" fill="#bd7c37" stroke="#fff" stroke-width="1.5"/><text x="${x + 10}" y="${y - 6}" font-size="8" font-weight="bold" fill="#fff" text-anchor="middle">${g.records.length}</text>` : '';
-    return `<g class="fpin" tabindex="0" role="button" aria-label="${esc(pinLabel(g))}" data-key="${esc(g.key)}">${shape}<text x="${x}" y="${y + 3}" font-size="8" font-weight="bold" fill="${g.precise === 'presence' ? '#5c6d78' : '#fff'}" text-anchor="middle">${g.precise === 'presence' ? 'P' : g.sector}</text>${badge}</g>`;
+      ? `<rect class="${fill} ${ring}" x="${x - 11}" y="${y - 11}" width="22" height="22" rx="4" stroke-width="3"/>`
+      : `<circle class="${fill} ${ring}" cx="${x}" cy="${y}" r="12" stroke-width="3"/>`;
+    const badge = g.records.length > 1 ? `<circle class="badge" cx="${x + 11}" cy="${y - 10}" r="7.5"/><text class="badge-t" x="${x + 11}" y="${y - 7}" font-size="9" font-weight="700" text-anchor="middle">${g.records.length}</text>` : '';
+    return `<g class="fpin" tabindex="0" role="button" aria-label="${esc(pinLabel(g))}" data-key="${esc(g.key)}">${shape}<text class="${g.precise === 'presence' ? 'tpres' : ''}" x="${x}" y="${y + 3}" font-size="9" font-weight="700" text-anchor="middle">${g.precise === 'presence' ? 'P' : g.sector}</text>${badge}<title>${esc(pinLabel(g))}</title></g>`;
   }).join('');
   $$('.fpin').forEach((el) => {
     const g = groups.find((x) => x.key === el.dataset.key);
@@ -112,8 +113,8 @@ export function renderPins() {
   if (map && tilesOk) renderLeaflet(groups);
   const anyVerified = groups.some((g) => g.precise === 'verified');
   $('#mapLabel').textContent = tilesOk
-    ? `Round pins are sector-level groupings, not employer addresses.${anyVerified ? ' Square pins are verified addresses.' : ''}`
-    : 'Schematic view - not geographically exact. Pins are sector-level groupings.';
+    ? `Round dots show the sector, not the exact office.${anyVerified ? ' Square dots are checked addresses.' : ''}`
+    : 'Sketch only. Dots show the sector, not the exact office.';
 }
 
 function useFallback(reason) {
@@ -141,14 +142,14 @@ function initLeaflet() {
   });
   layer.on('tileerror', () => {
     failed++;
-    if (!loaded && failed >= 3) useFallback('Street map tiles could not be loaded (offline or blocked).');
+    if (!loaded && failed >= 3) useFallback('The street map could not load (offline or blocked).');
   });
   layer.addTo(map);
   for (const [sec, s] of Object.entries(geo.sectors)) {
-    L.circle(s.centre, { radius: s.radius_m, color: s.colour, weight: 1, dashArray: '5,6', fillOpacity: 0.05 }).addTo(map).bindTooltip(`Sector ${sec}: approximate visual guide, not an official boundary`);
+    L.circle(s.centre, { radius: s.radius_m, color: getComputedStyle(document.documentElement).getPropertyValue(sec === '62' ? '--s62' : '--s63').trim() || s.colour, weight: 1, dashArray: '5,6', fillOpacity: 0.05 }).addTo(map).bindTooltip(`Sector ${sec}: rough guide, not an official boundary`);
   }
   map.fitBounds(geo.fit_bounds, { padding: [22, 22] });
-  setTimeout(() => { if (!loaded) useFallback('Street map tiles did not load in time (offline or blocked).'); }, 6000);
+  setTimeout(() => { if (!loaded) useFallback('The street map did not load in time (offline or blocked).'); }, 6000);
 }
 
 /** Load Leaflet from the bundled vendor copy; schematic stays usable throughout. */
@@ -157,6 +158,7 @@ export function initMap() {
   $('#leafletMap').style.display = 'none';
   renderPins();
   if (!navigator.onLine) return useFallback('This device is offline.');
+  if (window.__NO_STREET_MAP__) return useFallback(window.__NO_STREET_MAP__);
   const css = document.createElement('link');
   css.rel = 'stylesheet';
   css.href = 'vendor/leaflet/leaflet.css';

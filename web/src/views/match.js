@@ -1,49 +1,64 @@
-// Who could fit? Example learner profiles, hard gates and skill overlap.
-import { app } from '../app.js';
-import { esc, $ } from '../ui.js';
+// Match a learner: pick an example learner, see which ads could fit, grouped
+// by what stands in the way. Hard rules are shown separately from skills.
+import { app, SOME_OVERLAP } from '../app.js';
+import { esc, $, sectorTag } from '../ui.js';
 import { rankMatches, eduLabel } from '../../../src/core/matching.js';
 import { comparisonBase } from '../../../src/core/analytics.js';
 import { wageText } from '../../../src/core/decisions.js';
 
-const STATUS_TEXT = { pass: 'Met', fail: 'Not met', unknown: 'Unresolved', not_stated: 'Not stated' };
+const STATUS_TEXT = { pass: 'OK', fail: 'Not met', unknown: 'Ask employer', not_stated: 'Not mentioned' };
+const SHORT = { iti_electronics: 'Electronics repair, soldering, testing', iti_fitter: 'Fitting, assembly, measuring', iti_machinist: 'Lathe, milling, CNC basics', iti_copa: 'Computers, typing, office work', class12: 'School-leaver, no trade yet' };
 
 function profile() {
-  const base = app.data.profiles.find((p) => p.id === app.state.persona) || app.data.profiles[0];
+  const base = app.profile(app.state.persona) || app.data.profiles[0];
   return { ...base, ...app.state.adjust };
 }
 
 export function renderMatch() {
   const p = profile();
   const records = comparisonBase(app.data.records.filter((r) => r.review.state === 'approved'), app.state.filters.sector);
-  const ranked = rankMatches(p, records, 12);
+  const ranked = rankMatches(p, records, 50);
+  const groups = [
+    ['Worth a call to the employer', 'No stated rule rules this learner out, and they share some of the skills.', ranked.filter(({ m }) => m.verdict !== 'gate_not_met' && m.overlap.ratio >= SOME_OVERLAP)],
+    ['Possible, but the learner needs more skills', 'No stated rule rules them out, but they share few of the skills asked for.', ranked.filter(({ m }) => m.verdict !== 'gate_not_met' && m.overlap.ratio < SOME_OVERLAP)],
+    ['Not eligible as the ad is written', 'The ad asks for more experience, a different qualification or a language level this learner does not have. Useful for spotting training gaps.', ranked.filter(({ m }) => m.verdict === 'gate_not_met')],
+  ];
   const opt = (v, cur, label) => `<option value="${v}" ${String(cur) === String(v) ? 'selected' : ''}>${label}</option>`;
-  $('#match').innerHTML = `<div class="wide"><h2 class="section-title">Which opportunities might match a learner?</h2><p class="section-description">Choose an example learner profile. Hard gates (qualification, certification, experience, location, language) are checked separately from skill overlap. <strong>Skill overlap is not hiring eligibility</strong>, and nothing here certifies a learner or promises a job. Uses the sector chosen on the Explore tab (${app.state.filters.sector === 'all' ? 'both sectors' : 'Sector ' + app.state.filters.sector}).</p>
-  <div class="profile-wrap"><div class="profile-aside"><h3><label for="persona">Choose a learner profile</label></h3><select id="persona">${app.data.profiles.map((x) => opt(x.id, app.state.persona, esc(x.label))).join('')}</select>
-  <div class="eyebrow">Assumed for this example</div>
-  <ul><li>Qualifications: ${esc(p.qualifications.map(eduLabel).join(', '))}</li><li>Certificates: ${esc(p.certifications.join(', ') || 'none recorded')}</li><li>Lives in: ${esc(p.home_catchment)}</li></ul>
-  <div class="form" style="margin-top:10px"><label for="adjEnglish">Spoken English (assumption)</label><select id="adjEnglish">${['unknown', 'basic', 'functional', 'strong'].map((v) => opt(v, p.english, v)).join('')}</select>
-  <label for="adjExp" style="margin-top:10px">Work experience</label><select id="adjExp">${[[0, 'Fresher'], [6, '6 months'], [12, '1 year'], [24, '2 years'], [36, '3 years'], [60, '5 years']].map(([v, l]) => opt(v, p.experience_months, l)).join('')}</select>
-  <label class="checkline" style="margin-top:12px;text-transform:none;letter-spacing:0"><input type="checkbox" id="adjReloc" ${p.willing_to_relocate ? 'checked' : ''}/> Willing to relocate</label></div>
-  <div class="eyebrow" style="margin-top:14px">Skills in this example</div><ul>${p.skills.map((s) => '<li>' + esc(s) + '</li>').join('')}</ul>
-  <div class="method">These are illustrative profiles, not records of real trainees. Authorised, aggregate ITI capability inventories can replace them later only with approval. No personal data is used or shown.</div></div>
-  <div class="matchlist"><div class="panel-head"><h3>Potential occupational connections</h3><span class="count">Gates first, then skill overlap</span></div>${ranked.map(({ r, m }, i) => item(r, m, i < 3)).join('') || '<div class="empty">No current signals for this sector.</div>'}</div></div></div>`;
-  $('#persona').onchange = (e) => { app.state.persona = e.target.value; app.state.adjust = {}; renderMatch(); };
+  $('#match').innerHTML = `<div class="section-head"><div><h2>Which jobs could a learner go for?</h2><p>Pick an example learner. We check the ad’s firm requirements first, then the skills. A match is a reason to call the employer, not a promise of a job. Uses the area chosen on the Jobs map (${app.state.filters.sector === 'all' ? 'both sectors' : 'Sector ' + esc(app.state.filters.sector)}).</p></div></div>
+  <div class="profiles" role="group" aria-label="Example learner">${app.data.profiles.map((x) => `<button class="profile-tile ${x.id === app.state.persona ? 'active' : ''}" aria-pressed="${x.id === app.state.persona}" data-action="persona" data-id="${esc(x.id)}"><b>${esc(x.label.replace(/ \(.*\)$/, ''))}</b><span>${esc(SHORT[x.id] || '')}</span></button>`).join('')}</div>
+  <div class="card card-body"><div class="assume">
+    <div class="fgroup"><span class="flabel">Qualifications</span><span>${esc(p.qualifications.map(eduLabel).join(', '))}</span></div>
+    <div class="fgroup"><label for="adjEnglish">Spoken English</label><select id="adjEnglish" class="input">${[['unknown', 'Not assessed'], ['basic', 'Basic'], ['functional', 'Workable'], ['strong', 'Strong']].map(([v, l]) => opt(v, p.english, l)).join('')}</select></div>
+    <div class="fgroup"><label for="adjExp">Work experience</label><select id="adjExp" class="input">${[[0, 'Fresher'], [6, '6 months'], [12, '1 year'], [24, '2 years'], [36, '3 years'], [60, '5 years']].map(([v, l]) => opt(v, p.experience_months, l)).join('')}</select></div>
+    <label class="check"><input type="checkbox" id="adjReloc" ${p.willing_to_relocate ? 'checked' : ''}/> Willing to move</label>
+  </div><p class="note" style="margin-top:10px">Example profile, not a real trainee. No personal data is used. Later, approved ITI-level summaries can replace these examples.</p></div>
+  <div class="match-groups">${groups.map(([title, desc, items], gi) => {
+    const inner = items.length ? `<div class="match-list">${items.map(({ r, m }) => item(r, m)).join('')}</div>` : '<p class="note">None.</p>';
+    return gi < 2
+      ? `<div class="match-group"><h3>${esc(title)} <span class="tag">${items.length}</span></h3><p>${esc(desc)}</p>${inner}</div>`
+      : `<details class="match-group disclose"><summary><h3 style="display:inline-flex">${esc(title)} <span class="tag">${items.length}</span></h3></summary><p>${esc(desc)}</p>${inner}</details>`;
+  }).join('')}</div>`;
   $('#adjEnglish').onchange = (e) => { app.state.adjust.english = e.target.value; renderMatch(); };
   $('#adjExp').onchange = (e) => { app.state.adjust.experience_months = Number(e.target.value); renderMatch(); };
   $('#adjReloc').onchange = (e) => { app.state.adjust.willing_to_relocate = e.target.checked; renderMatch(); };
 }
 
-function item(r, m, open) {
-  const vcls = m.verdict === 'gates_met' ? '' : m.verdict === 'gates_unresolved' ? 'mid' : 'low';
-  const ocls = m.overlap.ratio >= 0.65 ? '' : m.overlap.ratio >= 0.34 ? 'mid' : 'low';
-  return `<div class="matchitem"><h4>${esc(r.role_title_raw)} <span class="matchtag ${vcls}">${esc(m.verdictLabel)}</span><span class="matchtag ${ocls}">${esc(m.overlap.label)} · ${m.overlap.matched.length}/${m.overlap.matched.length + m.overlap.missing.length}</span></h4>
-  <div class="matchmeta">${esc(r.employer_identity || 'Employer undisclosed')} · Sector ${esc(r.sector)} · ${esc(r.experience.raw)} · ${esc(wageText(r.wage))}</div>
-  <details ${open ? 'open' : ''}><summary class="need" style="cursor:pointer;margin-top:6px">Hard gates: ${m.gates.filter((g) => g.status === 'pass').length} met · ${m.gates.filter((g) => g.status === 'unknown').length} unresolved · ${m.gates.filter((g) => g.status === 'fail').length} not met</summary><table class="minitable" style="margin-top:8px"><tr><th>Gate</th><th>Status</th><th>Source fact</th><th>Inference</th></tr>${m.gates.map((g) => `<tr><td>${esc(g.gate)}</td><td><span class="status ${g.status}">${STATUS_TEXT[g.status]}</span></td><td>${esc(g.fact)}</td><td>${esc(g.inference || '-')}</td></tr>`).join('')}</table></details>
-  <p><strong>Matched skills:</strong> ${esc(m.overlap.matched.join(', ') || 'None of the named skills')}</p>
-  <p><strong>Skills to develop:</strong> ${esc(m.overlap.missing.join(', ') || 'No additional named skills in this simplified mapping')}</p>
-  ${m.gaps.length ? `<p><strong>Qualification or experience gaps:</strong> ${esc(m.gaps.join(' '))}</p>` : ''}
-  ${m.conditions.length ? `<p><strong>Employment terms to discuss:</strong> ${esc(m.conditions.join(', '))}</p>` : ''}
-  <p><strong>Recommendation:</strong> ${m.verdict === 'gate_not_met' ? 'Not a referral candidate on stated requirements; use as a skills-gap signal.' : 'Confirm unresolved gates with the employer before any referral.'} <a href="${esc(r.source_url)}" target="_blank" rel="noopener">Check listing requirements ↗</a></p></div>`;
+function item(r, m) {
+  const total = m.overlap.matched.length + m.overlap.missing.length;
+  return `<div class="match"><div class="job-top"><h4>${esc(r.role_title_raw)}</h4>${sectorTag(r)}</div>
+  <div class="note">${esc(r.employer_identity || 'Employer not named')} · ${esc(wageText(r.wage))} · ${esc(r.experience.raw)}</div>
+  <div class="meter"><span>Skills</span><div class="bar s${esc(r.sector)}"><i style="width:${Math.round(m.overlap.ratio * 100)}%"></i></div><strong>${m.overlap.matched.length}/${total}</strong></div>
+  ${m.gaps.length ? `<p><strong>Gap:</strong> ${esc(m.gaps.join(' '))}</p>` : ''}
+  ${m.overlap.missing.length ? `<p><strong>Skills to build:</strong> ${esc(m.overlap.missing.join(', '))}</p>` : '<p><strong>Skills:</strong> all named skills covered</p>'}
+  ${m.conditions.length ? `<p><strong>Conditions to discuss:</strong> ${esc(m.conditions.join(', '))}</p>` : ''}
+  <details class="disclose"><summary>Firm requirements checked</summary><div class="table-scroll" style="margin-top:8px"><table class="minitable"><tr><th>Rule</th><th>Result</th><th>Why</th></tr>${m.gates.map((g) => `<tr><td>${esc(g.gate)}</td><td><span class="status ${g.status}">${STATUS_TEXT[g.status]}</span></td><td>${esc(g.fact)}${g.inference ? `<br/><span class="note">${esc(g.inference)}</span>` : ''}</td></tr>`).join('')}</table></div></details>
+  <div class="actions"><button class="btn small" data-action="open-record" data-id="${esc(r.source_id)}">View job</button><a class="btn small ghost" href="${esc(r.source_url)}" target="_blank" rel="noopener">Original ad ↗</a></div></div>`;
 }
+
+app.actions.persona = (el) => {
+  app.state.persona = el.dataset.id;
+  app.state.adjust = {};
+  renderMatch();
+};
 
 app.views.match = renderMatch;

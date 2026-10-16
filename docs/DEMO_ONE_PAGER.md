@@ -28,12 +28,12 @@ A job advert is a signal, not a vacancy. An opening counts only after the employ
 
 ## Demonstration path (10 minutes)
 
-1. **Guided start:** choose Sector 63 and "ITI Electronics Mechanic".
-2. **Explore:** click a pin or record; read facts, inferences and the recommendation; open the original advert.
-3. **Compare 62 vs 63:** occupation mix, most frequent requirements, and why no trend is shown yet.
-4. **Who could fit?:** see qualification and experience gates for an ITI learner, separate from skill overlap.
-5. **Planning & outreach:** five Sector 62/63 records are flagged as priority for employer calls; none is yet ready for planning.
-6. **Employer verification (verifier role):** record a call; the openings count rises only after a second person approves.
+1. **Quick start:** choose Sector 63 and "ITI Electronics Mechanic"; the list narrows to ads that may suit that learner.
+2. **Jobs map:** click a dot or ad; read what the ad says, what we think and what to do next; open the original ad.
+3. **Compare 62 and 63:** type of work, skills asked for, and why no trend is shown yet.
+4. **Match a learner:** see which ads are worth a call, which need more skills, and which the learner is not eligible for as written.
+5. **Next steps:** five ads are flagged "call these employers first"; none is yet ready for planning.
+6. **Record an employer call (team sign-in):** the confirmed-jobs count rises only after a second person approves.
 
 ## Safeguards
 

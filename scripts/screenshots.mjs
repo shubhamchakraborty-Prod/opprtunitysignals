@@ -20,16 +20,20 @@ try {
   await shot(page, join(out, '00-guided-start.png'), false);
   await page.click('[data-action=guide-skip]');
   await page.waitForTimeout(6500);
+  await shot(page, join(out, '01-jobs-map.png'));
   await page.locator('#jobCards .job', { hasText: 'Production Engineer' }).click();
-  await shot(page, join(out, '01-explore-opportunities.png'));
-  const tabs = [['compare', '02-compare-62-vs-63'], ['match', '03-who-could-fit'], ['voice', '04-worker-employer-voice'], ['plan', '05-planning-and-outreach'], ['evidence', '08-source-register']];
+  await page.waitForTimeout(400);
+  await shot(page, join(out, '01b-job-detail.png'), false);
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(300);
+  const tabs = [['compare', '02-compare-62-and-63'], ['match', '03-match-a-learner'], ['plan', '04-next-steps'], ['voice', '05-workers-views'], ['evidence', '06-sources']];
   for (const [t, name] of tabs) {
     await page.click(`.tab[data-tab=${t}]`);
     await page.waitForTimeout(300);
     await shot(page, join(out, name + '.png'));
   }
   await signIn(page, 'dev-admin-token');
-  for (const [t, name] of [['review', '06-source-review-queue'], ['verify', '07-employer-verification']]) {
+  for (const [t, name] of [['review', '07-review-queue'], ['verify', '08-record-employer-call']]) {
     await page.click(`.tab[data-tab=${t}]`);
     await page.waitForTimeout(500);
     await shot(page, join(out, name + '.png'));
@@ -39,3 +43,4 @@ try {
   await browser.close();
   srv.stop();
 }
+

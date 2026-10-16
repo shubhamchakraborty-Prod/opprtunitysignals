@@ -36,10 +36,24 @@ test('AT3: historical post hidden by default, dated when shown', async () => {
   await page.goto(srv.url + '/?noguide');
   await page.waitForSelector('#jobCards .job');
   assert.ok(!(await text(page, '#jobCards')).includes('Electronics Technician'));
+  await page.click('#moreBtn');
   await page.check('#historic');
   const card = page.locator('#jobCards .job', { hasText: 'Electronics Technician' });
-  assert.match(await card.textContent(), /Older signal · Posted c\. 24 Feb 2026/);
+  assert.match(await card.textContent(), /Old ad · Feb 2026/);
+  await card.click();
+  assert.match(await text(page, '#detailPanel'), /Posted around 24 Feb 2026/);
   assert.equal(await text(page, '#mCount'), '17', 'historical shown but not counted');
+});
+
+test('learner filter narrows every counter; team tabs hidden from the public', async () => {
+  const page = await newPage(browser);
+  await page.goto(srv.url + '/?noguide');
+  await page.waitForSelector('#jobCards .job');
+  assert.ok(await page.locator('.tab[data-tab=review]').isHidden());
+  await page.selectOption('#suits', 'iti_electronics');
+  assert.deepEqual([await text(page, '#mCount'), await text(page, '#m62'), await text(page, '#m63')], ['1', '0', '1']);
+  assert.equal(await page.$$eval('#jobCards .job', (x) => x.length), 1);
+  assert.match(await text(page, '#suitsNote'), /ITI Electronics Mechanic/);
 });
 
 test('AT8, AT9, AT10 in the UI', async () => {
@@ -48,10 +62,10 @@ test('AT8, AT9, AT10 in the UI', async () => {
   await page.waitForSelector('#sentimentEmpty');
   assert.match(await text(page, '#sentimentEmpty'), /No measured sentiment available/);
   await page.click('.tab[data-tab=plan]');
-  assert.match(await text(page, '#plan'), /Demand coverage\s*verified openings ÷ expected ITI pass-outs\s*Not available/);
+  assert.match(await text(page, '#plan'), /Are there enough jobs for our ITI learners\?\s*Not available yet/);
   await page.click('.tab[data-tab=discover]');
   await page.click('#jobCards .job >> nth=0');
-  const a = page.locator('#detailPanel a', { hasText: 'Open original source' });
+  const a = page.locator('#detailPanel a', { hasText: 'Open the original ad' });
   assert.match(await a.getAttribute('href'), /^https:\/\//);
   assert.equal(await a.getAttribute('target'), '_blank');
 });
@@ -86,7 +100,7 @@ test('offline single-file build works from disk without a server', async () => {
   const page = await newPage(browser);
   await page.goto(pathToFileURL(join(ROOT, 'dist/explorer-offline.html')).href + '?noguide');
   await page.waitForSelector('#jobCards .job');
-  assert.match(await text(page, '#modePill'), /offline snapshot/);
+  assert.match(await text(page, '#modePill'), /Offline copy/);
   assert.equal(await text(page, '#mCount'), '17');
   assert.deepEqual(page.errors, []);
 });

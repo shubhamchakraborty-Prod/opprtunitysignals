@@ -8,7 +8,8 @@ Not an official employment service. Not an authorised government programme.
 
 | Goal | Command | Notes |
 |---|---|---|
-| Open the offline snapshot | open `dist/explorer-offline.html` | No install, no server. Read-only data with a demo sandbox for roles; nothing is saved. |
+| Open the offline snapshot | open `dist/explorer-offline.html` | No install, no server. Practice mode for team roles; nothing is saved. |
+| claude.ai page | `dist/artifact.html` | Same app without the document skeleton, for publishing as a claude.ai artifact (map sketch only). |
 | Run the full pilot (file store) | `npm install && npm run dev` then open http://127.0.0.1:8080 | Data persists in `data/runtime/db.json`; audit trail in `data/runtime/audit.jsonl`. |
 | Run on PostgreSQL / PostGIS | `DATABASE_URL=postgres://… STORE=pg npm run dev` | Migrates and seeds an empty database automatically. |
 | Demo without persistence | `STORE=memory npm run dev` | Resets on restart. |
@@ -20,7 +21,7 @@ Requirements: Node 20+. PostgreSQL 14+ with PostGIS 3 only for `STORE=pg`.
 
 ### Dev sign-in
 
-Unauthenticated visitors are **Observers**. Use "Viewing as" (top right) and a dev token:
+Unauthenticated visitors are **Observers**. Use "Team sign-in" (top right) and a dev token:
 
 | Role | Token | Can |
 |---|---|---|
@@ -33,19 +34,22 @@ Dev tokens are for local demos only. See `config/README.md` for real users.
 
 ## Screens
 
+Designed for a first-time, non-technical viewer: the answer comes first, labels use plain words, and every ad carries a coloured trust label (seen online / call planned / confirmed / old / location unclear). Team tools are hidden until someone signs in. Light and dark themes follow the device.
+
 | Tab | Answers | Screenshot |
 |---|---|---|
-| Guided start | First-run: choose 62 / 63 / Both and an occupation or ITI trade | `docs/screenshots/00-guided-start.png` |
-| Explore opportunities | Q1, Q3: filters, KPIs, map (grouped by employer and precision), list, detail with Fact / Inference / Recommendation | `01-explore-opportunities.png` |
-| Compare 62 vs 63 | Q1, Q5: occupation mix, requirement frequencies, employment terms, source coverage, missingness, trend refusal | `02-compare-62-vs-63.png` |
-| Who could fit? | Q4: Electronics Mechanic, Fitter, Machinist, COPA, Class 12; hard gates + skill gaps | `03-who-could-fit.png` |
-| Worker & employer voice | Q6: disabled until consented interviews exist; advert terms shown separately | `04-worker-employer-voice.png` |
-| Planning & outreach | Q2, Q7: planning-ready vs outreach tiers, demand coverage, management note | `05-planning-and-outreach.png` |
-| Source review | Pending review, employer checks, duplicates, unverifiable, expired/stale, follow-ups, approvals, audit log | `06-source-review-queue.png` |
-| Employer verification | Dated notes, roles, openings, entry pay, start date, pre-screen, contact, consent basis | `07-employer-verification.png` |
-| Source register | Every record to its source, freshness, confidence; CSV export | `08-source-register.png` |
+| Quick start | Pick an area and the learner you are finding jobs for | `docs/screenshots/00-guided-start.png` |
+| Jobs map | Q1, Q3: summary cards, filters (area, learner, type of work), sketch or street map, job list | `01-jobs-map.png` |
+| Job details (drawer) | Q3, Q4: pay, requirements, "Is this a real, open job?" steps, who could do it, what the ad says / what we think / what to do next | `01b-job-detail.png` |
+| Compare 62 and 63 | Q1, Q5: type of work, skills, working conditions, what the ads leave out, trend refusal | `02-compare-62-and-63.png` |
+| Match a learner | Q4: five example learners, grouped into worth a call / needs more skills / not eligible as written | `03-match-a-learner.png` |
+| Next steps | Q2, Q7: ready for planning vs call these employers first, jobs per pass-out, management note | `04-next-steps.png` |
+| Workers' views | Q6: empty until consented interviews exist; ad conditions shown separately | `05-workers-views.png` |
+| Sources | Every ad linked to its page, freshness, how sure we are, CSV export | `06-sources.png` |
+| Review queue (team) | New uploads, employer calls, repeat ads, broken links, closed ads, approvals, change log | `07-review-queue.png` |
+| Record an employer call (team) | Dated notes, confirmed jobs, entry pay, start date, pre-screen, contact, legal basis | `08-record-employer-call.png` |
 
-Screenshots show the schematic map because street tiles were blocked in the capture environment; with internet access the OpenStreetMap layer loads.
+Screenshots show the map sketch because street tiles were blocked in the capture environment; with internet access the OpenStreetMap layer loads.
 
 ## Architecture
 
@@ -63,7 +67,7 @@ src/core/      shared domain logic (runs in browser and server, no dependencies)
   service.js     all use cases: RBAC, validation, four-eyes approval, audit
   note.js        management note (Markdown)
 src/server/    node:http API, bearer auth, file store, PostgreSQL/PostGIS store, workers
-web/           original markup and CSS + view modules (bundled by esbuild)
+web/           page template, styles (light and dark tokens) and view modules (bundled by esbuild)
 data/source/   untouched v0 inputs (snapshot JSON, CSV register, prototype HTML)
 data/seed/     evidence-model seed built by scripts/build-seed.mjs
 test/          node:test suites and Playwright e2e
@@ -72,7 +76,7 @@ test/          node:test suites and Playwright e2e
 Design choices:
 
 - **One rules engine.** Counters, matching and exports are computed by `src/core` in both the server and the browser, so the offline snapshot and the live API cannot disagree.
-- **Plain JavaScript with JSDoc types** (`checkJs`) instead of a React rewrite: the v0 layout is preserved exactly and the offline single file still works from disk.
+- **Plain JavaScript with JSDoc types** (`checkJs`), no framework: the offline single file still works from disk. The v0 page is kept unchanged in `data/source/prototype_index_v0.html`.
 - **No vector DB, LLM, queue or scraper.** CSV upload plus human review; external connectors only when licensed and approved.
 - **PostgreSQL/PostGIS**: JSONB provenance documents with generated columns, trigger-based record history, append-only audit log (trigger), DB-level checks (presence records carry no vacancies; verified counts only on confirmed records), approximate sector areas and `ST_Covers` scope checks for verified geocodes.
 

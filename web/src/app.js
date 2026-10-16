@@ -3,6 +3,11 @@
 import { defaultFilters, filterOpportunities, filterPresence } from '../../src/core/filters.js';
 import { representatives } from '../../src/core/dedupe.js';
 import { computeKpis } from '../../src/core/analytics.js';
+import { matchRecord } from '../../src/core/matching.js';
+import { planningBoard } from '../../src/core/decisions.js';
+
+/** At least a third of the named skills. */
+export const SOME_OVERLAP = 1 / 3 - 1e-9;
 
 const ls = {
   get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch { return d; } },
@@ -19,6 +24,7 @@ export const app = {
     tab: 'discover',
     layers: { approx: true, verified: true, presence: false },
     persona: 'iti_electronics',
+    suits: '',
     adjust: {},
     shortlist: ls.get('noida-shortlist', []),
     verifyPrefill: null,
@@ -36,9 +42,25 @@ export const app = {
     return (this.data?.permissions || []).includes(perm);
   },
 
+  /** Profiles a record may suit: no hard gate failed and at least partial skill overlap. */
+  suitsFor(r) {
+    const key = r.source_id + '|' + (r.verified_at || '') + '|' + r.verification_status;
+    this._suits = this._suits || new Map();
+    if (!this._suits.has(key)) this._suits.set(key, (this.data.profiles || []).filter((p) => {
+      const m = matchRecord(p, r);
+      return m.verdict !== 'gate_not_met' && m.overlap.ratio >= SOME_OVERLAP;
+    }).map((p) => p.id));
+    return this._suits.get(key);
+  },
+
+  profile(id) {
+    return (this.data.profiles || []).find((p) => p.id === id) || null;
+  },
+
   compute() {
-    const recs = this.data.records;
     const f = this.state.filters;
+    const suits = this.state.suits;
+    const recs = suits ? this.data.records.filter((r) => this.suitsFor(r).includes(suits)) : this.data.records;
     const visible = filterOpportunities(recs, f);
     const reps = representatives(visible).sort((a, b) => (a.sector || a.geo.claimed_sector || '').localeCompare(b.sector || b.geo.claimed_sector || '') || a.source_id.localeCompare(b.source_id));
     this.derived = {
@@ -46,6 +68,7 @@ export const app = {
       reps,
       presence: filterPresence(recs, f),
       kpis: computeKpis(recs.filter((r) => r.review.state === 'approved'), f, { asOf: this.data.asOf, pendingVerifications: this.data.pendingVerifications }),
+      board: planningBoard(reps, this.data.asOf),
     };
     return this.derived;
   },

@@ -24,14 +24,14 @@ const roleRow = (i, r = {}) => `<div class="role-row" data-role="${i}">
 export function renderVerify() {
   const root = $('#verify');
   if (!app.can('verify:submit')) {
-    root.innerHTML = `<div class="wide"><h2 class="section-title">Employer verification</h2>${lockNotice('Recording an employer verification requires the employer verifier or administrator role.')}<p class="section-description">Verification is how a public signal becomes an employer-confirmed opening. Each record needs a dated note, confirmed roles and openings, the consent or legal basis for contacting the employer, and approval by a second person.</p></div>`;
+    root.innerHTML = lockNotice('Record an employer call', 'This form is for the team member who phones or visits employers. Each call needs a dated note, the confirmed jobs and the legal basis for contact, and a second person approves it.');
     return;
   }
   const candidates = app.data.records.filter((r) => r.review.state === 'approved' && isInScope(r) && !isOlder(r) && r.evidence_type !== 'employer_presence');
   const pre = app.data.records.find((r) => r.source_id === app.state.verifyPrefill);
   const today = app.data.asOf;
-  root.innerHTML = `<div class="wide"><h2 class="section-title">Record an employer verification</h2><p class="section-description">Use after speaking to the employer. Submissions are stored with the contact details restricted to verifiers and administrators, and only count after a second person approves them in the Source review queue.</p>${message}
-  <form class="form section-panel" data-form="verification" novalidate>
+  root.innerHTML = `<div class="section-head"><div><h2>Record an employer call</h2><p>Fill this in after speaking to the employer. Contact details are visible only to the team. The jobs count only after a second person approves this in the Review queue.</p></div></div>${message}
+  <form class="form card card-body" data-form="verification" novalidate>
   <div class="form-grid">
   <div class="full"><label for="vRec">Public signal being verified</label><select id="vRec" name="record_id"><option value="">None - new opening reported directly by the employer</option>${candidates.map((r) => `<option value="${esc(r.source_id)}" ${pre?.source_id === r.source_id ? 'selected' : ''}>${esc(r.source_id)} · ${esc(r.role_title_raw)} · ${esc(r.employer_identity || r.recruiter_identity || 'Undisclosed')} · Sector ${esc(r.sector)}</option>`).join('')}</select></div>
   <div><label for="vEmp">Employer (legal or trading name)</label><input id="vEmp" name="employer_identity" required value="${esc(pre?.employer_identity || '')}"/></div>
@@ -40,7 +40,7 @@ export function renderVerify() {
   <div><label for="vMethod">Method</label><select id="vMethod" name="method">${VERIFICATION_METHODS.map((m) => `<option value="${m}">${m.replace(/_/g, ' ')}</option>`).join('')}</select></div>
   <div><label for="vOutcome">Outcome</label><select id="vOutcome" name="outcome">${VERIFICATION_OUTCOMES.map((m) => `<option value="${m}">${m.replace(/_/g, ' ')}</option>`).join('')}</select><div class="hint">“Contradicted” or “filled or closed” removes the signal from planning; “no response” keeps it pending.</div></div>
   <div><label for="vValid">Valid until (optional)</label><input id="vValid" name="valid_until" type="date"/><div class="hint">Defaults to 90 days after contact.</div></div>
-  <fieldset class="full"><legend>Confirmed roles, openings and entry terms</legend><div id="roleRows">${roleRow(0, pre ? { role_title: pre.role_title_raw, occupation_family: pre.occupation_family } : {})}</div><button type="button" class="btn small" data-action="add-role">Add another role</button></fieldset>
+  <fieldset class="full"><legend>Jobs the employer confirmed</legend><div id="roleRows">${roleRow(0, pre ? { role_title: pre.role_title_raw, occupation_family: pre.occupation_family } : {})}</div><button type="button" class="btn small" data-action="add-role">Add another role</button></fieldset>
   <fieldset class="full"><legend>Work location</legend><div class="form-grid">
   <div><label for="vSec">Sector</label><select id="vSec" name="sector"><option value="62" ${pre?.sector === '62' ? 'selected' : ''}>62</option><option value="63" ${pre?.sector === '63' ? 'selected' : ''}>63</option></select></div>
   <div><label for="vPrec">Precision confirmed</label><select id="vPrec" name="granularity"><option value="sector">Sector only</option><option value="locality">Locality / block</option><option value="address">Street address</option><option value="building">Building</option></select></div>
@@ -52,7 +52,7 @@ export function renderVerify() {
   <fieldset class="full"><legend>Outreach contact (restricted)</legend><div class="form-grid"><div><label for="cName">Contact name</label><input id="cName" name="contact_name"/></div><div><label for="cDes">Designation</label><input id="cDes" name="contact_designation"/></div><div><label for="cCh">Channel</label><input id="cCh" name="contact_channel" placeholder="phone / email / visit"/></div></div><div class="hint">Shown only to verifiers and administrators. Never shown on public views or exports for observers.</div></fieldset>
   <div><label for="vConsent">Consent or legal basis</label><select id="vConsent" name="consent_basis">${CONSENT_BASES.map((b) => `<option value="${b}">${b.replace(/_/g, ' ')}</option>`).join('')}</select></div>
   <div><label for="vConsentNote">Consent note</label><input id="vConsentNote" name="consent_note" placeholder="e.g. HR agreed to be recontacted"/></div>
-  </div><div class="detail-actions"><button class="btn strong" type="submit">Submit for second-person approval</button></div></form></div>`;
+  </div><div class="actions"><button class="btn primary" type="submit">Send for approval</button></div></form>`;
   app.state.verifyPrefill = null;
   message = '';
 }
@@ -67,7 +67,6 @@ app.actions['add-note'] = () => {
   $('#noteRows').insertAdjacentHTML('beforeend', `<div class="form-grid" style="margin-top:8px"><div><label for="n${i}d">Date</label><input id="n${i}d" type="date" name="note_date" value="${app.data.asOf}"/></div><div><label for="n${i}t">Note</label><input id="n${i}t" name="note_text"/></div></div>`);
 };
 
-app.forms = app.forms || {};
 app.forms.verification = async (form) => {
   const fd = new FormData(form);
   const roles = $$('.role-row', form).map((row) => {

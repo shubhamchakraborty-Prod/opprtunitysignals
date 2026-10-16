@@ -1,37 +1,33 @@
-// Compare 62 vs 63: occupation mix, requirement frequencies, employment
-// terms, source coverage and missingness, plus the trend refusal rule.
+// Compare 62 and 63: type of work, skills asked for, working conditions,
+// where the information came from and what the ads leave out.
 import { app } from '../app.js';
-import { esc, $, pct, KIND_LABEL, BASIS_LABEL } from '../ui.js';
+import { esc, $, pct, familyLabel, KIND_LABEL, BASIS_LABEL } from '../ui.js';
 import { rolePrevalence, requirementFrequencies, sourceCoverage, requirementTrend } from '../../../src/core/analytics.js';
 
-const bars = (rows, n, purple, label = (r) => r.name) => rows.map((r) => `<div class="barrow"><div class="barlabel"><span>${esc(label(r))}</span><strong>${r.count} <small style="font-weight:400;color:#7a8993">of ${n}</small></strong></div><div class="barline"><div class="barfill ${purple ? 'purple' : ''}" style="width:${n ? (r.count / n) * 100 : 0}%"></div></div></div>`).join('');
+const bars = (rows, n, sector) => `<div class="bars">${rows.map((r) => `<div class="bar-row"><div class="bar-label"><span>${esc(r.name)}</span><strong>${r.count} <small>of ${n}</small></strong></div><div class="bar s${sector}"><i style="width:${n ? (r.count / n) * 100 : 0}%"></i></div></div>`).join('')}</div>`;
 
 function column(sector, records) {
   const prev = rolePrevalence(records, sector);
   const req = requirementFrequencies(records, sector, app.data.asOf);
   const cov = sourceCoverage(records, sector);
-  const purple = sector === '63';
   const n = prev.denominator;
-  return `<div class="compare-col"><h3>Sector ${sector}<small>${sector === '62' ? 'Office, IT-enabled services and digital operations' : 'Production roles alongside IT-enabled services and business operations'}</small></h3>
-  <div style="font-size:12px;color:#677986;margin:13px 0 6px">${n} deduplicated current public signals · ${esc(prev.scope)}</div>
-  <div class="section-mini">Occupation groups</div>${bars(prev.rows.map((r) => ({ name: r.family, count: r.count })), n, purple)}
-  <div class="section-mini">Most frequent requirements (last ${req.windowDays} days, n=${req.denominator})</div>${bars(req.skills.slice(0, 6), req.denominator, purple)}
-  <div class="section-mini">Employment terms stated in adverts <span class="chip grey">not sentiment</span></div>${req.terms.length ? bars(req.terms, req.denominator, purple) : '<p class="need">No night-shift, six-day-week or similar terms recorded.</p>'}
-  <div class="section-mini">Source coverage</div>
-  <table class="minitable"><tr><th>Source</th><th>Records</th></tr>${cov.platforms.map((p) => `<tr><td>${esc(p.name)}</td><td>${p.count}</td></tr>`).join('')}</table>
-  <p class="need" style="margin-top:8px">Page types: ${cov.pageKinds.map((p) => `${esc(KIND_LABEL[p.name] || p.name)} ${p.count}`).join(' · ')}<br/>Location basis: ${cov.locationBasis.map((p) => `${esc(BASIS_LABEL[p.name] || p.name)} ${p.count}`).join(' · ')}<br/>Employer-confirmed: ${cov.employerConfirmed} of ${cov.denominator}</p>
-  <div class="section-mini">Missing information</div>
-  <table class="minitable"><tr><th>Field</th><th>Stated</th><th>Missing</th></tr>${req.missingness.map((m) => `<tr><td>${esc(m.field)}</td><td>${m.stated} (${pct(m.stated, req.denominator)})</td><td>${m.missing}</td></tr>`).join('')}</table></div>`;
+  const top = prev.rows[0];
+  return `<div class="card sector-col"><div><span class="sector-tag s${sector}">Sector ${sector}</span><h3 style="margin-top:8px">${n} job ads</h3><p class="verdict">${top ? `Most common: <strong>${esc(familyLabel(top.family))}</strong> (${top.count} of ${n}).` : 'No ads collected.'}</p></div>
+  <div><div class="section-label">Type of work</div>${bars(prev.rows.map((r) => ({ name: familyLabel(r.family), count: r.count })), n, sector)}</div>
+  <div><div class="section-label">Skills asked for most</div>${bars(req.skills.slice(0, 6), req.denominator, sector)}</div>
+  <div><div class="section-label">Working conditions written in the ads</div>${req.terms.length ? bars(req.terms, req.denominator, sector) : '<p class="note">No night shifts, six-day weeks or similar terms mentioned.</p>'}<p class="note" style="margin-top:6px">These are the employer’s terms, not what workers think of them.</p></div>
+  <div><div class="section-label">What the ads don’t tell us</div><div class="table-scroll"><table class="minitable"><tr><th>Information</th><th>Given in</th><th>Missing from</th></tr>${req.missingness.map((m) => `<tr><td>${esc(m.field)}</td><td>${m.stated} ads (${pct(m.stated, req.denominator)})</td><td>${m.missing}</td></tr>`).join('')}</table></div></div>
+  <div><div class="section-label">Where the information came from</div><p class="note">${cov.platforms.map((p) => `${esc(p.name)} ${p.count}`).join(' · ')}<br/>${cov.pageKinds.map((p) => `${p.count} from a ${esc(KIND_LABEL[p.name] || p.name)}`).join(' · ')}<br/>Location: ${cov.locationBasis.map((p) => `${esc(BASIS_LABEL[p.name] || p.name)} (${p.count})`).join(' · ')}<br/>Confirmed by employer: ${cov.employerConfirmed} of ${cov.denominator}</p></div></div>`;
 }
 
 export function renderCompare() {
   const records = app.data.records.filter((r) => r.review.state === 'approved');
   const trend = requirementTrend(records);
-  $('#compare').innerHTML = `<div class="wide"><h2 class="section-title">Two neighbouring sectors, different role mixes</h2><p class="section-description">This comparison counts the <strong>small sample of public job signals collected for this pilot</strong>. It must not be read as the actual total or share of hiring in either sector. Mirrored posts are counted once; unclear locations and historical posts are excluded.</p>
-  <div class="comparison">${column('62', records)}${column('63', records)}</div>
-  <div class="insights-compare"><div class="eyebrow">Are requirements rising or falling?</div><h3 style="margin:8px 0 8px;font-size:19px">${trend.status === 'ok' ? esc(trend.message) : 'Insufficient evidence for a trend'}</h3>
-  ${trend.status === 'ok' ? `<table class="minitable"><tr><th>Requirement</th><th>Earlier share</th><th>Later share</th></tr>${trend.rows.slice(0, 10).map((r) => `<tr><td>${esc(r.name)}</td><td>${Math.round(r.before * 100)}%</td><td>${Math.round(r.after * 100)}%</td></tr>`).join('')}</table>` : `<p class="need">${esc(trend.message)}</p><ul class="need">${trend.reasons.map((r) => `<li>${esc(r)}</li>`).join('')}</ul><p class="need">A trend is computed only when at least two capture waves use the same sources and method, cover both sectors, and each hold 10 or more records.</p>`}</div>
-  <div class="insights-compare"><div class="eyebrow">Planning interpretation</div><h3 style="margin:8px 0 17px;font-size:19px">What could an ITI or workforce planner do with this?</h3><div class="narrative"><div><span class="mini-tag">1 · Observe</span><h4>Identify relevant occupations</h4><p>Document employer, advertised role, location, qualification, experience and whether the listing is recent.</p></div><div><span class="mini-tag">2 · Verify</span><h4>Contact the employer</h4><p>Confirm genuine openings, working conditions and candidate requirements before counting demand.</p></div><div><span class="mini-tag">3 · Plan</span><h4>Match to training supply</h4><p>Only after a verified demand baseline, compare the openings with expected ITI pass-outs and training provision.</p></div></div></div></div>`;
+  $('#compare').innerHTML = `<div class="section-head"><div><h2>How do the two areas differ?</h2><p>Based on the job ads we collected, not on every job in each sector. Repeat ads are counted once. Old ads and ads with unclear locations are left out.</p></div></div>
+  <div class="grid2">${column('62', records)}${column('63', records)}</div>
+  <div class="card card-body"><div class="section-label">Are skill demands going up or down?</div><h3 style="font-size:19px">${trend.status === 'ok' ? esc(trend.message) : 'Too early to tell'}</h3>
+  ${trend.status === 'ok' ? `<div class="table-scroll" style="margin-top:10px"><table class="minitable"><tr><th>Skill</th><th>Earlier</th><th>Later</th></tr>${trend.rows.slice(0, 10).map((r) => `<tr><td>${esc(r.name)}</td><td>${Math.round(r.before * 100)}%</td><td>${Math.round(r.after * 100)}%</td></tr>`).join('')}</table></div>` : `<p style="margin-top:6px;color:var(--ink-2)">We have one round of data so far. A trend needs at least two rounds collected the same way, each with 10 or more ads from both sectors.</p><ul class="note" style="margin:8px 0 0;padding-left:18px">${trend.reasons.map((r) => `<li>${esc(r)}</li>`).join('')}</ul>`}</div>
+  <div class="callout"><strong>How to use this.</strong> 1. Spot the kinds of work that keep appearing. 2. Call those employers to confirm real openings. 3. Only then compare confirmed openings with how many ITI learners will finish each trade.</div>`;
 }
 
 app.views.compare = renderCompare;
