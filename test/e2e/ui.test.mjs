@@ -445,7 +445,7 @@ test('internal research operations refuse public access and provide actionable a
   assert.equal(await page.locator('#iops .iro-kpis').count(),0);
   await signIn(page,'dev-researcher-token');
   await page.waitForSelector('#iops .iro-queue');
-  assert.match(await text(page, '#iops'), /Distinct current ads/);
+  assert.match(await text(page, '#iops'), /Deduplicated nonclosed ads/);
   assert.match(await text(page, '#iops'), /Second-person approval/);
   assert.ok(await page.locator('#iops .iro-queue-row').count()>3);
   await page.click('#iops .iro-queue-row >> nth=0');
