@@ -496,7 +496,8 @@ test('future-state intelligence demo displays simulation and explainable confide
   assert.match(await text(page,'#idemo'),/No external API keys are connected/);
   assert.ok(await page.locator('#idemo .fd-marker').count()>3);
   assert.ok(await page.locator('#idemo .fd-connector-grid article').count()>=8);
-  assert.match(await text(page,'#idemo'),/Not employer-confirmed/);
+  await page.click('#idemo [data-action=fd-select][data-id=DM-001] >> nth=0');
+  assert.match(await text(page,'#idemo .fd-evidence-panel'),/Not employer-confirmed/);
   const score=await text(page,'#idemo .fd-evidence-panel');
   assert.match(score,/Why the example is scored this way/);
   await page.click('#idemo [data-action=fd-select][data-id=DM-006] >> nth=0');
