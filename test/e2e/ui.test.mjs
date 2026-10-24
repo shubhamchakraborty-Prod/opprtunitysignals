@@ -311,3 +311,66 @@ test('learner profile editor on desktop retains existing programme selection flo
   assert.match(await text(page, '#learn'), /Your skill plan/);
   assert.deepEqual(page.errors, []);
 });
+
+test('institution demand displays source-backed programme analysis on desktop', async () => {
+  const page = await newPage(browser);
+  await page.setViewportSize({ width: 1366, height: 900 });
+  await page.goto(srv.url + '/?noguide&view=institution&tab=ihome');
+  await page.waitForSelector('.inst-quicklinks');
+  await page.click('#ihome [data-tab=idemand]');
+  await page.waitForSelector('#instProgrammeSelect');
+  assert.match(await text(page, '#idemand'), /Pilot evidence: Noida Sectors 62 and 63/);
+  assert.ok(await page.locator('#idemand .inst-chart-row').count() > 0);
+  assert.ok(await page.locator('#idemand .inst-source-list a[href^="https://"]').count() > 0);
+  assert.match(await text(page, '#idemand'), /not as a placement forecast/);
+  await page.click('#idemand [data-action=inst-type-switch][data-type=polytechnic]');
+  assert.match(await text(page, '#idemand'), /Polytechnic/);
+  assert.ok(await page.locator('#instProgrammeSelect option').count() > 0);
+  await page.click('#idemand [data-action=inst-type-switch][data-type=college]');
+  assert.match(await text(page, '#idemand'), /College \/ university/);
+  assert.deepEqual(page.errors, []);
+});
+
+test('institution outreach saves, updates and erases only local planning actions', async () => {
+  const page = await newPage(browser);
+  await page.goto(srv.url + '/?noguide&view=institution&tab=ioutreach');
+  await page.waitForSelector('#instLeadQuery');
+  assert.match(await text(page, '#ioutreach'), /stored only in your browser/);
+  assert.ok(await page.locator('#ioutreach .inst-lead').count() > 0);
+  assert.equal(await page.evaluate(() => localStorage.getItem('opx-inst-outreach-v1')), null);
+  await page.click('#ioutreach [data-action=inst-lead-toggle] >> nth=0');
+  assert.equal(await page.locator('#ioutreach .inst-pipeline-item').count(), 1);
+  const stored = await page.evaluate(() => JSON.parse(localStorage.getItem('opx-inst-outreach-v1')));
+  assert.deepEqual(stored.map((x) => x.stage), ['saved']);
+  // Sector filters should not erase a saved lead from another sector.
+  await page.selectOption('#location', '62');
+  assert.equal(await page.locator('#ioutreach .inst-pipeline-item').count(), 1);
+  await page.selectOption('#location', '63');
+  assert.equal(await page.locator('#ioutreach .inst-pipeline-item').count(), 1);
+  await page.selectOption('#location', 'all');
+  await page.selectOption('#ioutreach [data-inst-stage]', 'followup');
+  assert.match(await text(page, '#ioutreach'), /Follow-up needed/);
+  await page.reload();
+  await page.waitForSelector('#instLeadQuery');
+  assert.equal(await page.locator('#ioutreach .inst-pipeline-item').count(), 1);
+  await page.click('#ioutreach [data-action=inst-clear-outreach]');
+  assert.equal(await page.evaluate(() => localStorage.getItem('opx-inst-outreach-v1')), null);
+  assert.match(await text(page, '#ioutreach'), /Changing a status here does not verify a vacancy/);
+  assert.deepEqual(page.errors, []);
+});
+
+test('mobile institution navigation exposes priority screens and region evidence caveats', async () => {
+  const page = await newPage(browser);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(srv.url + '/?noguide&view=institution&tab=ihome');
+  await page.waitForSelector('#mobileNav .mobile-tab');
+  assert.equal(await page.locator('#mobileNav .mobile-tab').count(), 5);
+  await page.click('#mobileNav [data-tab=idemand]');
+  assert.match(await text(page, '#idemand'), /Programme relevance/);
+  await page.selectOption('#location', 'siliguri');
+  assert.match(await text(page, '#idemand'), /do not yet have comparable vacancy data/);
+  assert.match(await text(page, '#idemand'), /not evidence about your selected region/);
+  await page.click('#mobileNav [data-tab=ioutreach]');
+  assert.match(await text(page, '#ioutreach'), /Noida figures below are a method demonstration/);
+  assert.deepEqual(page.errors, []);
+});
