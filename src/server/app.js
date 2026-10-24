@@ -11,7 +11,7 @@ const MAX_BODY = 2 * 1024 * 1024;
 
 const SECURITY_HEADERS = {
   'X-Content-Type-Options': 'nosniff',
-  'Referrer-Policy': 'no-referrer',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
   'X-Frame-Options': 'DENY',
   'Content-Security-Policy': "default-src 'self'; img-src 'self' data: blob: https://tiles.openfreemap.org https://api.maptiler.com https://tiles.stadiamaps.com https://tile.thunderforest.com https://tile.openstreetmap.org; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self' https://tiles.openfreemap.org https://api.maptiler.com https://tiles.stadiamaps.com https://tile.thunderforest.com https://tile.openstreetmap.org; worker-src 'self' blob:; child-src blob:; frame-ancestors 'none'",
 };

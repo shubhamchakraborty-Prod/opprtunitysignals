@@ -32,6 +32,8 @@ How to get a key:
 2. **Stadia Maps.** Sign up at client.stadiamaps.com and create a property. Either add your domain (no key needed) or create an API key.
 3. **Thunderforest.** Sign up at manage.thunderforest.com and copy the API key.
 
+The site sends only its domain as the Referer (`strict-origin-when-cross-origin`). OpenStreetMap's tile policy requires a Referer, and keyed providers use it for domain restrictions.
+
 Browsers can see the key. In the provider's dashboard, restrict it to your site's domain, for example `your-site.netlify.app`.
 
 If a keyed provider is chosen but no key is given, the site falls back to OpenFreeMap. When tiles cannot load at all (offline, blocked, or no WebGL), it shows the zoomable sketch, labelled "not geographically exact".
