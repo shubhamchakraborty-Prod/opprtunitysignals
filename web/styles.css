@@ -1197,3 +1197,41 @@ button.inst-chart-row:hover,button.inst-chart-row.active{background:var(--primar
 @media(max-width:1180px){.fd-map-grid{grid-template-columns:1fr}.fd-signal-card{min-height:0}.fd-signal-list{max-height:370px}.fd-connector-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:820px){.fd-kpis,.fd-facts,.fd-pipeline ol{grid-template-columns:repeat(2,minmax(0,1fr))}.fd-score-breakdown{grid-template-columns:1fr}}
 @media(max-width:760px){.fd-overview-bar,.fd-connector-grid,.fd-facts{grid-template-columns:1fr}.fd-hero .btn{width:100%}.fd-hero h1{font-size:29px}.fd-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.fd-kpis>div{padding:12px}.fd-kpis strong{font-size:25px}.fd-map-art{margin:0 8px}.fd-marker{width:32px;height:32px}.fd-marker .ico{width:17px;height:17px}.fd-map-key{position:relative;inset:auto;margin:6px}.fd-panel-heading{flex-direction:column}.fd-evidence-panel{padding:14px}.fd-score-breakdown>div{grid-template-columns:minmax(112px,1fr) minmax(50px,.9fr) 40px}.fd-pipeline ol{grid-template-columns:1fr}.fd-simulation-header{padding:12px}.fd-card-header{padding:12px}}
+
+/* Purposeful engagement: finite role briefings, clear choices, no dark patterns. */
+.engage-brief{display:grid;gap:15px;border-radius:19px;border:1px solid #CCD8F1;padding:20px;background:linear-gradient(160deg,#F8FAFF,#FFFFFF 72%)}
+.engage-head{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.engage-head>div:first-child{display:grid;gap:7px}
+.engage-eyebrow{color:var(--primary);font-size:11px;font-weight:760;letter-spacing:.025em;display:flex;align-items:center;gap:6px}
+.engage-head h2{font-size:clamp(23px,2.6vw,31px);font-weight:680;line-height:1.2}
+.engage-head p{font-size:13px;color:var(--ink-2);max-width:70ch;line-height:1.5}
+.engage-counter{display:grid;text-align:center;gap:5px;min-width:100px;padding:13px;background:#EDF1FF;border-radius:12px}
+.engage-counter strong{font-size:24px;color:#0E1B5C;font-variant-numeric:tabular-nums}
+.engage-counter span{font-size:11px;color:#43577A}
+.engage-roles{display:flex;gap:7px;flex-wrap:wrap}
+.engage-roles button{min-height:43px;border-radius:23px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);font:inherit;font-size:13px;padding:9px 15px;cursor:pointer}
+.engage-roles button.active{border-color:#3D5AFE;background:#E8EDFF;color:#0E1B5C;font-weight:700}
+.engage-roles button:focus-visible,.engage-actions button:focus-visible,.engage-footer button:focus-visible{outline:3px solid #3D5AFE;outline-offset:2px}
+.engage-items{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.engage-item{background:white;border:1px solid #DDE3F2;border-radius:15px;padding:15px;display:grid;align-content:start;gap:10px;min-width:0}
+.engage-item-meta{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:10px;color:#5C647A;letter-spacing:.015em}
+.engage-item-meta span:last-child{background:#EEF2F9;border-radius:8px;padding:4px 7px;font-weight:700}
+.engage-item h3{font-size:18px;color:var(--ink);font-weight:660;line-height:1.23}
+.engage-topic{font-size:13px;color:#0E1B5C;font-weight:640}
+.engage-next{font-size:12.5px;line-height:1.5;color:var(--ink-2);min-height:40px}
+.engage-item details{font-size:12px;color:var(--ink-2);line-height:1.5}
+.engage-item summary{cursor:pointer;display:list-item;min-height:28px;font-weight:600;color:#3D5AFE}
+.engage-item details p{padding:5px 0}
+.engage-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;align-self:end}
+.engage-actions .btn{min-height:42px;white-space:normal}
+.engage-less{background:transparent;border:0;color:var(--muted);font-size:12px;min-height:42px;padding:4px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.engage-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;color:var(--ink-2);font-size:12px;border-top:1px solid #DCE4F3;padding-top:13px}
+.engage-footer p{max-width:65ch;line-height:1.5}
+.engage-footer span{display:flex;align-items:center;gap:5px}
+.engage-message{font-size:12px;color:#1A624D;background:#E8F4EE;padding:10px 13px;border-radius:10px;line-height:1.5}
+.engage-finished{background:#F0F6F8;padding:20px;border-radius:12px;display:grid;gap:7px}
+.engage-finished strong{font-size:15px}
+.engage-finished p{color:var(--ink-2);font-size:13px}
+@media(max-width:1080px){.engage-items{grid-template-columns:1fr}.engage-next{min-height:0}}
+@media(max-width:760px){.engage-brief{padding:14px;gap:12px}.engage-head{align-items:start}.engage-counter{min-width:78px;padding:9px}.engage-counter strong{font-size:20px}.engage-head h2{font-size:24px}.engage-roles button{flex:1}.engage-item{padding:14px}.engage-actions .btn{flex:1}}
+@media(prefers-reduced-motion:reduce){.engage-brief *{transition:none!important;animation:none!important}}

@@ -5,8 +5,9 @@ import { esc, $, icon } from '../ui.js';
 import { FUTURE_DEMO_MAP_SVG } from './future-state-map.generated.js';
 import { DEMO_AREAS, DEMO_ASOF, DEMO_CONNECTORS, DEMO_SIGNALS, DEMO_STORY } from './future-state-demo-data.js';
 import { demoConfidence, demoSignalCounts } from '../../../src/core/demo-confidence.js';
+import { demoBriefHtml } from './future-state-brief.js';
 
-let area='noida', band='all', selected='DM-002', category='all', persona='research', syncCounter=0;
+let area='noida', band='all', selected='DM-002', category='all', persona='learner', syncCounter=0;
 const LABEL = {job_ad:'Job advertisement',employer_confirmation:'Employer-confirmed opening · simulated',social_signal:'Unverified social signal',training_supply:'Institution supply signal',project_announcement:'Project announcement'};
 const ICON = {job_ad:'work',employer_confirmation:'verified',social_signal:'campaign',training_supply:'school',project_announcement:'factory'};
 const PERSONAS=[['research','Research team'],['learner','Learner'],['institution','Institution'],['industry','Industry']];
@@ -57,6 +58,7 @@ export function renderFutureDemo(){
     <p>See how approved government datasets, licensed jobs feeds, permitted media signals and verified employer inputs could come together—without confusing observations with confirmed openings.</p></div>
     <button class="btn primary" type="button" data-action="fd-sync">${icon('refresh')} Run simulated sync</button>
   </div>
+  ${demoBriefHtml(data,persona,trust)}
   <div class="fd-overview-bar" role="group" aria-label="Demo filters">
     <label>Demo geography <select id="fdArea">${DEMO_AREAS.map(x=>`<option value="${x.id}" ${x.id===area?'selected':''}>${esc(x.label)}</option>`).join('')}</select></label>
     <label>Confidence level <select id="fdBand"><option value="all">All confidence levels</option>${['Very high','High','Medium','Low','Needs review'].map(x=>`<option ${band===x?'selected':''}>${x}</option>`).join('')}</select></label>
