@@ -1,6 +1,6 @@
 # Noida Sector 62 / 63 Industry Opportunity Explorer (research pilot)
 
-ConveGenius.AI research pilot. Public hiring signals, employer verification, ten years of investment and policy change, and skill plans for learners, for **Noida Sectors 62 and 63 (Gautam Buddh Nagar, Uttar Pradesh)**, with **Kalyani** and **Siliguri (West Bengal)** for comparison. Four views on the same data: **Learners**, **Institution**, **Industry** and **Internal** (Swift AI Academy product signals). Design: Material 3 with Google Sans, following the principles in `docs/PRODUCT_PRINCIPLES.md`.
+ConveGenius.AI research pilot. Public hiring signals, employer verification, ten years of investment and policy change, and skill plans for learners, for **Noida Sectors 62 and 63 (Gautam Buddh Nagar, Uttar Pradesh)**, with **Kalyani** and **Siliguri (West Bengal)** for comparison. Four separate interfaces on the same data: **Learners** (ITI, polytechnic, college), **Institutions**, **Industry** (talent, not job ads) and **Internal** (Swift AI Academy product signals). Design: Material 3 with Google Sans, following the principles in `docs/PRODUCT_PRINCIPLES.md`.
 
 Not an official employment service. Not an authorised government programme.
 
@@ -13,7 +13,7 @@ Not an official employment service. Not an authorised government programme.
 | Run the full pilot (file store) | `npm install && npm run dev` then open http://127.0.0.1:8080 | Data persists in `data/runtime/db.json`; audit trail in `data/runtime/audit.jsonl`. |
 | Run on PostgreSQL / PostGIS | `DATABASE_URL=postgres://… STORE=pg npm run dev` | Migrates and seeds an empty database automatically. |
 | Demo without persistence | `STORE=memory npm run dev` | Resets on restart. |
-| All tests | `npm test` (44 unit/service/API) · `npm run test:e2e` (10 browser) · `TEST_DATABASE_URL=… npm run test:pg` (PostGIS) | e2e uses the pre-installed Chromium. |
+| All tests | `npm test` (47 unit/service/API) · `npm run test:e2e` (11 browser) · `TEST_DATABASE_URL=… npm run test:pg` (PostGIS) | e2e uses the pre-installed Chromium. |
 | Typecheck | `npm run typecheck` | `checkJs` over `src/`. |
 | Screenshots | `npm run screenshots` | Writes `docs/screenshots/`. |
 
@@ -44,31 +44,17 @@ Dev tokens are for local demos only. See `config/README.md` for real users.
 
 ## Screens
 
-Four views, chosen from the home page or the switcher at the top of the navigation. One location picker (Sector 62 and 63, Sector 62, Sector 63, Kalyani, Siliguri) drives every regional page. Every ad carries a coloured trust label; every external figure carries its source, date and confidence.
+Four separate interfaces, chosen with the top row of tabs. Each has its own second row of tabs, landing page, wording and colour. The needs behind each one are in `docs/QA_USER_NEEDS.md`. One location picker (Sector 62 and 63, Sector 62, Sector 63, Kalyani, Siliguri) drives every regional page.
 
-| View | Page | Answers | Screenshot |
-|---|---|---|---|
-| All | Home | What this is, one door per audience, how it works, what is changing | `docs/screenshots/00-home.png` |
-| Industry | Jobs map | Scorecards, filters with removable chips, zoomable map (hovering a job highlights its pin), job list | `01-jobs-map.png`, `01b-job-detail.png` |
-| Learners | Where to apply | College, polytechnic or ITI: ads open to you, official portals (NCS, NAPS, NATS, PM Internship, UP Sewayojan, WB Employment Bank), skills asked, Swift AI Academy pathways, institutes nearby | `02-where-to-apply.png` |
-| Learners | Close my skill gaps | Pick a trade: jobs now, jobs after a short course, a skill plan of Swift AI Academy courses (or other providers, or trade training) | `03-close-my-skill-gaps.png` |
-| Learners | Match a learner | Five example learners: worth a call / needs more skills / not eligible as written | `04-match-a-learner.png` |
-| Institution | ITI trades and skill gaps | 103 CTS trades mapped to local ads: extra skills, courses, bridge jobs | `05-iti-trades-and-skill-gaps.png` |
-| Institution | Next steps | Ready for planning vs call these employers first | `06-next-steps.png` |
-| Institution | Institutes nearby | ITIs, polytechnics and colleges within about 100 km on the map, with projects coming up nearby and partnership ideas | `07-institutes-nearby.png` |
-| Industry, Institution, Internal | Market overview | India, the state, or 100 km: demand indicators, 2016 to 2026 timeline, largest announcements, roles in demand, future projects linked to skills and institutes | `08-market-overview.png` |
-| Industry | Compare 62 and 63 | Type of work, skills, conditions, what ads leave out | `09-compare-62-and-63.png` |
-| Industry | Coming up | Announced projects with likely trades; never counted as jobs | `10-coming-up.png` |
-| Industry | Kalyani and Siliguri | Industrial parks, clusters and ITIs on the same zoomable map | `11-kalyani-and-siliguri.png` |
-| Industry, Internal | Government data | A clearly labelled live **simulation** (tiles, data-flow diagram, streaming chart, event feed, connection health) above the real status of every tracked source | `12-government-data.png` |
-| Internal | Market signals | Skills employers ask for vs the Swift AI Academy catalogue vs NSQF, NPTEL, SWAYAM, nasscom and Skill India: build, extend, curate or promote; course demand; platform signals | `13-market-signals.png` |
-| Institution | Workers' views | Empty until consented interviews exist | `14-workers-views.png` |
-| Industry, Internal | Sources | Every ad linked, freshness, confidence, CSV export | `15-sources.png` |
-| Internal (team) | Review queue, Record an employer call | Uploads, calls, repeats, approvals, change log | `16-review-queue.png`, `17-record-employer-call.png` |
+| Interface | Pages (second row of tabs) | Screenshots |
+|---|---|---|
+| Home | One door per audience, live demo activity, how it works, what is changing | `00-home.png` |
+| **Learners** (teal) | For you (three next moves for the learner's own profile), Where to apply, My skill plan, Jobs for me, Coming up. The learner picks ITI, polytechnic or college and a trade or programme once; every page follows it. | `01`–`04b` |
+| **Institutions** (indigo) | Overview (ITI, polytechnic or college: demand for each trade or programme, skills to add, employers and projects to approach), Trades and programmes, Jobs near you, Placement steps, Institutes nearby, Market, Compare 62 and 63, Kalyani and Siliguri, Workers' views | `05`–`12` |
+| **Industry** (navy) | Talent, not job ads: Talent near you (institutes by talent pool), Hire for a role (best-fit trades, diplomas and degrees, gaps, local pay, where to recruit), Apprentices and interns, Market and competition, Request candidates (demo form, saved in the browser) | `13`–`16` |
+| **Internal** (dark bar, violet) | Market signals (build, extend, curate, promote; demand by learner type; partner leads), Government data (live simulation and real status), Job ads, Market, Match a learner, Sources, Review queue, Record an employer call | `17`–`22` |
 
-**Live demo mode.** The offline copy, the claude.ai page and Netlify start with simulated live activity: new ads ripple onto the map, notifications arrive, and a "Happening now" feed and counters move on the home page. Every item is labelled Demo, names no real employer, institute or learner, and never changes a real count. Toggle it with the "Live demo" pill in the top bar; it is off by default on the live server. **Watch the demo** on the home page plays a 70-second guided tour with captions (`?tour=1` starts it automatically). Recorded walkthrough: `docs/demo/opportunity-explorer-demo.mp4`.
-
-Internal pages need a team sign-in on the live server; the offline copy shows them for the demo. Screenshots show the zoomable sketch because street tiles were blocked in the capture environment.
+Internal pages need a team sign-in on the live server; the offline copy shows them for the demo. Screenshots show the zoomable map sketch because street tiles were blocked in the capture environment.
 
 ## Architecture
 

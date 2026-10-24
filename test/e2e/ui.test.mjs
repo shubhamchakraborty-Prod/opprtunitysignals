@@ -12,7 +12,7 @@ after(async () => { await browser?.close(); srv?.stop(); });
 const pins = (page) => page.$$eval('#svgPins g.fpin', (gs) => gs.map((g) => g.getAttribute('aria-label')));
 const text = (page, s) => page.textContent(s);
 /** Open a view, then a page in it, the way a person would. */
-const go = async (page, view, tab) => { await page.click(`.vbtn[data-view=${view}]`); if (tab) await page.click(`#navLinks .tab[data-tab=${tab}]`); };
+const go = async (page, view, tab) => { await page.click(`.aud-tab[data-view=${view}]`); if (tab) await page.click(`#subTabs .tab[data-tab=${tab}]`); };
 
 test('AT1 + AT11: sector switch updates counters, list and pins; schematic says not exact', async () => {
   const page = await newPage(browser);
@@ -63,9 +63,9 @@ test('AT8, AT9, AT10 in the UI', async () => {
   await page.goto(srv.url + '/?noguide&tab=voice');
   await page.waitForSelector('#sentimentEmpty');
   assert.match(await text(page, '#sentimentEmpty'), /No measured sentiment available/);
-  await page.click('#navLinks .tab[data-tab=plan]');
+  await page.click('#subTabs .tab[data-tab=plan]');
   assert.match(await text(page, '#plan'), /Are there enough jobs for our ITI learners\?\s*Not available yet/);
-  await go(page, 'industry', 'discover');
+  await go(page, 'internal', 'discover');
   await page.click('#jobCards .job >> nth=0');
   const a = page.locator('#detailPanel a', { hasText: 'Open the original ad' });
   assert.match(await a.getAttribute('href'), /^https:\/\//);
@@ -84,14 +84,14 @@ test('AT6 in the UI: verifier submits 3 openings, a second person approves, KPI 
   await page.fill('#n0t', 'E2E test note: employer confirmed three openings.');
   await page.click('[data-form=verification] button[type=submit]');
   await page.waitForSelector('.ok-box');
-  await go(page, 'industry', 'discover');
+  await go(page, 'internal', 'discover');
   assert.equal(await text(page, '#mConfirmed'), '0');
   assert.match(await text(page, '#mConfirmedSub'), /3 awaiting approval/);
   await signIn(page, 'dev-admin-token');
   await go(page, 'internal', 'review');
   await page.click('[data-action=decide-verification][data-decision=approve]');
   await page.waitForTimeout(300);
-  await go(page, 'industry', 'discover');
+  await go(page, 'internal', 'discover');
   assert.equal(await text(page, '#mConfirmed'), '3');
   await page.selectOption('#location', '62');
   assert.equal(await text(page, '#mConfirmed'), '0');
@@ -106,7 +106,7 @@ test('ITI trades tab maps the catalogue and shows bridge jobs with courses; map 
   const t = await text(page, '.trade.open');
   assert.match(t, /Jobs outside the trade a learner could reach/);
   assert.match(t, /Technical Support Engineer/);
-  await go(page, 'industry', 'regions');
+  await go(page, 'institution', 'regions');
   await page.waitForSelector('#regionSketch .fpin');
   assert.match(await text(page, '#regions'), /Dabgram|Kalyani Industrial Park/);
   const before = await page.getAttribute('#regionSketch svg', 'viewBox');
@@ -136,21 +136,37 @@ test('Government data tab lists every tracked source with an honest status', asy
   assert.deepEqual(page.errors, []);
 });
 
-test('home page offers one door per audience and each opens its own navigation', async () => {
+test('four separate interfaces: learners, institutions, industry (talent, not jobs) and internal', async () => {
   const page = await newPage(browser);
   await page.goto(srv.url + '/?noguide');
   await page.waitForSelector('.door');
   assert.equal(await page.$$eval('.door', (x) => x.length), 4);
+  assert.equal(await page.$$eval('.aud-tab', (x) => x.length), 4);
   await page.click('.door[data-view=learners]');
-  assert.match(await text(page, '#path'), /Where can you apply/);
-  assert.ok(await page.locator('#navLinks .tab[data-tab=learn]').isVisible());
-  await page.click('.type-tab[data-type=college]');
-  assert.match(await text(page, '#path'), /National Apprenticeship Training Scheme|AICTE/);
+  assert.match(await text(page, '#lhome'), /Your next step, in three moves/);
+  await page.click('[data-action=lp-type][data-type=polytechnic]');
+  assert.match(await page.$eval('#lpProg', (s) => s.selectedOptions[0].textContent), /Diploma/);
+  await page.click('#subTabs .tab[data-tab=learn]');
+  assert.match(await text(page, '#learn'), /Your skill plan/);
+  await page.click('#subTabs .tab[data-tab=path]');
+  assert.match(await text(page, '#path'), /National Apprenticeship Training Scheme|NATS/);
+  await go(page, 'industry');
+  assert.match(await text(page, '#talent'), /Hire trained people near your site/);
+  assert.equal(await page.$$eval('#subTabs .tab[data-tab=discover]', (x) => x.length), 0, 'no job-ads page in the industry interface');
+  await page.click('#talent [data-action=hire-role][data-role=support]');
+  assert.match(await text(page, '#hire'), /ITI trades[\s\S]*Diplomas[\s\S]*Degrees/);
+  await page.click('#subTabs .tab[data-tab=partner]');
+  await page.fill('#hrWhen', '2027-01');
+  await page.click('[data-form=hire-request] button[type=submit]');
+  assert.match(await text(page, '#partner'), /1 saved in this browser/);
+  await go(page, 'institution');
+  await page.click('[data-action=inst-home-type][data-type=polytechnic]');
+  assert.match(await text(page, '#ihome'), /Demand for your programmes/);
   await go(page, 'internal');
-  assert.match(await text(page, '#signals'), /Team sign-in needed/, 'internal view is gated on the live server');
+  assert.match(await text(page, '#signals'), /Team sign-in needed/, 'internal interface is gated on the live server');
   await signIn(page, 'dev-researcher-token');
   assert.match(await text(page, '#signals'), /What should we build next\?/);
-  assert.match(await text(page, '#signals'), /Build a new course[\s\S]*Extend an existing course/);
+  assert.match(await text(page, '#signals'), /Demand by learner type[\s\S]*Partner leads/);
   assert.match(await text(page, '.matrix'), /NSQF \(NQR\)[\s\S]*NPTEL/);
   assert.deepEqual(page.errors, []);
 });
@@ -160,10 +176,9 @@ test('learner skill plan links gaps to Swift AI Academy courses; market overview
   await page.goto(srv.url + '/?noguide&tab=learn');
   await page.waitForSelector('.plan-step');
   assert.match(await text(page, '.plan-steps'), /Spoken clarity and listening/);
-  await page.selectOption('#learnTrade', 'Fitter');
+  await page.selectOption('#lpProg', 'Fitter');
   assert.match(await text(page, '#learn'), /Your skill plan/);
-  await page.click('.vbtn[data-view=industry]');
-  await page.click('#navLinks .tab[data-tab=market]');
+  await go(page, 'institution', 'market');
   assert.match(await text(page, '#market'), /2016 to 2026/);
   await page.selectOption('#location', 'kalyani');
   assert.match(await text(page, '#market'), /Kalyani/);
@@ -194,7 +209,7 @@ test('live demo mode is labelled, never changes real counts, and the guided demo
   assert.match(await text(page, '#tourBar'), /Demo · 1 of 9/);
   await page.click('#tourExit');
   assert.equal(await page.$('#tourBar'), null);
-  await page.click('.vbtn[data-view=industry]');
+  await go(page, 'internal', 'discover');
   assert.equal(await text(page, '#mCount'), '29', 'demo activity never touches real counts');
   assert.deepEqual(page.errors, []);
 });

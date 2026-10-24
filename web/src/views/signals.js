@@ -5,6 +5,7 @@ import { app } from '../app.js';
 import { esc, $, artBox, icon, fmtDate } from '../ui.js';
 import { skillSignals, courseDemand, platformSignals, offeringsFor, ACTIONS } from '../../../src/core/signals.js';
 import { comparisonBase } from '../../../src/core/analytics.js';
+import { demandByType } from '../../../src/core/learners.js';
 
 const ui = { show: 'all' };
 const COLS = [
@@ -81,6 +82,11 @@ export function renderSignals() {
     ${matrixRows.map((r) => `<tr><td><strong>${esc(r.skill)}</strong>${r.bridgeTrades ? `<div class="note">${r.bridgeTrades} trades need it for bridge jobs</div>` : ''}</td><td>${r.demand} <span class="note">of ${r.of}</span></td>${COLS.map((c) => cell(r, c)).join('')}<td><span class="act act-${r.action}">${esc(ACTIONS[r.action].label)}</span></td></tr>`).join('')}
     </tbody></table></div>
     <p class="note" style="margin-top:10px"><span class="dotm full"></span> taught · <span class="dotm part"></span> partly taught · <span class="dotm none"></span> not found. Numbers are how many similar courses the scan found. Hover a cell to see course names.</p></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card"><div class="card-head"><h3>Demand by learner type</h3><small>Ads each type can apply for</small></div><div class="card-body"><div class="bars">${demandByType(ads).map((x) => `<div class="bar-row"><div class="bar-label"><span>${esc(x.label)}</span><strong>${x.ads} <small>of ${ads.length} · ${x.fresh} for freshers · ${x.named} name it</small></strong></div><div class="bar"><i style="width:${(x.ads / ads.length) * 100}%"></i></div></div>`).join('')}</div><p class="note" style="margin-top:10px">Most ads name no qualification, so all three types can apply. Only ${demandByType(ads).map((x) => `${x.named} name ${x.label}`).join(', ')}. Product reading: lead with communication and office skills that every type needs.</p></div></div>
+    <div class="card"><div class="card-head"><h3>Partner leads</h3><small>Who to approach next</small></div><div class="card-body"><div class="section-label">Hiring partners: projects coming up</div><ul class="plain">${(app.data.market?.future || []).filter((f) => ['noida_ncr', 'kalyani', 'siliguri'].includes(f.area)).slice(0, 5).map((f) => `<li><strong>${esc(f.title)}</strong> <span class="note">· ${esc(f.status)}${f.skills_implied?.length ? ' · ' + esc(f.skills_implied.slice(0, 2).join(', ')) : ''}</span></li>`).join('')}</ul><div class="section-label" style="margin-top:12px">Channel partners: institutes by area</div><ul class="plain">${['noida_ncr', 'kalyani', 'siliguri'].map((a) => { const list = (app.data.demand?.institutes || []).filter((i) => i.area === a); return `<li><strong>${esc({ noida_ncr: 'Noida and NCR', kalyani: 'Kalyani', siliguri: 'Siliguri' }[a])}</strong> <span class="note">· ${list.filter((i) => i.type === 'iti').length} ITIs, ${list.filter((i) => i.type === 'polytechnic').length} polytechnics, ${list.filter((i) => ['college', 'university'].includes(i.type)).length} colleges</span></li>`; }).join('')}</ul></div></div>
   </div>
 
   <div class="grid2">

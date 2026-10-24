@@ -6,8 +6,9 @@ import { esc, $, artBox, icon, sectorTag } from '../ui.js';
 import { filterOpportunities } from '../../../src/core/filters.js';
 import { representatives } from '../../../src/core/dedupe.js';
 import { wageText } from '../../../src/core/decisions.js';
+import { profile } from './learner-profile.js';
+import { acceptsType } from '../../../src/core/learners.js';
 
-const ui = { type: 'iti' };
 const TYPES = {
   iti: { label: 'ITI', long: 'ITI trainee or pass-out', accepts: (acc) => acc.some((t) => t.startsWith('iti_') || t === '10th'), tracks: ['comms', 'analytics'], first: ['CO01', 'DA01'],
     why: 'Most entry roles near Sector 62 and 63 ask for spoken English, customer handling and basic computer and Excel skills on top of the trade.' },
@@ -21,23 +22,24 @@ const WB = ['wb_employment_bank', 'wb_karmadisha'];
 const UP = ['up_sewayojan', 'up_rozgar_mela'];
 
 export function renderPath() {
+  const lt = profile().type;
   const root = $('#path');
   const d = app.data.demand;
-  const T = TYPES[ui.type];
+  const T = TYPES[lt];
   const area = app.area();
   const saa = app.data.saa;
   const approved = app.data.records.filter((r) => r.review.state === 'approved');
   const ads = representatives(filterOpportunities(approved, { sector: 'all', query: '', family: 'all', career: 'all', includeHistorical: false, includeUnclear: false, verification: 'all', from: null, to: null }));
-  const open = ads.filter((r) => !r.education.stated || T.accepts(r.education.accepted || [])).sort((a, b) => (a.experience.min_months ?? 0) - (b.experience.min_months ?? 0));
+  const open = ads.filter((r) => acceptsType(r, lt)).sort((a, b) => (a.experience.min_months ?? 0) - (b.experience.min_months ?? 0));
   const fresh = open.filter((r) => (r.experience.min_months ?? 0) < 12);
-  const routes = (d?.apply_routes || []).filter((r) => r.for.includes(ui.type) && !(area === 'noida_ncr' ? WB : UP).includes(r.id))
+  const routes = (d?.apply_routes || []).filter((r) => r.for.includes(lt) && !(area === 'noida_ncr' ? WB : UP).includes(r.id))
     .sort((a, b) => Number(AREA_ROUTES[area].includes(b.id)) - Number(AREA_ROUTES[area].includes(a.id)));
-  const demand = (d?.in_demand || []).filter((x) => x.learner_types.includes(ui.type)).slice(0, 6);
+  const demand = (d?.in_demand || []).filter((x) => x.learner_types.includes(lt)).slice(0, 6);
   const tracks = T.tracks.map((id) => saa.tracks.find((t) => t.id === id)).filter(Boolean);
-  const inst = (d?.institutes || []).filter((i) => i.area === area && (ui.type === 'iti' ? i.type === 'iti' : ui.type === 'polytechnic' ? i.type === 'polytechnic' : ['college', 'university'].includes(i.type)));
+  const inst = (d?.institutes || []).filter((i) => i.area === area && (lt === 'iti' ? i.type === 'iti' : lt === 'polytechnic' ? i.type === 'polytechnic' : ['college', 'university'].includes(i.type)));
   const areaName = { noida_ncr: 'Noida', kalyani: 'Kalyani', siliguri: 'Siliguri' }[area];
   root.innerHTML = `<div class="section-head">${artBox('path')}<div><div class="eyebrow">For learners · ${esc(areaName)}</div><h2>Where can you apply, and what will help you get hired?</h2><p>Choose what you are studying. You will see jobs that accept your qualification, the official portals to apply on, the skills employers ask for, and the Swift AI Academy courses that build them.</p></div></div>
-  <div class="type-tabs" role="tablist" aria-label="I am a">${Object.entries(TYPES).map(([k, t]) => `<button role="tab" class="type-tab ${ui.type === k ? 'active' : ''}" aria-selected="${ui.type === k}" data-action="path-type" data-type="${k}">${icon(k === 'iti' ? 'construction' : k === 'polytechnic' ? 'engineering' : 'school')}<span><b>${esc(t.label)}</b><small>${esc(t.long)}</small></span></button>`).join('')}</div>
+  <div class="type-tabs" role="tablist" aria-label="I am a">${Object.entries(TYPES).map(([k, t]) => `<button role="tab" class="type-tab ${lt === k ? 'active' : ''}" aria-selected="${lt === k}" data-action="lp-type" data-type="${k}">${icon(k === 'iti' ? 'construction' : k === 'polytechnic' ? 'engineering' : 'school')}<span><b>${esc(t.label)}</b><small>${esc(t.long)}</small></span></button>`).join('')}</div>
 
   <div class="answers">
     <div class="answer"><span class="label">${icon('work')}Ads open to you</span><span class="big">${open.length}</span><span class="sub">Of ${ads.length} ads in Sectors 62 and 63, these accept ${esc(T.label)} or name no qualification</span></div>
@@ -68,5 +70,4 @@ export function renderPath() {
   <p class="note">Portal details, stipends and eligibility come from web search results on 24 Oct 2026 and can change. Check the official portal before applying.</p>`;
 }
 
-app.actions['path-type'] = (el) => { ui.type = el.dataset.type; renderPath(); };
 app.views.path = renderPath;

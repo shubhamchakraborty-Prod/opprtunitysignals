@@ -55,6 +55,9 @@
 | Course suggestions | Confirmed course listings with dates and fees from Skill India Digital Hub, NSTIs and Sector Skill Councils |
 | Swift AI Academy skill map and market-signal actions | Curated mapping and fixed rules; review with the product team when the catalogue changes |
 | Platform signals on the Internal view | Inferences from the ad sample, each with its evidence |
+| Diploma and degree core skills (`data/seed/programmes.json`) | Official syllabi from the state technical boards and universities |
+| Industry roles, best-fit backgrounds and talent pools | Curated role skills matched to trade and programme skills; a shortlisting aid, not a test of any candidate. Replace with employer-confirmed role profiles |
+| Pass-outs per year for employers and institutions | Shown as "Not available yet": needs NCVT MIS, state board and AISHE data |
 | Trades linked to announced projects | Hiring plans confirmed by each company |
 | Synthetic test fixtures (`test/helpers.js`, `fixture: true`) | Never shown in the app; tests only |
 

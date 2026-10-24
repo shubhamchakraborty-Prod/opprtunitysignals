@@ -1,0 +1,270 @@
+{
+ "note": "Core skills for common diploma branches and degree programmes, written in the same skill names used for job ads so they can be matched. Curated by the research team from typical syllabi; illustrative, not an official syllabus. ITI trades come from iti_trades.json.",
+ "compiled_at": "2026-10-24",
+ "programmes": [
+  {
+   "id": "dip-mech",
+   "type": "polytechnic",
+   "name": "Diploma in Mechanical Engineering",
+   "core_skills": [
+    "Mechanical drawing",
+    "CAD",
+    "Measurement",
+    "Quality inspection",
+    "Production processes",
+    "Machine safety",
+    "Machine maintenance",
+    "Lathe operation",
+    "Fitting and assembly",
+    "Machine setting"
+   ],
+   "typical_roles": [
+    "Production supervisor",
+    "Quality inspector",
+    "CAD draughtsperson",
+    "Maintenance technician"
+   ]
+  },
+  {
+   "id": "dip-elec",
+   "type": "polytechnic",
+   "name": "Diploma in Electrical Engineering",
+   "core_skills": [
+    "Electrical basics",
+    "Electrical wiring",
+    "Electrical maintenance",
+    "Power supply systems",
+    "Installation and servicing",
+    "DG set operation",
+    "Measurement",
+    "Troubleshooting",
+    "Machine safety"
+   ],
+   "typical_roles": [
+    "Maintenance electrician",
+    "Electrical supervisor",
+    "Field service technician"
+   ]
+  },
+  {
+   "id": "dip-ece",
+   "type": "polytechnic",
+   "name": "Diploma in Electronics Engineering",
+   "core_skills": [
+    "Electronics testing",
+    "Electrical basics",
+    "Soldering",
+    "PCB assembly",
+    "Troubleshooting",
+    "Measurement",
+    "Quality inspection",
+    "Power supply systems",
+    "ESD handling"
+   ],
+   "typical_roles": [
+    "Electronics technician",
+    "SMT line operator",
+    "Test and quality technician"
+   ]
+  },
+  {
+   "id": "dip-cs",
+   "type": "polytechnic",
+   "name": "Diploma in Computer Science or IT",
+   "core_skills": [
+    "Computer basics",
+    "IT knowledge",
+    "Technical support",
+    "Typing",
+    "Excel",
+    "Troubleshooting",
+    "Documentation"
+   ],
+   "typical_roles": [
+    "IT helpdesk associate",
+    "Data entry operator",
+    "Technical support executive"
+   ]
+  },
+  {
+   "id": "dip-civil",
+   "type": "polytechnic",
+   "name": "Diploma in Civil Engineering",
+   "core_skills": [
+    "Measurement",
+    "Mechanical drawing",
+    "CAD",
+    "Documentation",
+    "Quality inspection"
+   ],
+   "typical_roles": [
+    "Site supervisor",
+    "Survey assistant",
+    "CAD draughtsperson"
+   ]
+  },
+  {
+   "id": "dip-auto",
+   "type": "polytechnic",
+   "name": "Diploma in Automobile Engineering",
+   "core_skills": [
+    "Vehicle repair",
+    "Auto electrical wiring",
+    "EV basics",
+    "Machine maintenance",
+    "Measurement",
+    "Troubleshooting"
+   ],
+   "typical_roles": [
+    "Service advisor",
+    "EV technician",
+    "Workshop supervisor"
+   ]
+  },
+  {
+   "id": "btech-cs",
+   "type": "college",
+   "name": "B.Tech or B.E. in Computer Science or IT",
+   "core_skills": [
+    "Computer basics",
+    "IT knowledge",
+    "Technical support",
+    "Excel",
+    "Problem solving",
+    "Documentation",
+    "English writing"
+   ],
+   "typical_roles": [
+    "Software support engineer",
+    "Data analyst",
+    "IT executive"
+   ]
+  },
+  {
+   "id": "btech-ece",
+   "type": "college",
+   "name": "B.Tech or B.E. in Electronics and Communication",
+   "core_skills": [
+    "Electronics testing",
+    "Electrical basics",
+    "Troubleshooting",
+    "Measurement",
+    "Problem solving",
+    "Computer basics",
+    "PCB assembly"
+   ],
+   "typical_roles": [
+    "Production engineer",
+    "Test engineer",
+    "Field application engineer"
+   ]
+  },
+  {
+   "id": "btech-mech",
+   "type": "college",
+   "name": "B.Tech or B.E. in Mechanical Engineering",
+   "core_skills": [
+    "Mechanical drawing",
+    "CAD",
+    "Production processes",
+    "Quality inspection",
+    "Measurement",
+    "Problem solving",
+    "Machine maintenance"
+   ],
+   "typical_roles": [
+    "Production engineer",
+    "Quality engineer",
+    "Design engineer"
+   ]
+  },
+  {
+   "id": "btech-ee",
+   "type": "college",
+   "name": "B.Tech or B.E. in Electrical Engineering",
+   "core_skills": [
+    "Electrical basics",
+    "Electrical maintenance",
+    "Power supply systems",
+    "Measurement",
+    "Problem solving",
+    "Troubleshooting"
+   ],
+   "typical_roles": [
+    "Maintenance engineer",
+    "Electrical design engineer"
+   ]
+  },
+  {
+   "id": "bca",
+   "type": "college",
+   "name": "BCA or B.Sc Computer Science",
+   "core_skills": [
+    "Computer basics",
+    "IT knowledge",
+    "Technical support",
+    "Excel",
+    "Typing",
+    "Documentation"
+   ],
+   "typical_roles": [
+    "IT support executive",
+    "MIS executive",
+    "Junior data analyst"
+   ]
+  },
+  {
+   "id": "bcom",
+   "type": "college",
+   "name": "B.Com",
+   "core_skills": [
+    "Excel",
+    "Reporting",
+    "Documentation",
+    "Office administration",
+    "Computer basics",
+    "Typing"
+   ],
+   "typical_roles": [
+    "Accounts assistant",
+    "MIS executive",
+    "Back-office executive"
+   ]
+  },
+  {
+   "id": "bba",
+   "type": "college",
+   "name": "BBA",
+   "core_skills": [
+    "Sales",
+    "Communication",
+    "Office administration",
+    "Excel",
+    "Customer handling",
+    "Documentation"
+   ],
+   "typical_roles": [
+    "Sales executive",
+    "Business development executive",
+    "Operations associate"
+   ]
+  },
+  {
+   "id": "ba",
+   "type": "college",
+   "name": "BA (any subject)",
+   "core_skills": [
+    "English communication",
+    "English writing",
+    "Communication",
+    "Documentation",
+    "Computer basics"
+   ],
+   "typical_roles": [
+    "Customer support executive",
+    "Content and communications associate",
+    "Office executive"
+   ]
+  }
+ ]
+}

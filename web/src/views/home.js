@@ -1,13 +1,13 @@
 // Home: what this site is, who it is for, and one door per audience.
 import { app } from '../app.js';
 import { esc, $, artBox, icon, fmtDate } from '../ui.js';
-import { VIEWS, PAGES } from '../nav.js';
+import { VIEWS } from '../nav.js';
 import { renderLive } from '../live.js';
 
 const DOORS = {
-  learners: { title: 'I am a learner', text: 'College, ITI or polytechnic. See jobs you can apply for, where to apply, and the skills that open more doors.', tasks: ['Where to apply', 'Close my skill gaps', 'Jobs map'] },
-  institution: { title: 'I run an institute', text: 'Principals, training and placement officers. Match your trades and branches to local demand.', tasks: ['ITI trades and skill gaps', 'Institutes nearby', 'Next steps'] },
-  industry: { title: 'I follow industry', text: 'Employers, planners and partners. See demand now, investments over ten years and what is coming.', tasks: ['Jobs map', 'Market overview', 'Coming up'] },
+  learners: { title: 'I am a learner', text: 'College, ITI or polytechnic. Jobs that fit what you studied, where to apply, and the skills that open more doors.', tasks: ['For you', 'Where to apply', 'My skill plan', 'Jobs for me'] },
+  institution: { title: 'I run an institute', text: 'ITI, polytechnic or college. How your trades and programmes match local demand, and who to call for placements.', tasks: ['Overview', 'Trades and programmes', 'Placement steps'] },
+  industry: { title: 'I hire people', text: 'Employers. Where the talent you need is trained, what fresh hires know, local pay and apprentice schemes.', tasks: ['Talent near you', 'Hire for a role', 'Apprentices and interns'] },
   internal: { title: 'Swift AI Academy team', text: 'Market signals for product development: which courses to build, extend, curate or promote.', tasks: ['Market signals', 'Government data', 'Sources'] },
 };
 
@@ -24,13 +24,13 @@ export function renderHome() {
       <div class="eyebrow">Noida · Kalyani · Siliguri</div>
       <h1>Skills that lead to real jobs, mapped for your area</h1>
       <p class="lead">We track job ads, investments and government data around each area, check them with employers, and turn them into a plan: which jobs learners can apply for, which skills they still need, and where to learn them.</p>
-      <div class="actions"><button class="btn primary" data-action="tour">${icon('play_arrow')}Watch the demo</button><button class="btn tonal" data-action="view" data-view="learners">${icon('school')}I am a learner</button><button class="btn outlined" data-action="tab" data-tab="discover">${icon('map')}See the jobs map</button></div>
+      <div class="actions"><button class="btn primary" data-action="tour">${icon('play_arrow')}Watch the demo</button><button class="btn tonal" data-action="view" data-view="learners">${icon('school')}I am a learner</button><button class="btn outlined" data-action="view" data-view="industry">${icon('groups')}I am hiring</button></div>
     </div>
     ${artBox('home')}
   </section>
 
   <section class="doors" aria-label="Choose your view">
-    ${VIEWS.map((v) => `<button class="door door-${v.id}" data-action="view" data-view="${v.id}"><span class="door-ico">${icon(v.icon + '-fill')}</span><span class="door-title">${esc(DOORS[v.id].title)}</span><span class="door-text">${esc(DOORS[v.id].text)}</span><span class="door-tasks">${DOORS[v.id].tasks.map((t) => `<span>${esc(t)}</span>`).join('')}</span><span class="door-go">Open the ${esc(v.label.toLowerCase())} view${icon('arrow_forward')}</span></button>`).join('')}
+    ${VIEWS.map((v) => `<button class="door door-${v.id}" data-action="view" data-view="${v.id}"><span class="door-ico">${icon(v.icon + '-fill')}</span><span class="door-title">${esc(DOORS[v.id].title)}</span><span class="door-text">${esc(DOORS[v.id].text)}</span><span class="door-tasks">${DOORS[v.id].tasks.map((t) => `<span>${esc(t)}</span>`).join('')}</span><span class="door-go">Open the ${esc(v.label.toLowerCase())} interface${icon('arrow_forward')}</span></button>`).join('')}
   </section>
 
   <section class="home-stats" aria-label="Right now">
@@ -67,4 +67,3 @@ export function renderHome() {
 }
 
 app.views.home = renderHome;
-export { PAGES };

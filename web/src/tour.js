@@ -44,32 +44,32 @@ async function scrollTo(sel, id, ms = 900) {
   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   await wait(ms, id);
 }
-const view = (v, id) => point(`.vbtn[data-view=${v}]`, id);
-const tab = (t, id) => point(`#navLinks .tab[data-tab=${t}]`, id);
+const view = (v, id) => point(`.aud-tab[data-view=${v}]`, id);
+const tab = (t, id) => point(`#subTabs .tab[data-tab=${t}]`, id);
 
 const STEPS = [
-  { title: 'One place for skills and jobs', text: 'The explorer tracks job ads, investments and government data around Noida, Kalyani and Siliguri, and turns them into plans.',
-    async go(id) { app.actions.tab({ dataset: { tab: 'home' } }); await wait(1800, id); await scrollTo('#homeLive', id, 2600); await scrollTo('#home', id, 800); } },
-  { title: 'Learners see where to apply', text: 'An ITI learner sees the job ads open to them and the official portals to apply on.',
-    async go(id) { await point('.door[data-view=learners]', id); await wait(900, id); await point('.type-tab[data-type=iti]', id); await wait(800, id); await scrollTo('.route-grid', id, 2200); } },
-  { title: 'A skill plan in one click', text: 'Pick a trade. The plan lists the Swift AI Academy courses that open more jobs, and where else to learn.',
-    async go(id) { await tab('learn', id); await wait(700, id); await choose('#learnTrade', 'Electrician', id); await wait(900, id); await scrollTo('.learn-grid', id, 2600); } },
-  { title: 'A live jobs map', text: 'Every ad carries a trust label. Pointing at a job finds it on the map; new ads ripple in as they arrive.',
+  { title: 'Four interfaces, one set of facts', text: 'Learners, institutions, industry and our own team each get their own screens. Pick yours with the tabs at the top.',
+    async go(id) { app.actions.tab({ dataset: { tab: 'home' } }); await wait(1600, id); await scrollTo('#homeLive', id, 2200); await scrollTo('#home', id, 600); } },
+  { title: 'Learners: your next step in three moves', text: 'A learner says what they studied once. Jobs, a first course and a portal to register on follow.',
+    async go(id) { await view('learners', id); await wait(900, id); await point('[data-action=lp-type][data-type=iti]', id); await wait(700, id); await scrollTo('.moves', id, 2400); } },
+  { title: 'A skill plan for every kind of learner', text: 'ITI trades, diploma branches and degrees each get their own plan, with Swift AI Academy courses that open more jobs.',
+    async go(id) { await tab('learn', id); await wait(700, id); await point('[data-action=lp-type][data-type=polytechnic]', id); await wait(1100, id); await scrollTo('.learn-grid', id, 2200); await point('[data-action=lp-type][data-type=iti]', id); await wait(400, id); } },
+  { title: 'Jobs for me, live on the map', text: 'Every ad carries a trust label. Pointing at a job finds it on the map; new ads ripple in as they arrive.',
     async go(id) {
-      await view('industry', id); await wait(900, id);
-      for (const j of $$('#jobCards .job').slice(0, 3)) { j.dispatchEvent(new MouseEvent('mouseover', { bubbles: true })); await point(j, id, false); await wait(500, id); }
-      await point('#jobCards .job', id); await wait(2600, id); app.actions['close-detail']?.(/** @type {any} */ ({}), /** @type {any} */ ({})); await wait(500, id);
+      await tab('discover', id); await wait(900, id);
+      for (const j of $$('#jobCards .job').slice(0, 3)) { j.dispatchEvent(new MouseEvent('mouseover', { bubbles: true })); await point(j, id, false); await wait(450, id); }
+      await point('#jobCards .job', id); await wait(2200, id); app.actions['close-detail']?.(/** @type {any} */ ({}), /** @type {any} */ ({})); await wait(400, id);
     } },
-  { title: 'Ten years of change', text: 'Investments, policies and projects since 2016, and what is coming, linked to the skills they need. Switch area at the top.',
-    async go(id) { await tab('market', id); await wait(900, id); await scrollTo('.year-strip', id, 900); await point('.ys-dot', id); await wait(1600, id); await choose('#location', 'kalyani', id); await wait(1800, id); await choose('#location', 'all', id); await wait(400, id); } },
-  { title: 'Institutes nearby', text: 'ITIs, polytechnics and colleges within 100 km, with projects coming up nearby and how to partner with them.',
-    async go(id) { await view('institution', id); await tab('institutes', id); await wait(800, id); await point('#institutes .cards .job', id); await wait(2200, id); } },
+  { title: 'Institutions: do our programmes match demand?', text: 'An ITI, polytechnic or college sees demand for each trade or programme, skills to add, and employers to call.',
+    async go(id) { await view('institution', id); await wait(900, id); await point('[data-action=inst-home-type][data-type=polytechnic]', id); await wait(1200, id); await scrollTo('#ihome .grid2', id, 2000); await point('[data-action=inst-home-type][data-type=iti]', id); await wait(300, id); } },
+  { title: 'Industry: talent, not job ads', text: 'Employers see where the skills they need are trained within 100 km, what fresh hires know, and local pay.',
+    async go(id) { await view('industry', id); await wait(1200, id); await scrollTo('.pool-grid', id, 1600); await tab('hire', id); await wait(600, id); await point('[data-action=hire-role][data-role=support]', id); await wait(1000, id); await scrollTo('.fit-cols', id, 2000); } },
+  { title: 'Internal: what we build next', text: 'For the Swift AI Academy team: employer demand against our catalogue and other providers, by learner type.',
+    async go(id) { await view('internal', id); await wait(1200, id); await scrollTo('.rec-board', id, 2200); await scrollTo('.matrix', id, 1600); } },
   { title: 'Government data, streaming in', text: 'How live government feeds will look once keys and data-sharing agreements are in place. This panel is a simulation.',
-    async go(id) { await view('industry', id); await tab('feeds', id); await wait(1200, id); await scrollTo('#simTiles', id, 3200); await scrollTo('.sim-grid', id, 2600); } },
-  { title: 'What we build next', text: 'Internal view for the Swift AI Academy team: employer demand against our catalogue and other providers.',
-    async go(id) { await view('internal', id); await wait(1200, id); await scrollTo('.rec-board', id, 2400); await scrollTo('.matrix', id, 2200); } },
-  { title: 'That is the tour', text: 'Explore on your own, or replay the demo from the home page.',
-    async go(id) { app.actions.tab({ dataset: { tab: 'home' } }); await wait(2600, id); } },
+    async go(id) { await tab('feeds', id); await wait(1200, id); await scrollTo('#simTiles', id, 2600); await scrollTo('.sim-grid', id, 2200); } },
+  { title: 'That is the tour', text: 'Pick your interface at the top, or replay the demo from the home page.',
+    async go(id) { app.actions.tab({ dataset: { tab: 'home' } }); await wait(2400, id); } },
 ];
 
 function bar(i) {

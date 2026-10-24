@@ -22,6 +22,9 @@ import './views/path.js';
 import './views/institutes.js';
 import './views/market.js';
 import './views/signals.js';
+import './views/learner-home.js';
+import './views/institution-home.js';
+import './views/talent.js';
 import { openRoleDialog, openHelp, closeModal } from './views/chrome.js';
 import { initLive } from './live.js';
 import { startTour } from './tour.js';
@@ -56,7 +59,8 @@ app.actions.tab = (el) => {
   if (tab === 'discover') { app.views.discover(); invalidateMap(); }
   else app.views[tab]?.();
   syncLocation();
-  closeNav();
+  const act = /** @type {HTMLElement|null} */ ($('.sub-tabs .tab.active'));
+  if (act) { const bar = /** @type {HTMLElement} */ ($('#subTabs')); bar.scrollLeft = act.offsetLeft - bar.clientWidth / 2 + act.clientWidth / 2; }
   if (prev !== tab) window.scrollTo({ top: 0 });
   try { history.replaceState(null, '', '#' + tab); } catch { /* sandboxed */ }
 };
@@ -67,16 +71,16 @@ app.actions.view = (el) => {
   app.actions.tab({ dataset: { tab: v.home } });
 };
 
-function openNav() { $('#sideNav').classList.add('open'); $('#navScrim').classList.add('open'); $('#navToggle').setAttribute('aria-expanded', 'true'); }
-function closeNav() { $('#sideNav').classList.remove('open'); $('#navScrim').classList.remove('open'); $('#navToggle').setAttribute('aria-expanded', 'false'); }
 
-const AREA_PAGES = ['market', 'institutes', 'path', 'home', 'regions'];
+const AREA_PAGES = ['market', 'institutes', 'path', 'home', 'regions', 'lhome', 'ihome', 'talent', 'hire', 'apprentice', 'partner'];
 function onLocation(v) {
   app.state.place = v;
   if (REGIONS.includes(v)) {
     setRegion(v);
-    if (AREA_PAGES.includes(app.state.tab) && app.state.tab !== 'home') app.views[app.state.tab]?.();
-    else app.actions.tab({ dataset: { tab: 'regions' } });
+    const hasRegions = viewOf(app.state.view).tabs.some(([t]) => t === 'regions');
+    if (!AREA_PAGES.includes(app.state.tab) && hasRegions) app.actions.tab({ dataset: { tab: 'regions' } });
+    else if (app.state.tab === 'discover') renderExplore();
+    else app.views[app.state.tab]?.();
     return;
   }
   app.state.filters.sector = /** @type {any} */ (v);
@@ -87,22 +91,24 @@ function onLocation(v) {
 }
 
 function wire() {
-  $('#sideNav').addEventListener('click', (e) => {
-    const t = /** @type {HTMLElement} */ (e.target).closest('.tab');
-    if (t) app.actions.tab(/** @type {any} */ (t));
-    const v = /** @type {HTMLElement} */ (e.target).closest('.vbtn');
+  $('#audTabs').addEventListener('click', (e) => {
+    const v = /** @type {HTMLElement} */ (e.target).closest('.aud-tab');
     if (v) app.actions.view(/** @type {any} */ (v));
   });
-  $('#sideNav').addEventListener('keydown', (e) => {
-    if (!['ArrowDown', 'ArrowUp'].includes(e.key)) return;
-    const tabs = $$('#navLinks .tab');
-    const i = tabs.indexOf(/** @type {any} */ (document.activeElement));
-    if (i < 0) return;
-    e.preventDefault();
-    tabs[(i + (e.key === 'ArrowDown' ? 1 : tabs.length - 1)) % tabs.length].focus();
+  $('#subTabs').addEventListener('click', (e) => {
+    const t = /** @type {HTMLElement} */ (e.target).closest('.tab');
+    if (t) app.actions.tab(/** @type {any} */ (t));
   });
-  $('#navToggle').onclick = () => ($('#sideNav').classList.contains('open') ? closeNav() : openNav());
-  $('#navScrim').onclick = closeNav;
+  for (const [bar, sel] of [['#audTabs', '.aud-tab'], ['#subTabs', '.tab']]) {
+    $(bar).addEventListener('keydown', (e) => {
+      if (!['ArrowRight', 'ArrowLeft'].includes(e.key)) return;
+      const tabs = $$(bar + ' ' + sel);
+      const i = tabs.indexOf(/** @type {any} */ (document.activeElement));
+      if (i < 0) return;
+      e.preventDefault();
+      tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length].focus();
+    });
+  }
   $('#location').onchange = (e) => onLocation(/** @type {HTMLSelectElement} */ (e.target).value);
   $('#query').addEventListener('focus', () => { if (app.state.tab !== 'discover') app.actions.tab({ dataset: { tab: 'discover' } }); });
   document.addEventListener('click', (ev) => {
@@ -120,7 +126,6 @@ function wire() {
     if (ev.key === 'Escape') {
       if (!$('#modal').classList.contains('hide')) closeModal();
       else if (app.state.selected || app.state.selectedGroup) closeDetail();
-      else closeNav();
     }
     if (ev.key === '/' && !/input|textarea|select/i.test(el.tagName)) { ev.preventDefault(); $('#query').focus(); }
   });
@@ -142,8 +147,8 @@ function wire() {
 }
 
 async function start() {
-  app.state.view = app.ls.get('opx-view', 'industry');
-  if (!VIEWS.some((v) => v.id === app.state.view)) app.state.view = 'industry';
+  app.state.view = app.ls.get('opx-view', 'learners');
+  if (!VIEWS.some((v) => v.id === app.state.view)) app.state.view = 'learners';
   wire();
   const seed = JSON.parse($('#seed').textContent);
   try {

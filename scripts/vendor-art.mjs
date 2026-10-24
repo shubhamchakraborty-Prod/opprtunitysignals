@@ -17,7 +17,7 @@ const ART = {
 const ICONS = ['map', 'handshake', 'construction', 'compare_arrows', 'checklist', 'event_upcoming', 'travel_explore', 'cell_tower', 'forum', 'source_notes',
   'inbox', 'call', 'help', 'login', 'search', 'download', 'open_in_new', 'close', 'check_circle', 'warning', 'schedule', 'pause', 'play_arrow', 'menu',
   'location_on', 'arrow_drop_down', 'arrow_forward', 'info', 'verified', 'database', 'monitoring', 'factory', 'school', 'work', 'bolt', 'trending_up', 'hub', 'tune', 'lightbulb', 'school', 'apartment', 'trending_up', 'timeline', 'home', 'route', 'location_city', 'public', 'rocket_launch', 'currency_rupee', 'groups', 'north_east', 'engineering'];
-const FILLED = ['map', 'handshake', 'construction', 'compare_arrows', 'checklist', 'event_upcoming', 'travel_explore', 'cell_tower', 'forum', 'source_notes', 'inbox', 'call', 'school', 'apartment', 'factory', 'hub', 'trending_up', 'timeline', 'home', 'route', 'location_city'];
+const FILLED = ['map', 'handshake', 'construction', 'compare_arrows', 'checklist', 'event_upcoming', 'travel_explore', 'cell_tower', 'forum', 'source_notes', 'inbox', 'call', 'school', 'apartment', 'factory', 'hub', 'trending_up', 'timeline', 'home', 'route', 'location_city', 'groups', 'work'];
 const DARK = /#(3f3d56|2f2e41|090814|192534)/gi;
 
 const art = {};

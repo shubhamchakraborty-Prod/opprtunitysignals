@@ -12,31 +12,29 @@
 <a class="skip" href="#main">Skip to content</a>
 <div class="app">
 <header class="appbar">
-  <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-controls="sideNav" aria-expanded="false"><!--ICON:menu--></button>
-  <div class="brand"><img src="<!--LOGO-->" alt="ConveGenius.AI"/><span class="product">Opportunity Explorer<small id="viewName">Industry</small></span></div>
-  <div class="appbar-center">
-    <label class="loc" for="location" title="Choose the area"><!--ICON:location_on--><span class="screenreader">Location</span>
-      <select id="location">
-        <optgroup label="Noida, Uttar Pradesh"><option value="all">Sector 62 and 63</option><option value="62">Sector 62</option><option value="63">Sector 63</option></optgroup>
-        <optgroup label="West Bengal"><option value="kalyani">Kalyani</option><option value="siliguri">Siliguri</option></optgroup>
-      </select><!--ICON:arrow_drop_down--></label>
-    <div class="searchbar" role="search"><!--ICON:search--><label for="query" class="screenreader">Search job ads</label><input id="query" type="search" placeholder="Search jobs, employers or skills" autocomplete="off"/></div>
+  <div class="bar1">
+    <button class="brand" type="button" data-action="tab" data-tab="home" aria-label="Opportunity Explorer home"><img src="<!--LOGO-->" alt="ConveGenius.AI"/><span class="product">Opportunity Explorer</span></button>
+    <nav class="aud-tabs" id="audTabs" role="tablist" aria-label="Choose your interface"></nav>
+    <div class="appbar-right">
+      <button class="pill live-pill" id="livePill" type="button" aria-pressed="false" title="Simulated live activity for the demo. Click to pause or resume."><span class="live-dot"></span>Live demo</button>
+      <span class="pill" id="modePill"><span class="dot"></span>Research pilot</span>
+      <span class="pill subtle" id="scanDate">Data checked 16 Oct 2026</span>
+      <button class="icon-btn" id="helpBtn" type="button" aria-haspopup="dialog" aria-label="How to read this page" title="How to read this page"><!--ICON:help--></button>
+      <button class="btn tonal" id="roleBtn" type="button" aria-haspopup="dialog">Team sign-in</button>
+    </div>
   </div>
-  <div class="appbar-right">
-    <button class="pill live-pill" id="livePill" type="button" aria-pressed="false" title="Simulated live activity for the demo. Click to pause or resume."><span class="live-dot"></span>Live demo</button>
-    <span class="pill" id="modePill"><span class="dot"></span>Research pilot</span>
-    <span class="pill subtle" id="scanDate">Data checked 16 Oct 2026</span>
-    <button class="icon-btn" id="helpBtn" type="button" aria-haspopup="dialog" aria-label="How to read this page" title="How to read this page"><!--ICON:help--></button>
-    <button class="btn tonal" id="roleBtn" type="button" aria-haspopup="dialog">Team sign-in</button>
+  <div class="bar2">
+    <nav class="sub-tabs" id="subTabs" aria-label="Pages"></nav>
+    <div class="bar2-tools">
+      <label class="loc" for="location" title="Choose the area"><!--ICON:location_on--><span class="screenreader">Location</span>
+        <select id="location">
+          <optgroup label="Noida, Uttar Pradesh"><option value="all">Sector 62 and 63</option><option value="62">Sector 62</option><option value="63">Sector 63</option></optgroup>
+          <optgroup label="West Bengal"><option value="kalyani">Kalyani</option><option value="siliguri">Siliguri</option></optgroup>
+        </select><!--ICON:arrow_drop_down--></label>
+      <div class="searchbar" role="search" id="searchBox"><!--ICON:search--><label for="query" class="screenreader">Search job ads</label><input id="query" type="search" placeholder="Search job ads" autocomplete="off"/></div>
+    </div>
   </div>
 </header>
-
-<nav class="sidenav" id="sideNav" aria-label="Main sections">
-  <div class="view-switch-wrap"><div class="nav-label" id="viewLbl">Show me the view for</div><div class="view-switch" id="viewSwitch" role="group" aria-labelledby="viewLbl"></div></div>
-  <div id="navLinks"></div>
-  <div class="nav-foot">Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a><br/>Illustrations: unDraw · Icons: Material Symbols</div>
-</nav>
-<div class="nav-scrim" id="navScrim"></div>
 
 <main class="sheet" id="main">
 <div class="sandbox-strip hide" id="sandboxStrip" role="status"></div>
@@ -93,6 +91,12 @@
   </div>
 </section>
 <section id="home" class="section hide"></section>
+<section id="lhome" class="section hide"></section>
+<section id="ihome" class="section hide"></section>
+<section id="talent" class="section hide"></section>
+<section id="hire" class="section hide"></section>
+<section id="apprentice" class="section hide"></section>
+<section id="partner" class="section hide"></section>
 <section id="path" class="section hide"></section>
 <section id="learn" class="section hide"></section>
 <section id="institutes" class="section hide"></section>
@@ -109,7 +113,7 @@
 <section id="evidence" class="section hide"></section>
 <section id="review" class="section hide"></section>
 <section id="verify" class="section hide"></section>
-<footer class="page-foot"><span>© ConveGenius.AI · Internal research pilot · Not an official employment service</span><span id="footStats"></span></footer>
+<footer class="page-foot"><span>© ConveGenius.AI · Research pilot · Not an official employment service</span><span>Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a> · Illustrations: unDraw · Icons: Material Symbols</span><span id="footStats"></span></footer>
 </main>
 </div>
 <div class="drawer-backdrop" id="drawerBackdrop" data-action="close-detail"></div>

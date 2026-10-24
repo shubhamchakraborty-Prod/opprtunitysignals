@@ -35,7 +35,7 @@ async function main() {
   } else {
     store = new FileStore(process.env.DATA_FILE || join(ROOT, 'data', 'runtime', 'db.json'), seedData);
   }
-  const service = createService(/** @type {any} */ (store), { now: process.env.AS_OF ? () => /** @type {string} */ (process.env.AS_OF) : undefined, profiles: seed.profiles, geometry: seed.geometry, trades: seed.trades, courses: seed.courses, announcements: seed.announcements, regions: seed.regions, saa: seed.saa, providers: seed.providers, market: seed.market, demand: seed.demand });
+  const service = createService(/** @type {any} */ (store), { now: process.env.AS_OF ? () => /** @type {string} */ (process.env.AS_OF) : undefined, profiles: seed.profiles, geometry: seed.geometry, trades: seed.trades, courses: seed.courses, announcements: seed.announcements, regions: seed.regions, saa: seed.saa, providers: seed.providers, market: seed.market, demand: seed.demand, programmes: seed.programmes });
   const users = loadUsers(USERS_FILE);
   if (!existsSync(join(STATIC_DIR, 'index.html'))) console.warn(`No built web app in ${STATIC_DIR}. Run "npm run build" first.`);
   const registry = loadRegistry();

@@ -38,11 +38,15 @@ How the Opportunity Explorer is designed and built, following the way Google des
 | **Consistency and standards** | Familiar patterns cut learning time. | Material 3 components behave the way they do in Google's own products: navigation drawer, top app bar, filter chips, segmented buttons, side sheet, snackbar. |
 | **Human-centred design: observe, ideate, prototype, test** | Build what people need, not what was asked for. | Browser tests encode the main tasks (find a job, see a skill plan, apply, check a source). The pilot exists to watch real institutes use it. |
 
-## 3. Audience views
+## 3. Four interfaces
 
-| View | Who | First question | Pages |
+Chosen with primary tabs at the top; each has its own secondary tabs. The needs QA behind them is in `QA_USER_NEEDS.md`.
+
+| Interface | Who | First question | Pages |
 |---|---|---|---|
-| Learners | College, ITI and polytechnic learners | Where can I apply, and what should I learn? | Where to apply, Close my skill gaps, Match a learner, Jobs map, Coming up |
-| Institution | Principals, training and placement officers | Which of our trades and branches fit local demand? | ITI trades and skill gaps, Next steps, Institutes nearby, Market overview, Compare 62 and 63, Workers' views |
-| Industry | Employers, planners, partners | What is demand now and what is coming? | Jobs map, Compare, Kalyani and Siliguri, Market overview, Coming up, Government data, Sources |
-| Internal | Swift AI Academy product team | What should we build, extend, curate or promote? | Market signals, Market overview, Government data, Sources, Review queue, Record an employer call |
+| Learners | ITI, polytechnic and college learners | What can I do next? | For you, Where to apply, My skill plan, Jobs for me, Coming up |
+| Institutions | Principals, training and placement officers | Do our trades and programmes match demand? | Overview, Trades and programmes, Jobs near you, Placement steps, Institutes nearby, Market, Compare, Kalyani and Siliguri, Workers' views |
+| Industry | Employers hiring | Where is the talent, and what will it need? | Talent near you, Hire for a role, Apprentices and interns, Market and competition, Request candidates |
+| Internal | Swift AI Academy team | What should we build, extend, curate or promote? | Market signals, Government data, Job ads, Market, Match a learner, Sources, Review queue, Record an employer call |
+
+Employers do not see job ads: they post them. Their interface is about talent supply instead.

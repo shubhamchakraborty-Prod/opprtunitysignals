@@ -27,5 +27,6 @@ export function loadSeed() {
     providers: readIf('provider_scan.json'),
     market: readIf('market.json'),
     demand: readIf('demand.json'),
+    programmes: readIf('programmes.json'),
   };
 }

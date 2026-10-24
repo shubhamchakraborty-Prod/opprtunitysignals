@@ -12,43 +12,46 @@ const srv = await startServer();
 const shot = async (page, name, full = true) => {
   await page.evaluate(() => {
     document.querySelector('#toast')?.classList.add('hide');
-    if (!document.getElementById('shotcss')) document.head.insertAdjacentHTML('beforeend', '<style id="shotcss">.appbar,.sidenav{position:relative!important;top:0!important}body::before{display:none}</style>');
+    if (!document.getElementById('shotcss')) document.head.insertAdjacentHTML('beforeend', '<style id="shotcss">.appbar{position:relative!important;top:0!important}body::before{display:none}.live-toasts{display:none!important}</style>');
     window.scrollTo(0, 0);
   });
   await page.waitForTimeout(150);
   await page.screenshot({ path: join(out, name + '.png'), fullPage: full });
 };
-const go = async (page, view, tab) => { await page.click(`.vbtn[data-view=${view}]`); if (tab) await page.click(`#navLinks .tab[data-tab=${tab}]`); await page.waitForTimeout(500); };
+const go = async (page, view, tab) => { await page.click(`.aud-tab[data-view=${view}]`); if (tab) await page.click(`#subTabs .tab[data-tab=${tab}]`); await page.waitForTimeout(500); };
 const browser = await launch();
 try {
   const page = await newPage(browser);
   await page.goto(srv.url + '/');
   await page.waitForSelector('.door');
   await shot(page, '00-home');
-  await go(page, 'industry', 'discover');
-  await page.waitForTimeout(6000);
-  await shot(page, '01-jobs-map');
-  await page.locator('#jobCards .job', { hasText: 'Production Engineer' }).click();
-  await page.waitForTimeout(400);
-  await shot(page, '01b-job-detail', false);
-  await page.keyboard.press('Escape');
-  await page.waitForTimeout(300);
   const pages = [
-    ['learners', 'path', '02-where-to-apply'], ['learners', 'learn', '03-close-my-skill-gaps'], ['learners', 'match', '04-match-a-learner'],
-    ['institution', 'trades', '05-iti-trades-and-skill-gaps'], ['institution', 'plan', '06-next-steps'], ['institution', 'institutes', '07-institutes-nearby'],
-    ['industry', 'market', '08-market-overview'], ['industry', 'compare', '09-compare-62-and-63'], ['industry', 'upcoming', '10-coming-up'],
-    ['industry', 'regions', '11-kalyani-and-siliguri'], ['industry', 'feeds', '12-government-data'], ['institution', 'voice', '14-workers-views'], ['industry', 'evidence', '15-sources'],
+    ['learners', 'lhome', '01-learners-for-you'], ['learners', 'path', '02-learners-where-to-apply'], ['learners', 'learn', '03-learners-skill-plan'], ['learners', 'discover', '04-learners-jobs-for-me'],
+    ['institution', 'ihome', '05-institutions-overview'], ['institution', 'trades', '06-institutions-trades-and-programmes'], ['institution', 'plan', '07-institutions-placement-steps'], ['institution', 'institutes', '08-institutions-institutes-nearby'],
+    ['institution', 'market', '09-institutions-market'], ['institution', 'compare', '10-institutions-compare-62-and-63'], ['institution', 'regions', '11-institutions-kalyani-and-siliguri'], ['institution', 'voice', '12-institutions-workers-views'],
+    ['industry', 'talent', '13-industry-talent-near-you'], ['industry', 'hire', '14-industry-hire-for-a-role'], ['industry', 'apprentice', '15-industry-apprentices-and-interns'], ['industry', 'partner', '16-industry-request-candidates'],
   ];
   for (const [view, t, name] of pages) {
     await go(page, view, t);
+    if (t === 'discover') {
+      await page.waitForTimeout(5500);
+      await shot(page, name);
+      await page.locator('#jobCards .job', { hasText: 'Production Engineer' }).click();
+      await page.waitForTimeout(400);
+      await shot(page, '04b-job-detail', false);
+      await page.keyboard.press('Escape');
+      await page.waitForTimeout(300);
+      continue;
+    }
     if (t === 'trades') { await page.click('[data-action=trade-open][data-trade="Electrician"]'); await page.waitForTimeout(200); }
     if (t === 'regions') { await page.click('#regionSketch .fpin >> nth=0'); await page.waitForTimeout(200); }
-    if (t === 'feeds') { await page.waitForTimeout(5500); await page.click('#simToggle'); }
     await shot(page, name);
+    if (t === 'regions') await page.selectOption('#location', 'all');
   }
   await signIn(page, 'dev-admin-token');
-  for (const [view, t, name] of [['internal', 'signals', '13-market-signals'], ['internal', 'review', '16-review-queue'], ['internal', 'verify', '17-record-employer-call']]) {
-    await go(page, view, t);
+  for (const [t, name] of [['signals', '17-internal-market-signals'], ['feeds', '18-internal-government-data'], ['match', '19-internal-match-a-learner'], ['evidence', '20-internal-sources'], ['review', '21-internal-review-queue'], ['verify', '22-internal-record-employer-call']]) {
+    await go(page, 'internal', t);
+    if (t === 'feeds') { await page.waitForTimeout(5500); await page.click('#simToggle'); }
     await shot(page, name);
   }
   console.log('Screenshots written to docs/screenshots');
