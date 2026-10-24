@@ -42,3 +42,10 @@ See `test/e2e/ui.test.mjs` for responsive and permission tests. Run `npm run typ
 5. Complete full interaction and accessibility QA before a public rollout.
 
 **Scope note:** This PR changes only navigation. It is not a claim that the full product PRD has been implemented.
+
+
+## Learner journey addition
+
+Learners now have a sixth page, **My profile**, reached through **More** on mobile or directly on desktop. The first four mobile destinations stay focused on the most-used jobs, courses and application tasks. Learner profile setup stores personal preferences **only after consent** in browser localStorage. Nothing is uploaded or shared with employers, and erasing the profile clears saved preferences.
+
+Opportunity cards mark ad-level **programme relevance** and skill bridges. The detail drawer explains qualification wording, matched and missing skills, and explicitly distinguishes unverified job advertisements from eligibility and confirmed vacancies. This is based on the existing skills catalogue, not a learner assessment.

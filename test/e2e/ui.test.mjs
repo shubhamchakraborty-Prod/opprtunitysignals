@@ -231,7 +231,7 @@ test('mobile navigation offers five destinations and keeps all institution pages
 
   await page.click('.aud-tab[data-view=learners]');
   assert.equal(await page.locator('#mobileNav .mobile-tab').count(), 5);
-  assert.equal(await page.locator('#mobileNav [data-action=mobile-more]').count(), 0);
+  assert.equal(await page.locator('#mobileNav [data-action=mobile-more]').count(), 1);
   await page.click('#mobileNav [data-tab=learn]');
   assert.match(await text(page, '#learn'), /Your skill plan/);
   await page.setViewportSize({ width: 1280, height: 800 });
@@ -250,5 +250,63 @@ test('mobile internal navigation never exposes restricted review and verificatio
   assert.equal(await page.locator('#modal [data-tab=review]').count(), 0);
   assert.equal(await page.locator('#modal [data-tab=verify]').count(), 0);
   assert.ok(await page.locator('#modal [data-tab=evidence]').count() > 0);
+  assert.deepEqual(page.errors, []);
+});
+
+
+test('learner profile: explicit local consent, study match and erase', async () => {
+  const page = await newPage(browser);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(srv.url + '/?noguide&view=learners&tab=lprofile');
+  await page.waitForSelector('#learnerProfileForm');
+  assert.equal(await page.locator('#learnerProfileForm [name=consent]').isChecked(), false);
+  assert.match(await text(page, '#lprofile'), /No learner details are sent to employers/);
+  await page.click('#lprofile [data-action=lp-type][data-type=polytechnic]');
+  await page.selectOption('#learnerProfileForm [name=programme]', 'dip-ece');
+  await page.selectOption('#learnerProfileForm [name=stage]', 'completed');
+  await page.selectOption('#learnerProfileForm [name=year]', '3');
+  await page.selectOption('#learnerProfileForm [name=location]', 'siliguri');
+  await page.selectOption('#learnerProfileForm [name=language]', 'bn');
+  await page.selectOption('#learnerProfileForm [name=relocation]', 'yes');
+  await page.selectOption('#learnerProfileForm [name=shift]', 'day');
+  await page.click('#learnerProfileForm button[type=submit]');
+  assert.equal(await page.locator('#lprofile').isHidden(), false, 'consent is required to save');
+  assert.equal(await page.evaluate(() => localStorage.getItem('opx-learner')), null);
+  await page.check('#learnerProfileForm [name=consent]');
+  await page.click('#learnerProfileForm button[type=submit]');
+  assert.match(await text(page, '#lhome'), /Saved only on this device/);
+  let saved = await page.evaluate(() => JSON.parse(localStorage.getItem('opx-learner')));
+  assert.equal(saved.programme, 'dip-ece');
+  assert.equal(saved.stage, 'completed');
+  assert.equal(saved.language, 'bn');
+  assert.equal(saved.consent, true);
+
+  await page.click('#lhome [data-tab=lprofile]');
+  await page.waitForSelector('#learnerProfileForm');
+  assert.equal(await page.inputValue('#learnerProfileForm [name=language]'), 'bn');
+  await page.click('#learnerProfileForm [data-action=lp-forget]');
+  assert.equal(await page.evaluate(() => localStorage.getItem('opx-learner')), null);
+  assert.match(await text(page, '#lprofile'), /I agree to save these preferences/);
+
+  await page.click('.aud-tab[data-view=learners]');
+  await page.click('#subTabs .tab[data-tab=discover]', { force: true });
+  await page.waitForSelector('#jobCards .job');
+  await page.click('#jobCards .job >> nth=0');
+  assert.match(await text(page, '#detailPanel'), /How this advert relates to your profile/);
+  assert.match(await text(page, '#detailPanel'), /not your assessed skills or employer-confirmed eligibility/);
+  assert.deepEqual(page.errors, []);
+});
+
+test('learner profile editor on desktop retains existing programme selection flow', async () => {
+  const page = await newPage(browser);
+  await page.setViewportSize({ width: 1366, height: 900 });
+  await page.goto(srv.url + '/?noguide&view=learners&tab=lhome');
+  await page.waitForSelector('#lpProg');
+  await page.selectOption('#lpProg', 'Fitter');
+  assert.match(await text(page, '#lhome'), /Fitter/);
+  await page.click('#lhome [data-tab=lprofile]');
+  assert.equal(await page.inputValue('#learnerProfileForm [name=programme]'), 'Fitter');
+  await page.click('#subTabs .tab[data-tab=learn]');
+  assert.match(await text(page, '#learn'), /Your skill plan/);
   assert.deepEqual(page.errors, []);
 });
