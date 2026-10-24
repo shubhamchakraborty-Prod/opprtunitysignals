@@ -10,7 +10,7 @@ export const DEMO_PEOPLE = Object.freeze([
 
 const WEIGHTS = {
   learner: {employer_confirmation:5,job_ad:4,training_supply:3,project_announcement:1,social_signal:0},
-  institution: {employer_confirmation:5,job_ad:5,training_supply:4,project_announcement:2,social_signal:1},
+  institution: {employer_confirmation:6,job_ad:5,training_supply:4,project_announcement:2,social_signal:1},
   industry: {training_supply:5,employer_confirmation:4,job_ad:3,project_announcement:2,social_signal:1},
   research: {social_signal:5,job_ad:4,project_announcement:4,employer_confirmation:3,training_supply:2},
 };
