@@ -1,6 +1,6 @@
 // Header, team sign-in, help and the first-visit guided start.
 import { app } from '../app.js';
-import { esc, $, $, toast, errorBox, fmtDate, icon } from '../ui.js';
+import { esc, $, $$, toast, errorBox, fmtDate, icon } from '../ui.js';
 import { ROLE_LABELS } from '../../../src/core/rbac.js';
 import { renderNav, mobileNavigation, viewOf } from '../nav.js';
 
