@@ -151,7 +151,7 @@ test('four separate interfaces: learners, institutions, industry (talent, not jo
   await page.click('#subTabs .tab[data-tab=path]');
   assert.match(await text(page, '#path'), /National Apprenticeship Training Scheme|NATS/);
   await go(page, 'industry');
-  assert.match(await text(page, '#talent'), /Hire trained people near your site/);
+  assert.match(await text(page, '#talent'), /Explore local training institutions/);
   assert.equal(await page.$$eval('#subTabs .tab[data-tab=discover]', (x) => x.length), 0, 'no job-ads page in the industry interface');
   await page.click('#talent [data-action=hire-role][data-role=support]');
   assert.match(await text(page, '#hire'), /ITI trades[\s\S]*Diplomas[\s\S]*Degrees/);
