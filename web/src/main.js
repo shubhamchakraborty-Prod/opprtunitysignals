@@ -24,6 +24,7 @@ import './views/market.js';
 import './views/signals.js';
 import './views/learner-home.js';
 import './views/institution-home.js';
+import './views/institution-intelligence.js';
 import './views/talent.js';
 import { openRoleDialog, openHelp, closeModal } from './views/chrome.js';
 import { initLive } from './live.js';
@@ -72,7 +73,7 @@ app.actions.view = (el) => {
 };
 
 
-const AREA_PAGES = ['market', 'institutes', 'path', 'home', 'regions', 'lhome', 'ihome', 'talent', 'hire', 'apprentice', 'partner'];
+const AREA_PAGES = ['market', 'institutes', 'path', 'home', 'regions', 'lhome', 'ihome', 'idemand', 'ioutreach', 'talent', 'hire', 'apprentice', 'partner'];
 function onLocation(v) {
   app.state.place = v;
   if (REGIONS.includes(v)) {

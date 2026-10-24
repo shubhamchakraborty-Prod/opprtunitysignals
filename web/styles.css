@@ -926,3 +926,75 @@ ul.plain{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px;f
  .profile-bar select.input{width:100%;max-width:none}
  .lp-onboard-cta .btn{width:100%}
 }
+
+/* Institution intelligence: native responsive evidence charts and outreach workflow. */
+.inst-head{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.inst-head>div:first-child{display:grid;gap:9px;flex:1}
+.inst-head h2{font-size:clamp(25px,2.8vw,38px);font-weight:550;line-height:1.16;max-width:26ch}
+.inst-head p{color:var(--ink-2);font-size:15px;max-width:70ch}
+.inst-head-art .ph-art{width:220px}
+.inst-evidence{display:grid;gap:7px;border:1px solid var(--line-2);background:var(--surface-1);border-radius:14px;padding:16px 18px;font-size:13px}
+.inst-evidence strong{display:flex;align-items:center;gap:8px}
+.inst-evidence p{color:var(--ink-2);line-height:1.5}
+.inst-type-switch{display:flex;flex-wrap:wrap;gap:8px}
+.inst-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.inst-metric{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.inst-metric span{font-size:12.5px;color:var(--ink-2)}
+.inst-metric strong{font-size:clamp(19px,2.3vw,31px);line-height:1.12;font-weight:650;overflow-wrap:anywhere}
+.inst-metric small{font-size:11.5px;color:var(--muted);line-height:1.45}
+.inst-panels,.inst-outreach-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.inst-panel{overflow:hidden}
+.inst-chart{display:grid;gap:7px;padding:2px 18px 10px}
+.inst-chart-row{display:grid;grid-template-columns:minmax(110px,1.25fr) minmax(65px,1fr) 32px;gap:10px;align-items:center;min-height:43px;border:1px solid transparent;background:transparent;border-radius:9px;padding:6px 9px;text-align:left;font:inherit;color:var(--ink)}
+button.inst-chart-row{cursor:pointer}
+button.inst-chart-row:hover,button.inst-chart-row.active{background:var(--primary-container)}
+.inst-chart-label{font-size:12.5px;line-height:1.3;overflow-wrap:anywhere}
+.inst-chart-row>strong{text-align:right;font-size:13px;font-weight:650}
+.inst-bar{height:9px;border-radius:12px;background:var(--surface-2);overflow:hidden}
+.inst-bar i{height:100%;background:var(--primary);display:block;border-radius:12px}
+.inst-chart-note{padding:0 18px 18px;line-height:1.5}
+.inst-select-label{display:grid;gap:6px;font-size:12px;font-weight:600;color:var(--ink-2)}
+.inst-select-label select,.inst-pipeline-item select,.inst-lead-search input{min-height:43px;max-width:100%;padding:8px 10px;border:1px solid var(--line-2);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit;font-size:13px}
+.inst-detail-top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.inst-detail-top h4{font-size:20px;font-weight:600;margin-top:5px}
+.inst-detail-stats{display:flex;gap:10px;flex-wrap:wrap}
+.inst-detail-stats span{max-width:230px;border-radius:10px;background:var(--surface-1);padding:9px;font-size:12px;line-height:1.4}
+.inst-detail-stats strong{font-size:20px;display:block}
+.inst-detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;padding:16px 0}
+.inst-detail-grid h5{font-size:13px;font-weight:650;margin-bottom:9px}
+.inst-chip-list{list-style:none;display:flex;flex-wrap:wrap;gap:7px;padding:0;margin:0}
+.inst-chip-list li{border:1px solid var(--line);border-radius:12px;padding:7px 10px;font-size:12px;background:var(--surface-1)}
+.inst-chip-list small{color:var(--ink-2);margin-left:4px}
+.inst-source-list{list-style:none;display:grid;gap:12px;padding:0;margin:0}
+.inst-source-list li{display:grid;gap:3px;font-size:13px}
+.inst-source-list span{color:var(--muted);font-size:12px}
+.inst-source-list .ico{width:15px;height:15px}
+.inst-empty{padding:22px 14px;display:grid;gap:7px;color:var(--ink-2);font-size:13px}
+.inst-empty strong{font-size:14px;color:var(--ink)}
+.inst-lead-search{padding:0 18px 15px;display:grid;gap:8px}
+.inst-lead-search label{font-size:12px;font-weight:600}
+.inst-leads{display:grid}
+.inst-lead{padding:17px 18px;border-top:1px solid var(--line);display:grid;gap:8px}
+.inst-lead-title{display:flex;align-items:center;gap:10px;justify-content:space-between}
+.inst-lead-title h4{font-weight:650;font-size:14px}
+.inst-lead>p:not(.note){font-size:13px;color:var(--ink-2)}
+.inst-lead-actions{display:flex;flex-wrap:wrap;gap:8px}
+.inst-lead-actions .btn{white-space:normal;text-align:center}
+.inst-pipeline{display:grid}
+.inst-pipeline-item{display:grid;gap:10px;padding:15px 18px;border-bottom:1px solid var(--line)}
+.inst-pipeline-item h4{font-size:14px;font-weight:650}
+.inst-pipeline-item label{font-size:12px;font-weight:600;display:grid;gap:7px}
+.inst-pipeline-item .note{margin-top:5px}
+.inst-outreach-note{margin:16px 18px;background:var(--surface-1);border-radius:12px;padding:14px;font-size:12px;line-height:1.5}
+.inst-outreach-note p{color:var(--ink-2);margin-top:5px}
+.inst-clear{padding:10px 18px}
+.inst-quicklinks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.inst-quicklink{display:grid;grid-template-columns:auto 1fr auto;column-gap:12px;row-gap:4px;align-items:center;border:1px solid var(--line);border-radius:16px;background:var(--surface);padding:16px;text-align:left;color:var(--ink);cursor:pointer}
+.inst-quicklink>span{grid-row:span 2;color:var(--primary)}
+.inst-quicklink .ico{width:24px;height:24px}
+.inst-quicklink>strong{font-size:14px}
+.inst-quicklink>small{font-size:12px;color:var(--muted);grid-column:2}
+.inst-quicklink>.ico{grid-column:3;grid-row:1/3}
+.inst-quicklink:hover{background:var(--surface-1)}
+@media(max-width:1000px){.inst-panels,.inst-outreach-grid{grid-template-columns:1fr}.inst-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.inst-head-art{display:none}.inst-head p{font-size:14px}.inst-metrics,.inst-quicklinks,.inst-detail-grid{grid-template-columns:1fr}.inst-metric{padding:14px}.inst-metric>strong{font-size:24px}.inst-chart{padding:2px 10px 10px}.inst-chart-row{grid-template-columns:minmax(100px,1fr) minmax(54px,.75fr) 28px;gap:7px}.inst-chart-note{padding:0 14px 15px}.inst-detail-stats span{max-width:none}.inst-select-label,.inst-select-label select{width:100%}.inst-lead{padding:15px}.inst-lead-search{padding:0 14px 14px}.inst-lead-actions .btn{flex:1}}
