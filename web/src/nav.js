@@ -13,7 +13,7 @@ export const VIEWS = [
   { id: 'industry', label: 'Industry', icon: 'factory', home: 'talent', who: 'Employers hiring talent',
     tabs: [['talent', 'Talent overview', 'groups'], ['isupply', 'Institution supply', 'location_city'], ['hire', 'Match role & skills', 'work'], ['partner', 'Partnership plans', 'handshake'], ['apprentice', 'Apprentices and interns', 'school'], ['market', 'Market and competition', 'timeline']] },
   { id: 'internal', label: 'Internal', icon: 'hub', home: 'iops', who: 'Researchers, employer verifiers and administrators',
-    tabs: [['iops', 'Research overview', 'layout_dashboard'], ['iquality', 'Data quality', 'fact_check'], ['signals', 'Market signals', 'trending_up'], ['feeds', 'Government data', 'cell_tower'], ['discover', 'Job ads', 'map'], ['market', 'Market', 'timeline'], ['match', 'Match a learner', 'handshake'], ['evidence', 'Sources', 'source_notes'], ['review', 'Review queue', 'inbox'], ['verify', 'Record an employer call', 'call'], ['iaccess', 'Access & permissions', 'shield']] },
+    tabs: [['iops', 'Research overview', 'layout_dashboard'], ['idemo', 'Integrated demo', 'auto_awesome'], ['iquality', 'Data quality', 'fact_check'], ['signals', 'Market signals', 'trending_up'], ['feeds', 'Government data', 'cell_tower'], ['discover', 'Job ads', 'map'], ['market', 'Market', 'timeline'], ['match', 'Match a learner', 'handshake'], ['evidence', 'Sources', 'source_notes'], ['review', 'Review queue', 'inbox'], ['verify', 'Record an employer call', 'call'], ['iaccess', 'Access & permissions', 'shield']] },
 ];
 export const ALL_TABS = ['home', ...new Set(VIEWS.flatMap((v) => v.tabs.map(([t]) => t)))];
 /** Pages with job-ad search. */

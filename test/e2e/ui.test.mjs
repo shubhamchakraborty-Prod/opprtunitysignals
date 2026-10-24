@@ -486,3 +486,46 @@ test('internal access matrix is read-only; administrator rights are not granted 
   assert.match(await text(page,'#verify'),/not permitted|team member|for the team/i);
   assert.deepEqual(page.errors,[]);
 });
+
+test('future-state intelligence demo displays simulation and explainable confidence', async () => {
+  const page = await newPage(browser);
+  await page.setViewportSize({width:1366,height:900});
+  await page.goto(srv.url + '/?noguide&view=internal&tab=idemo');
+  await page.waitForSelector('#idemo .fd-map-art');
+  assert.match(await text(page,'#idemo'),/FUTURE-STATE SIMULATION/);
+  assert.match(await text(page,'#idemo'),/No external API keys are connected/);
+  assert.ok(await page.locator('#idemo .fd-marker').count()>3);
+  assert.ok(await page.locator('#idemo .fd-connector-grid article').count()>=8);
+  assert.match(await text(page,'#idemo'),/Not employer-confirmed/);
+  const score=await text(page,'#idemo .fd-evidence-panel');
+  assert.match(score,/Why the example is scored this way/);
+  await page.click('#idemo [data-action=fd-select][data-id=DM-006] >> nth=0');
+  assert.match(await text(page,'#idemo .fd-evidence-panel'),/Unconfirmed social-only claim/);
+  await page.click('#idemo [data-action=fd-persona][data-persona=institution]');
+  assert.match(await text(page,'#idemo .fd-persona-result'),/Institution interpretation/);
+  await page.click('#idemo [data-action=fd-sync]');
+  assert.match(await text(page,'#idemo .fd-sync-status'),/Demo sync #1/);
+  assert.deepEqual(page.errors,[]);
+});
+
+test('future-state demo region, confidence and source filters remain separate from live data', async () => {
+  const page=await newPage(browser);
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(srv.url + '/?noguide&view=internal&tab=idemo');
+  await page.waitForSelector('#fdArea');
+  assert.equal(await page.locator('#mobileNav .mobile-tab').count(),5);
+  await page.selectOption('#fdArea','kalyani');
+  assert.match(await text(page,'#idemo'),/Kalyani/);
+  assert.equal(await page.locator('#idemo .fd-marker').count(),3);
+  await page.selectOption('#fdCategory','social');
+  assert.equal(await page.locator('#idemo .fd-marker').count(),1);
+  await page.selectOption('#fdBand',{label:'Very high'});
+  assert.equal(await page.locator('#idemo .fd-marker').count(),0);
+  assert.match(await text(page,'#idemo'),/No sample records meet/);
+  await page.selectOption('#fdBand','all');
+  await page.selectOption('#fdCategory','all');
+  await page.selectOption('#fdArea','noida');
+  assert.ok(await page.locator('#idemo .fd-marker').count()>3);
+  assert.match(await text(page,'#idemo'),/This preview uses entirely synthetic/);
+  assert.deepEqual(page.errors,[]);
+});
