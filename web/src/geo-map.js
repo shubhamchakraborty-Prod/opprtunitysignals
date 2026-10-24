@@ -3,8 +3,30 @@
 // callers fall back to a zoomable sketch. Also provides the sketch helpers.
 import { esc } from './ui.js';
 
-const STYLE = 'https://tiles.openfreemap.org/styles/liberty';
-const ATTRIBUTION = '<a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> © <a href="https://www.openmaptiles.org/" target="_blank" rel="noopener">OpenMapTiles</a> Data from <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>';
+const OSM = '© <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>';
+/**
+ * Map providers. All draw OpenStreetMap data, so every one credits OpenStreetMap contributors.
+ * openstreetmap.org itself does not issue API keys: its own tile server is free for light use under the
+ * OSMF tile usage policy. Keyed providers (MapTiler, Stadia Maps, Thunderforest) serve OSM data at scale.
+ * Chosen at build time with MAP_PROVIDER and MAP_API_KEY (see docs/MAPS.md).
+ */
+export const PROVIDERS = {
+  openfreemap: { name: 'OpenFreeMap', key: false, style: () => 'https://tiles.openfreemap.org/styles/liberty', credit: `<a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> © <a href="https://www.openmaptiles.org/" target="_blank" rel="noopener">OpenMapTiles</a> ${OSM}` },
+  maptiler: { name: 'MapTiler', key: true, style: (k) => `https://api.maptiler.com/maps/streets-v2/style.json?key=${encodeURIComponent(k)}`, credit: `<a href="https://www.maptiler.com/copyright/" target="_blank" rel="noopener">© MapTiler</a> ${OSM}` },
+  stadia: { name: 'Stadia Maps', key: true, style: (k) => `https://tiles.stadiamaps.com/styles/alidade_smooth.json${k ? `?api_key=${encodeURIComponent(k)}` : ''}`, credit: `<a href="https://stadiamaps.com/" target="_blank" rel="noopener">© Stadia Maps</a> <a href="https://openmaptiles.org/" target="_blank" rel="noopener">© OpenMapTiles</a> ${OSM}` },
+  thunderforest: { name: 'Thunderforest', key: true, style: (k) => raster(`https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=${encodeURIComponent(k)}`, 22), credit: `Maps © <a href="https://www.thunderforest.com/" target="_blank" rel="noopener">Thunderforest</a>, data ${OSM}` },
+  osm: { name: 'OpenStreetMap', key: false, style: () => raster('https://tile.openstreetmap.org/{z}/{x}/{y}.png', 19), credit: OSM },
+};
+function raster(url, maxzoom) {
+  return { version: 8, sources: { base: { type: 'raster', tiles: [url], tileSize: 256, maxzoom } }, layers: [{ id: 'base', type: 'raster', source: 'base' }] };
+}
+/** The configured provider; falls back to OpenFreeMap when a keyed provider has no key. */
+export function mapProvider() {
+  const cfg = /** @type {any} */ (window).__MAP_CONFIG__ || {};
+  const p = PROVIDERS[cfg.provider] || PROVIDERS.openfreemap;
+  if (p.key && !cfg.key && cfg.provider !== 'stadia') return { ...PROVIDERS.openfreemap, id: 'openfreemap', keyMissing: cfg.provider };
+  return { ...p, id: PROVIDERS[cfg.provider] ? cfg.provider : 'openfreemap', apiKey: cfg.key || '' };
+}
 
 let libPromise = null;
 function loadMapLibre() {
@@ -46,9 +68,10 @@ export async function createStreetMap(container, opts) {
   if (!navigator.onLine) throw new Error('This device is offline.');
   const maplibregl = await loadMapLibre();
   if (!maplibregl.supported || (typeof maplibregl.supported === 'function' && !maplibregl.supported())) throw new Error('This browser cannot draw the street map.');
-  const map = new maplibregl.Map({ container, style: STYLE, center: [opts.center[1], opts.center[0]], zoom: opts.zoom, attributionControl: false, cooperativeGestures: false });
+  const prov = mapProvider();
+  const map = new maplibregl.Map({ container, style: /** @type {any} */ (prov.style(prov.apiKey)), center: [opts.center[1], opts.center[0]], zoom: opts.zoom, attributionControl: false, cooperativeGestures: false });
   map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');
-  map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: ATTRIBUTION }));
+  map.addControl(new maplibregl.AttributionControl({ compact: false, customAttribution: prov.credit }));
   map.scrollZoom.enable();
   await new Promise((resolve, reject) => {
     const t = setTimeout(() => reject(new Error('The street map did not load in time (offline or blocked).')), 9000);
@@ -69,6 +92,7 @@ export async function createStreetMap(container, opts) {
         const el = document.createElement('button');
         el.type = 'button';
         el.className = `marker ${p.cls || ''}`;
+        el.dataset.key = p.g?.key || p.id || '';
         el.setAttribute('aria-label', p.label);
         el.title = p.label;
         el.innerHTML = `${esc(p.text || '')}${p.count > 1 ? `<span class="badge">${p.count}</span>` : ''}`;

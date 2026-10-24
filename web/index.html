@@ -5,94 +5,111 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <title>Noida Opportunity Explorer</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="ConveGenius.AI research pilot: job ads seen online in Noida Sectors 62 and 63, which ones employers have confirmed, and which ITI learners they could suit."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&family=Sora:wght@600;700&display=swap"/>
+<meta name="description" content="ConveGenius.AI research pilot: job ads seen online in Noida Sectors 62 and 63, which ones employers have confirmed, which ITI learners they could suit, and industry around Kalyani and Siliguri."/>
 <!--STYLES-->
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="top"><div class="top-in">
-  <div class="brand"><span class="logo-chip"><img src="<!--LOGO-->" alt="ConveGenius.AI"/></span><div class="brand-copy"><strong>Industry Opportunity Explorer</strong><small>Noida Sector 62 and 63 · research pilot</small></div></div>
-  <div class="topright"><span class="pill" id="modePill"><span class="dot"></span>Research pilot</span><span class="pill" id="scanDate">Data checked 16 Oct 2026</span><button class="btn ghost small" id="helpBtn" aria-haspopup="dialog">How to read this</button><button class="btn small" id="roleBtn" aria-haspopup="dialog">Team sign-in</button></div>
-</div></header>
-<div class="sandbox-strip hide" id="sandboxStrip" role="status"></div>
-<main class="shell" id="main">
-
-<section class="hero" id="hero" aria-labelledby="heroTitle">
-  <div class="eyebrow">Noida Sector 62 and 63 · Gautam Buddh Nagar, Uttar Pradesh</div>
-  <h1 id="heroTitle">What jobs are on offer in Sector 62 and 63, and <em>who could fill them?</em></h1>
-  <p class="lead">We collect job ads from public websites, then call employers to confirm them. Only jobs an employer has confirmed are used for ITI planning.</p>
-  <div class="answers" aria-live="polite">
-    <div class="answer"><span class="label">Job ads found online</span><span class="big" id="mCount">0</span><span class="sub"><strong id="m62">0</strong> in Sector 62 · <strong id="m63">0</strong> in Sector 63</span><span class="sub" id="mCountSub"></span></div>
-    <div class="answer wait" id="confirmedCard"><span class="label">Jobs confirmed by employers</span><span class="big" id="mConfirmed">0</span><span class="sub" id="mConfirmedSub">No employer has been called yet</span></div>
-    <div class="answer go"><span class="label">Ads worth checking with employers first</span><span class="big" id="mPriority">0</span><span class="sub">Entry-level roles linked to ITI trades</span><span class="foot"><button class="linkbtn" data-action="tab" data-tab="plan">See the call list →</button></span></div>
-    <div class="answer"><span class="label">Data last checked</span><span class="big" id="mFreshDays">-</span><span class="sub" id="mFresh"></span><span class="foot"><button class="linkbtn" data-action="tab" data-tab="evidence">See all sources →</button></span></div>
+<div class="app">
+<header class="appbar">
+  <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-controls="sideNav" aria-expanded="false"><!--ICON:menu--></button>
+  <div class="brand"><img src="<!--LOGO-->" alt="ConveGenius.AI"/><span class="product">Opportunity Explorer<small id="viewName">Industry</small></span></div>
+  <div class="appbar-center">
+    <label class="loc" for="location" title="Choose the area"><!--ICON:location_on--><span class="screenreader">Location</span>
+      <select id="location">
+        <optgroup label="Noida, Uttar Pradesh"><option value="all">Sector 62 and 63</option><option value="62">Sector 62</option><option value="63">Sector 63</option></optgroup>
+        <optgroup label="West Bengal"><option value="kalyani">Kalyani</option><option value="siliguri">Siliguri</option></optgroup>
+      </select><!--ICON:arrow_drop_down--></label>
+    <div class="searchbar" role="search"><!--ICON:search--><label for="query" class="screenreader">Search job ads</label><input id="query" type="search" placeholder="Search jobs, employers or skills" autocomplete="off"/></div>
   </div>
-</section>
+  <div class="appbar-right">
+    <span class="pill" id="modePill"><span class="dot"></span>Research pilot</span>
+    <span class="pill subtle" id="scanDate">Data checked 16 Oct 2026</span>
+    <button class="icon-btn" id="helpBtn" type="button" aria-haspopup="dialog" aria-label="How to read this page" title="How to read this page"><!--ICON:help--></button>
+    <button class="btn tonal" id="roleBtn" type="button" aria-haspopup="dialog">Team sign-in</button>
+  </div>
+</header>
 
-<nav class="tabs" aria-label="Main sections" role="tablist">
-  <button class="tab active" role="tab" data-tab="discover" aria-selected="true">Jobs map</button>
-  <button class="tab" role="tab" data-tab="match" aria-selected="false">Match a learner</button>
-  <button class="tab" role="tab" data-tab="trades" aria-selected="false">ITI trades and skill gaps</button>
-  <button class="tab" role="tab" data-tab="compare" aria-selected="false">Compare 62 and 63</button>
-  <button class="tab" role="tab" data-tab="plan" aria-selected="false">Next steps</button>
-  <button class="tab" role="tab" data-tab="upcoming" aria-selected="false">Coming up</button>
-  <button class="tab" role="tab" data-tab="regions" aria-selected="false">Kalyani and Siliguri</button>
-  <button class="tab" role="tab" data-tab="feeds" aria-selected="false">Government data</button>
-  <button class="tab" role="tab" data-tab="voice" aria-selected="false">Workers' views</button>
-  <button class="tab" role="tab" data-tab="evidence" aria-selected="false">Sources</button>
-  <span class="tab-sep team-only" hidden></span><span class="tab-group-label team-only" hidden>Team</span>
-  <button class="tab team-only" role="tab" data-tab="review" aria-selected="false" hidden>Review queue <span class="tab-count" id="reviewCount"></span></button>
-  <button class="tab team-only" role="tab" data-tab="verify" aria-selected="false" hidden>Record an employer call</button>
+<nav class="sidenav" id="sideNav" aria-label="Main sections">
+  <div class="view-switch-wrap"><div class="nav-label" id="viewLbl">Show me the view for</div><div class="view-switch" id="viewSwitch" role="group" aria-labelledby="viewLbl"></div></div>
+  <div id="navLinks"></div>
+  <div class="nav-foot">Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a><br/>Illustrations: unDraw · Icons: Material Symbols</div>
 </nav>
+<div class="nav-scrim" id="navScrim"></div>
 
-<section id="discover" class="section" role="tabpanel">
-  <div class="filterbar" role="search" aria-label="Filter job ads">
+<main class="sheet" id="main">
+<div class="sandbox-strip hide" id="sandboxStrip" role="status"></div>
+
+<section class="hero page-head compact" id="hero" aria-labelledby="heroTitle">
+  <div class="ph-text">
+    <div class="eyebrow" id="heroEyebrow">Noida · Gautam Buddh Nagar, Uttar Pradesh</div>
+    <h1 id="heroTitle">Jobs in Sector 62 and 63, and who could fill them</h1>
+    <p class="lead">We collect job ads from public websites, then call employers to confirm them. Only jobs an employer has confirmed are used for ITI planning.</p>
+    <ol class="journey" aria-label="How a job ad becomes a confirmed job">
+      <li class="j-on"><b>1</b><span>Seen online<small>Public job ad collected</small></span></li>
+      <li><b>2</b><span>Employer called<small>Openings, pay and start date checked</small></span></li>
+      <li><b>3</b><span>Approved<small>A second person checks the call</small></span></li>
+    </ol>
+  </div>
+  <div class="ph-art" aria-hidden="true"><!--ART:jobs--></div>
+</section>
+<div class="answers scorecards compact" id="scorecards" aria-live="polite">
+  <div class="answer"><span class="label"><!--ICON:work-->Job ads found online</span><span class="big" id="mCount">0</span><span class="split" aria-hidden="true"><i class="s62" id="split62"></i><i class="s63" id="split63"></i></span><span class="sub"><strong id="m62">0</strong> in Sector 62 · <strong id="m63">0</strong> in Sector 63</span><span class="sub" id="mCountSub"></span></div>
+  <div class="answer wait" id="confirmedCard"><span class="label"><!--ICON:verified-->Jobs confirmed by employers</span><span class="big" id="mConfirmed">0</span><span class="meter-line" aria-hidden="true"><i id="confirmedBar"></i></span><span class="sub" id="mConfirmedSub">No employer has been called yet</span></div>
+  <div class="answer go"><span class="label"><!--ICON:call-->Ads to check with employers first</span><span class="big" id="mPriority">0</span><span class="meter-line accent" aria-hidden="true"><i id="priorityBar"></i></span><span class="sub">Entry-level roles linked to ITI trades</span><span class="foot"><button class="linkbtn" data-action="tab" data-tab="plan">See the call list<!--ICON:arrow_forward--></button></span></div>
+  <div class="answer"><span class="label"><!--ICON:schedule-->Data last checked</span><span class="big" id="mFreshDays">-</span><span class="sub" id="mFresh"></span><span class="foot"><button class="linkbtn" data-action="tab" data-tab="evidence">See all sources<!--ICON:arrow_forward--></button></span></div>
+</div>
+
+<section id="discover" class="section hide" aria-label="Jobs map">
+  <div class="filterbar" aria-label="Filter job ads">
     <div class="filter-row">
-      <div class="fgroup"><span class="flabel" id="locLabel">Area</span><div class="seg-group" role="group" aria-labelledby="locLabel"><button class="seg active" data-sector="all" aria-pressed="true">Both</button><button class="seg" data-sector="62" aria-pressed="false">Sector 62</button><button class="seg" data-sector="63" aria-pressed="false">Sector 63</button></div></div>
       <div class="fgroup"><label for="suits">Finding jobs for</label><select id="suits" class="input"><option value="">Anyone</option></select></div>
-      <div class="fgroup search"><label for="query">Search</label><input id="query" class="input" type="search" placeholder="Employer, job title or skill, e.g. soldering"/></div>
-      <button class="btn small" id="moreBtn" aria-expanded="false" aria-controls="morePanel">More filters</button>
-      <button class="btn small ghost" id="clearBtn">Clear all</button>
+      <div class="chips" id="familyChips" role="group" aria-label="Type of work"></div>
+      <div class="filter-actions"><button class="btn outlined small" id="moreBtn" aria-expanded="false" aria-controls="morePanel"><!--ICON:tune-->More filters</button><button class="btn text small" id="clearBtn">Clear all</button></div>
     </div>
     <div class="more-panel hide" id="morePanel">
       <div class="fgroup"><label for="career">Experience</label><select id="career" class="input"><option value="all">Any</option><option value="Entry level">Freshers and entry level</option><option value="Early career">1-2 years</option><option value="Experienced">Experienced</option></select></div>
       <div class="fgroup"><label for="verification">Checked with employer?</label><select id="verification" class="input"><option value="all">Any</option><option value="observed_public">Not checked yet</option><option value="pending_employer_check">Call planned</option><option value="employer_confirmed">Confirmed by employer</option><option value="contradicted">Employer says not hiring</option></select></div>
       <label class="check"><input id="historic" type="checkbox"/> Show old and closed ads</label>
       <label class="check"><input id="unclear" type="checkbox"/> Show ads with unclear location</label>
-      <button class="btn small" id="exportBtn">Download this list (CSV)</button>
+      <button class="btn outlined small" id="exportBtn"><!--ICON:download-->Download this list (CSV)</button>
     </div>
-    <div class="chips" id="familyChips" role="group" aria-label="Type of work"></div>
+    <div class="active-filters" id="activeFilters" aria-live="polite"></div>
     <div class="suits-note hide" id="suitsNote"></div>
   </div>
 
   <div class="explore">
     <div class="card map-card">
-      <div class="card-head"><h2>Where the jobs are</h2><small>Zoom with + and −, drag to move, tap a dot</small></div>
-      <div class="mapwrap"><div class="fallback" id="fallback"><svg viewBox="0 0 700 380" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Simplified sketch of Noida Sectors 62 and 63, not geographically exact, with clickable job dots"><rect class="sch-bg" width="700" height="380"/><path class="sch-road" d="M-10 60L720 175M-20 260L720 310" stroke-width="34" fill="none"/><path class="sch-road" d="M330 -10L435 390M60 -10L148 390M560 -10L630 390" stroke-width="25" fill="none"/><path class="sch-dash" d="M-10 62L720 176M-20 260L720 310M330 -10L435 390M60 -10L148 390M560 -10L630 390" stroke-width="2" stroke-dasharray="5 5" fill="none"/><path class="sch-62" d="M162 94L312 117L343 287L188 273Z" stroke-width="2"/><path class="sch-63" d="M393 135L546 149L564 296L434 297Z" stroke-width="2"/><text class="sch-t62" x="190" y="140" font-size="17" font-weight="700">SECTOR 62</text><text class="sch-t63" x="428" y="172" font-size="17" font-weight="700">SECTOR 63</text><g id="svgPins"></g></svg><div class="fallback-banner" id="fallbackBanner"><strong>Simplified sketch - not geographically exact.</strong> <span id="fallbackReason">The street map has not loaded.</span></div></div><div id="leafletMap" class="map" aria-label="Street map of Noida Sector 62 and Sector 63"></div><div class="map-label" id="mapLabel">Dots show the sector, not the exact office.</div></div>
+      <div class="card-head"><h2>Where the jobs are</h2><small>Scroll or use + and − to zoom · drag to move · tap a dot</small></div>
+      <div class="mapwrap"><div class="fallback" id="fallback"><svg viewBox="0 0 700 380" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Simplified sketch of Noida Sectors 62 and 63, not geographically exact, with clickable job dots"><rect class="sch-bg" width="700" height="380"/><path class="sch-road" d="M-10 60L720 175M-20 260L720 310" stroke-width="34" fill="none"/><path class="sch-road" d="M330 -10L435 390M60 -10L148 390M560 -10L630 390" stroke-width="25" fill="none"/><path class="sch-dash" d="M-10 62L720 176M-20 260L720 310M330 -10L435 390M60 -10L148 390M560 -10L630 390" stroke-width="2" stroke-dasharray="5 5" fill="none"/><path class="sch-62" d="M162 94L312 117L343 287L188 273Z" stroke-width="2"/><path class="sch-63" d="M393 135L546 149L564 296L434 297Z" stroke-width="2"/><text class="sch-t62" x="190" y="140" font-size="17" font-weight="600">SECTOR 62</text><text class="sch-t63" x="428" y="172" font-size="17" font-weight="600">SECTOR 63</text><g id="svgPins"></g></svg><div class="fallback-banner" id="fallbackBanner"><strong>Simplified sketch, not geographically exact.</strong> <span id="fallbackReason">The street map has not loaded.</span></div></div><div id="leafletMap" class="map" aria-label="Street map of Noida Sector 62 and Sector 63"></div><div class="map-label" id="mapLabel">Dots show the sector, not the exact office.</div></div>
       <div class="map-foot">
         <div class="legend"><span><i style="background:var(--s62)"></i>Sector 62</span><span><i style="background:var(--s63)"></i>Sector 63</span><span><i style="background:var(--old)"></i>Old ad</span><span><i class="sq" style="background:var(--ink)"></i>Exact address checked</span><span><i style="background:var(--warn)"></i>Number = several jobs at one employer</span></div>
-        <details class="disclose"><summary>Map layers and credits</summary><div class="layer-toggles" role="group" aria-label="Map layers" style="margin-top:8px"><label class="check"><input type="checkbox" id="layerApprox" checked/> Jobs placed by sector</label><label class="check"><input type="checkbox" id="layerVerified" checked/> Exact addresses <span id="verifiedLayerCount"></span></label><label class="check"><input type="checkbox" id="layerPresence"/> Employers with no ad <span id="presenceLayerCount"></span></label></div><p style="margin-top:8px">Street map: OpenFreeMap © OpenMapTiles, data © OpenStreetMap contributors, when it loads. Sector circles are rough guides, not official boundaries. Orientation reference: <a href="https://www.mapsofindia.com/maps/uttarpradesh/noida-city-map.htm" target="_blank" rel="noopener">Maps of India · Noida city map ↗</a> (not reproduced).</p></details>
+        <details class="disclose"><summary>Map layers and credits</summary><div class="layer-toggles" role="group" aria-label="Map layers"><label class="check"><input type="checkbox" id="layerApprox" checked/> Jobs placed by sector</label><label class="check"><input type="checkbox" id="layerVerified" checked/> Exact addresses <span id="verifiedLayerCount"></span></label><label class="check"><input type="checkbox" id="layerPresence"/> Employers with no ad <span id="presenceLayerCount"></span></label></div><p id="mapCredit">Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>, available under the Open Database Licence. Sector shapes are rough guides, not official boundaries. Orientation reference: <a href="https://www.mapsofindia.com/maps/uttarpradesh/noida-city-map.htm" target="_blank" rel="noopener">Maps of India · Noida city map</a> (not reproduced).</p></details>
       </div>
     </div>
-    <div class="card"><div class="card-head"><h2 id="listHead">Job ads</h2><small id="listCount">0 shown</small></div><div id="jobCards" class="cards" aria-live="polite"></div></div>
+    <div class="card list-card"><div class="card-head"><h2 id="listHead">Job ads</h2><small id="listCount">0 shown</small></div><div id="jobCards" class="cards" aria-live="polite"></div></div>
   </div>
 </section>
-<section id="compare" class="section hide" role="tabpanel"></section>
-<section id="match" class="section hide" role="tabpanel"></section>
-<section id="plan" class="section hide" role="tabpanel"></section>
-<section id="voice" class="section hide" role="tabpanel"></section>
-<section id="trades" class="section hide" role="tabpanel"></section>
-<section id="upcoming" class="section hide" role="tabpanel"></section>
-<section id="regions" class="section hide" role="tabpanel"></section>
-<section id="feeds" class="section hide" role="tabpanel"></section>
-<section id="evidence" class="section hide" role="tabpanel"></section>
-<section id="review" class="section hide" role="tabpanel"></section>
-<section id="verify" class="section hide" role="tabpanel"></section>
+<section id="home" class="section hide"></section>
+<section id="path" class="section hide"></section>
+<section id="learn" class="section hide"></section>
+<section id="institutes" class="section hide"></section>
+<section id="market" class="section hide"></section>
+<section id="signals" class="section hide"></section>
+<section id="compare" class="section hide"></section>
+<section id="match" class="section hide"></section>
+<section id="plan" class="section hide"></section>
+<section id="voice" class="section hide"></section>
+<section id="trades" class="section hide"></section>
+<section id="upcoming" class="section hide"></section>
+<section id="regions" class="section hide"></section>
+<section id="feeds" class="section hide"></section>
+<section id="evidence" class="section hide"></section>
+<section id="review" class="section hide"></section>
+<section id="verify" class="section hide"></section>
 <footer class="page-foot"><span>© ConveGenius.AI · Internal research pilot · Not an official employment service</span><span id="footStats"></span></footer>
 </main>
+</div>
 <div class="drawer-backdrop" id="drawerBackdrop" data-action="close-detail"></div>
 <aside class="drawer" id="detailPanel" aria-label="Job details" aria-hidden="true"></aside>
 <div class="modal-backdrop hide" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal" id="modalBody"></div></div>

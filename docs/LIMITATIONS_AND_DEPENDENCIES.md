@@ -17,6 +17,21 @@
 | Kalyani and Siliguri | No current ITI-level job ads found. Industry presence comes from WBIIDC, MSME and SJDA documents, some of them old (dated per item). |
 | Social media | Public LinkedIn posts searched; only old IT posts found. No private groups or closed accounts were searched. |
 
+## Captured from search results (24 Oct 2026)
+
+| Item | Note |
+|---|---|
+| Provider scan (61 courses) | Titles, NSQF levels and costs from search snippets; some links are aggregator pages (Careers360, Class Central). Check the provider page before use. |
+| Timeline and future projects | Amounts and job numbers are as announced; summit figures are MoU totals, not investment made. |
+| Demand indicators | National PLFS and India Skills Report figures are solid; state and city figures are thin and partly from secondary sites. |
+| Institutes and apply routes | A starting list, not a census. Stipends change; PM Internship sources conflict. Most map positions are approximate. |
+
+## Simulated (labelled SIMULATION in the app)
+
+| Item | Note |
+|---|---|
+| Government data live panel | Every number, event and connection status in the top panel is generated in the browser from a fixed seed, to show how live feeds would look. The real source status is shown below it. |
+
 ## Inferred (labelled as inference in the app)
 
 | Item | Note |
@@ -37,6 +52,8 @@
 | Kalyani and Siliguri pin positions | Surveyed addresses from WBIIDC allotment records |
 | ITI trade list and core skills | Current DGT trade list and syllabus (bharatskills.gov.in) |
 | Course suggestions | Confirmed course listings with dates and fees from Skill India Digital Hub, NSTIs and Sector Skill Councils |
+| Swift AI Academy skill map and market-signal actions | Curated mapping and fixed rules; review with the product team when the catalogue changes |
+| Platform signals on the Internal view | Inferences from the ad sample, each with its evidence |
 | Trades linked to announced projects | Hiring plans confirmed by each company |
 | Synthetic test fixtures (`test/helpers.js`, `fixture: true`) | Never shown in the app; tests only |
 
@@ -57,5 +74,5 @@
 | Portal connectors (Apna, Indeed, LinkedIn, Naukri, NCS) | Not built. Only with licence or written permission; no scraping, no gated or private social accounts, rate limits respected |
 | Production authentication | Dev bearer tokens only; replace with organisational SSO |
 | Hosting and data-protection review (DPDP Act 2023) | Required before collecting interview or contact data at scale |
-| Street map tiles | Public OpenStreetMap tiles need internet and fair use; a production deployment should use its own or a commercial tile provider |
+| Street map tiles | OpenFreeMap by default; a production deployment should use a keyed provider (MapTiler, Stadia Maps, Thunderforest) or its own tiles. See `docs/MAPS.md` |
 | Official boundaries | Not available; circles are approximate guides |

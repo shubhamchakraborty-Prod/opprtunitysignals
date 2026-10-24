@@ -1,0 +1,1458 @@
+{
+ "captured_at": "2026-10-24",
+ "method": "Web search results reviewed on 24 Oct 2026; pages not opened unless evidence says page.",
+ "notes": [
+  "No page was opened directly: WebFetch and direct HTTP were not used / blocked (OSM geocoding returned proxy 403). All evidence is search_result.",
+  "State-level PLFS 2025 annual unemployment rates for Uttar Pradesh and West Bengal did not appear in results; only quarterly CWS LFPR from Economic Survey 2025-26 table 8.10 was found.",
+  "Several figures come from secondary summaries (exam-prep, aggregator, news sites); confidence is marked accordingly.",
+  "Coordinates were only recorded where a result stated them; others are null."
+ ],
+ "indicators": [
+  {
+   "level": "national",
+   "metric": "LFPR (usual status, 15+)",
+   "value": "59.3%",
+   "number": 59.3,
+   "unit": "%",
+   "period": "2025 (calendar year, PLFS annual)",
+   "detail": "MoSPI press note on PLFS Annual Report 2025 states LFPR of 59.3%, stable versus 2024; 79.1% for men and 40.0% for women.",
+   "source": {
+    "label": "MoSPI, PLFS Annual Report 2025 press note",
+    "url": "https://www.mospi.gov.in/uploads/latestReleases/latest_release_1774607827733_3e8964a9-268b-4cc9-ad65-cfc8a9e32f08_Press_note_AR_PLFS_2025_23032025_V2.1_26032026_final.pdf"
+   },
+   "evidence": "search_result",
+   "confidence": "high"
+  },
+  {
+   "level": "national",
+   "metric": "Unemployment rate (usual status, 15+)",
+   "value": "3.1%",
+   "number": 3.1,
+   "unit": "%",
+   "period": "2025 (calendar year, PLFS annual)",
+   "detail": "Overall unemployment rate 3.1% in 2025; rural 2.4% and urban 4.8%.",
+   "source": {
+    "label": "MoSPI, PLFS Annual Report 2025 press note",
+    "url": "https://www.mospi.gov.in/uploads/latestReleases/latest_release_1774607827733_3e8964a9-268b-4cc9-ad65-cfc8a9e32f08_Press_note_AR_PLFS_2025_23032025_V2.1_26032026_final.pdf"
+   },
+   "evidence": "search_result",
+   "confidence": "high"
+  },
+  {
+   "level": "national",
+   "metric": "Urban unemployment rate (usual status, 15+)",
+   "value": "4.8%",
+   "number": 4.8,
+   "unit": "%",
+   "period": "2025 (calendar year, PLFS annual)",
+   "detail": "Urban unemployment was 4.8% against 2.4% in rural areas.",
+   "source": {
+    "label": "MoSPI, PLFS Annual Report 2025 press note",
+    "url": "https://www.mospi.gov.in/uploads/latestReleases/latest_release_1774607827733_3e8964a9-268b-4cc9-ad65-cfc8a9e32f08_Press_note_AR_PLFS_2025_23032025_V2.1_26032026_final.pdf"
+   },
+   "evidence": "search_result",
+   "confidence": "high"
+  },
+  {
+   "level": "national",
+   "metric": "Youth unemployment rate (15-29, usual status)",
+   "value": "9.9%",
+   "number": 9.9,
+   "unit": "%",
+   "period": "2025 (calendar year, PLFS annual)",
+   "detail": "Secondary summaries of PLFS 2025 report youth unemployment declined to 9.9%; not confirmed in the official press note excerpt.",
+   "source": {
+    "label": "Drishti IAS summary of PLFS 2025",
+    "url": "https://www.drishtiias.com/printpdf/periodic-labour-force-survey-2025"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "metric": "Unemployment among educated (secondary and above)",
+   "value": "6.5%",
+   "number": 6.5,
+   "unit": "%",
+   "period": "2025 (calendar year, PLFS annual)",
+   "detail": "Unemployment among persons educated to secondary level and above reported down to 6.5% in 2025 from 7.0% in 2024.",
+   "source": {
+    "label": "Vision IAS summary of PLFS Annual Report 2025",
+    "url": "https://visionias.in/current-affairs/monthly-magazine/2026-05-22/economy/periodic-labour-force-survey-plfs-annual-report-2025"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "metric": "Youth NEET rate (15-24)",
+   "value": "21.0%",
+   "number": 21.0,
+   "unit": "%",
+   "period": "2025 (calendar year, PLFS annual)",
+   "detail": "Share of youth aged 15-24 not in employment, education or training reported at 21.0% (24.9% for 15-59).",
+   "source": {
+    "label": "Vision IAS summary of PLFS Annual Report 2025",
+    "url": "https://visionias.in/current-affairs/monthly-magazine/2026-05-22/economy/periodic-labour-force-survey-plfs-annual-report-2025"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "metric": "Unemployment rate (CWS, 15+), monthly",
+   "value": "5.0%",
+   "number": 5.0,
+   "unit": "%",
+   "period": "September 2026",
+   "detail": "PLFS monthly bulletin released 15 Oct 2026: unemployment unchanged from August at 5.0%; urban 6.9%, rural 4.2%.",
+   "source": {
+    "label": "MoSPI, PLFS Monthly Bulletin September 2026",
+    "url": "https://www.mospi.gov.in/uploads/publications_reports/publications_reports1792060119690_a8b6f36c-31cc-43c2-92e9-a8f959974e30_Monthly_Bulletin_Sept_2026.pdf"
+   },
+   "evidence": "search_result",
+   "confidence": "high"
+  },
+  {
+   "level": "national",
+   "metric": "Youth unemployment rate (15-29, CWS), monthly",
+   "value": "15.2%",
+   "number": 15.2,
+   "unit": "%",
+   "period": "September 2026",
+   "detail": "Youth unemployment rose to 15.2% from 15.1% in August 2026; rural youth 13.2%.",
+   "source": {
+    "label": "Devdiscourse report on PLFS Monthly Bulletin Sept 2026",
+    "url": "https://www.devdiscourse.com/article/business/3993040-urban-youth-unemployment-rises-to-19-in-september-reaches-266-among-young-women"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "metric": "Urban youth unemployment rate (15-29, CWS), monthly",
+   "value": "19.0%",
+   "number": 19.0,
+   "unit": "%",
+   "period": "September 2026",
+   "detail": "Urban youth unemployment reached 19% (18.7% in August, 17.5% in May 2026).",
+   "source": {
+    "label": "Devdiscourse report on PLFS Monthly Bulletin Sept 2026",
+    "url": "https://www.devdiscourse.com/article/business/3993040-urban-youth-unemployment-rises-to-19-in-september-reaches-266-among-young-women"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "metric": "Urban young women unemployment rate (15-29, CWS)",
+   "value": "26.6%",
+   "number": 26.6,
+   "unit": "%",
+   "period": "September 2026",
+   "detail": "Urban women aged 15-29 at 26.6% versus 16.4% for urban young men.",
+   "source": {
+    "label": "Devdiscourse report on PLFS Monthly Bulletin Sept 2026",
+    "url": "https://www.devdiscourse.com/article/business/3993040-urban-youth-unemployment-rises-to-19-in-september-reaches-266-among-young-women"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "metric": "LFPR (CWS, 15+), quarterly",
+   "value": "54.6%",
+   "number": 54.6,
+   "unit": "%",
+   "period": "Q1 FY27 (April-June 2026)",
+   "detail": "Summary of PLFS quarterly bulletin Apr-Jun 2026 gives LFPR 54.6%, urban unemployment 6.7%, rural 4.8%.",
+   "source": {
+    "label": "Adda247 summary of PLFS Quarterly Bulletin Apr-Jun 2026",
+    "url": "https://currentaffairs.adda247.com/plfs-quarterly-bulletin-april-june-2026-key-findings-lfpr-wpr-and-unemployment-rate/amp/"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "metric": "Graduate employability (India Skills Report)",
+   "value": "56.35%",
+   "number": 56.35,
+   "unit": "%",
+   "period": "India Skills Report 2026",
+   "detail": "Employability rose to 56.35% in 2026 from 54.81% in 2025 (ETS with CII, AICTE, AIU, Taggd; Global Employability Test).",
+   "source": {
+    "label": "Careers360 News, India Skills Report 2026",
+    "url": "https://news.careers360.com/india-skills-report-2026-employability-56-35-pc-ai-tools-digital-gig-economy-workforce-global-talent-hub"
+   },
+   "evidence": "search_result",
+   "confidence": "high"
+  },
+  {
+   "level": "national",
+   "metric": "Employability by gender (India Skills Report)",
+   "value": "Women 54%, men 51.5%",
+   "number": 54.0,
+   "unit": "%",
+   "period": "India Skills Report 2026",
+   "detail": "Women's employability surpassed men's for the first time in 5 years.",
+   "source": {
+    "label": "AffairsCloud, India Skills Report 2026",
+    "url": "https://affairscloud.com/india-skills-report-2026-indias-employability-rises-to-56-35-women-surpass-men-for-the-first-time-in-5-years/"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "metric": "AI workforce projection",
+   "value": "over 1.25 million by 2027 (from 600,000-650,000)",
+   "number": 1250000,
+   "unit": "count",
+   "period": "2027 projection",
+   "detail": "Nasscom-Deloitte 'Advancing India's AI Skills' projects AI workforce growth to over 1.25 million while AI market grows 25-35% CAGR, leaving a skills gap.",
+   "source": {
+    "label": "BusinessWorld on Nasscom-Deloitte AI skills paper",
+    "url": "https://businessworld.in/article/significant-ai-talent-gap-to-affect-indias-growing-ai-market-report-530285"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "metric": "AI talent demand-supply gap",
+   "value": "nearly 1 million workers by 2027",
+   "number": 1000000,
+   "unit": "count",
+   "period": "2027 projection",
+   "detail": "Bain & Company estimate cited by People Matters: AI talent demand to exceed supply by nearly one million.",
+   "source": {
+    "label": "People Matters citing Bain & Company",
+    "url": "https://www.peoplematters.in/article/talent-acquisition/indias-ai-workforce-crisis-how-to-meet-the-demand-for-over-1-mn-professionals-44783"
+   },
+   "evidence": "search_result",
+   "confidence": "low"
+  },
+  {
+   "level": "national",
+   "metric": "Employers seeing AI impact on roles",
+   "value": "86%",
+   "number": 86,
+   "unit": "%",
+   "period": "2025-26 (report date not confirmed)",
+   "detail": "Nasscom-Indeed 'India's AI Talent Inflection Point': 86% of employers saw AI impact job roles; 35% saw significant redefinition.",
+   "source": {
+    "label": "CXOToday on Nasscom-Indeed report",
+    "url": "https://cxotoday.com/research/skills-over-degrees-nasscom-indeed-report-reveals-indias-evolving-ai-hiring-landscape/"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "metric": "Electronics manufacturing new jobs",
+   "value": "nearly 15 lakh new jobs by 2030",
+   "number": 1500000,
+   "unit": "count",
+   "period": "2030 projection",
+   "detail": "ESSCI's Saleem Ahmed: electronics manufacturing, growing over 16% a year, could create nearly 1.5 million new jobs by 2030.",
+   "source": {
+    "label": "TimesTech citing ESSCI",
+    "url": "https://timestech.in/essci-welcomes-sixth-semiconductor-unit-forecasts-over-1-lakh-new-jobs-by-2030/"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "metric": "EMS workforce projection",
+   "value": "1.32 million to over 2.1 million (8 lakh+ new jobs)",
+   "number": 800000,
+   "unit": "count",
+   "period": "2030 projection",
+   "detail": "ESSCI: electronics manufacturing services could add more than 8 lakh jobs.",
+   "source": {
+    "label": "TimesTech citing ESSCI",
+    "url": "https://timestech.in/essci-welcomes-sixth-semiconductor-unit-forecasts-over-1-lakh-new-jobs-by-2030/"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "metric": "Semiconductor new jobs",
+   "value": "1.03 lakh by 2030",
+   "number": 103000,
+   "unit": "count",
+   "period": "2030 projection",
+   "detail": "ESSCI analysis projects 1.03 lakh new semiconductor jobs across chip design, fabrication and testing.",
+   "source": {
+    "label": "TimesTech citing ESSCI",
+    "url": "https://timestech.in/essci-welcomes-sixth-semiconductor-unit-forecasts-over-1-lakh-new-jobs-by-2030/"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "metric": "Fresher hiring intent (employers)",
+   "value": "75%",
+   "number": 75,
+   "unit": "%",
+   "period": "July-December 2026",
+   "detail": "TeamLease EdTech Career Outlook: 75% of 1,097 employers intend to hire freshers, up from 73% in Jan-Jun 2026; IT sector intent fell from 81% to 76%.",
+   "source": {
+    "label": "People Matters on TeamLease EdTech Career Outlook Report H2 2026",
+    "url": "https://www.peoplematters.in/news/workforce-planning/fresher-hiring-intent-rises-to-75percent-but-it-demand-loses-ground-report-51352"
+   },
+   "evidence": "search_result",
+   "confidence": "high"
+  },
+  {
+   "level": "national",
+   "metric": "Fresher hiring intent by sector",
+   "value": "E-commerce/tech start-ups and retail 93%; manufacturing 89%",
+   "number": 93,
+   "unit": "%",
+   "period": "July-December 2026",
+   "detail": "Highest fresher hiring intent in e-commerce and technology start-ups and retail, followed by manufacturing.",
+   "source": {
+    "label": "NewKerala on TeamLease EdTech Career Outlook",
+    "url": "https://www.newkerala.com/news/a/fresher-hiring-outlook-seen-strong-e-commerce-retail-manufacturing-347.htm"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "metric": "AI/ML role hiring growth (Naukri JobSpeak)",
+   "value": "+31% YoY",
+   "number": 31,
+   "unit": "%",
+   "period": "August 2026",
+   "detail": "White-collar hiring up 14% YoY in August 2026, driven by AI/ML roles (+31%); July 2026 AI/ML +33%.",
+   "source": {
+    "label": "Staffing Industry Analysts on Naukri JobSpeak Aug 2026",
+    "url": "https://www.staffingindustry.com/news/global-daily-news/indias-ai-hiring-surge-fuels-14-jump-in-white-collar-recruitment"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "metric": "Naukri JobSpeak Index",
+   "value": "3,053 (+2% YoY); fresher hiring +1%",
+   "number": 3053,
+   "unit": "count",
+   "period": "September 2026",
+   "detail": "Secondary reports: AI/ML roles +20% YoY, fresher AI/ML in IT +19%, IT/software services -4%; not checked against Naukri's release.",
+   "source": {
+    "label": "SuccessCDS on Naukri JobSpeak Sept 2026",
+    "url": "https://www.successcds.net/?p=176936"
+   },
+   "evidence": "search_result",
+   "confidence": "low"
+  },
+  {
+   "level": "national",
+   "metric": "NCS portal registrations",
+   "value": "6.02 crore jobseekers; 54.27 lakh employers",
+   "number": 60200000,
+   "unit": "count",
+   "period": "Since inception, as of Dec 2025",
+   "detail": "Ministry of Labour release on National Career Service registrations.",
+   "source": {
+    "label": "Ministry of Labour & Employment, PIB release",
+    "url": "https://labour.gov.in/sites/default/files/pib2198745.pdf"
+   },
+   "evidence": "search_result",
+   "confidence": "high"
+  },
+  {
+   "level": "uttar_pradesh",
+   "metric": "Employability rank and score (India Skills Report)",
+   "value": "Rank 1; 78.64%",
+   "number": 78.64,
+   "unit": "%",
+   "period": "India Skills Report 2026",
+   "detail": "UP named top state for youth employability, ahead of Maharashtra and Karnataka; score reported 78.64% (secondary source).",
+   "source": {
+    "label": "Khan Global Studies, India Skills Report 2026",
+    "url": "https://currentaffairs.khanglobalstudies.com/up-topped-in-youth-employability-india-skills-report-2026/"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "uttar_pradesh",
+   "metric": "Top employability city (India Skills Report)",
+   "value": "Lucknow, 79.45%",
+   "number": 79.45,
+   "unit": "%",
+   "period": "India Skills Report 2026",
+   "detail": "Lucknow reported top city, ahead of Pune, Bengaluru, Kochi and Chandigarh; single secondary source.",
+   "source": {
+    "label": "News Arena India, India Skills Report 2026",
+    "url": "https://newsarenaindia.com/nation/up-leads-india-s-employability-rankings-kerala-punjab-in-top-5/84714"
+   },
+   "evidence": "search_result",
+   "confidence": "low"
+  },
+  {
+   "level": "uttar_pradesh",
+   "metric": "LFPR (CWS, 15+), quarterly",
+   "value": "56.8%",
+   "number": 56.8,
+   "unit": "%",
+   "period": "July-September 2025",
+   "detail": "Economic Survey 2025-26 table 8.10 (from PLFS quarterly bulletins): UP 57.0% (Apr-Jun 2025) and 56.8% (Jul-Sep 2025) vs all-India 55.1%.",
+   "source": {
+    "label": "Economic Survey 2025-26, Statistical Appendix Table 8.10",
+    "url": "https://taxindiaonline.com/RC2/union_budget/ub2026-27/es2025-26/stat/tab8.10.pdf"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "uttar_pradesh",
+   "metric": "Electronics and mobile manufacturing scale",
+   "value": "55%+ of India's mobile phones; 200+ companies; 300,000+ jobs; Rs 430 billion invested",
+   "number": 300000,
+   "unit": "count",
+   "period": "As reported September 2026",
+   "detail": "UP electronics factsheet coverage; two electronics clusters in Gautam Buddh Nagar host Samsung, LG, Haier, Dixon and others.",
+   "source": {
+    "label": "Indian Infrastructure, UP electronics and semiconductor investments",
+    "url": "https://indianinfrastructure.com/2026/09/15/uttar-pradesh-attracts-rs-430-billion-in-electronics-and-semiconductor-investments/"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "noida_ncr",
+   "metric": "YEIDA Electronics Manufacturing Cluster expected jobs",
+   "value": "15,000 jobs; Rs 2,500 crore investment; 200 acres",
+   "number": 15000,
+   "unit": "count",
+   "period": "Approved 2025 (EMC 2.0)",
+   "detail": "200-acre EMC in Gautam Buddh Nagar developed by YEIDA approved at Rs 417 crore project cost.",
+   "source": {
+    "label": "NBM&CW, Rs 417 Cr EMC approved in Gautam Buddha Nagar",
+    "url": "https://www.nbmcw.com/news/rs417-cr-electronics-manufacturing-cluster-approved-in-gautam-buddha-nagar.html"
+   },
+   "evidence": "search_result",
+   "confidence": "high"
+  },
+  {
+   "level": "noida_ncr",
+   "metric": "Greater Noida IITGN allottees expected jobs",
+   "value": "12,550 jobs; Rs 3,404 crore",
+   "number": 12550,
+   "unit": "count",
+   "period": "Date not shown",
+   "detail": "Haier, Forme Trading and Satkriti Infotainment allotted land in Integrated Industrial Township Greater Noida (DMICDC).",
+   "source": {
+    "label": "Electronics For You, Greater Noida DMICDC units",
+    "url": "https://ace.electronicsforu.com/uncategorized/greater-noida-to-house-3-mfg-units-as-part-of-dmicdc-project/"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "noida_ncr",
+   "metric": "Mobile manufacturing factories (Noida region)",
+   "value": "~80 factories; ~50,000 employed",
+   "number": 80,
+   "unit": "count",
+   "period": "circa 2020 (ICEA estimate)",
+   "detail": "ICEA estimate of mobile factories and employment in the Noida region; dated, the only unit count found.",
+   "source": {
+    "label": "Inc42 citing ICEA",
+    "url": "https://inc42.com/?p=178967"
+   },
+   "evidence": "search_result",
+   "confidence": "low"
+  },
+  {
+   "level": "west_bengal",
+   "metric": "LFPR (CWS, 15+), quarterly",
+   "value": "61.0%",
+   "number": 61.0,
+   "unit": "%",
+   "period": "July-September 2025",
+   "detail": "Economic Survey 2025-26 table 8.10: West Bengal 58.0% (Apr-Jun 2025) and 61.0% (Jul-Sep 2025) vs all-India 55.1%.",
+   "source": {
+    "label": "Economic Survey 2025-26, Statistical Appendix Table 8.10",
+    "url": "https://taxindiaonline.com/RC2/union_budget/ub2026-27/es2025-26/stat/tab8.10.pdf"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "west_bengal",
+   "metric": "Employability state rank (India Skills Report)",
+   "value": "7th",
+   "number": 7,
+   "unit": null,
+   "period": "India Skills Report 2026",
+   "detail": "West Bengal listed seventh among top-ten employability states (single secondary source).",
+   "source": {
+    "label": "News Arena India, India Skills Report 2026",
+    "url": "https://newsarenaindia.com/nation/up-leads-india-s-employability-rankings-kerala-punjab-in-top-5/84714"
+   },
+   "evidence": "search_result",
+   "confidence": "low"
+  },
+  {
+   "level": "west_bengal",
+   "metric": "MSME units and employment",
+   "value": "~89 lakh units; 1.36 crore employed",
+   "number": 8900000,
+   "unit": "count",
+   "period": "Mid-2024",
+   "detail": "State MSME base and employment as reported with FY25 bank-credit target.",
+   "source": {
+    "label": "Business Standard, WB MSME loan target FY25",
+    "url": "https://www.business-standard.com/amp/industry/sme/west-bengal-sets-target-of-bank-loans-worth-rs-1-53-trn-for-msmes-in-fy25-124062701109_1.html"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "kolkata_region",
+   "metric": "Kalyani Industrial Park units",
+   "value": "Phase I 19 units (102 acres); Phase II ~20 units (134 acres); Phase III 39 units (88 acres)",
+   "number": 78,
+   "unit": "count",
+   "period": "As listed on WBIIDC pages (date not shown)",
+   "detail": "WBIIDC Kalyani Industrial Park in Nadia (set up 1976), about 50 km from Kolkata; number is the sum of the three phase counts.",
+   "source": {
+    "label": "WBIIDC, Kalyani Industrial Park",
+    "url": "https://wbiidc.wb.gov.in/kalyani1.php"
+   },
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "level": "siliguri",
+   "metric": "Tea industry workers (North Bengal)",
+   "value": "about 2,50,000 workers",
+   "number": 250000,
+   "unit": "count",
+   "period": "Date not shown (older page)",
+   "detail": "Central Board for Workers Education Siliguri page: tea is the biggest employer in the region after railways and unorganised agriculture.",
+   "source": {
+    "label": "Central Board for Workers Education, Siliguri region",
+    "url": "https://cbwe.gov.in/DynamicWebPages/DynemicPages?MenuId=125"
+   },
+   "evidence": "search_result",
+   "confidence": "low"
+  }
+ ],
+ "in_demand": [
+  {
+   "level": "national",
+   "skill_or_role": "AI and machine learning roles",
+   "learner_types": [
+    "college"
+   ],
+   "detail": "AI/ML hiring up 31% YoY in Aug 2026 and 33% in Jul 2026 per Naukri JobSpeak; fresher AI/ML hiring in IT reported +19% in Sep 2026.",
+   "source": {
+    "label": "Staffing Industry Analysts on Naukri JobSpeak",
+    "url": "https://www.staffingindustry.com/news/global-daily-news/indias-ai-hiring-surge-fuels-14-jump-in-white-collar-recruitment"
+   },
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "skill_or_role": "AI, data analytics, cloud computing, cybersecurity",
+   "learner_types": [
+    "college",
+    "polytechnic"
+   ],
+   "detail": "India Skills Report 2026 lists these as the most sought-after skills.",
+   "source": {
+    "label": "News Arena India, India Skills Report 2026",
+    "url": "https://newsarenaindia.com/nation/up-leads-india-s-employability-rankings-kerala-punjab-in-top-5/84714"
+   },
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "skill_or_role": "Hiring sectors: technology, BFSI, manufacturing, renewable energy, healthcare",
+   "learner_types": [
+    "college",
+    "polytechnic",
+    "iti"
+   ],
+   "detail": "India Skills Report 2026 names these as leading hiring sectors.",
+   "source": {
+    "label": "News Arena India, India Skills Report 2026",
+    "url": "https://newsarenaindia.com/nation/up-leads-india-s-employability-rankings-kerala-punjab-in-top-5/84714"
+   },
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "skill_or_role": "Dark Store Assistant; Inventory Management Assistant (retail)",
+   "learner_types": [
+    "iti",
+    "polytechnic",
+    "college"
+   ],
+   "detail": "Most in-demand fresher retail roles in TeamLease EdTech Career Outlook Jan-Jun 2026.",
+   "source": {
+    "label": "IANS on TeamLease EdTech Career Outlook Jan-Jun 2026",
+    "url": "https://ianslive.in/3-in-4-employers-plan-to-hire-freshers-in-janjune-2026-report--20260218124536"
+   },
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "skill_or_role": "Digital Sales Associate; Junior Web Developer (e-commerce and tech start-ups)",
+   "learner_types": [
+    "college",
+    "polytechnic"
+   ],
+   "detail": "Top fresher roles in e-commerce and technology start-ups, TeamLease EdTech Jan-Jun 2026.",
+   "source": {
+    "label": "IANS on TeamLease EdTech Career Outlook Jan-Jun 2026",
+    "url": "https://ianslive.in/3-in-4-employers-plan-to-hire-freshers-in-janjune-2026-report--20260218124536"
+   },
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "skill_or_role": "Inventory and Logistics Coordinator; Battery Assembly Technician (manufacturing)",
+   "learner_types": [
+    "iti",
+    "polytechnic"
+   ],
+   "detail": "Highest manufacturing fresher demand in TeamLease EdTech Jan-Jun 2026; manufacturing fresher intent 89% in Jul-Dec 2026.",
+   "source": {
+    "label": "IANS on TeamLease EdTech Career Outlook Jan-Jun 2026",
+    "url": "https://ianslive.in/3-in-4-employers-plan-to-hire-freshers-in-janjune-2026-report--20260218124536"
+   },
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "skill_or_role": "Internships, project portfolios, hands-on exposure",
+   "learner_types": [
+    "college",
+    "polytechnic",
+    "iti"
+   ],
+   "detail": "TeamLease EdTech says freshers with applied exposure move faster into growth tracks.",
+   "source": {
+    "label": "People Matters on TeamLease EdTech H2 2026",
+    "url": "https://www.peoplematters.in/news/workforce-planning/fresher-hiring-intent-rises-to-75percent-but-it-demand-loses-ground-report-51352"
+   },
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "skill_or_role": "Software developer; data analyst; sales executive",
+   "learner_types": [
+    "college"
+   ],
+   "detail": "Top roles in Jan-Mar 2025 hiring wave per Indeed (older data; no 2026 Indeed report found).",
+   "source": {
+    "label": "DT Next citing Indeed",
+    "url": "https://www.dtnext.in/news/business/indias-job-market-ends-fy25-on-strong-note-freshers-and-tech-talent-in-high-demand-report-831822"
+   },
+   "confidence": "low"
+  },
+  {
+   "level": "national",
+   "skill_or_role": "Embedded systems, automation software, robotics, AI-integrated platforms (industrial electronics)",
+   "learner_types": [
+    "college",
+    "polytechnic"
+   ],
+   "detail": "ICEA says industrial electronics offers high-value employment in these areas within the USD 500 bn 2030-31 target.",
+   "source": {
+    "label": "Outlook Business on ICEA industrial electronics",
+    "url": "https://www.outlookbusiness.com/news/industrial-electronics-key-to-indias-usd-500-bn-manufacturing-vision-icea"
+   },
+   "confidence": "medium"
+  },
+  {
+   "level": "national",
+   "skill_or_role": "Semiconductor chip design, fabrication and testing technicians",
+   "learner_types": [
+    "college",
+    "polytechnic",
+    "iti"
+   ],
+   "detail": "ESSCI projects 1.03 lakh new semiconductor jobs by 2030 and need for over 1 lakh skilled technicians.",
+   "source": {
+    "label": "TimesTech citing ESSCI",
+    "url": "https://timestech.in/essci-welcomes-sixth-semiconductor-unit-forecasts-over-1-lakh-new-jobs-by-2030/"
+   },
+   "confidence": "medium"
+  },
+  {
+   "level": "noida_ncr",
+   "skill_or_role": "Electronics and mobile phone assembly, EMS operations",
+   "learner_types": [
+    "iti",
+    "polytechnic"
+   ],
+   "detail": "Gautam Buddh Nagar clusters host Samsung, LG, Haier, Dixon; YEIDA EMC expected to create 15,000 jobs.",
+   "source": {
+    "label": "Indian Infrastructure, UP electronics investments",
+    "url": "https://indianinfrastructure.com/2026/09/15/uttar-pradesh-attracts-rs-430-billion-in-electronics-and-semiconductor-investments/"
+   },
+   "confidence": "medium"
+  },
+  {
+   "level": "west_bengal",
+   "skill_or_role": "Precision engineering, electronics assembly, agri-tech food processing",
+   "learner_types": [
+    "iti",
+    "polytechnic",
+    "college"
+   ],
+   "detail": "Priority MSME growth areas named in Bengal Chamber MSME Day brochure June 2026.",
+   "source": {
+    "label": "Bengal Chamber, MSME Day brochure June 2026",
+    "url": "https://bengalchamber.com/msme-conclave/year2026/msme-day-brochure-june2026.pdf"
+   },
+   "confidence": "medium"
+  },
+  {
+   "level": "west_bengal",
+   "skill_or_role": "Textiles, leather, light engineering, food processing, handicrafts, IT services",
+   "learner_types": [
+    "iti",
+    "polytechnic",
+    "college"
+   ],
+   "detail": "Key MSME sectors listed in West Bengal State MSME Policy.",
+   "source": {
+    "label": "West Bengal State MSME Policy (ICAI copy)",
+    "url": "https://msme.icai.org/wp-content/uploads/2026/06/West-Bengal-State-MSME-Policy.pdf"
+   },
+   "confidence": "medium"
+  },
+  {
+   "level": "siliguri",
+   "skill_or_role": "Warehouse executive (tea packeting), hotel F&B, travel ticketing",
+   "learner_types": [
+    "iti",
+    "polytechnic",
+    "college"
+   ],
+   "detail": "Sample current Indeed listings in Siliguri and Bagdogra; anecdotal, not a demand survey.",
+   "source": {
+    "label": "Indeed India, Siliguri jobs listing",
+    "url": "https://in.indeed.com/Siliguri-Job-jobs-in-West-Bengal"
+   },
+   "confidence": "low"
+  }
+ ],
+ "institutes": [
+  {
+   "area": "noida_ncr",
+   "name": "Jaypee Institute of Information Technology (JIIT), Sector 62 campus",
+   "type": "university",
+   "town": "Noida (A-10, Sector 62)",
+   "lat": 28.62,
+   "lon": 77.37,
+   "offers": [
+    "B.Tech CSE",
+    "B.Tech IT",
+    "B.Tech ECE",
+    "ECE (Advanced Communication Technology)",
+    "Electronics and Computer Engineering",
+    "Mathematics and Computing"
+   ],
+   "url": "https://www.jiit.ac.in/Admission-2025/btech",
+   "evidence": "search_result",
+   "confidence": "high",
+   "note": "Coordinates are the Sector 62 centroid from Wikipedia, not the campus gate.",
+   "position": "as stated in the source"
+  },
+  {
+   "area": "noida_ncr",
+   "name": "Government ITI Noida (Sector 31, Nithari)",
+   "type": "iti",
+   "town": "Noida",
+   "lat": 28.5795,
+   "lon": 77.347,
+   "offers": [
+    "Fitter",
+    "Electrician",
+    "Electronics Mechanic",
+    "Wireman",
+    "Welder"
+   ],
+   "url": "https://nsez.gov.in/Resources/List%20of%20ITIs.pdf",
+   "evidence": "search_result",
+   "confidence": "medium",
+   "note": "Listed with 120 seats each in Fitter and Electrician in NSEZ list; date of list not shown.",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "noida_ncr",
+   "name": "Government ITI Badalpur",
+   "type": "iti",
+   "town": "Badalpur (Gautam Buddh Nagar)",
+   "lat": 28.588,
+   "lon": 77.556,
+   "offers": [
+    "Electrician",
+    "Fitter"
+   ],
+   "url": "https://nsez.gov.in/Resources/List%20of%20ITIs.pdf",
+   "evidence": "search_result",
+   "confidence": "medium",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "noida_ncr",
+   "name": "Government ITI Dadri",
+   "type": "iti",
+   "town": "Dadri (Gautam Buddh Nagar)",
+   "lat": 28.553,
+   "lon": 77.553,
+   "offers": [
+    "Electrician",
+    "COPA",
+    "Refrigeration and Air Conditioning",
+    "Draughtsman (Mechanical)"
+   ],
+   "url": "https://nsez.gov.in/Resources/List%20of%20ITIs.pdf",
+   "evidence": "search_result",
+   "confidence": "medium",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "noida_ncr",
+   "name": "Km. Mayawati Government Girls Polytechnic",
+   "type": "polytechnic",
+   "town": "Gautam Buddh Nagar (G T Road, NH 91)",
+   "lat": 28.59,
+   "lon": 77.548,
+   "offers": [
+    "Computer Science and Engineering",
+    "Information Technology",
+    "Hardware and Networking",
+    "Web Designing"
+   ],
+   "url": "https://www.careerindia.com/colleges/km-mayavati-government-girls-polytechnic-gautam-budh-nagar-uttar-pradesh-cp9334/",
+   "evidence": "search_result",
+   "confidence": "medium",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "noida_ncr",
+   "name": "Government Polytechnic Ghaziabad",
+   "type": "polytechnic",
+   "town": "Ghaziabad (Hapur Road, Shastri Nagar)",
+   "lat": 28.676,
+   "lon": 77.452,
+   "offers": [
+    "Civil Engineering",
+    "Mechanical (Automobile)",
+    "Mechanical (CAD)",
+    "Information Technology",
+    "Interior Decoration",
+    "Journalism and Mass Communication",
+    "PGD Cyber Security",
+    "PGD Internet of Things",
+    "PGD Web Designing"
+   ],
+   "url": "https://www.careers360.com/colleges/government-polytechnic-ghaziabad/courses",
+   "evidence": "search_result",
+   "confidence": "medium",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "noida_ncr",
+   "name": "ABES Engineering College",
+   "type": "college",
+   "town": "Ghaziabad (NH-09)",
+   "lat": 28.633,
+   "lon": 77.447,
+   "offers": [
+    "CSE",
+    "CSE (Data Science)",
+    "IT",
+    "ECE",
+    "Mechanical",
+    "MBA",
+    "MCA"
+   ],
+   "url": "https://abes.ac.in",
+   "evidence": "search_result",
+   "confidence": "high",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "noida_ncr",
+   "name": "KIET Group of Institutions",
+   "type": "college",
+   "town": "Ghaziabad",
+   "lat": 28.752,
+   "lon": 77.497,
+   "offers": [
+    "CSE",
+    "CSE (AI)",
+    "CSE (AI&ML)",
+    "CS&IT",
+    "IT",
+    "ECE",
+    "EEE",
+    "Mechanical",
+    "Civil"
+   ],
+   "url": "https://www.kiet.edu",
+   "evidence": "search_result",
+   "confidence": "medium",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "noida_ncr",
+   "name": "Galgotias University",
+   "type": "university",
+   "town": "Greater Noida (Sector 17A, Yamuna Expressway)",
+   "lat": 28.367,
+   "lon": 77.541,
+   "offers": [
+    "Engineering",
+    "Management",
+    "Law",
+    "Humanities",
+    "Diploma and certificate courses"
+   ],
+   "url": "https://www.galgotiasuniversity.edu.in",
+   "evidence": "search_result",
+   "confidence": "medium",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "noida_ncr",
+   "name": "Amity University Noida",
+   "type": "university",
+   "town": "Noida (Sector 125)",
+   "lat": 28.544,
+   "lon": 77.333,
+   "offers": [
+    "B.Tech",
+    "M.Tech",
+    "MBA",
+    "B.Ed",
+    "Foreign languages",
+    "Performing arts"
+   ],
+   "url": "https://amity.edu/Noida/ug-programmes.aspx",
+   "evidence": "search_result",
+   "confidence": "medium",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "noida_ncr",
+   "name": "G L Bajaj Institute of Technology and Management",
+   "type": "college",
+   "town": "Greater Noida",
+   "lat": 28.473,
+   "lon": 77.489,
+   "offers": [
+    "B.Tech (incl. CSE)",
+    "MBA",
+    "MCA"
+   ],
+   "url": "https://www.careers360.com/colleges/gl-bajaj-institute-of-technology-and-management-greater-noida",
+   "evidence": "search_result",
+   "confidence": "medium",
+   "note": "Official domain not confirmed (glbitm.org and glbitm.ac.in both seen).",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "kalyani",
+   "name": "Kalyani Government Engineering College (KGEC)",
+   "type": "college",
+   "town": "Kalyani",
+   "lat": 22.9917,
+   "lon": 88.4489,
+   "offers": [
+    "B.Tech CSE",
+    "B.Tech IT",
+    "B.Tech ECE",
+    "B.Tech Electrical",
+    "B.Tech Mechanical",
+    "MCA"
+   ],
+   "url": "https://www.kgec.edu.in/departments",
+   "evidence": "search_result",
+   "confidence": "high",
+   "position": "as stated in the source"
+  },
+  {
+   "area": "kalyani",
+   "name": "Government ITI Kalyani",
+   "type": "iti",
+   "town": "Kalyani",
+   "lat": 22.975,
+   "lon": 88.434,
+   "offers": [
+    "Machinist",
+    "Turner",
+    "Fitter",
+    "Electrician",
+    "Welder",
+    "Carpenter",
+    "Mason",
+    "COPA"
+   ],
+   "url": "https://iti.wb.gov.in/institute/home/kalyani",
+   "evidence": "search_result",
+   "confidence": "medium",
+   "note": "Established 1969; trade list from Collegedunia, not the official page.",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "kalyani",
+   "name": "University of Kalyani",
+   "type": "university",
+   "town": "Kalyani",
+   "lat": 22.99,
+   "lon": 88.447,
+   "offers": [
+    "37 departments across 6 faculty councils (science, arts, commerce, etc.)"
+   ],
+   "url": "https://klyuniv.ac.in",
+   "evidence": "search_result",
+   "confidence": "high",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "kalyani",
+   "name": "IISER Kolkata",
+   "type": "university",
+   "town": "Mohanpur (near Kalyani)",
+   "lat": 22.963,
+   "lon": 88.524,
+   "offers": [
+    "Biological Sciences",
+    "Chemical Sciences",
+    "Earth Sciences",
+    "Mathematics and Statistics",
+    "Physical Sciences"
+   ],
+   "url": "https://www.iiserkol.ac.in/web/en/about-us/campus/",
+   "evidence": "search_result",
+   "confidence": "high",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "kalyani",
+   "name": "JIS College of Engineering",
+   "type": "college",
+   "town": "Kalyani (Block A, Phase III)",
+   "lat": 22.959,
+   "lon": 88.454,
+   "offers": [
+    "CSE",
+    "ECE",
+    "IT",
+    "Electrical",
+    "Civil",
+    "Mechanical",
+    "Biomedical"
+   ],
+   "url": "https://www.jiscollege.ac.in/jisce-lp",
+   "evidence": "search_result",
+   "confidence": "high",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "kalyani",
+   "name": "Gayeshpur Government Polytechnic",
+   "type": "polytechnic",
+   "town": "Gayeshpur (near Kalyani, Nadia)",
+   "lat": 22.955,
+   "lon": 88.495,
+   "offers": [
+    "Diploma Civil",
+    "Diploma Mechanical",
+    "Diploma Survey Engineering"
+   ],
+   "url": "https://en.wikipedia.org/wiki/Gayeshpur_Government_Polytechnic",
+   "evidence": "search_result",
+   "confidence": "medium",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "kalyani",
+   "name": "JIS School of Polytechnic",
+   "type": "polytechnic",
+   "town": "Kalyani",
+   "lat": 22.962,
+   "lon": 88.45,
+   "offers": [
+    "Diploma Mechanical",
+    "Diploma Electrical"
+   ],
+   "url": "https://www.careers360.com/colleges/jis-school-of-polytechnic-kalyani",
+   "evidence": "search_result",
+   "confidence": "medium",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "kalyani",
+   "name": "Ranaghat Government Polytechnic",
+   "type": "polytechnic",
+   "town": "Ranaghat (Nadia)",
+   "lat": 23.18,
+   "lon": 88.57,
+   "offers": [],
+   "url": "https://s2.collegedunia.com/college/61154-ranaghat-government-polytechnic-nadia/news",
+   "evidence": "search_result",
+   "confidence": "low",
+   "note": "Existence only; branches not shown in results.",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "siliguri",
+   "name": "Siliguri Government Polytechnic",
+   "type": "polytechnic",
+   "town": "Siliguri (Dabgram)",
+   "lat": 26.73,
+   "lon": 88.41,
+   "offers": [
+    "Architecture",
+    "Electrical",
+    "Electronics and Telecommunication",
+    "Electronics and Instrumentation",
+    "Computer Science and Technology",
+    "Pharmacy",
+    "Civil"
+   ],
+   "url": "https://polytechnic.wbtetsd.gov.in/polytechnic/institute/library/funding/siligurigovpoly",
+   "evidence": "search_result",
+   "confidence": "medium",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "siliguri",
+   "name": "Government ITI Siliguri",
+   "type": "iti",
+   "town": "Siliguri (2nd Mile Sevoke Road)",
+   "lat": 26.742,
+   "lon": 88.44,
+   "offers": [],
+   "url": "https://iti.wb.gov.in/institute/home/siliguri",
+   "evidence": "search_result",
+   "confidence": "high",
+   "note": "Set up 1968; trade list not shown in results.",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "siliguri",
+   "name": "Government ITI for Women, Siliguri",
+   "type": "iti",
+   "town": "Siliguri",
+   "lat": 26.718,
+   "lon": 88.43,
+   "offers": [],
+   "url": "https://iti.wb.gov.in/institute/home/witisiliguri",
+   "evidence": "search_result",
+   "confidence": "high",
+   "note": "Established 1992; trade list not shown in results.",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "siliguri",
+   "name": "Siliguri Institute of Technology",
+   "type": "college",
+   "town": "Siliguri",
+   "lat": 26.705,
+   "lon": 88.36,
+   "offers": [
+    "CSE",
+    "IT",
+    "ECE",
+    "EE",
+    "Civil",
+    "CSE (AI&ML)",
+    "ECS"
+   ],
+   "url": "https://sittechno.org/about-sit.html",
+   "evidence": "search_result",
+   "confidence": "high",
+   "position": "approximate (town or campus area, placed by the research team)"
+  },
+  {
+   "area": "siliguri",
+   "name": "University of North Bengal",
+   "type": "university",
+   "town": "Raja Rammohunpur (Siliguri)",
+   "lat": 26.7062,
+   "lon": 88.351,
+   "offers": [
+    "Computer Science and Application",
+    "Tea Science",
+    "Food Technology",
+    "Biotechnology",
+    "Commerce",
+    "Economics",
+    "Geography"
+   ],
+   "url": "https://nbu.ac.in",
+   "evidence": "search_result",
+   "confidence": "medium",
+   "note": "Coordinates from a biodiversity observation site (non-authoritative).",
+   "position": "as stated in the source"
+  },
+  {
+   "area": "siliguri",
+   "name": "Jalpaiguri Government Engineering College",
+   "type": "college",
+   "town": "Jalpaiguri",
+   "lat": 26.546,
+   "lon": 88.704,
+   "offers": [
+    "Civil",
+    "CSE",
+    "ECE",
+    "Electrical",
+    "IT",
+    "Mechanical"
+   ],
+   "url": "https://jgec.ac.in",
+   "evidence": "search_result",
+   "confidence": "high",
+   "position": "approximate (town or campus area, placed by the research team)"
+  }
+ ],
+ "apply_routes": [
+  {
+   "id": "ncs",
+   "name": "National Career Service (NCS) portal",
+   "owner": "Ministry of Labour and Employment, Government of India",
+   "url": "https://www.ncs.gov.in",
+   "for": [
+    "college",
+    "iti",
+    "polytechnic"
+   ],
+   "what": "Free national job portal with job listings, career counselling, skill courses and online/offline job fairs.",
+   "stipend": null,
+   "eligibility": "Any job seeker with a valid mobile number and an ID such as Aadhaar, voter card or PAN.",
+   "how": [
+    "Open ncs.gov.in and click Register",
+    "Choose Jobseeker as user type",
+    "Enter name, date of birth, mobile, email and qualifications",
+    "Verify with OTP",
+    "Search jobs and job fairs in the Events section"
+   ],
+   "evidence": "search_result",
+   "confidence": "high"
+  },
+  {
+   "id": "naps",
+   "name": "National Apprenticeship Promotion Scheme (NAPS) - Apprenticeship India portal",
+   "owner": "Ministry of Skill Development and Entrepreneurship (DGT)",
+   "url": "https://www.apprenticeshipindia.gov.in",
+   "for": [
+    "iti",
+    "polytechnic",
+    "college"
+   ],
+   "what": "Paid apprenticeships with establishments; Government pays 25% of the stipend up to Rs 1,500 per month via DBT, employer pays at least 75%.",
+   "stipend": "Minimum rates revised and notified 11 Sep 2025 (CPI-linked; figures not found in results). Older Rule 11 minimum: Rs 7,000/month for National or State Certificate (ITI) holders.",
+   "eligibility": "Candidates (including ITI pass-outs) registered on the portal who meet the trade's minimum qualification.",
+   "how": [
+    "Register as candidate on apprenticeshipindia.gov.in",
+    "Complete profile with Aadhaar and bank details",
+    "Search and apply to apprenticeship opportunities by trade and location",
+    "Accept offer and sign contract with the establishment",
+    "Receive stipend; Government share via DBT"
+   ],
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "id": "nats",
+   "name": "National Apprenticeship Training Scheme (NATS 2.0)",
+   "owner": "Ministry of Education (Boards of Apprenticeship Training)",
+   "url": "https://nats.education.gov.in",
+   "for": [
+    "college",
+    "polytechnic"
+   ],
+   "what": "One-year apprenticeships for engineering/non-engineering graduates and diploma holders; Government reimburses 50% of stipend to employer.",
+   "stipend": "From 1 Apr 2026 (secondary sources): graduates Rs 12,300/month; diploma Rs 10,900 (degree-institution category) or Rs 9,600 (vocational/diploma category).",
+   "eligibility": "Graduates or diploma holders registered on the NATS 2.0 portal within the scheme's pass-out window.",
+   "how": [
+    "Register as student on nats.education.gov.in",
+    "Get enrolment number after document verification",
+    "Apply to establishments listing vacancies",
+    "Accept offer and sign apprenticeship contract",
+    "Receive monthly stipend"
+   ],
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "id": "pmis",
+   "name": "PM Internship Scheme",
+   "owner": "Ministry of Corporate Affairs",
+   "url": "https://pminternship.mca.gov.in",
+   "for": [
+    "college",
+    "iti",
+    "polytechnic"
+   ],
+   "what": "12-month internships in top companies with monthly assistance and a one-time grant.",
+   "stipend": "Rs 5,000/month plus one-time Rs 6,000 (original terms); some 2026 guides cite Rs 9,000/month - confirm on portal.",
+   "eligibility": "Indian citizens aged 21-24, not in full-time job or full-time education, family income under Rs 8 lakh (sources conflict on newer limits).",
+   "how": [
+    "Register on pminternship.mca.gov.in with Aadhaar-linked mobile",
+    "Complete profile and education details",
+    "Choose up to the allowed number of internship preferences",
+    "Track shortlisting and accept offer",
+    "Receive assistance by DBT"
+   ],
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "id": "up_sewayojan",
+   "name": "UP Sewayojan / Rojgaar Sangam portal",
+   "owner": "Employment Department (Sewayojan), Government of Uttar Pradesh",
+   "url": "https://sewayojan.up.nic.in",
+   "for": [
+    "college",
+    "iti",
+    "polytechnic"
+   ],
+   "what": "State registration and job matching; SMS/email alerts for matching vacancies and invitations to district Rozgar Melas.",
+   "stipend": null,
+   "eligibility": "UP job seekers; registration free (one source says no age bar).",
+   "how": [
+    "Register as Job Seeker on sewayojan.up.nic.in (Rojgaar Sangam: rojgaarsangam.up.gov.in)",
+    "Fill personal, education, skill and preference details",
+    "Note registration number",
+    "Watch for SMS/email on matching vacancies and Rozgar Mela invitations",
+    "Attend district Rozgar Mela (e.g. Gautam Buddh Nagar employment office)"
+   ],
+   "evidence": "search_result",
+   "confidence": "high"
+  },
+  {
+   "id": "up_rozgar_mela",
+   "name": "UP district Rozgar Melas",
+   "owner": "District Employment Offices, Government of Uttar Pradesh",
+   "url": "https://rojgaarsangam.up.gov.in/aboutus",
+   "for": [
+    "college",
+    "iti",
+    "polytechnic"
+   ],
+   "what": "Free district job fairs with private employers; e.g. Lucknow fair on 3 Aug 2026 had 2,800+ openings with salaries up to Rs 35,000.",
+   "stipend": null,
+   "eligibility": "Registered job seekers matching employer requirements; no candidate fee.",
+   "how": [
+    "Register on Sewayojan portal",
+    "Check district fair dates on the portal or employment office",
+    "Carry resume and certificates",
+    "Attend interviews on the fair day"
+   ],
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "id": "wb_employment_bank",
+   "name": "Employment Bank, West Bengal",
+   "owner": "Labour Department and IT Department, Government of West Bengal (Directorate of Employment)",
+   "url": "https://www.employmentbankwb.gov.in",
+   "for": [
+    "college",
+    "iti",
+    "polytechnic"
+   ],
+   "what": "State job seeker registry and job portal; linked to Yuvasree financial assistance.",
+   "stipend": "Yuvasree: Rs 1,500/month to first one lakh enrolled job seekers (2013 terms; current status unverified).",
+   "eligibility": "West Bengal resident job seekers; online registration must be validated at an Employment Exchange.",
+   "how": [
+    "Enrol online on employmentbankwb.gov.in",
+    "Note temporary enrolment ID",
+    "Visit any Employment Exchange to validate",
+    "Receive user ID and password by SMS",
+    "Search and apply to vacancies"
+   ],
+   "evidence": "search_result",
+   "confidence": "medium",
+   "note": "No search result confirmed a 'Karmasathi' employment portal; Employment Bank is the confirmed state portal."
+  },
+  {
+   "id": "wb_karmadisha",
+   "name": "Utkarsh Bangla / Karmadisha (PBSSD)",
+   "owner": "Paschim Banga Society for Skill Development, Government of West Bengal",
+   "url": "https://amarkarmadisha.wb.gov.in",
+   "for": [
+    "iti",
+    "polytechnic",
+    "college"
+   ],
+   "what": "Free state skill training with placement support for wage and self-employment.",
+   "stipend": null,
+   "eligibility": "West Bengal youth seeking short-term skill training (candidates apply through Karmadisha).",
+   "how": [
+    "Register on Karmadisha (amarkarmadisha.wb.gov.in)",
+    "Choose a course and training centre",
+    "Complete training and certification",
+    "Use placement support (PBSSD portal: pbssd.gov.in)"
+   ],
+   "evidence": "search_result",
+   "confidence": "low"
+  },
+  {
+   "id": "aicte_internship",
+   "name": "AICTE Internship Portal",
+   "owner": "All India Council for Technical Education",
+   "url": "https://internship.aicte-india.org",
+   "for": [
+    "college",
+    "polytechnic"
+   ],
+   "what": "Free national internship portal with paid and unpaid, remote and on-site internships; supports AICTE mandated credits (14-20 for B.Tech, 10-14 for 3-year diploma).",
+   "stipend": "Varies by internship; registration free.",
+   "eligibility": "Students of AICTE-approved institutions (degree and diploma) with current-year documents.",
+   "how": [
+    "Register with academic details on internship.aicte-india.org",
+    "Create profile and upload current-year document",
+    "Search by domain or location",
+    "Apply and track status online"
+   ],
+   "evidence": "search_result",
+   "confidence": "medium"
+  },
+  {
+   "id": "sidh",
+   "name": "Skill India Digital Hub (SIDH)",
+   "owner": "Ministry of Skill Development and Entrepreneurship / NSDC",
+   "url": "https://www.skillindiadigital.gov.in",
+   "for": [
+    "iti",
+    "polytechnic",
+    "college"
+   ],
+   "what": "Digital platform for courses (incl. NSQF), apprenticeships, job opportunities linked to NCS, and verified credentials.",
+   "stipend": null,
+   "eligibility": "Any learner or job seeker can register.",
+   "how": [
+    "Register on skillindiadigital.gov.in",
+    "Complete profile",
+    "Enrol in courses or browse apprenticeships and jobs",
+    "Download verified credentials"
+   ],
+   "evidence": "search_result",
+   "confidence": "medium"
+  }
+ ]
+}

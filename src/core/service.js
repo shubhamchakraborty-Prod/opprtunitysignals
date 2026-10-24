@@ -36,7 +36,7 @@ export const VERIFICATION_OUTCOMES = ['confirmed', 'contradicted', 'filled_or_cl
 
 /**
  * @param {import('./store-memory.js').MemoryStore} store
- * @param {{now?:()=>string, profiles?:any[], geometry?:any, trades?:any, courses?:any, announcements?:any, regions?:any}} [opts]
+ * @param {{now?:()=>string, profiles?:any[], geometry?:any, trades?:any, courses?:any, announcements?:any, regions?:any, saa?:any, providers?:any, market?:any, demand?:any}} [opts]
  */
 export function createService(store, opts = {}) {
   const now = opts.now || (() => isoDate());
@@ -108,6 +108,10 @@ export function createService(store, opts = {}) {
         courses: opts.courses || null,
         announcements: opts.announcements || null,
         regions: opts.regions || null,
+        saa: opts.saa || null,
+        providers: opts.providers || null,
+        market: opts.market || null,
+        demand: opts.demand || null,
       };
     },
 

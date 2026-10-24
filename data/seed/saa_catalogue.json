@@ -1,0 +1,503 @@
+{
+ "source": "Swift AI Academy MVP product document (mvp_prd_doc), demo catalogue",
+ "source_note": "Prototype-authored curricula. Hours are notional; credits and NSQF level are still to be confirmed in the source document.",
+ "extracted_at": "2026-10-24",
+ "tracks": [
+  {
+   "id": "aiml",
+   "name": "Applied AI/ML Practitioner",
+   "blurb": "Build, test and evaluate applied machine learning solutions on real tabular data.",
+   "estimate": "18 weeks • 4–6 hrs/week",
+   "courses": [
+    "AI01",
+    "AI02",
+    "AI03",
+    "AI04"
+   ],
+   "roles": [
+    "ML Associate",
+    "Data Science Analyst",
+    "AI Support Engineer"
+   ]
+  },
+  {
+   "id": "analytics",
+   "name": "Business Data Analyst",
+   "blurb": "Turn spreadsheets and databases into dashboards and decisions.",
+   "estimate": "14 weeks • 4–6 hrs/week",
+   "courses": [
+    "DA01",
+    "DA02",
+    "DA03"
+   ],
+   "roles": [
+    "Data Analyst",
+    "MIS Executive",
+    "BI Associate"
+   ]
+  },
+  {
+   "id": "comms",
+   "name": "Workplace Communication Pro",
+   "blurb": "Speak, write and interview with clarity for associate roles across IT services and BFSI.",
+   "estimate": "8 weeks • 2–3 hrs/week",
+   "courses": [
+    "CO01",
+    "CO02",
+    "CO03"
+   ],
+   "roles": [
+    "Customer Support Associate"
+   ]
+  }
+ ],
+ "courses": [
+  {
+   "id": "AI01",
+   "track": "aiml",
+   "title": "Python for data work",
+   "overview": "Get comfortable writing Python to load, clean and summarise tabular data.",
+   "outcomes": [
+    "Write and run basic Python programs",
+    "Load and clean a tabular dataset",
+    "Produce a correct summary report"
+   ],
+   "skills": [
+    "Python",
+    "Data cleaning"
+   ],
+   "weeks": 4,
+   "hours": 16,
+   "mode": "Self-paced",
+   "languages": [
+    "English"
+   ],
+   "level": "Beginner",
+   "coding": "Some coding",
+   "credits": "To be confirmed",
+   "nsqf": "To be confirmed"
+  },
+  {
+   "id": "AI02",
+   "track": "aiml",
+   "title": "Data handling and statistics",
+   "overview": "Learn to describe and question a dataset before modelling it.",
+   "outcomes": [
+    "Assess data quality",
+    "Join related tables",
+    "Compute and interpret descriptive statistics"
+   ],
+   "skills": [
+    "Statistics",
+    "Data joins"
+   ],
+   "weeks": 4,
+   "hours": 16,
+   "mode": "Self-paced",
+   "languages": [
+    "English"
+   ],
+   "level": "Beginner",
+   "coding": "Some coding",
+   "credits": "To be confirmed",
+   "nsqf": "To be confirmed"
+  },
+  {
+   "id": "AI03",
+   "track": "aiml",
+   "title": "Machine learning foundations",
+   "overview": "Frame a problem, train a simple model, and evaluate it honestly.",
+   "outcomes": [
+    "Frame a problem for ML",
+    "Split data into train/test",
+    "Evaluate and compare simple models"
+   ],
+   "skills": [
+    "ML foundations",
+    "Evaluation"
+   ],
+   "weeks": 5,
+   "hours": 20,
+   "mode": "Self-paced",
+   "languages": [
+    "English"
+   ],
+   "level": "Intermediate",
+   "coding": "Some coding",
+   "credits": "To be confirmed",
+   "nsqf": "To be confirmed"
+  },
+  {
+   "id": "AI04",
+   "track": "aiml",
+   "title": "Applied ML project",
+   "overview": "Run an end-to-end applied ML project and present it for review.",
+   "outcomes": [
+    "Define a real problem",
+    "Prepare data for modelling",
+    "Build and evaluate a baseline",
+    "Present results and limitations"
+   ],
+   "skills": [
+    "Applied ML",
+    "Project delivery"
+   ],
+   "weeks": 5,
+   "hours": 20,
+   "mode": "Self-paced + expert review",
+   "languages": [
+    "English"
+   ],
+   "level": "Intermediate",
+   "coding": "Some coding",
+   "credits": "To be confirmed",
+   "nsqf": "To be confirmed"
+  },
+  {
+   "id": "DA01",
+   "track": "analytics",
+   "title": "Spreadsheets to SQL",
+   "overview": "Move from spreadsheet formulas to SQL queries on the same problems.",
+   "outcomes": [
+    "Clean data in a spreadsheet",
+    "Write SELECT/GROUP BY queries",
+    "Join two tables in SQL"
+   ],
+   "skills": [
+    "Spreadsheets",
+    "SQL"
+   ],
+   "weeks": 4,
+   "hours": 16,
+   "mode": "Self-paced",
+   "languages": [
+    "English"
+   ],
+   "level": "Beginner",
+   "coding": "Light coding",
+   "credits": "To be confirmed",
+   "nsqf": "To be confirmed"
+  },
+  {
+   "id": "DA02",
+   "track": "analytics",
+   "title": "Dashboards and visual reporting",
+   "overview": "Design a small dashboard that actually helps someone decide something.",
+   "outcomes": [
+    "Define clear KPIs",
+    "Choose the right chart for a question",
+    "Lay out a decision-focused dashboard"
+   ],
+   "skills": [
+    "Dashboards",
+    "KPI design"
+   ],
+   "weeks": 5,
+   "hours": 20,
+   "mode": "Self-paced",
+   "languages": [
+    "English"
+   ],
+   "level": "Intermediate",
+   "coding": "No coding",
+   "credits": "To be confirmed",
+   "nsqf": "To be confirmed"
+  },
+  {
+   "id": "DA03",
+   "track": "analytics",
+   "title": "Analytics case studies",
+   "overview": "Practice the full analyst loop: question, plan, evidence, recommendation.",
+   "outcomes": [
+    "Frame a business question",
+    "Plan an analysis",
+    "Support a recommendation with evidence"
+   ],
+   "skills": [
+    "Case analysis",
+    "Recommendations"
+   ],
+   "weeks": 5,
+   "hours": 20,
+   "mode": "Self-paced + expert review",
+   "languages": [
+    "English"
+   ],
+   "level": "Intermediate",
+   "coding": "No coding",
+   "credits": "To be confirmed",
+   "nsqf": "To be confirmed"
+  },
+  {
+   "id": "CO01",
+   "track": "comms",
+   "title": "Spoken clarity and listening",
+   "overview": "Practice speaking and listening clearly under everyday workplace pressure.",
+   "outcomes": [
+    "Listen and clarify accurately",
+    "Speak in a structured way",
+    "Practice clear pronunciation"
+   ],
+   "skills": [
+    "Spoken English",
+    "Listening"
+   ],
+   "weeks": 3,
+   "hours": 9,
+   "mode": "Self-paced",
+   "languages": [
+    "English",
+    "Hindi (lesson text only)"
+   ],
+   "level": "Beginner",
+   "coding": "No coding",
+   "credits": "To be confirmed",
+   "nsqf": "To be confirmed"
+  },
+  {
+   "id": "CO02",
+   "track": "comms",
+   "title": "Written workplace English",
+   "overview": "Write emails and updates that get read and acted on.",
+   "outcomes": [
+    "Match tone to audience",
+    "Structure a clear email",
+    "Write a status update with a next action"
+   ],
+   "skills": [
+    "Written English"
+   ],
+   "weeks": 3,
+   "hours": 9,
+   "mode": "Self-paced",
+   "languages": [
+    "English"
+   ],
+   "level": "Beginner",
+   "coding": "No coding",
+   "credits": "To be confirmed",
+   "nsqf": "To be confirmed"
+  },
+  {
+   "id": "CO03",
+   "track": "comms",
+   "title": "Interviews and group discussion",
+   "overview": "Prepare evidence-based interview answers and practice group discussion.",
+   "outcomes": [
+    "Research a target role",
+    "Structure answers using STAR",
+    "Contribute constructively in a group discussion"
+   ],
+   "skills": [
+    "Interview skills"
+   ],
+   "weeks": 2,
+   "hours": 6,
+   "mode": "Self-paced",
+   "languages": [
+    "English"
+   ],
+   "level": "Intermediate",
+   "coding": "No coding",
+   "credits": "To be confirmed",
+   "nsqf": "To be confirmed"
+  },
+  {
+   "id": "MC4",
+   "track": "aiml",
+   "title": "Make It Stick",
+   "overview": "Produce a tested, repeatable AI-assisted method for a recurring task and demonstrate its use.",
+   "outcomes": [
+    "Build a documented, reusable AI-assisted method",
+    "Test the method on an awkward input and diagnose faults",
+    "Demonstrate and commit to using the method going forward"
+   ],
+   "skills": [
+    "Prompt/method design",
+    "Testing & hardening",
+    "Demonstration"
+   ],
+   "weeks": "Weeks 12&ndash;15 of a wider semester series",
+   "hours": 16,
+   "mode": "Self-paced + expert review",
+   "languages": [
+    "English (Hindi planned)"
+   ],
+   "level": "Intermediate",
+   "coding": "No coding",
+   "credits": "To be confirmed",
+   "nsqf": "To be confirmed"
+  }
+ ],
+ "skill_map": {
+  "English communication": {
+   "courses": [
+    "CO01"
+   ],
+   "fit": "full"
+  },
+  "Basic English": {
+   "courses": [
+    "CO01"
+   ],
+   "fit": "full"
+  },
+  "Communication": {
+   "courses": [
+    "CO01",
+    "CO03"
+   ],
+   "fit": "full"
+  },
+  "English writing": {
+   "courses": [
+    "CO02"
+   ],
+   "fit": "full"
+  },
+  "Documentation": {
+   "courses": [
+    "CO02"
+   ],
+   "fit": "partial",
+   "gap": "Written English covers emails, not forms, logs and record keeping."
+  },
+  "Interview skills": {
+   "courses": [
+    "CO03"
+   ],
+   "fit": "full"
+  },
+  "Customer handling": {
+   "courses": [
+    "CO01"
+   ],
+   "fit": "partial",
+   "gap": "Spoken clarity helps, but there is no customer service, voice process or CRM module."
+  },
+  "Excel": {
+   "courses": [
+    "DA01"
+   ],
+   "fit": "full"
+  },
+  "Reporting": {
+   "courses": [
+    "DA01",
+    "DA02"
+   ],
+   "fit": "full"
+  },
+  "Power BI": {
+   "courses": [
+    "DA02"
+   ],
+   "fit": "full"
+  },
+  "Problem solving": {
+   "courses": [
+    "DA03"
+   ],
+   "fit": "partial",
+   "gap": "Case studies build analytical problem solving, not shop-floor troubleshooting."
+  },
+  "Data annotation": {
+   "courses": [
+    "AI02"
+   ],
+   "fit": "partial",
+   "gap": "Data quality is taught inside AI02, which assumes some coding. There is no no-code annotation course for Class 12 or ITI learners."
+  },
+  "AI tools": {
+   "courses": [],
+   "fit": "none"
+  },
+  "Computer basics": {
+   "courses": [],
+   "fit": "none"
+  },
+  "Typing": {
+   "courses": [],
+   "fit": "none"
+  },
+  "Office administration": {
+   "courses": [],
+   "fit": "none"
+  },
+  "Technical support": {
+   "courses": [],
+   "fit": "none"
+  },
+  "Sales": {
+   "courses": [],
+   "fit": "none"
+  },
+  "Digital marketing": {
+   "courses": [],
+   "fit": "none"
+  },
+  "Google Ads": {
+   "courses": [],
+   "fit": "none"
+  },
+  "IT knowledge": {
+   "courses": [],
+   "fit": "none"
+  },
+  "Python": {
+   "courses": [
+    "AI01"
+   ],
+   "fit": "full"
+  },
+  "SQL": {
+   "courses": [
+    "DA01"
+   ],
+   "fit": "full"
+  },
+  "Machine learning": {
+   "courses": [
+    "AI03",
+    "AI04"
+   ],
+   "fit": "full"
+  }
+ },
+ "skill_map_note": "Which Swift AI Academy course teaches each skill named in local job ads. full = the course teaches it; partial = related but a module is missing; none = no course yet. Curated by the research team; review when the catalogue changes.",
+ "trade_skills": [
+  "Electrical basics",
+  "Electrical wiring",
+  "Auto electrical wiring",
+  "Electronics testing",
+  "Electronics repair",
+  "Soldering",
+  "PCB assembly",
+  "ESD handling",
+  "Troubleshooting",
+  "Installation and servicing",
+  "Power supply systems",
+  "Quality inspection",
+  "Measurement",
+  "Machine safety",
+  "Production processes",
+  "Lathe operation",
+  "Milling",
+  "CNC basics",
+  "Mechanical drawing",
+  "CAD",
+  "Fitting and assembly",
+  "Machine assembly",
+  "Machine setting",
+  "Machine maintenance",
+  "Plant machinery",
+  "Electrical maintenance",
+  "DG set operation",
+  "Vehicle repair",
+  "EV basics",
+  "Picking",
+  "Packing",
+  "Installation"
+ ],
+ "trade_skills_note": "Hands-on trade skills taught at ITIs and through Sector Skill Council courses. Swift AI Academy does not plan to teach these; the platform refers learners to ITI, NSTI or SSC courses instead."
+}

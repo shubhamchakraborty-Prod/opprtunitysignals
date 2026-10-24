@@ -13,7 +13,7 @@ const dist = join(root, 'dist');
 rmSync(dist, { recursive: true, force: true });
 mkdirSync(join(dist, 'assets'), { recursive: true });
 
-const res = await build({ entryPoints: [join(root, 'web/src/main.js')], bundle: true, format: 'iife', target: 'es2020', minify: true, write: false, legalComments: 'none' });
+const res = await build({ entryPoints: [join(root, 'web/src/main.js')], bundle: true, supported: { 'top-level-await': false }, format: 'iife', target: 'es2020', minify: true, write: false, legalComments: 'none' });
 const js = res.outputFiles[0].text;
 const css = readFileSync(join(root, 'web/styles.css'), 'utf8');
 const logo = readFileSync(join(root, 'web/assets/convegenius-logo.png'));
@@ -29,17 +29,31 @@ const seed = loadSeed();
   }
 }
 const seedJson = JSON.stringify(seed).replace(/</g, '\\u003c');
-const tpl = readFileSync(join(root, 'web/index.html'), 'utf8');
+const { ICONS, ART } = await import('../web/src/art.generated.js');
+const tpl = readFileSync(join(root, 'web/index.html'), 'utf8')
+  .replace(/<!--ICON:([\w-]+)-->/g, (_, n) => ICONS[n] || '')
+  .replace(/<!--ART:([\w-]+)-->/g, (_, n) => ART[n] || '');
+// Fonts (Google Sans Flex and Google Sans Code, OFL) ship with the app so it works offline.
+const FONTS = {
+  'google-sans-flex.woff2': 'node_modules/@fontsource-variable/google-sans-flex/files/google-sans-flex-latin-wght-normal.woff2',
+  'google-sans-code.woff2': 'node_modules/@fontsource-variable/google-sans-code/files/google-sans-code-latin-wght-normal.woff2',
+};
+const inlineFonts = (text) => text.replace(/url\("fonts\/([\w-]+\.woff2)"\)/g, (_, f) => `url("data:font/woff2;base64,${readFileSync(join(root, FONTS[f])).toString('base64')}")`);
+// Street map provider, chosen at build time (docs/MAPS.md). The key is visible to browsers: restrict it to your domain.
+const mapConfig = `<script>window.__MAP_CONFIG__=${JSON.stringify({ provider: process.env.MAP_PROVIDER || 'openfreemap', key: process.env.MAP_API_KEY || '' }).replace(/</g, '\\u003c')};</script>`;
 
-const fill = (styles, logoSrc, script) => tpl.replace('<!--STYLES-->', styles).replace('<!--LOGO-->', logoSrc).replace('<!--SEED-->', () => seedJson).replace('<!--SCRIPT-->', () => script);
+const fill = (styles, logoSrc, script) => tpl.replace('<!--STYLES-->', () => styles).replace('<!--LOGO-->', logoSrc).replace('<!--SEED-->', () => seedJson).replace('<!--SCRIPT-->', () => mapConfig + '\n' + script);
+const cssInline = inlineFonts(css);
 
 writeFileSync(join(dist, 'app.js'), js);
 writeFileSync(join(dist, 'styles.css'), css);
 cpSync(join(root, 'web/assets/convegenius-logo.png'), join(dist, 'assets/convegenius-logo.png'));
 writeFileSync(join(dist, 'index.html'), fill('<link rel="stylesheet" href="styles.css"/>', 'assets/convegenius-logo.png', '<script src="app.js"></script>'));
-writeFileSync(join(dist, 'explorer-offline.html'), fill(`<style>\n${css}\n</style>`, 'data:image/png;base64,' + logo.toString('base64'), `<script>\n${js.replace(/<\/script/gi, '<\\/script')}\n</script>`));
+mkdirSync(join(dist, 'fonts'), { recursive: true });
+for (const [name, src] of Object.entries(FONTS)) cpSync(join(root, src), join(dist, 'fonts', name));
+writeFileSync(join(dist, 'explorer-offline.html'), fill(`<style>\n${cssInline}\n</style>`, 'data:image/png;base64,' + logo.toString('base64'), `<script>\n${js.replace(/<\/script/gi, '<\\/script')}\n</script>`));
 // Artifact page for claude.ai: content only (the viewer adds the document skeleton), no street map (tiles are blocked there).
-const artifact = fill(`<style>\n${css}\n</style>`, 'data:image/png;base64,' + logo.toString('base64'), `<script>window.__NO_STREET_MAP__='The street map is not available in this viewer.';</script>\n<script>\n${js.replace(/<\/script/gi, '<\\/script')}\n</script>`)
+const artifact = fill(`<style>\n${cssInline}\n</style>`, 'data:image/png;base64,' + logo.toString('base64'), `<script>window.__NO_STREET_MAP__='The street map is not available in this viewer.';</script>\n<script>\n${js.replace(/<\/script/gi, '<\\/script')}\n</script>`)
   .replace(/<!doctype html>\s*/i, '').replace(/<html[^>]*>\s*/i, '').replace(/<\/html>\s*/i, '').replace(/<head>\s*/i, '').replace(/<\/head>\s*/i, '').replace(/<body>\s*/i, '').replace(/<\/body>\s*/i, '')
   .replace(/<meta charset[^>]*>\s*/i, '').replace(/<meta name="viewport"[^>]*>\s*/i, '');
 writeFileSync(join(dist, 'artifact.html'), artifact);

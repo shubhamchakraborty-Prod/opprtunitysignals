@@ -142,6 +142,13 @@ export function initMap() {
   });
 }
 
+/** Highlight the pin that holds a record (list hover maps to the map). */
+export function highlightRecord(id) {
+  const g = id ? currentGroups().find((x) => x.records.some((r) => r.source_id === id)) : null;
+  $$('.fpin').forEach((el) => el.classList.toggle('hl', !!g && el.dataset.key === g.key));
+  $$('#leafletMap .marker').forEach((el) => el.classList.toggle('hl', !!g && el.dataset.key === g.key));
+}
+
 export function invalidateMap() {
   if (street) setTimeout(() => street.resize(), 30);
 }

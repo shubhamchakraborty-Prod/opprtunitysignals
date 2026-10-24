@@ -1,7 +1,7 @@
 // Worker & employer voice. Disabled until attributed, consented interviews
 // exist. Advert terms are shown separately and never scored as sentiment.
 import { app } from '../app.js';
-import { esc, $, toast, errorBox } from '../ui.js';
+import { esc, $, toast, errorBox, artBox } from '../ui.js';
 import { requirementFrequencies } from '../../../src/core/analytics.js';
 import { INTERVIEW_THEMES, CONSENT_BASES } from '../../../src/core/constants.js';
 
@@ -12,7 +12,7 @@ export function renderVoice() {
   const body = s.status === 'ok'
     ? `<div class="card card-body" style="display:flex;flex-direction:column;gap:14px"><div class="section-label">${esc(s.message)}</div><div class="grid3">${s.themes.map((t) => `<div class="theme-card"><h4>${esc(t.theme.replace('_', ' '))}</h4><div class="note">Raised in ${t.mentions} of ${t.of} interviews${t.byGroup.length ? ' (' + t.byGroup.map((g) => `${g.count} ${esc(g.group)}`).join(', ') + ')' : ''}</div>${t.quotes.map((q) => `<div class="quote">“${esc(q.quote)}” <span class="note">${esc(q.group)}${q.sector ? ', Sector ' + esc(q.sector) : ''}</span></div>`).join('')}</div>`).join('')}</div><p class="note">${esc(s.method)}</p></div>`
     : `<div class="empty-state" id="sentimentEmpty"><span class="trust old">Not measured yet</span><h3>${esc(s.message)}</h3><p>We have not interviewed workers, learners or employers yet, so this page shows no opinions. Job ads cannot tell us how people feel about a job.</p><div class="needs"><div><b>Interviews</b>Workers, learners and employers in Sectors 62 and 63</div><div><b>Consent</b>Recorded for every person, with separate permission to quote</div><div><b>Coding</b>Six fixed topics: hopes, commute, pay, safety, hours, staying on</div><div><b>Approval</b>Checked by an administrator before anything appears</div></div></div>`;
-  $('#voice').innerHTML = `<div class="section-head"><div><h2>What do workers and employers say?</h2><p>Hopes, commute, pay, safety, working hours and why people stay or leave. Taken only from interviews where people agreed to take part. This is kept apart from the job counts.</p></div></div>
+  $('#voice').innerHTML = `<div class="section-head">${artBox('voice')}<div><h2>What do workers and employers say?</h2><p>Hopes, commute, pay, safety, working hours and why people stay or leave. Taken only from interviews where people agreed to take part. This is kept apart from the job counts.</p></div></div>
   ${body}
   <div class="card"><div class="card-head"><h3>Working conditions written in the ads</h3><small>${terms.denominator} recent ads · ${app.state.filters.sector === 'all' ? 'both sectors' : 'Sector ' + esc(app.state.filters.sector)}</small></div><div class="card-body" style="display:flex;flex-direction:column;gap:10px">
   ${terms.terms.length ? `<div class="table-scroll"><table class="minitable"><tr><th>Condition</th><th>Ads mentioning it</th></tr>${terms.terms.map((t) => `<tr><td>${esc(t.name)}</td><td>${t.count} of ${terms.denominator}</td></tr>`).join('')}</table></div>` : '<p class="note">No working conditions mentioned in the current area.</p>'}

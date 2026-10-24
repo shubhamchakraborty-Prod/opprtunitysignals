@@ -1,7 +1,7 @@
 // ITI trades: every trade mapped to the local job ads, the extra skills those
 // ads ask for, bridge jobs outside the trade, and courses that close the gap.
 import { app } from '../app.js';
-import { esc, $, $$, sectorTag } from '../ui.js';
+import { esc, $, $$, sectorTag, artBox } from '../ui.js';
 import { mapCatalogue, bridgeJobs, bridgeSkillDemand } from '../../../src/core/trades.js';
 import { comparisonBase } from '../../../src/core/analytics.js';
 import { filterOpportunities } from '../../../src/core/filters.js';
@@ -57,7 +57,7 @@ export function renderTrades() {
   const doors = bridgeSkillDemand(ads, courses).slice(0, 8);
   const q = ui.q.toLowerCase();
   const shown = mapped.filter((m) => (ui.sector === 'all' || m.sector === ui.sector) && (!q || m.trade.toLowerCase().includes(q) || m.core_skills.join(' ').toLowerCase().includes(q)) && (!ui.onlyDemand || m.demand));
-  $('#trades').innerHTML = `<div class="section-head"><div><h2>Which ITI trades fit the jobs here, and what is missing?</h2><p>All ${cat.trades.length} ITI trades in our list, matched against the ${ads.length} current job ads in Sectors 62 and 63. For each trade you see the ads it fits, the extra skills those ads ask for, jobs outside the trade a learner could reach, and short courses that close the gap.</p></div></div>
+  $('#trades').innerHTML = `<div class="section-head">${artBox('trades')}<div><h2>Which ITI trades fit the jobs here, and what is missing?</h2><p>All ${cat.trades.length} ITI trades in our list, matched against the ${ads.length} current job ads in Sectors 62 and 63. For each trade you see the ads it fits, the extra skills those ads ask for, jobs outside the trade a learner could reach, and short courses that close the gap.</p></div></div>
   <div class="answers">
     <div class="answer"><span class="label">ITI trades listed</span><span class="big">${cat.trades.length}</span><span class="sub">${sectors.length} sectors</span></div>
     <div class="answer go"><span class="label">Trades with related ads here</span><span class="big">${mapped.filter((m) => m.demand).length}</span><span class="sub">Most are electrical, electronics and machine trades</span></div>

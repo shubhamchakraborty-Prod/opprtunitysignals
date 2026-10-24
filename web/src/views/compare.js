@@ -1,7 +1,7 @@
 // Compare 62 and 63: type of work, skills asked for, working conditions,
 // where the information came from and what the ads leave out.
 import { app } from '../app.js';
-import { esc, $, pct, familyLabel, KIND_LABEL, BASIS_LABEL } from '../ui.js';
+import { esc, $, pct, familyLabel, KIND_LABEL, BASIS_LABEL, artBox } from '../ui.js';
 import { rolePrevalence, requirementFrequencies, sourceCoverage, requirementTrend } from '../../../src/core/analytics.js';
 
 const bars = (rows, n, sector) => `<div class="bars">${rows.map((r) => `<div class="bar-row"><div class="bar-label"><span>${esc(r.name)}</span><strong>${r.count} <small>of ${n}</small></strong></div><div class="bar s${sector}"><i style="width:${n ? (r.count / n) * 100 : 0}%"></i></div></div>`).join('')}</div>`;
@@ -23,7 +23,7 @@ function column(sector, records) {
 export function renderCompare() {
   const records = app.data.records.filter((r) => r.review.state === 'approved');
   const trend = requirementTrend(records);
-  $('#compare').innerHTML = `<div class="section-head"><div><h2>How do the two areas differ?</h2><p>Based on the job ads we collected, not on every job in each sector. Repeat ads are counted once. Old ads and ads with unclear locations are left out.</p></div></div>
+  $('#compare').innerHTML = `<div class="section-head">${artBox('compare')}<div><h2>How do the two areas differ?</h2><p>Based on the job ads we collected, not on every job in each sector. Repeat ads are counted once. Old ads and ads with unclear locations are left out.</p></div></div>
   <div class="grid2">${column('62', records)}${column('63', records)}</div>
   <div class="card card-body"><div class="section-label">Are skill demands going up or down?</div><h3 style="font-size:19px">${trend.status === 'ok' ? esc(trend.message) : 'Too early to tell'}</h3>
   ${trend.status === 'ok' ? `<div class="table-scroll" style="margin-top:10px"><table class="minitable"><tr><th>Skill</th><th>Earlier</th><th>Later</th></tr>${trend.rows.slice(0, 10).map((r) => `<tr><td>${esc(r.name)}</td><td>${Math.round(r.before * 100)}%</td><td>${Math.round(r.after * 100)}%</td></tr>`).join('')}</table></div>` : `<p style="margin-top:6px;color:var(--ink-2)">We have one round of data so far. A trend needs at least two rounds collected the same way, each with 10 or more ads from both sectors.</p><ul class="note" style="margin:8px 0 0;padding-left:18px">${trend.reasons.map((r) => `<li>${esc(r)}</li>`).join('')}</ul>`}</div>

@@ -1,6 +1,6 @@
 # Noida Sector 62 / 63 Industry Opportunity Explorer (research pilot)
 
-ConveGenius.AI internal research pilot. Public hiring signals, employer verification and ITI planning evidence for **Noida Sectors 62 and 63, Gautam Buddh Nagar, Uttar Pradesh**. Evolved from the v0 curated snapshot (16 Oct 2026) without changing its look or interaction design.
+ConveGenius.AI research pilot. Public hiring signals, employer verification, ten years of investment and policy change, and skill plans for learners, for **Noida Sectors 62 and 63 (Gautam Buddh Nagar, Uttar Pradesh)**, with **Kalyani** and **Siliguri (West Bengal)** for comparison. Four views on the same data: **Learners**, **Institution**, **Industry** and **Internal** (Swift AI Academy product signals). Design: Material 3 with Google Sans, following the principles in `docs/PRODUCT_PRINCIPLES.md`.
 
 Not an official employment service. Not an authorised government programme.
 
@@ -13,7 +13,7 @@ Not an official employment service. Not an authorised government programme.
 | Run the full pilot (file store) | `npm install && npm run dev` then open http://127.0.0.1:8080 | Data persists in `data/runtime/db.json`; audit trail in `data/runtime/audit.jsonl`. |
 | Run on PostgreSQL / PostGIS | `DATABASE_URL=postgres://… STORE=pg npm run dev` | Migrates and seeds an empty database automatically. |
 | Demo without persistence | `STORE=memory npm run dev` | Resets on restart. |
-| All tests | `npm test` (33 unit/service/API) · `npm run test:e2e` (5 browser) · `TEST_DATABASE_URL=… npm run test:pg` (PostGIS) | e2e uses the pre-installed Chromium. |
+| All tests | `npm test` (44 unit/service/API) · `npm run test:e2e` (10 browser) · `TEST_DATABASE_URL=… npm run test:pg` (PostGIS) | e2e uses the pre-installed Chromium. |
 | Typecheck | `npm run typecheck` | `checkJs` over `src/`. |
 | Screenshots | `npm run screenshots` | Writes `docs/screenshots/`. |
 
@@ -27,7 +27,7 @@ Requirements: Node 20+. PostgreSQL 14+ with PostGIS 3 only for `STORE=pg`.
 | Connect GitHub | Add new site > Import from Git > this repo and branch. `netlify.toml` sets build `npm ci && npm run build`, publish `dist`, Node 22 |
 | Netlify CLI | `npm i -g netlify-cli`, `netlify login`, `netlify deploy --dir=dist --prod` |
 
-Netlify serves the app in offline mode with the built-in sample data: practice mode for team roles, nothing saved, Government data tab shows the last snapshot. Live sign-in, saving and scheduled government checks need the Node API server on a Node host (Render, Railway, a VM).
+Netlify serves the app in offline mode with the built-in sample data: practice mode for team roles, nothing saved, Government data shows the live simulation and the last snapshot. Live sign-in, saving and scheduled government checks need the Node API server on a Node host (Render, Railway, a VM). Street map with a provider key: set `MAP_PROVIDER` and `MAP_API_KEY` as Netlify environment variables (`docs/MAPS.md`).
 
 ### Dev sign-in
 
@@ -44,26 +44,29 @@ Dev tokens are for local demos only. See `config/README.md` for real users.
 
 ## Screens
 
-Designed for a first-time, non-technical viewer: the answer comes first, labels use plain words, and every ad carries a coloured trust label (seen online / call planned / confirmed / old / location unclear). Team tools are hidden until someone signs in. The page always uses the light theme.
+Four views, chosen from the home page or the switcher at the top of the navigation. One location picker (Sector 62 and 63, Sector 62, Sector 63, Kalyani, Siliguri) drives every regional page. Every ad carries a coloured trust label; every external figure carries its source, date and confidence.
 
-| Tab | Answers | Screenshot |
-|---|---|---|
-| Quick start | Pick an area and the learner you are finding jobs for | `docs/screenshots/00-guided-start.png` |
-| Jobs map | Summary cards, filters, zoomable OpenFreeMap street map (sketch when offline), job list | `01-jobs-map.png` |
-| Job details (drawer) | Pay, requirements, "Is this a real, open job?" steps, who could do it, fact / inference / next step | `01b-job-detail.png` |
-| Match a learner | Five example learners: worth a call / needs more skills / not eligible as written | `02-match-a-learner.png` |
-| ITI trades and skill gaps | 103 CTS trades mapped to local ads: extra skills needed, courses, bridge jobs outside the trade | `03-iti-trades-and-skill-gaps.png` |
-| Compare 62 and 63 | Type of work, skills, working conditions, what ads leave out, trend refusal | `04-compare-62-and-63.png` |
-| Next steps | Ready for planning vs call these employers first, jobs per pass-out, management note | `05-next-steps.png` |
-| Coming up | Announced projects (Six Sense Mobility, HCL-Foxconn, Spark Minda, EMC 2.0...) with likely trades; never counted as jobs | `06-coming-up.png` |
-| Kalyani and Siliguri | Industrial parks, clusters, logistics and ITIs on the same zoomable map; presence, not vacancies | `07-kalyani-and-siliguri.png` |
-| Government data | Live status and figures from government APIs | `08-government-data.png` |
-| Workers' views | Empty until consented interviews exist | `09-workers-views.png` |
-| Sources | Every ad linked to its page, freshness, confidence, CSV export | `10-sources.png` |
-| Review queue (team) | Uploads, employer calls, repeats, follow-ups, approvals, change log | `11-review-queue.png` |
-| Record an employer call (team) | Dated notes, confirmed jobs, entry pay, start, pre-screen, contact, legal basis | `12-record-employer-call.png` |
+| View | Page | Answers | Screenshot |
+|---|---|---|---|
+| All | Home | What this is, one door per audience, how it works, what is changing | `docs/screenshots/00-home.png` |
+| Industry | Jobs map | Scorecards, filters with removable chips, zoomable map (hovering a job highlights its pin), job list | `01-jobs-map.png`, `01b-job-detail.png` |
+| Learners | Where to apply | College, polytechnic or ITI: ads open to you, official portals (NCS, NAPS, NATS, PM Internship, UP Sewayojan, WB Employment Bank), skills asked, Swift AI Academy pathways, institutes nearby | `02-where-to-apply.png` |
+| Learners | Close my skill gaps | Pick a trade: jobs now, jobs after a short course, a skill plan of Swift AI Academy courses (or other providers, or trade training) | `03-close-my-skill-gaps.png` |
+| Learners | Match a learner | Five example learners: worth a call / needs more skills / not eligible as written | `04-match-a-learner.png` |
+| Institution | ITI trades and skill gaps | 103 CTS trades mapped to local ads: extra skills, courses, bridge jobs | `05-iti-trades-and-skill-gaps.png` |
+| Institution | Next steps | Ready for planning vs call these employers first | `06-next-steps.png` |
+| Institution | Institutes nearby | ITIs, polytechnics and colleges within about 100 km on the map, with projects coming up nearby and partnership ideas | `07-institutes-nearby.png` |
+| Industry, Institution, Internal | Market overview | India, the state, or 100 km: demand indicators, 2016 to 2026 timeline, largest announcements, roles in demand, future projects linked to skills and institutes | `08-market-overview.png` |
+| Industry | Compare 62 and 63 | Type of work, skills, conditions, what ads leave out | `09-compare-62-and-63.png` |
+| Industry | Coming up | Announced projects with likely trades; never counted as jobs | `10-coming-up.png` |
+| Industry | Kalyani and Siliguri | Industrial parks, clusters and ITIs on the same zoomable map | `11-kalyani-and-siliguri.png` |
+| Industry, Internal | Government data | A clearly labelled live **simulation** (tiles, data-flow diagram, streaming chart, event feed, connection health) above the real status of every tracked source | `12-government-data.png` |
+| Internal | Market signals | Skills employers ask for vs the Swift AI Academy catalogue vs NSQF, NPTEL, SWAYAM, nasscom and Skill India: build, extend, curate or promote; course demand; platform signals | `13-market-signals.png` |
+| Institution | Workers' views | Empty until consented interviews exist | `14-workers-views.png` |
+| Industry, Internal | Sources | Every ad linked, freshness, confidence, CSV export | `15-sources.png` |
+| Internal (team) | Review queue, Record an employer call | Uploads, calls, repeats, approvals, change log | `16-review-queue.png`, `17-record-employer-call.png` |
 
-Screenshots show the zoomable sketch because street tiles were blocked in the capture environment. With internet access the OpenFreeMap street map loads (MapLibre GL, no API key; attribution OpenFreeMap © OpenMapTiles, data © OpenStreetMap contributors).
+Internal pages need a team sign-in on the live server; the offline copy shows them for the demo. Screenshots show the zoomable sketch because street tiles were blocked in the capture environment.
 
 ## Architecture
 
@@ -81,7 +84,8 @@ src/core/      shared domain logic (runs in browser and server, no dependencies)
   service.js     all use cases: RBAC, validation, four-eyes approval, audit
   note.js        management note (Markdown)
 src/server/    node:http API, bearer auth, file store, PostgreSQL/PostGIS store, workers
-web/           page template, styles (light theme) and view modules (bundled by esbuild)
+web/           page template, Material 3 styles, views (bundled by esbuild), nav.js (four views), art.generated.js (illustrations, icons)
+  src/core/signals.js  market signals: demand vs catalogue vs providers, suggested actions
 data/source/   untouched v0 inputs (snapshot JSON, CSV register, prototype HTML)
 data/seed/     evidence-model seed built by scripts/build-seed.mjs
 test/          node:test suites and Playwright e2e
@@ -139,6 +143,15 @@ Field dictionary: `docs/EVIDENCE_MODEL.md`. Key rules enforced in code and tests
 | Announced projects | `data/seed/announcements.json` | Announcements and projections with sources; never counted as jobs |
 | Kalyani and Siliguri industry | `data/seed/regions.json` | WBIIDC, MSME and SJDA sources, dated per item; approximate pin positions |
 
+## Data added on 24 Oct 2026
+
+| Data | File | Notes |
+|---|---|---|
+| Swift AI Academy catalogue (3 pathways, 11 courses) and a skill map | `data/seed/saa_catalogue.json` | From the Swift AI Academy MVP product document. Hours are notional; credits and NSQF level still to be confirmed there. |
+| Provider scan: 61 similar courses for 21 skills | `data/source/provider_scan_2026-10-24.json` (seed copy `provider_scan.json`) | NQR/NSQF, NPTEL, SWAYAM, FutureSkills Prime, IT-ITeS SSC, Skill India Digital Hub, ESSCI, ASDC, IASC. From search results only; some via aggregator sites, marked low confidence. |
+| Timeline 2016 to 2026 (55 events) and 23 future projects | `data/source/decade_timeline_2026-10-24.json` (seed `market.json`) | Summit figures are MoU totals. Conflicting sources are noted per item. |
+| 36 demand indicators, 14 in-demand roles, 25 institutes, 10 apply routes | `data/source/demand_institutes_2026-10-24.json` (seed `demand.json`) | No 2025 PLFS state unemployment rates were found for UP or WB. Most institute map positions are approximate (town or campus area). |
+
 ## Government data feeds
 
 Scheduled fetches from official APIs with run logs, raw-response hashes and plain-language health. Setup, keys and safeguards: `docs/GOV_DATA_SOURCES.md`. Registry: `config/gov-sources.json`.
@@ -163,4 +176,4 @@ One-page note for officials: `docs/DEMO_ONE_PAGER.md` (printable: `docs/demo-one
 
 ## Licences and attribution
 
-Map data © OpenStreetMap contributors (ODbL) when tiles load; Leaflet (BSD-2-Clause) is bundled. The Maps of India Noida city map is used only as a geographic reference and is not reproduced. The ConveGenius.AI logo is the original supplied file (`web/assets/convegenius-logo.png`, unchanged).
+Map data © OpenStreetMap contributors (ODbL), credited on every map; MapLibre GL JS (BSD-3-Clause) is bundled; provider options and keys in `docs/MAPS.md`. Fonts: Google Sans Flex and Google Sans Code (SIL Open Font Licence), bundled. Icons: Material Symbols (Apache 2.0). Illustrations: unDraw (unDraw licence), recoloured to the brand. The Maps of India Noida city map is used only as a geographic reference and is not reproduced. The ConveGenius.AI logo is the original supplied file (`web/assets/convegenius-logo.png`, unchanged).

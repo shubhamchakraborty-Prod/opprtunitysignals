@@ -21,7 +21,10 @@ export const app = {
     filters: defaultFilters(),
     selected: null,
     selectedGroup: null,
-    tab: 'discover',
+    tab: 'home',
+    view: 'industry',
+    /** Location picker value: all | 62 | 63 | kalyani | siliguri */
+    place: 'all',
     layers: { approx: true, verified: true, presence: false },
     persona: 'iti_electronics',
     suits: '',
@@ -36,6 +39,10 @@ export const app = {
   forms: {},
   /** @type {Record<string, any>} */
   views: {},
+  /** Called when a page is left or the browser tab is hidden (stop timers). @type {Record<string, () => void>} */
+  leave: {},
+  /** Called when the browser tab becomes visible again. @type {Record<string, () => void>} */
+  enter: {},
   derived: { visible: [], reps: [], kpis: null, presence: [] },
 
   can(perm) {
@@ -51,6 +58,12 @@ export const app = {
       return m.verdict !== 'gate_not_met' && m.overlap.ratio >= SOME_OVERLAP;
     }).map((p) => p.id));
     return this._suits.get(key);
+  },
+
+  /** Area for regional pages: noida_ncr, kalyani or siliguri. */
+  area() {
+    const p = this.state.place;
+    return p === 'kalyani' || p === 'siliguri' ? p : 'noida_ncr';
   },
 
   profile(id) {
@@ -85,6 +98,7 @@ export const app = {
 
   renderAll() {
     this.views.chrome?.();
+    this.views.nav?.();
     this.views.discover?.();
     const v = this.views[this.state.tab];
     if (this.state.tab !== 'discover' && v) v();

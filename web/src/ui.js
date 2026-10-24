@@ -3,6 +3,12 @@ import { fmtDate, daysBetween } from '../../src/core/util.js';
 import { STALE_AFTER_DAYS } from '../../src/core/constants.js';
 import { isValidConfirmed } from '../../src/core/analytics.js';
 import { isInScope } from '../../src/core/filters.js';
+import { ART, ICONS } from './art.generated.js';
+
+/** Inline Material Symbol (empty string if unknown). */
+export const icon = (name) => ICONS[name] || '';
+/** Page illustration, coloured by the page accent. */
+export const artBox = (key) => (ART[key] ? `<div class="ph-art" aria-hidden="true">${ART[key]}</div>` : '');
 
 export const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 export const $ = (s, root = document) => root.querySelector(s);

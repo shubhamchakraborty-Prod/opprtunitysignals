@@ -1,7 +1,7 @@
 // Next steps: what is ready for ITI planning, which employers to call,
 // whether there are enough jobs for pass-outs, and the management note.
 import { app } from '../app.js';
-import { esc, $, toast, errorBox, download, sectorTag } from '../ui.js';
+import { esc, $, toast, errorBox, download, sectorTag, artBox } from '../ui.js';
 import { planningBoard, wageText } from '../../../src/core/decisions.js';
 import { demandCoverage, verifiedOpeningsByTrade } from '../../../src/core/analytics.js';
 import { TRADES } from '../../../src/core/service.js';
@@ -21,7 +21,7 @@ export function renderPlan() {
   const reps = representatives(filterOpportunities(approved, f));
   const board = planningBoard(reps, app.data.asOf);
   const dc = demandCoverage(verifiedOpeningsByTrade(approved, app.data.asOf), app.data.passouts);
-  $('#plan').innerHTML = `<div class="section-head"><div><h2>What should we do next?</h2><p>Every ad is sorted by fixed rules. Only jobs an employer has confirmed, and a second person has approved, are ready for ITI planning. Showing ${f.sector === 'all' ? 'both sectors' : 'Sector ' + esc(f.sector)}, including old and unclear ads so nothing is hidden.</p></div></div>
+  $('#plan').innerHTML = `<div class="section-head">${artBox('plan')}<div><h2>What should we do next?</h2><p>Every ad is sorted by fixed rules. Only jobs an employer has confirmed, and a second person has approved, are ready for ITI planning. Showing ${f.sector === 'all' ? 'both sectors' : 'Sector ' + esc(f.sector)}, including old and unclear ads so nothing is hidden.</p></div></div>
   <div class="board">${COLS.map(([t, cls, title, desc]) => `<div class="board-col ${cls}"><h4>${esc(title)}</h4><span class="count">${board[t].length} ad${board[t].length === 1 ? '' : 's'} · ${esc(desc)}</span>${board[t].map(({ r, reasons }) => `<div class="board-item"><a href="#" data-action="open-record" data-id="${esc(r.source_id)}">${esc(r.role_title_raw)}</a><span>${esc(r.employer_identity || r.recruiter_identity || 'Employer not named')} · ${esc(wageText(r.wage))}</span><div>${sectorTag(r)}</div><p>${esc(reasons.join(' '))}</p></div>`).join('') || '<p class="note" style="margin-top:8px">Nothing here yet.</p>'}</div>`).join('')}</div>
   <div class="grid2">
   <div class="card card-body" style="display:flex;flex-direction:column;gap:12px"><div><div class="section-label">Are there enough jobs for our ITI learners?</div><h3 style="font-size:19px">${dc.rows.some((r) => r.ratio != null) ? 'Confirmed jobs per expected pass-out' : 'Not available yet'}</h3></div>

@@ -1,5 +1,6 @@
 # Netlify: hosts the web app as a static site (offline mode, sample data built in).
 # The API server (sign-in, saving, scheduled government data checks) does not run on Netlify.
+# Street map: set MAP_PROVIDER and MAP_API_KEY in Site settings > Environment variables (docs/MAPS.md).
 [build]
   command = "npm ci && npm run build"
   publish = "dist"
@@ -13,4 +14,4 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer"
     X-Frame-Options = "DENY"
-    Content-Security-Policy = "default-src 'self'; img-src 'self' data: blob: https://tiles.openfreemap.org; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; connect-src 'self' https://tiles.openfreemap.org; worker-src 'self' blob:; child-src blob:; frame-ancestors 'none'"
+    Content-Security-Policy = "default-src 'self'; img-src 'self' data: blob: https://tiles.openfreemap.org https://api.maptiler.com https://tiles.stadiamaps.com https://tile.thunderforest.com https://tile.openstreetmap.org; style-src 'self' 'unsafe-inline'; font-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self' https://tiles.openfreemap.org https://api.maptiler.com https://tiles.stadiamaps.com https://tile.thunderforest.com https://tile.openstreetmap.org; worker-src 'self' blob:; child-src blob:; frame-ancestors 'none'"

@@ -2,6 +2,7 @@
 import { app } from '../app.js';
 import { esc, $, $$, toast, errorBox, fmtDate } from '../ui.js';
 import { ROLE_LABELS } from '../../../src/core/rbac.js';
+import { renderNav } from '../nav.js';
 
 const ROLE_HINT = {
   observer: 'Look at jobs, maps and sources. Nothing to sign in.',
@@ -25,17 +26,15 @@ export function renderChrome() {
   const k = app.derived.kpis;
   const total = app.data.records.filter((r) => r.review.state === 'approved').length;
   $('#footStats').textContent = `${total} ads on file · ${k.confirmedOpenings ? k.confirmedOpenings + ' jobs confirmed by employers' : 'no employer-confirmed jobs yet'} · as of ${fmtDate(app.data.asOf)}`;
-  const team = app.can('read:review') || app.can('verify:submit');
-  $$('.team-only').forEach((el) => { el.hidden = !team; });
-  $('.tab[data-tab=review]').hidden = !app.can('read:review');
-  $('.tab[data-tab=verify]').hidden = !app.can('verify:submit');
-  if (!team && ['review', 'verify'].includes(app.state.tab)) app.actions.tab({ dataset: { tab: 'discover' } });
+  renderNav();
+  if ((app.state.tab === 'review' && !app.can('read:review')) || (app.state.tab === 'verify' && !app.can('verify:submit'))) app.actions.tab({ dataset: { tab: 'home' } });
   if (app.can('read:review')) {
     app.client.reviewQueue().then((q) => {
       const n = q.pendingReview.length + q.duplicates.length + q.followups.length + q.verificationsAwaitingApproval.length + q.expired.possiblyClosed.length;
-      $('#reviewCount').textContent = n ? String(n) : '';
+      const el = $('#reviewCount');
+      if (el) el.textContent = n ? String(n) : '';
     }).catch(() => {});
-  } else $('#reviewCount').textContent = '';
+  }
 }
 
 let returnFocus = null;
@@ -79,7 +78,7 @@ export function openHelp() {
     <dt>Working conditions</dt><dd>Things like night shifts written in the ad. They are not workers’ opinions.</dd>
     <dt>Dots on the map</dt><dd>Show the sector, not the exact office, unless the dot is square.</dd>
   </dl></div>
-  <div class="actions"><button class="btn primary" data-action="close-modal">Got it</button><button class="btn" data-action="open-guide">Start the guided tour</button></div>`);
+  <div class="actions"><button class="btn primary" data-action="close-modal">Got it</button><button class="btn" data-action="tab" data-tab="home">Go to the home page</button></div>`);
 }
 
 export function openGuide() {

@@ -11,21 +11,23 @@ after(async () => { await browser?.close(); srv?.stop(); });
 
 const pins = (page) => page.$$eval('#svgPins g.fpin', (gs) => gs.map((g) => g.getAttribute('aria-label')));
 const text = (page, s) => page.textContent(s);
+/** Open a view, then a page in it, the way a person would. */
+const go = async (page, view, tab) => { await page.click(`.vbtn[data-view=${view}]`); if (tab) await page.click(`#navLinks .tab[data-tab=${tab}]`); };
 
 test('AT1 + AT11: sector switch updates counters, list and pins; schematic says not exact', async () => {
   const page = await newPage(browser);
-  await page.goto(srv.url + '/?noguide');
+  await page.goto(srv.url + '/?noguide&tab=discover');
   await page.waitForSelector('#jobCards .job');
   await page.waitForFunction(() => document.querySelector('#fallback').style.display === 'block' && document.querySelector('#leafletMap').style.display === 'none', null, { timeout: 10000 });
   assert.match(await text(page, '#fallbackBanner'), /not geographically exact/);
   assert.equal(await text(page, '#mCount'), '29');
   const allPins = await pins(page);
   assert.ok(allPins.some((p) => /Sector 62/.test(p)) && allPins.some((p) => /Sector 63/.test(p)));
-  await page.click('.seg[data-sector="62"]');
+  await page.selectOption('#location', '62');
   assert.deepEqual([await text(page, '#mCount'), await text(page, '#m62'), await text(page, '#m63')], ['10', '10', '0']);
   assert.ok((await pins(page)).every((p) => /Sector 62/.test(p)));
   assert.equal(await page.$$eval('#jobCards .job', (x) => x.length), 10);
-  await page.click('.seg[data-sector="63"]');
+  await page.selectOption('#location', '63');
   assert.deepEqual([await text(page, '#mCount'), await text(page, '#m62'), await text(page, '#m63')], ['19', '0', '19']);
   assert.ok((await pins(page)).every((p) => /Sector 63/.test(p)));
   assert.deepEqual(page.errors, []);
@@ -33,7 +35,7 @@ test('AT1 + AT11: sector switch updates counters, list and pins; schematic says 
 
 test('AT3: historical post hidden by default, dated when shown', async () => {
   const page = await newPage(browser);
-  await page.goto(srv.url + '/?noguide');
+  await page.goto(srv.url + '/?noguide&tab=discover');
   await page.waitForSelector('#jobCards .job');
   assert.ok(!(await text(page, '#jobCards')).includes('SMD soldering'));
   await page.click('#moreBtn');
@@ -47,7 +49,7 @@ test('AT3: historical post hidden by default, dated when shown', async () => {
 
 test('learner filter narrows every counter; team tabs hidden from the public', async () => {
   const page = await newPage(browser);
-  await page.goto(srv.url + '/?noguide');
+  await page.goto(srv.url + '/?noguide&tab=discover');
   await page.waitForSelector('#jobCards .job');
   assert.ok(await page.locator('.tab[data-tab=review]').isHidden());
   await page.selectOption('#suits', 'iti_electronics');
@@ -61,9 +63,9 @@ test('AT8, AT9, AT10 in the UI', async () => {
   await page.goto(srv.url + '/?noguide&tab=voice');
   await page.waitForSelector('#sentimentEmpty');
   assert.match(await text(page, '#sentimentEmpty'), /No measured sentiment available/);
-  await page.click('.tab[data-tab=plan]');
+  await page.click('#navLinks .tab[data-tab=plan]');
   assert.match(await text(page, '#plan'), /Are there enough jobs for our ITI learners\?\s*Not available yet/);
-  await page.click('.tab[data-tab=discover]');
+  await go(page, 'industry', 'discover');
   await page.click('#jobCards .job >> nth=0');
   const a = page.locator('#detailPanel a', { hasText: 'Open the original ad' });
   assert.match(await a.getAttribute('href'), /^https:\/\//);
@@ -72,7 +74,7 @@ test('AT8, AT9, AT10 in the UI', async () => {
 
 test('AT6 in the UI: verifier submits 3 openings, a second person approves, KPI rises by 3', async () => {
   const page = await newPage(browser);
-  await page.goto(srv.url + '/?noguide');
+  await page.goto(srv.url + '/?noguide&tab=discover');
   await page.waitForSelector('#jobCards .job');
   await signIn(page, 'dev-verifier-token');
   await page.locator('#jobCards .job', { hasText: 'Production Engineer' }).click();
@@ -82,16 +84,16 @@ test('AT6 in the UI: verifier submits 3 openings, a second person approves, KPI 
   await page.fill('#n0t', 'E2E test note: employer confirmed three openings.');
   await page.click('[data-form=verification] button[type=submit]');
   await page.waitForSelector('.ok-box');
-  await page.click('.tab[data-tab=discover]');
+  await go(page, 'industry', 'discover');
   assert.equal(await text(page, '#mConfirmed'), '0');
   assert.match(await text(page, '#mConfirmedSub'), /3 awaiting approval/);
   await signIn(page, 'dev-admin-token');
-  await page.click('.tab[data-tab=review]');
+  await go(page, 'internal', 'review');
   await page.click('[data-action=decide-verification][data-decision=approve]');
   await page.waitForTimeout(300);
-  await page.click('.tab[data-tab=discover]');
+  await go(page, 'industry', 'discover');
   assert.equal(await text(page, '#mConfirmed'), '3');
-  await page.click('.seg[data-sector="62"]');
+  await page.selectOption('#location', '62');
   assert.equal(await text(page, '#mConfirmed'), '0');
   assert.deepEqual(page.errors, []);
 });
@@ -104,13 +106,14 @@ test('ITI trades tab maps the catalogue and shows bridge jobs with courses; map 
   const t = await text(page, '.trade.open');
   assert.match(t, /Jobs outside the trade a learner could reach/);
   assert.match(t, /Technical Support Engineer/);
-  await page.click('.tab[data-tab=regions]');
+  await go(page, 'industry', 'regions');
   await page.waitForSelector('#regionSketch .fpin');
   assert.match(await text(page, '#regions'), /Dabgram|Kalyani Industrial Park/);
   const before = await page.getAttribute('#regionSketch svg', 'viewBox');
   await page.click('#regionSketch .zoom-ctl [data-z=in]');
   assert.notEqual(await page.getAttribute('#regionSketch svg', 'viewBox'), before);
-  await page.click('[data-action=region][data-region=siliguri]');
+  await page.selectOption('#location', 'siliguri');
+  assert.match(await text(page, '#regions'), /Industry around Siliguri/);
   await page.click('#regionSketch .fpin >> nth=0');
   assert.match(await text(page, '#siteDetail'), /Presence, not a vacancy/);
   assert.deepEqual(page.errors, []);
@@ -125,12 +128,51 @@ test('Government data tab lists every tracked source with an honest status', asy
   assert.match(t, /No government figures fetched yet/);
   assert.match(t, /Needs API key/);
   assert.match(t, /Needs data-sharing agreement/);
+  assert.match(await text(page, '.sim-banner'), /SIMULATION[\s\S]*made up in your browser/);
+  await page.waitForSelector('#simStream .ev');
+  assert.match(await text(page, '#simHealth'), /National Career Service/);
+  await page.click('#simToggle');
+  assert.match(await text(page, '#simToggle'), /Play/);
+  assert.deepEqual(page.errors, []);
+});
+
+test('home page offers one door per audience and each opens its own navigation', async () => {
+  const page = await newPage(browser);
+  await page.goto(srv.url + '/?noguide');
+  await page.waitForSelector('.door');
+  assert.equal(await page.$$eval('.door', (x) => x.length), 4);
+  await page.click('.door[data-view=learners]');
+  assert.match(await text(page, '#path'), /Where can you apply/);
+  assert.ok(await page.locator('#navLinks .tab[data-tab=learn]').isVisible());
+  await page.click('.type-tab[data-type=college]');
+  assert.match(await text(page, '#path'), /National Apprenticeship Training Scheme|AICTE/);
+  await go(page, 'internal');
+  assert.match(await text(page, '#signals'), /Team sign-in needed/, 'internal view is gated on the live server');
+  await signIn(page, 'dev-researcher-token');
+  assert.match(await text(page, '#signals'), /What should we build next\?/);
+  assert.match(await text(page, '#signals'), /Build a new course[\s\S]*Extend an existing course/);
+  assert.match(await text(page, '.matrix'), /NSQF \(NQR\)[\s\S]*NPTEL/);
+  assert.deepEqual(page.errors, []);
+});
+
+test('learner skill plan links gaps to Swift AI Academy courses; market overview follows the location', async () => {
+  const page = await newPage(browser);
+  await page.goto(srv.url + '/?noguide&tab=learn');
+  await page.waitForSelector('.plan-step');
+  assert.match(await text(page, '.plan-steps'), /Spoken clarity and listening/);
+  await page.selectOption('#learnTrade', 'Fitter');
+  assert.match(await text(page, '#learn'), /Your skill plan/);
+  await page.click('.vbtn[data-view=industry]');
+  await page.click('#navLinks .tab[data-tab=market]');
+  assert.match(await text(page, '#market'), /2016 to 2026/);
+  await page.selectOption('#location', 'kalyani');
+  assert.match(await text(page, '#market'), /Kalyani/);
   assert.deepEqual(page.errors, []);
 });
 
 test('offline single-file build works from disk without a server', async () => {
   const page = await newPage(browser);
-  await page.goto(pathToFileURL(join(ROOT, 'dist/explorer-offline.html')).href + '?noguide');
+  await page.goto(pathToFileURL(join(ROOT, 'dist/explorer-offline.html')).href + '?noguide&tab=discover');
   await page.waitForSelector('#jobCards .job');
   assert.match(await text(page, '#modePill'), /Offline copy/);
   assert.equal(await text(page, '#mCount'), '29');

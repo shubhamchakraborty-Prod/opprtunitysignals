@@ -1,7 +1,7 @@
 // Kalyani and Siliguri: where industry is, on the same zoomable map, with the
 // same honesty rules (presence is not a vacancy; positions are approximate).
 import { app } from '../app.js';
-import { esc, $, $$ } from '../ui.js';
+import { esc, $, $$, artBox } from '../ui.js';
 import { createStreetMap, attachSvgZoom, projector } from '../geo-map.js';
 import { openTrade } from './trades.js';
 
@@ -48,8 +48,7 @@ export function renderRegions() {
   const data = app.data.regions;
   if (!data) { $('#regions').innerHTML = '<p class="note">Region data not loaded.</p>'; return; }
   const reg = data.regions.find((r) => r.id === ui.region) || data.regions[0];
-  $('#regions').innerHTML = `<div class="section-head"><div><h2>Industry around Kalyani and Siliguri</h2><p>The same view as Noida for two West Bengal towns: where industry is, what it makes, and which ITI trades it could use. These are places, not job vacancies.</p></div></div>
-  <div class="filterbar"><div class="filter-row"><div class="fgroup"><span class="flabel" id="regLbl">Town</span><div class="seg-group" role="group" aria-labelledby="regLbl">${data.regions.map((r) => `<button class="seg ${r.id === reg.id ? 'active' : ''}" data-action="region" data-region="${esc(r.id)}" aria-pressed="${r.id === reg.id}">${esc(r.name)}</button>`).join('')}</div></div><p class="note" style="flex:1;min-width:240px">${esc(reg.district)}. ${esc(reg.summary)}</p></div></div>
+  $('#regions').innerHTML = `<div class="section-head">${artBox('regions')}<div><div class="eyebrow">${esc(reg.district)}, West Bengal</div><h2>Industry around ${esc(reg.name)}</h2><p>${esc(reg.summary)} Use the location picker at the top to switch between Kalyani, Siliguri and Noida. These are places, not job vacancies.</p></div></div>
   <div class="callout warn"><strong>Job ads:</strong> ${esc(reg.job_search)}</div>
   <div class="explore">
     <div class="card map-card"><div class="card-head"><h2>Where industry is in ${esc(reg.name)}</h2><small>Zoom with + and −, drag to move</small></div>
@@ -100,7 +99,10 @@ function selectSite(id) {
   $$('#regionSketch .kpin').forEach((c) => c.classList.toggle('sel', c.parentElement.dataset.site === id));
 }
 
-app.actions.region = (el) => { ui.region = el.dataset.region; ui.selected = null; renderRegions(); };
+app.actions.region = (el) => { setRegion(el.dataset.region); renderRegions(); };
+/** Choose Kalyani or Siliguri (called by the location picker). */
+export function setRegion(id) { if (ui.region !== id) { ui.region = id; ui.selected = null; } }
+export const currentRegion = () => ui.region;
 app.actions.site = (el) => selectSite(el.dataset.id);
 
 app.views.regions = renderRegions;

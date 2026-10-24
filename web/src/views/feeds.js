@@ -1,11 +1,14 @@
 // Government data: health of each tracked government API and its latest figures.
 import { app } from '../app.js';
-import { esc, $, fmtDate, toast, errorBox } from '../ui.js';
+import { esc, $, fmtDate, toast, errorBox, artBox } from '../ui.js';
+import { mountSimulation } from './feeds-sim.js';
 import { feedSummary } from '../../../src/core/govdata.js';
 
 const ACCESS = { open_api: 'Open API, no key needed', api_key: 'Open API, free key needed', agreement: 'No open API: needs a data-sharing agreement' };
 const TONE = { ok: 'ok', warn: 'warn', bad: 'bad', plan: 'plan', old: 'old' };
 let lastError = '';
+/** @type {{stop:()=>void,start:()=>void}|null} */
+let sim = null;
 
 const when = (iso) => (iso ? `${fmtDate(iso)}, ${new Date(iso).toISOString().slice(11, 16)} UTC` : 'Never');
 const every = (h) => (h % 24 === 0 ? (h === 24 ? 'Daily' : h === 168 ? 'Weekly' : h === 720 ? 'Monthly' : `Every ${h / 24} days`) : `Every ${h} hours`);
@@ -84,7 +87,12 @@ export async function renderFeeds() {
   const canSync = live && app.can('admin:feeds');
   const s = feedSummary(gov.feeds);
   const withData = gov.feeds.filter((f) => f.latest?.rows?.length);
-  root.innerHTML = `<div class="section-head"><div><h2>Government data feeds</h2><p>We check official government sources on a schedule and show whether each one is working. Figures appear here only after a successful fetch from the portal, with the date we fetched them.</p></div>${canSync ? '<button class="btn primary" data-action="feed-sync" data-id="">Check all sources now</button>' : ''}</div>${lastError}
+  sim?.stop();
+  root.innerHTML = `<div class="section-head">${artBox('feeds')}<div><div class="eyebrow">Government data</div><h2>Live data from government sources</h2><p>The top panel is a simulation of how live feeds would look once keys and agreements are in place. Below it is the real status of every source we track: what works today, and what each one still needs.</p></div></div>
+  <div id="simRoot" class="section"></div>
+  <div class="divider-title"><h2>Real connection status</h2></div>
+  <p class="note" style="margin-top:-8px">We check official government sources on a schedule and show whether each one is working. Figures appear here only after a successful fetch from the portal, with the date we fetched them.</p>
+  ${canSync ? '<div class="actions"><button class="btn primary" data-action="feed-sync" data-id="">Check all sources now</button></div>' : ''}${lastError}
   <div class="answers">
     <div class="answer"><span class="label">Sources tracked</span><span class="big">${s.total}</span><span class="sub">MoSPI, data.gov.in, NCS, DGT, e-Shram</span></div>
     <div class="answer ${s.live ? 'good' : ''}"><span class="label">Working now</span><span class="big">${s.live}</span><span class="sub">Fetched on schedule</span></div>
@@ -95,6 +103,7 @@ export async function renderFeeds() {
   ${withData.length ? withData.map((f) => `<div class="card"><div class="card-head"><h3>Latest figures: ${esc(f.name)}</h3><small>Fetched ${esc(when(f.latest.fetched_at))} from ${esc(f.portal)}</small></div><div class="card-body">${f.id.startsWith('mospi') ? plfsTable(f) : rawTable(f)}<p class="note" style="margin-top:8px">Source: ${esc(f.publisher)}. ${esc(f.terms)}</p></div></div>`).join('') : `<div class="empty-state"><span class="trust old">No figures yet</span><h3>No government figures fetched yet</h3><p>As soon as a source below is reachable and set up, its latest figures appear here with the date they were fetched. Nothing is estimated or filled in by hand.</p></div>`}
   <div class="feeds-grid">${gov.feeds.map((f) => feedCard(f, canSync)).join('')}</div>`;
   lastError = '';
+  sim = mountSimulation(/** @type {HTMLElement} */ ($('#simRoot')));
 }
 
 app.actions['feed-sync'] = async (el) => {
@@ -111,3 +120,5 @@ app.actions['feed-sync'] = async (el) => {
 };
 
 app.views.feeds = renderFeeds;
+app.leave.feeds = () => sim?.stop();
+app.enter.feeds = () => sim?.start();

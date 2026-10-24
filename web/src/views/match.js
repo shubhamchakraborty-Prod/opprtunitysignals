@@ -1,7 +1,7 @@
 // Match a learner: pick an example learner, see which ads could fit, grouped
 // by what stands in the way. Hard rules are shown separately from skills.
 import { app, SOME_OVERLAP } from '../app.js';
-import { esc, $, sectorTag } from '../ui.js';
+import { esc, $, sectorTag, artBox } from '../ui.js';
 import { rankMatches, eduLabel } from '../../../src/core/matching.js';
 import { comparisonBase } from '../../../src/core/analytics.js';
 import { wageText } from '../../../src/core/decisions.js';
@@ -24,7 +24,7 @@ export function renderMatch() {
     ['Not eligible as the ad is written', 'The ad asks for more experience, a different qualification or a language level this learner does not have. Useful for spotting training gaps.', ranked.filter(({ m }) => m.verdict === 'gate_not_met')],
   ];
   const opt = (v, cur, label) => `<option value="${v}" ${String(cur) === String(v) ? 'selected' : ''}>${label}</option>`;
-  $('#match').innerHTML = `<div class="section-head"><div><h2>Which jobs could a learner go for?</h2><p>Pick an example learner. We check the ad’s firm requirements first, then the skills. A match is a reason to call the employer, not a promise of a job. Uses the area chosen on the Jobs map (${app.state.filters.sector === 'all' ? 'both sectors' : 'Sector ' + esc(app.state.filters.sector)}).</p></div></div>
+  $('#match').innerHTML = `<div class="section-head">${artBox('match')}<div><h2>Which jobs could a learner go for?</h2><p>Pick an example learner. We check the ad’s firm requirements first, then the skills. A match is a reason to call the employer, not a promise of a job. Uses the area chosen on the Jobs map (${app.state.filters.sector === 'all' ? 'both sectors' : 'Sector ' + esc(app.state.filters.sector)}).</p></div></div>
   <div class="profiles" role="group" aria-label="Example learner">${app.data.profiles.map((x) => `<button class="profile-tile ${x.id === app.state.persona ? 'active' : ''}" aria-pressed="${x.id === app.state.persona}" data-action="persona" data-id="${esc(x.id)}"><b>${esc(x.label.replace(/ \(.*\)$/, ''))}</b><span>${esc(SHORT[x.id] || '')}</span></button>`).join('')}</div>
   <div class="card card-body"><div class="assume">
     <div class="fgroup"><span class="flabel">Qualifications</span><span>${esc(p.qualifications.map(eduLabel).join(', '))}</span></div>

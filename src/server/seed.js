@@ -1,12 +1,13 @@
 // @ts-check
 // Loads seed fixtures from data/seed. Used by the server, the PostgreSQL
 // seeder, the web build and the tests.
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
 export const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const read = (f) => JSON.parse(readFileSync(join(ROOT, 'data', 'seed', f), 'utf8'));
+const readIf = (f) => (existsSync(join(ROOT, 'data', 'seed', f)) ? read(f) : null);
 
 export function loadSeed() {
   return {
@@ -22,5 +23,9 @@ export function loadSeed() {
     courses: read('course_map.json'),
     announcements: read('announcements.json'),
     regions: read('regions.json'),
+    saa: read('saa_catalogue.json'),
+    providers: readIf('provider_scan.json'),
+    market: readIf('market.json'),
+    demand: readIf('demand.json'),
   };
 }

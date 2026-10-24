@@ -1,6 +1,6 @@
 // Jobs map: answer cards, filter bar, job list and the detail drawer.
 import { app, SOME_OVERLAP } from '../app.js';
-import { esc, $, $$, fmtDate, trustBadge, staleBadge, postedText, sectorTag, toast, errorBox, familyLabel, BASIS_LABEL, PRECISION_LABEL, KIND_LABEL } from '../ui.js';
+import { esc, $, $$, icon, fmtDate, trustBadge, staleBadge, postedText, sectorTag, toast, errorBox, familyLabel, BASIS_LABEL, PRECISION_LABEL, KIND_LABEL } from '../ui.js';
 import { explainRecord, wageText } from '../../../src/core/decisions.js';
 import { extractEmploymentTerms } from '../../../src/core/terms.js';
 import { matchRecord } from '../../../src/core/matching.js';
@@ -8,13 +8,20 @@ import { freshness } from '../../../src/core/analytics.js';
 import { isOlder, isInScope, filterOpportunities } from '../../../src/core/filters.js';
 import { representatives } from '../../../src/core/dedupe.js';
 import { SOURCE_FLAG_TYPES, OCCUPATION_FAMILIES } from '../../../src/core/constants.js';
-import { renderPins } from '../map.js';
+import { renderPins, highlightRecord } from '../map.js';
 
 const FLAG_LABEL = { broken_link: 'Link does not open', stale: 'Looks out of date', possibly_closed: 'Ad may be closed', unverifiable: 'Cannot be checked', location_mismatch: 'Wrong location', other: 'Something else' };
 
 function answers() {
   const k = app.derived.kpis;
+  const sec = app.state.filters.sector;
+  $('#heroTitle').textContent = sec === 'all' ? 'Jobs in Sector 62 and 63, and who could fill them' : `Jobs in Sector ${sec}, and who could fill them`;
   $('#mCount').textContent = k.signalCount;
+  const both = k.sector62 + k.sector63 || 1;
+  $('#split62').style.flex = String(k.sector62 / both);
+  $('#split63').style.flex = String(k.sector63 / both);
+  $('#confirmedBar').style.width = `${k.signalCount ? Math.min(100, (k.confirmedOpenings / k.signalCount) * 100) : 0}%`;
+  $('#priorityBar').style.width = `${k.signalCount ? (app.derived.board.outreach_priority.length / k.signalCount) * 100 : 0}%`;
   $('#m62').textContent = k.sector62;
   $('#m63').textContent = k.sector63;
   const extra = [k.mirrorsCollapsed ? `${k.mirrorsCollapsed} repeat ad${k.mirrorsCollapsed > 1 ? 's' : ''} counted once` : '', k.olderShown ? `${k.olderShown} old ad${k.olderShown > 1 ? 's' : ''} shown, not counted` : '', k.unclearShown ? `${k.unclearShown} with unclear location, not counted` : ''].filter(Boolean).join(' · ');
@@ -42,6 +49,16 @@ function chips() {
   $('#familyChips').innerHTML = `<button class="fchip ${f.family === 'all' ? 'active' : ''}" data-action="family" data-family="all" aria-pressed="${f.family === 'all'}">All work <span class="n">${base.length}</span></button>` +
     fams.map((x) => `<button class="fchip ${f.family === x ? 'active' : ''}" data-action="family" data-family="${esc(x)}" aria-pressed="${f.family === x}">${esc(familyLabel(x))} <span class="n">${count(x)}</span></button>`).join('');
   const p = app.state.suits && app.profile(app.state.suits);
+  const af = [];
+  if (f.sector !== 'all') af.push(['sector', `Sector ${f.sector}`]);
+  if (f.query) af.push(['query', `“${f.query}”`]);
+  if (f.family !== 'all') af.push(['family', familyLabel(f.family)]);
+  if (p) af.push(['suits', `May suit: ${p.label.replace(/ \(.*\)$/, '')}`]);
+  if (f.career !== 'all') af.push(['career', f.career]);
+  if (f.verification !== 'all') af.push(['verification', $('#verification option:checked')?.textContent || f.verification]);
+  if (f.includeHistorical) af.push(['historic', 'Old ads shown']);
+  if (f.includeUnclear) af.push(['unclear', 'Unclear locations shown']);
+  $('#activeFilters').innerHTML = af.length ? `<span>Showing ${app.derived.reps.length} ad${app.derived.reps.length === 1 ? '' : 's'} for</span>${af.map(([k, l]) => `<button class="afchip" data-action="clear-one" data-key="${k}" aria-label="Remove filter: ${esc(l)}">${esc(l)}${icon('close')}</button>`).join('')}` : '';
   const note = $('#suitsNote');
   if (p) {
     note.innerHTML = `Showing ads that may suit an <strong>${esc(p.label)}</strong>: they share some skills and no stated rule (experience, qualification, language) rules this learner out. The employer still decides. <button class="linkbtn" data-action="tab" data-tab="match">See why in Match a learner →</button>`;
@@ -62,6 +79,13 @@ function card(r) {
 
 function list() {
   const reps = app.derived.reps;
+  const box = $('#jobCards');
+  if (!box.dataset.hover) {
+    box.dataset.hover = '1';
+    box.addEventListener('mouseover', (e) => highlightRecord(/** @type {HTMLElement} */ (e.target).closest('.job')?.dataset.id || null));
+    box.addEventListener('mouseleave', () => highlightRecord(null));
+    box.addEventListener('focusin', (e) => highlightRecord(/** @type {HTMLElement} */ (e.target).closest('.job')?.dataset.id || null));
+  }
   $('#listCount').textContent = `${reps.length} shown`;
   const p = app.state.suits && app.profile(app.state.suits);
   $('#jobCards').innerHTML = reps.length ? reps.map(card).join('') : p
@@ -211,18 +235,31 @@ function apply() {
 
 function clearFilters() {
   Object.assign(app.state.filters, { sector: 'all', query: '', family: 'all', career: 'all', verification: 'all', includeHistorical: false, includeUnclear: false });
+  app.state.place = 'all';
+  const l = /** @type {HTMLSelectElement} */ ($('#location'));
+  if (l) l.value = 'all';
   app.state.suits = '';
   syncFilterControls();
   apply();
 }
 
+app.actions['clear-one'] = (el) => {
+  const f = app.state.filters;
+  const k = el.dataset.key;
+  if (k === 'sector') { f.sector = 'all'; app.state.place = 'all'; const l = /** @type {HTMLSelectElement} */ ($('#location')); if (l) l.value = 'all'; }
+  else if (k === 'query') f.query = '';
+  else if (k === 'family') f.family = 'all';
+  else if (k === 'suits') app.state.suits = '';
+  else if (k === 'career') f.career = 'all';
+  else if (k === 'verification') f.verification = 'all';
+  else if (k === 'historic') f.includeHistorical = false;
+  else if (k === 'unclear') f.includeUnclear = false;
+  syncFilterControls();
+  apply();
+};
+
 export function bindFilters() {
   const f = app.state.filters;
-  $$('.seg[data-sector]').forEach((b) => (b.onclick = () => {
-    f.sector = /** @type {any} */ (b.dataset.sector);
-    syncFilterControls();
-    apply();
-  }));
   $('#query').oninput = (e) => { f.query = e.target.value.trim(); apply(); };
   $('#career').onchange = (e) => { f.career = e.target.value; apply(); };
   $('#verification').onchange = (e) => { f.verification = e.target.value; apply(); };
@@ -257,7 +294,6 @@ export function fillSuitsOptions() {
 
 export function syncFilterControls() {
   const f = app.state.filters;
-  $$('.seg[data-sector]').forEach((x) => { x.classList.toggle('active', x.dataset.sector === f.sector); x.setAttribute('aria-pressed', String(x.dataset.sector === f.sector)); });
   $('#query').value = f.query;
   $('#career').value = f.career;
   $('#verification').value = f.verification;

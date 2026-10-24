@@ -1,0 +1,1585 @@
+{
+  "captured_at": "2026-10-24",
+  "method": "Web search results reviewed on 24 Oct 2026; pages not opened unless evidence says page.",
+  "timeline": [
+    {
+      "year": 2016,
+      "date": "2016-08-19",
+      "scope": "national",
+      "kind": "scheme",
+      "title": "National Apprenticeship Promotion Scheme (NAPS) notified",
+      "detail": "MSDE notified NAPS on 19 Aug 2016; government reimburses employers 25% of the prescribed apprentice stipend, capped at Rs 1,500 per month, plus basic-training cost up to Rs 7,500. Sources differ on whether it took effect on notification or 1 Oct 2016.",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "apprentice supervision",
+        "on-the-job training",
+        "trade apprenticeship"
+      ],
+      "source": {
+        "label": "Vikaspedia, National Apprenticeship Promotion Scheme",
+        "url": "https://en.vikaspedia.in/social-welfare/skill-development/schemes-for-skill-development/national-apprenticeship-promotion-scheme"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2016,
+      "date": null,
+      "scope": "west_bengal",
+      "kind": "summit",
+      "title": "Bengal Global Business Summit 2016",
+      "detail": "State reported investment proposals of about Rs 2.50 lakh crore, with manufacturing at Rs 1.61 lakh crore (January 2016 report).",
+      "amount_inr_crore": 250000,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "manufacturing trades",
+        "MSME operations"
+      ],
+      "source": {
+        "label": "Madhyamam, Investment summit got proposals worth Rs 2.50 lakh crore: Mamata",
+        "url": "https://english.madhyamam.com/business/2016/jan/9/investment-summit-got-proposals-worth-rs250-lakh-crore-mamata"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2016,
+      "date": null,
+      "scope": "siliguri",
+      "kind": "factory",
+      "title": "Closed North Bengal tea gardens and worker distress",
+      "detail": "Duncans' closures from 2015 left about 25,000 workers unemployed in north Bengal; state paid Rs 1,500 per month subsistence to workers of five closed gardens (2016 reporting).",
+      "amount_inr_crore": null,
+      "jobs_claimed": "about 25,000 workers unemployed",
+      "skills_implied": [
+        "tea plantation work",
+        "tea processing"
+      ],
+      "source": {
+        "label": "Organiser, North Bengal ground zero: agony of tea garden workers",
+        "url": "https://organiser.org/2016/02/15/117466/bharat/north-bengal-ground-zero-agony-of-tea-garden-workers/"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2017,
+      "date": "2017-06-07",
+      "scope": "noida_ncr",
+      "kind": "investment",
+      "title": "Samsung announces Rs 4,915 crore Noida expansion",
+      "detail": "Samsung announced Rs 4,915 crore to add capacity at its Noida plant under UP's Mega Policy.",
+      "amount_inr_crore": 4915,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "mobile assembly",
+        "SMT operator",
+        "industrial engineering"
+      ],
+      "source": {
+        "label": "Samsung Newsroom India, Samsung inaugurates world's largest mobile factory in India",
+        "url": "https://news.samsung.com/in/samsung-inaugurates-worlds-largest-mobile-factory-in-india"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2017,
+      "date": null,
+      "scope": "west_bengal",
+      "kind": "summit",
+      "title": "Bengal Global Business Summit 2017",
+      "detail": "Third edition reported proposals of Rs 2,35,290 crore despite demonetisation.",
+      "amount_inr_crore": 235290,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "manufacturing",
+        "IT services"
+      ],
+      "source": {
+        "label": "Millennium Post, Bengal bags over Rs 2.35L cr investment proposals",
+        "url": "https://www.millenniumpost.in/big-stories/news-180082"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2018,
+      "date": "2018-02-21",
+      "scope": "uttar_pradesh",
+      "kind": "summit",
+      "title": "UP Investors Summit 2018, Lucknow",
+      "detail": "Summit on 21-22 Feb 2018 saw 1,045 MoUs worth Rs 4.28 lakh crore; Adani pledged Rs 35,000 crore and Reliance Jio Rs 10,000 crore; a Bundelkhand defence corridor was announced.",
+      "amount_inr_crore": 428000,
+      "jobs_claimed": "33 lakh jobs claimed by CM (including further Rs 4 lakh crore in pipeline)",
+      "skills_implied": [
+        "manufacturing trades",
+        "logistics",
+        "defence manufacturing"
+      ],
+      "source": {
+        "label": "Invest UP, UP Investors Summit 2018",
+        "url": "https://invest.up.gov.in/up-investors-summit-2018/"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2018,
+      "date": "2018-07-09",
+      "scope": "noida_ncr",
+      "kind": "factory",
+      "title": "Samsung Noida mobile factory expansion inaugurated",
+      "detail": "PM Modi and President Moon Jae-in opened the expanded Sector 81 plant (35 acres), raising capacity from 68 to 120 million phones a year, completed phase-wise by 2020.",
+      "amount_inr_crore": 4915,
+      "jobs_claimed": "2,000 direct jobs per one source; 15,000 per another",
+      "skills_implied": [
+        "SMT operator",
+        "mobile assembly",
+        "quality inspection",
+        "repair technician"
+      ],
+      "source": {
+        "label": "Business Today, Samsung expands manufacturing facility in Noida; to produce 120 million units annually",
+        "url": "https://www.businesstoday.in/amp/latest/corporate/story/samsung-india-sets-up-world-largest-mobile-manufacturing-facility-in-noida-108684-2018-07-08"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2018,
+      "date": null,
+      "scope": "west_bengal",
+      "kind": "summit",
+      "title": "Bengal Global Business Summit 2018",
+      "detail": "Commentary put fourth-edition intentions at Rs 2.19 lakh crore from 110 MoUs.",
+      "amount_inr_crore": 219000,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "manufacturing",
+        "services"
+      ],
+      "source": {
+        "label": "Asian Age, Biz-friendly Bengal: is Didi coming of age?",
+        "url": "https://www.asianage.com/opinion/oped/200118/biz-friendly-bengal-is-didi-coming-of-age.html"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2020,
+      "date": "2020-04-01",
+      "scope": "national",
+      "kind": "scheme",
+      "title": "PLI scheme for large-scale electronics (mobile phones) launched",
+      "detail": "MeitY introduced the Production Linked Incentive scheme for mobile phones under the National Policy on Electronics 2019, offering 4-6% incentive on incremental sales over base year FY2019-20. Outlay cited as Rs 40,951 crore; some later reports cite a revised Rs 38,601 crore.",
+      "amount_inr_crore": 40951,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "SMT operator",
+        "mobile assembly",
+        "quality inspection",
+        "production planning"
+      ],
+      "source": {
+        "label": "India Law Offices, PLI scheme for manufacturing mobile phones in India",
+        "url": "https://www.indialawoffices.com/legal-articles/pli-scheme-for-manufacturing-mobile-phones-in-india"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2020,
+      "date": "2020-07-29",
+      "scope": "national",
+      "kind": "policy",
+      "title": "National Education Policy 2020 approved by Union Cabinet",
+      "detail": "Cabinet approved NEP 2020 replacing the 1986 policy; official highlights say vocational education to start from Class 6 with internships and higher-education GER to rise to 50% by 2035. Sources date approval 29-30 July 2020.",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "vocational trainers",
+        "school skill educators",
+        "internship coordination"
+      ],
+      "source": {
+        "label": "Manorama Yearbook, New education policy gets cabinet nod",
+        "url": "https://www.manoramayearbook.in/current-affairs/india/2020/07/30/new-education-policy-gets-cabinet-nod.html"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2020,
+      "date": null,
+      "scope": "uttar_pradesh",
+      "kind": "policy",
+      "title": "UP Electronics Manufacturing Policy 2020",
+      "detail": "August 2020 policy extended electronics incentives beyond Noida, Greater Noida and the Yamuna Expressway zone to the whole state; projected Rs 40,000 crore benefits and 4 lakh direct jobs in five years. UP then reported about 60% of India's mobile and parts output.",
+      "amount_inr_crore": null,
+      "jobs_claimed": "4 lakh direct jobs over five years (projection)",
+      "skills_implied": [
+        "electronics assembly",
+        "component manufacturing"
+      ],
+      "source": {
+        "label": "tele.net.in, UP government's new policy to incentivise electronics manufacturers lauded by ICEA",
+        "url": "https://tele.net.in/up-governments-new-policy-to-incentivise-electronics-manufacturers-lauded-by-icea/"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2021,
+      "date": null,
+      "scope": "national",
+      "kind": "scheme",
+      "title": "India Semiconductor Mission and Rs 76,000 crore semicon programme",
+      "detail": "Government approved a Rs 76,000 crore outlay for semiconductor and display manufacturing under the India Semiconductor Mission; about ten projects with roughly Rs 1.6 lakh crore of commitments were later sanctioned. Approval date not shown in the result.",
+      "amount_inr_crore": 76000,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "cleanroom technician",
+        "process engineer",
+        "chip packaging and test",
+        "VLSI design"
+      ],
+      "source": {
+        "label": "Deccan Herald, ICEA, GSA join hands to strengthen semiconductor ecosystem",
+        "url": "https://www.deccanherald.com/amp/story/business/icea-gsa-join-hands-to-strengthen-semiconductor-ecosystem-3782438"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2021,
+      "date": null,
+      "scope": "uttar_pradesh",
+      "kind": "policy",
+      "title": "UP Data Centre Policy 2021",
+      "detail": "UP announced a data centre policy with land subsidies (25% in Noida/Greater Noida, 50% for Bundelkhand and Purvanchal); a 2026 analysis says all approved projects (Rs 21,343 crore, 644 MW) landed in Noida or Greater Noida.",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "data centre operations",
+        "electrical and HVAC technician",
+        "network engineering"
+      ],
+      "source": {
+        "label": "w.media, India's largest state announces Data Center policy",
+        "url": "https://w.media/indias-largest-state-announces-data-center-policy/"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2022,
+      "date": "2022-10-12",
+      "scope": "west_bengal",
+      "kind": "infrastructure",
+      "title": "Tajpur deep-sea port letter of intent to Adani",
+      "detail": "CM handed the Tajpur port LoI to Adani Ports after bidding concluded in March 2021; the deal stalled through 2023-2025.",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "port operations",
+        "marine construction"
+      ],
+      "source": {
+        "label": "The Wire, Adani Group, Tajpur port and Bengal government's U-turn",
+        "url": "https://thewire.in/politics/adani-group-tajpur-port-bengal-government-u-turn-mystery"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2022,
+      "date": "2022-10-31",
+      "scope": "noida_ncr",
+      "kind": "infrastructure",
+      "title": "Yotta D1 hyperscale data centre opens in Greater Noida",
+      "detail": "Hiranandani Group's Yotta opened D1 (28.8 MW, about 5,000 racks, about Rs 1,500 crore) as north India's first hyperscale data centre, first of six planned buildings; Yotta signed an MoU to invest Rs 39,000 crore in 5-7 years.",
+      "amount_inr_crore": 1500,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "data centre technician",
+        "facility management",
+        "cloud operations",
+        "critical power maintenance"
+      ],
+      "source": {
+        "label": "DatacenterDynamics, Yotta launches data center in Noida, India",
+        "url": "https://datacenterdynamics.com/en/news/yotta-launches-data-center-in-noida-india/"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2022,
+      "date": null,
+      "scope": "uttar_pradesh",
+      "kind": "investment",
+      "title": "UP approves Rs 15,950 crore of data centre parks",
+      "detail": "June 2022 reporting described state approval of four data centre park proposals worth over Rs 15,950 crore under the 2021 policy.",
+      "amount_inr_crore": 15950,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "data centre construction",
+        "MEP engineering"
+      ],
+      "source": {
+        "label": "w.media, Uttar Pradesh Government approves proposals to set up Data Centres worth Rs 15,950 crore",
+        "url": "https://w.media/uttar-pradesh-government-approves-proposals-to-set-up-data-centres-worth-rs-15950-crore/"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2022,
+      "date": null,
+      "scope": "west_bengal",
+      "kind": "summit",
+      "title": "Bengal Global Business Summit 2022",
+      "detail": "Sixth edition (April 2022) recorded proposals of Rs 3,42,375 crore with stated employment potential of 40 lakh.",
+      "amount_inr_crore": 342375,
+      "jobs_claimed": "40 lakh employment potential",
+      "skills_implied": [
+        "manufacturing",
+        "IT/ITeS",
+        "MSME"
+      ],
+      "source": {
+        "label": "EastMojo, Bengal received Rs 3.42 lakh cr investment proposals at biz summit: Mamata",
+        "url": "https://eastmojo.com/news/2022/04/21/bengal-received-rs-3-42-lakh-cr-investment-proposals-at-biz-summit-mamata/"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2023,
+      "date": "2023-02-10",
+      "scope": "uttar_pradesh",
+      "kind": "summit",
+      "title": "UP Global Investors Summit 2023",
+      "detail": "Summit on 10-12 Feb 2023 recorded about 18,643 MoUs worth Rs 33.50 lakh crore (other sources: Rs 32.92 lakh crore); renewables led at about Rs 3.58 lakh crore, ahead of electronics.",
+      "amount_inr_crore": 3350000,
+      "jobs_claimed": "about 92.5 lakh jobs",
+      "skills_implied": [
+        "renewable energy technician",
+        "electronics manufacturing",
+        "construction"
+      ],
+      "source": {
+        "label": "AffairsCloud, UP Global Investor Summit 2023: 18,643 MoUs Worth Rs 33.50 Lakh Crore Signed",
+        "url": "https://affairscloud.com/up-global-investor-summit-2023-18643-mous-worth-rs-33-50-lakh-crore-signed"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2023,
+      "date": "2023-02-12",
+      "scope": "noida_ncr",
+      "kind": "infrastructure",
+      "title": "Delhi-Mumbai Expressway first section opened",
+      "detail": "PM inaugurated the 246 km Delhi-Dausa-Lalsot section built at Rs 12,150 crore, cutting Delhi-Jaipur travel to about 3.5 hours; full expressway 1,386 km.",
+      "amount_inr_crore": 12150,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "logistics and warehousing",
+        "highway maintenance",
+        "transport operations"
+      ],
+      "source": {
+        "label": "Business Today, PM Modi inaugurates first section of Delhi-Mumbai Expressway",
+        "url": "https://www.businesstoday.in/amp/industry/infra/story/delhi-to-jaipur-in-35-hours-pm-modi-inaugurates-first-section-of-delhi-mumbai-expressway-369914-2023-02-12"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2023,
+      "date": null,
+      "scope": "national",
+      "kind": "scheme",
+      "title": "PMKVY 4.0 and Skill India Digital Hub",
+      "detail": "PMKVY 4.0 (FY2022-26) runs the full enrolment-to-certification cycle through the Skill India Digital platform. Sources differ on launch year (2022 vs 2023).",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "short-term skill training",
+        "assessment",
+        "digital skilling platforms"
+      ],
+      "source": {
+        "label": "CBSE Academic, Circular 122 of 2023 (PMKVY 4.0 / Skill Hub)",
+        "url": "https://www.cbseacademic.nic.in/web_material/Circulars/2023/122_Circular_2023.pdf"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2023,
+      "date": null,
+      "scope": "noida_ncr",
+      "kind": "infrastructure",
+      "title": "YEIDA Medical Device Park plot allotments",
+      "detail": "By April 2023 YEIDA had allotted 59 plots (37 in phase 1, 22 in phase 2) in the 350-acre Sector 28 park; later reports cite 101 of 203 plots allotted and Rs 100 crore central support for a common facility centre.",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "medical device assembly",
+        "biomedical engineering",
+        "regulatory and quality (ISO 13485)"
+      ],
+      "source": {
+        "label": "Daily Guardian, YEIDA's medical device park picks up pace, over 100 plots allotted",
+        "url": "https://thedailyguardian.com/india/yeidas-medical-device-park-picks-up-pace-over-100-plots-allotted-692996/amp/"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2023,
+      "date": null,
+      "scope": "west_bengal",
+      "kind": "summit",
+      "title": "Bengal Global Business Summit 2023",
+      "detail": "Seventh edition (November 2023) drew investment promises of Rs 3,76,288 crore.",
+      "amount_inr_crore": 376288,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "manufacturing",
+        "IT/ITeS"
+      ],
+      "source": {
+        "label": "Deccan Herald, Bengal govt's business summit draws investment promises worth Rs 3,76,288 crore",
+        "url": "https://www.deccanherald.com/amp/story/business%2Fbengal-govts-business-summit-draws-investment-promises-worth-rs-376288-crore-2781786"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2024,
+      "date": "2024-01-31",
+      "scope": "noida_ncr",
+      "kind": "investment",
+      "title": "YEIDA International Film City awarded",
+      "detail": "Bayview Projects (Boney Kapoor and Bhutani Group) won the Film City bid on 31 Jan 2024 with an 18% revenue share; concession signed 27 Jun 2024 for about 1,000 acres in Sector 21; estimated cost Rs 1,510 crore; phase 1 (230 acres, with a film institute) targeted by 2027.",
+      "amount_inr_crore": 1510,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "film production crew",
+        "VFX and post-production",
+        "set construction",
+        "hospitality"
+      ],
+      "source": {
+        "label": "Housing.com, Boney Kapoor's consortium signs pact with Yeida for Noida Film City",
+        "url": "https://housing.com/news/boney-kapoors-consortium-signs-pact-with-yeida-for-noida-film-city"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2024,
+      "date": "2024-02-19",
+      "scope": "uttar_pradesh",
+      "kind": "summit",
+      "title": "UP Ground Breaking Ceremony 4.0",
+      "detail": "GBC 4.0 (19-21 Feb 2024, Lucknow) launched 14,537 projects worth Rs 10,15,583 crore from GIS 2023 MoUs; over 52% of projects in western UP.",
+      "amount_inr_crore": 1015583,
+      "jobs_claimed": "33.50 lakh employment opportunities",
+      "skills_implied": [
+        "construction trades",
+        "manufacturing operators",
+        "project management"
+      ],
+      "source": {
+        "label": "Drishti IAS, Projects worth Rs 10 lakh crore to be implemented in Uttar Pradesh",
+        "url": "https://www.drishtiias.com/state-pcs-current-affairs/projects-worth-10-lakh-crore-to-be-implemented-in-uttar-pradesh/print_manually"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2024,
+      "date": "2024-02-25",
+      "scope": "kalyani",
+      "kind": "institution",
+      "title": "AIIMS Kalyani dedicated to the nation",
+      "detail": "PM virtually inaugurated the 960-bed AIIMS Kalyani (125 MBBS seats, 60 nursing seats, 30-bed AYUSH block) on 179.82 acres; OPD had run since 2019. One source gives cost Rs 1,754 crore (unverified).",
+      "amount_inr_crore": 1754,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "nursing",
+        "allied health technicians",
+        "hospital administration",
+        "biomedical equipment maintenance"
+      ],
+      "source": {
+        "label": "BioSpectrum India, 5 AIIMS open at Rajkot, Bathinda, Raebareli, Kalyani and Mangalagiri",
+        "url": "https://biospectrumindia.com/news/101/24255/5-aiims-open-at-rajkot-bathinda-raebareli-kalyani-and-mangalagiri.html"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2024,
+      "date": "2024-03-07",
+      "scope": "national",
+      "kind": "scheme",
+      "title": "IndiaAI Mission approved",
+      "detail": "Union Cabinet approved the IndiaAI Mission with an outlay of Rs 10,371.92 crore over five years, including compute capacity of over 10,000 GPUs, foundation models, datasets platform and sector applications.",
+      "amount_inr_crore": 10371.92,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "AI/ML engineering",
+        "data annotation and curation",
+        "GPU/cloud operations"
+      ],
+      "source": {
+        "label": "TelecomTalk, Cabinet Approves IndiaAI Mission With an Outlay of Rs 10,371.92 Crore",
+        "url": "https://telecomtalk.info/?p=924948"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2024,
+      "date": "2024-07-23",
+      "scope": "national",
+      "kind": "scheme",
+      "title": "Union Budget 2024-25 PM package for employment and skilling",
+      "detail": "Budget announced a Rs 2 lakh crore central package for employment and skilling for 4.1 crore youth over five years, including a Rs 60,000 crore centrally sponsored scheme to train 20 lakh youth and upgrade 1,000 ITIs in hub-and-spoke mode.",
+      "amount_inr_crore": 200000,
+      "jobs_claimed": "opportunities for 4.1 crore youth over five years",
+      "skills_implied": [
+        "ITI instructors",
+        "industry-linked trades",
+        "apprenticeship"
+      ],
+      "source": {
+        "label": "PIB Ministry of Finance, Budget 2024-25 employment and skilling package",
+        "url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2035608"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2024,
+      "date": "2024-10-03",
+      "scope": "national",
+      "kind": "scheme",
+      "title": "PM Internship Scheme pilot launched",
+      "detail": "Announced in Budget 2024-25 to give one crore youth internships in top 500 companies over five years; pilot launched 3 Oct 2024 targeting 1.25 lakh internships, with Rs 800 crore for FY2024-25. Interns get Rs 5,000 per month plus Rs 6,000 one-time.",
+      "amount_inr_crore": 800,
+      "jobs_claimed": "1.25 lakh internships in pilot; 1 crore over five years",
+      "skills_implied": [
+        "workplace readiness",
+        "internship mentoring"
+      ],
+      "source": {
+        "label": "Amar Ujala, Prime Minister's Internship Scheme launched, to provide 1.25 lakh internship during FY 2024-25",
+        "url": "https://results.amarujala.com/current-affairs/prime-minister-s-internship-scheme-launched-to-provide-1-25-lakh-internship-during-fy-2024-25"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2024,
+      "date": "2024-12-18",
+      "scope": "west_bengal",
+      "kind": "investment",
+      "title": "Infosys New Town (Kolkata) campus inaugurated",
+      "detail": "CM inaugurated Infosys' Rs 426 crore development centre on 50 acres in New Town, focused on cloud, AI and digital work.",
+      "amount_inr_crore": 426,
+      "jobs_claimed": "employment potential for 4,000 IT professionals",
+      "skills_implied": [
+        "software engineering",
+        "cloud",
+        "AI services"
+      ],
+      "source": {
+        "label": "Business Standard, Mamata Banerjee inaugurates Infosys development centre in Kolkata",
+        "url": "https://business-standard.com/amp/india-news/mamata-banerjee-inaugurates-infosys-development-centre-in-kolkata-124121800976_1.html"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2024,
+      "date": null,
+      "scope": "uttar_pradesh",
+      "kind": "policy",
+      "title": "UP Semiconductor Policy 2024",
+      "detail": "UP notified a semiconductor policy (rolled out February 2024 per Swarajya) offering 50% additional capital subsidy over central support, 75% land rebate on first 200 acres for ATMP/OSAT and 10-year electricity duty exemption.",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "semiconductor packaging",
+        "cleanroom operations",
+        "VLSI design"
+      ],
+      "source": {
+        "label": "Invest UP, Uttar Pradesh Semiconductor Policy-2024",
+        "url": "https://invest.up.gov.in/uttar-pradesh-semiconductor-policy-2024/"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2024,
+      "date": null,
+      "scope": "noida_ncr",
+      "kind": "investment",
+      "title": "YEIDA semiconductor land: 225 acres for three companies",
+      "detail": "UP approved three companies for semiconductor projects and allocated 225 acres in YEIDA Sectors 10 and 28 (2024 reporting).",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "semiconductor assembly and test",
+        "cleanroom technician"
+      ],
+      "source": {
+        "label": "Swarajya, Uttar Pradesh's first semiconductor park coming to Greater Noida",
+        "url": "https://swarajyamag.com/amp/story/uttar-pradesh%2Futtar-pradeshs-first-semiconductor-park-coming-to-greater-noida-state-approves-225-acres-land-for-three-companies"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2024,
+      "date": null,
+      "scope": "west_bengal",
+      "kind": "investment",
+      "title": "GlobalFoundries Kolkata Power Center",
+      "detail": "After acquiring Tagore Technology's GaN power business, GlobalFoundries set up a design and test centre in Kolkata (STPI Salt Lake space allotted by the state); announced around the September 2024 Biden-Modi meeting.",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "analog/power IC design",
+        "semiconductor test engineering"
+      ],
+      "source": {
+        "label": "Investment Monitor, GlobalFoundries to establish design centre in Kolkata, India",
+        "url": "https://www.investmentmonitor.ai/news/globalfoundries-to-establish-design-centre-in-kolkata-india/"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2025,
+      "date": "2025-02-06",
+      "scope": "west_bengal",
+      "kind": "summit",
+      "title": "Bengal Global Business Summit 2025",
+      "detail": "Eighth edition reported proposals of Rs 4,40,595 crore with 212 MoUs/LoIs (another source says 1,200+). State claimed Rs 13 lakh crore of Rs 19 lakh crore from seven earlier editions had been invested.",
+      "amount_inr_crore": 440595,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "manufacturing",
+        "IT/ITeS",
+        "logistics"
+      ],
+      "source": {
+        "label": "All India Radio News, BGBS 2025 secures over Rs 4.4 lakh crore in investment proposals",
+        "url": "https://www.newsonair.gov.in/bgbs-2025-secures-over-%e2%82%b94-4-lakh-crore-in-investment-proposals-cm-mamata-banerjee"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2025,
+      "date": "2025-02-07",
+      "scope": "national",
+      "kind": "policy",
+      "title": "Parliament reply lists approved semiconductor units",
+      "detail": "Rajya Sabha reply listed Micron ATMP Sanand (Rs 22,516 crore), Tata OSAT (Rs 27,120 crore), CG Power OSAT (Rs 7,584 crore), Kaynes OSAT (Rs 3,307 crore) and the Tata-PSMC Dholera fab (Rs 91,526 crore).",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "OSAT/ATMP operator",
+        "equipment maintenance",
+        "yield engineering"
+      ],
+      "source": {
+        "label": "Rajya Sabha, Parliament Question 267 dated 07.02.2025",
+        "url": "https://rsdebate.nic.in/bitstream/123456789/758379/1/PQ_267_07022025_U552_p269_p269.pdf"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2025,
+      "date": "2025-02-13",
+      "scope": "national",
+      "kind": "scheme",
+      "title": "Mobile PLI payouts: 19 firms, record handset exports",
+      "detail": "Report says 19 companies qualified for mobile PLI incentives with about Rs 8,700 crore disbursed over three years, fuelling a record surge in handset exports.",
+      "amount_inr_crore": 8700,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "SMT operator",
+        "export compliance",
+        "quality inspection"
+      ],
+      "source": {
+        "label": "Vision IAS (Indian Express), The PLI push: $1 billion over 3 years to 19 firms",
+        "url": "https://visionias.in/current-affairs/upsc-daily-news-summary/article/2025-02-13/the-indian-express/schemes-in-news/the-pli-push-1-billion-over-3-years-to-19-firms-fuels-record-surge-in-handset-exports"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2025,
+      "date": "2025-03-08",
+      "scope": "noida_ncr",
+      "kind": "investment",
+      "title": "Microsoft India Development Centre campus groundbreaking, Noida Sector 145",
+      "detail": "Microsoft broke ground for a 15-acre, 1.1 million sq ft IDC campus in Sector 145 planned as an AI, cloud and security hub.",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "software engineering",
+        "cloud and AI engineering",
+        "cybersecurity"
+      ],
+      "source": {
+        "label": "Microsoft Source Asia, Groundbreaking ceremony for India Development Centre campus in Noida",
+        "url": "https://news.microsoft.com/source/asia/2025/03/08/groundbreaking-ceremony-for-india-development-centre-idc-campus-in-noida/"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2025,
+      "date": "2025-03-28",
+      "scope": "national",
+      "kind": "scheme",
+      "title": "Electronics Component Manufacturing Scheme (ECMS) approved",
+      "detail": "Cabinet approved ECMS with Rs 22,919 crore outlay over six years, expected to draw Rs 59,350 crore investment and Rs 4,56,500 crore production; part of the incentive is tied to employment targets.",
+      "amount_inr_crore": 22919,
+      "jobs_claimed": "91,600 direct jobs",
+      "skills_implied": [
+        "PCB assembly",
+        "component manufacturing",
+        "process engineering",
+        "quality assurance"
+      ],
+      "source": {
+        "label": "Vision IAS (Indian Express), Cabinet clears Rs 23k-cr scheme for electronic components, targets 92k jobs",
+        "url": "https://visionias.in/current-affairs/upsc-daily-news-summary/article/2025-03-29/the-indian-express/economy/cabinet-clears-rs-23k-cr-scheme-for-electronic-components-targets-92k-jobs"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2025,
+      "date": "2025-05-06",
+      "scope": "uttar_pradesh",
+      "kind": "policy",
+      "title": "UP Global Capability Centres Policy approved",
+      "detail": "State cabinet cleared the UP GCC Policy (titled 2024) on 6 May 2025 with payroll subsidies, internship and skill-building incentives, aiming to spread GCCs beyond Noida to Kanpur, Varanasi and others.",
+      "amount_inr_crore": null,
+      "jobs_claimed": "over 2 lakh high-paying jobs in five years (target)",
+      "skills_implied": [
+        "software engineering",
+        "finance and analytics shared services",
+        "AI/data roles"
+      ],
+      "source": {
+        "label": "Drishti IAS, Global Service Centre in UP (08 May 2025)",
+        "url": "https://www.drishtiias.com/state-pcs-current-affairs/global-service-centre-in-up"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2025,
+      "date": "2025-05-14",
+      "scope": "noida_ncr",
+      "kind": "factory",
+      "title": "HCL-Foxconn OSAT near Jewar approved",
+      "detail": "Union Cabinet approved the Rs 3,706 crore HCL-Foxconn display driver chip OSAT unit in YEIDA near Jewar airport (20,000 wafers/month, 36 million units/month), sixth ISM unit and first in UP; production expected 2027.",
+      "amount_inr_crore": 3706,
+      "jobs_claimed": "about 2,000 jobs",
+      "skills_implied": [
+        "OSAT operator",
+        "wire bonding and test",
+        "equipment technician",
+        "process engineer"
+      ],
+      "source": {
+        "label": "Tribune India, One more cap in India's semiconductor mission: new plant at Jewar, UP announced",
+        "url": "https://www.tribuneindia.com/news/business/one-more-cap-in-indias-semiconductor-mission-new-plant-at-jewar-up-announced"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2025,
+      "date": null,
+      "scope": "siliguri",
+      "kind": "infrastructure",
+      "title": "Bagdogra Airport new terminal under construction",
+      "detail": "AAI's Rs 1,560 crore expansion (terminal by Kalpataru Projects plus airside works) targets a 10-million-passenger terminal by March 2027; 13 bidders for apron and taxiway works in July 2025.",
+      "amount_inr_crore": 1560,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "construction trades",
+        "airport operations",
+        "ground handling"
+      ],
+      "source": {
+        "label": "The Metro Rail Guy, 13 Bidders for Siliguri Bagdogra Airport's Apron and Taxiway Contract",
+        "url": "https://themetrorailguy.com/2025/07/19/13-bidders-for-siliguri-bagdogra-airports-apron-taxiway-contract/"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2025,
+      "date": null,
+      "scope": "kalyani",
+      "kind": "institution",
+      "title": "IIIT Kalyani permanent campus near completion",
+      "detail": "Lok Sabha answer (August 2025) put the permanent campus on the Kalyani Expressway at 98% physical progress; the institute still runs from the Webel IT Park building in Kalyani.",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "computer science",
+        "VLSI design"
+      ],
+      "source": {
+        "label": "Careers360, IIIT Kalyani campus 98% complete; 28 new faculty positions",
+        "url": "https://news.careers360.com/iiit-kalyani-campus-98-complete-28-new-faculty-positions-grievance-system-active-education-ministry"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2026,
+      "date": "2026-02-01",
+      "scope": "national",
+      "kind": "policy",
+      "title": "Union Budget 2026-27 skilling measures",
+      "detail": "Coverage reports MSDE allocation raised from Rs 6,100 crore to Rs 9,885.80 crore, a scheme to train 1.5 lakh geriatric and allied caregivers over five years, and AVGC content creator labs in 15,000 schools and 500 colleges. Figures are from secondary coverage.",
+      "amount_inr_crore": 9885.8,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "caregiving",
+        "AVGC content creation",
+        "AI skills"
+      ],
+      "source": {
+        "label": "National Skills Network, Budget 2026-27 highlights: skill and education",
+        "url": "https://nationalskillsnetwork.in/budget-2026-27-highlights-skill-education"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2026,
+      "date": "2026-05-09",
+      "scope": "west_bengal",
+      "kind": "policy",
+      "title": "Change of state government in West Bengal",
+      "detail": "BJP won the April 2026 election (results 4 May); Suvendu Adhikari sworn in as chief minister on 9 May 2026, ending TMC rule.",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [],
+      "source": {
+        "label": "The Quint, Suvendu Adhikari sworn in as West Bengal's first BJP chief minister",
+        "url": "https://www.thequint.com/news/breaking-news/suvendu-adhikari-sworn-in-bjp-chief-minister"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2026,
+      "date": "2026-06-15",
+      "scope": "noida_ncr",
+      "kind": "infrastructure",
+      "title": "Noida International Airport (Jewar) starts commercial flights",
+      "detail": "Commercial operations began on 15 Jun 2026 with an IndiGo flight; phase 1 has one runway and one terminal for up to 12 million passengers a year. Sources differ on formal inauguration date.",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "airport ground handling",
+        "aviation security",
+        "cargo handling",
+        "hospitality"
+      ],
+      "source": {
+        "label": "All India Radio News, Noida International Airport in Jewar begins commercial flight operations",
+        "url": "https://newsonair.gov.in/noida-international-airport-in-jewar-begins-commercial-flight-operations-this-morning/"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2026,
+      "date": "2026-06-22",
+      "scope": "west_bengal",
+      "kind": "policy",
+      "title": "West Bengal Budget 2026-27 (first BJP budget)",
+      "detail": "Budget proposed single-window clearance, an AI mission and semiconductor hub, Rs 200 crore to make Siliguri a logistics and trade hub, a 50,000 sq ft Siliguri IT park and Rs 1,821.52 crore for North Bengal development.",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "logistics",
+        "IT services",
+        "AI skills"
+      ],
+      "source": {
+        "label": "The Week, West Bengal Budget 2026-27: Viksit Bangla",
+        "url": "https://www.theweek.in/news/biz-tech/2026/06/22/west-bengal-budget-2026-27-vikshit-bangla.html"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2026,
+      "date": "2026-07-02",
+      "scope": "noida_ncr",
+      "kind": "factory",
+      "title": "Maruti Suzuki Kharkhoda (Haryana) plant inaugurated",
+      "detail": "PM Modi and Japan PM Takaichi virtually inaugurated the Rs 35,000 crore Kharkhoda plant; two units running at 2.5 lakh vehicles each, planned 10 lakh vehicles on 800 acres with supplier park.",
+      "amount_inr_crore": 35000,
+      "jobs_claimed": "over 21,000 jobs",
+      "skills_implied": [
+        "automotive assembly",
+        "welding and paint shop",
+        "maintenance technician",
+        "supplier quality"
+      ],
+      "source": {
+        "label": "Outlook Business, Modi, Takaichi inaugurate Maruti Suzuki's Rs 35,000 cr Kharkhoda manufacturing plant",
+        "url": "https://www.outlookbusiness.com/news/modi-takaichi-inaugurate-maruti-suzukis-35000-cr-kharkhoda-manufacturing-plant"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2026,
+      "date": "2026-07-12",
+      "scope": "siliguri",
+      "kind": "policy",
+      "title": "Review of closed North Bengal tea gardens",
+      "detail": "Labour Minister Arjun Singh met unions and managements at Uttarkanya, Siliguri, on wages, bonus, gratuity and PF dues in shut gardens; CM stated commitment to revive closed gardens.",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "tea plantation work",
+        "tea processing"
+      ],
+      "source": {
+        "label": "All India Radio News, West Bengal Labour Minister holds meeting at Uttarkanya secretariat",
+        "url": "https://newsonair.gov.in/west-bengal-labour-transport-minister-arjun-singh-holds-meeting-at-uttarkanya-secretariat/"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2026,
+      "date": "2026-09-21",
+      "scope": "kalyani",
+      "kind": "infrastructure",
+      "title": "Land identification for Kalyani greenfield airport",
+      "detail": "State began identifying about 2,000 acres across nine mouzas in Nadia including Kalyani and restricted land registrations; it already owns about 240 acres.",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "land survey",
+        "civil construction"
+      ],
+      "source": {
+        "label": "All India Radio News, West Bengal govt begins process of identifying land for proposed Kalyani greenfield airport",
+        "url": "https://newsonair.gov.in/west-bengal-govt-begins-process-of-identifying-land-for-proposed-kalyani-greenfield-airport-project/"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "year": 2026,
+      "date": "2026-09-25",
+      "scope": "west_bengal",
+      "kind": "investment",
+      "title": "Land allotted for 33 industrial projects",
+      "detail": "CM said land allotment was complete for 33 projects with about Rs 60,000 crore proposed investment in semiconductors, defence, solar, EVs, pharma, steel, food processing, textiles, engineering and MSME. Locations not named.",
+      "amount_inr_crore": 60000,
+      "jobs_claimed": "about 62,000 direct and indirect",
+      "skills_implied": [
+        "manufacturing operators",
+        "solar technician",
+        "pharma production",
+        "steel plant trades"
+      ],
+      "source": {
+        "label": "Indian Masterminds, West Bengal industrial land allotment",
+        "url": "https://indianmasterminds.com/news/west-bengal-industrial-land-allotment-226153/"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2026,
+      "date": null,
+      "scope": "national",
+      "kind": "scheme",
+      "title": "PMKVY 4.0 reported at about 15% of target",
+      "detail": "Careers360 (March 2026) reports PMKVY 4.0 certified only about 15% of its three-year target and MSDE is preparing PMKVY 5.0 with skill vouchers, outcome bonds and APAAR ID linkage.",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "skill assessment",
+        "placement tracking"
+      ],
+      "source": {
+        "label": "Careers360, PMKVY 4.0 meets just 15% of target, MSDE plans version 5.0",
+        "url": "https://news.careers360.com/pmkvy-pm-kaushal-vikas-yojana-15-pc-target-skill-india-development-msde-plan-voucher-loan-outcome-bond-apaar-id-new-format/amp"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2026,
+      "date": null,
+      "scope": "noida_ncr",
+      "kind": "investment",
+      "title": "Dixon display module fab in Noida-Greater Noida",
+      "detail": "Dixon will invest about Rs 1,100 crore in a display facility approved under ECMS, with eventual capacity of about 6 crore mobile and 2.4 crore IT hardware display units a year; trial production expected around July.",
+      "amount_inr_crore": 1100,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "display module assembly",
+        "SMT operator",
+        "quality inspection"
+      ],
+      "source": {
+        "label": "Communications Today, Dixon Technologies to invest Rs 1,100 crore in Noida display fab",
+        "url": "https://www.communicationstoday.co.in/dixon-technologies-to-invest-%e2%82%b91100-crore-in-noida-display-fab/"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2026,
+      "date": null,
+      "scope": "uttar_pradesh",
+      "kind": "policy",
+      "title": "UP Data Centre Policy 2026 unveiled",
+      "detail": "UP's IT minister unveiled a Data Centre Policy 2026 in July, reviving the 50% land subsidy for Bundelkhand and Purvanchal; the 2021 policy had approved Rs 21,343 crore (644 MW), all in Noida or Greater Noida.",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "data centre operations",
+        "electrical technician",
+        "cooling systems"
+      ],
+      "source": {
+        "label": "Swarajya, UP is offering cheap land to two regions that cannot host a data centre",
+        "url": "https://swarajyamag.com/uttar-pradesh/up-is-offering-cheap-land-to-two-regions-that-cannot-host-a-data-centre"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2026,
+      "date": null,
+      "scope": "siliguri",
+      "kind": "investment",
+      "title": "TVS ILP logistics park MoU in Siliguri",
+      "detail": "TVS Industrial and Logistics Parks signed an MoU (May 2026) for a 10-acre Grade A logistics park in Siliguri with Ram Niwas Group.",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "warehouse operations",
+        "inventory management",
+        "forklift operation"
+      ],
+      "source": {
+        "label": "Outlook Business, TVS Industrial & Logistics Parks to set up logistics park in Siliguri",
+        "url": "https://www.outlookbusiness.com/news/tvs-industrial-logistics-parks-to-set-up-logistics-park-in-siliguri"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2026,
+      "date": null,
+      "scope": "west_bengal",
+      "kind": "infrastructure",
+      "title": "Tajpur port re-tendered and relocated",
+      "detail": "Cabinet cleared a fresh tender for the Rs 25,000 crore Tajpur deep-sea port, declaring the Adani agreement void (around May 2026); in September 2026 the site moved to Dadanpatrabar (over 1,700 acres) owing to land issues.",
+      "amount_inr_crore": 25000,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "port operations",
+        "logistics"
+      ],
+      "source": {
+        "label": "The Week, Behind Tajpur port relocation",
+        "url": "https://www.theweek.in/news/maritime/2026/09/12/behind-tajpur-port-relocation-land-challenges-the-gujarat-model-and-a-question-of-scale-for-west-bengal-s-key-maritime-project.html"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "year": 2026,
+      "date": null,
+      "scope": "kalyani",
+      "kind": "policy",
+      "title": "Nadia land shortlisted under Centre's Bhavya scheme",
+      "detail": "State shortlisted 118.5 acres at Dhubulia, Nadia, for an industrial park under the Rs 33,660 crore Bhavya scheme (August 2026).",
+      "amount_inr_crore": null,
+      "jobs_claimed": null,
+      "skills_implied": [
+        "industrial park development",
+        "manufacturing"
+      ],
+      "source": {
+        "label": "Swarajya, West Bengal identifies land in Nadia, Paschim Burdwan for industrial parks under Bhavya scheme",
+        "url": "https://swarajyamag.com/news-brief/west-bengal-identifies-land-in-nadia-paschim-burdwan-for-industrial-parks-under-rs-33660-crore-bhavya-scheme"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    }
+  ],
+  "future": [
+    {
+      "area": "national",
+      "title": "Mobile PLI 2.0",
+      "status": "proposed",
+      "expected": null,
+      "detail": "Government plans a second mobile PLI with about $5 billion outlay focused on exports; not yet before Cabinet (April 2026).",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "SMT operator",
+        "export compliance"
+      ],
+      "source": {
+        "label": "Vision IAS (Business Standard), Govt plans mobile PLI 2.0 with $5 billion outlay",
+        "url": "https://visionias.in/current-affairs/upsc-daily-news-summary/article/2026-04-16/business-standard/economy/govt-plans-mobile-pli-20-with-5-billion-outlay-to-boost-exports"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "national",
+      "title": "India Semiconductor Mission 2.0",
+      "status": "proposed",
+      "expected": null,
+      "detail": "With 12 plants in phase one, ISM 2.0 is under consideration and may cut OSAT capex support below 50%.",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "cleanroom technician",
+        "chip design"
+      ],
+      "source": {
+        "label": "SuperKalam, With 12 plants in phase one, India's chip-making mission sets sights on next frontier",
+        "url": "https://superkalam.com/current-affairs/07-05-2026/with-12-plants-in-phase-one-india-s-chip-making-mission-sets-sights-on-next-frontier-pg15-3df7573c-f23c-442e-8612-f20692a5f163"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "national",
+      "title": "PMKVY 5.0",
+      "status": "proposed",
+      "expected": null,
+      "detail": "MSDE preparing PMKVY 5.0 with skill vouchers, outcome bonds and APAAR ID linkage after PMKVY 4.0 underperformance.",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "skill assessment",
+        "placement services"
+      ],
+      "source": {
+        "label": "Careers360, PMKVY 4.0 meets just 15% of target, MSDE plans version 5.0",
+        "url": "https://news.careers360.com/pmkvy-pm-kaushal-vikas-yojana-15-pc-target-skill-india-development-msde-plan-voucher-loan-outcome-bond-apaar-id-new-format/amp"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "noida_ncr",
+      "title": "HCL-Foxconn display driver chip OSAT, YEIDA",
+      "status": "approved",
+      "expected": "2027",
+      "detail": "Rs 3,706 crore OSAT near Jewar airport; production expected to start 2027.",
+      "jobs_claimed": "about 2,000 jobs",
+      "skills_implied": [
+        "OSAT operator",
+        "test engineering",
+        "equipment maintenance"
+      ],
+      "source": {
+        "label": "The Hitavada, Govt approves Rs 3,706 cr HCL-Foxconn semiconductor joint venture in UP",
+        "url": "https://www.thehitavada.com/Encyc/2025/5/15/Govt-approves-Rs-3,706-cr-HCL-Foxconn-semiconductor-joint-venture-in-UP.html"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "area": "noida_ncr",
+      "title": "International Film City, YEIDA Sector 21 (phase 1)",
+      "status": "under construction",
+      "expected": "2027",
+      "detail": "Phase 1 on 230 acres with film facilities and a film institute expected by 2027; land allotted Feb 2025.",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "camera and lighting crew",
+        "VFX",
+        "set carpentry",
+        "sound engineering"
+      ],
+      "source": {
+        "label": "Business Today, Boney Kapoor, Bhutani Infra-backed firm to build international film city in Noida",
+        "url": "https://www.businesstoday.in/amp/latest/corporate/story/boney-kapoor-bhutani-infra-backed-firm-to-build-international-film-city-in-noida-466231-2025-02-28"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "noida_ncr",
+      "title": "Multi-Modal Logistics Hub, Dadri (Greater Noida)",
+      "status": "under construction",
+      "expected": null,
+      "detail": "PPP (DBFOT) dry port at the junction of the Eastern and Western DFCs; DFCCIL building the rail link from New Dadri; planned 1.44 million TEU in three phases. Cost cited between Rs 4,034 and 5,942 crore.",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "container handling",
+        "customs brokerage",
+        "cold chain",
+        "warehouse management"
+      ],
+      "source": {
+        "label": "PSU Connect, DFCCIL begins construction of external connectivity for Greater Noida MMLH",
+        "url": "https://www.psuconnect.in/psu-news/dfccil-begins-construction-of-external-connectivity-for-greater-noida-mmlh"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "noida_ncr",
+      "title": "Noida International Airport international flights",
+      "status": "announced",
+      "expected": "2026",
+      "detail": "Pre-launch report said international operations expected by end-2026; Akasa Air and Air India Express to follow IndiGo.",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "ground handling",
+        "immigration and customs support",
+        "cargo operations"
+      ],
+      "source": {
+        "label": "Outlook Traveller, Noida International Airport to begin commercial flights on June 15",
+        "url": "https://www.outlooktraveller.com/News/noida-international-airport-to-begin-commercial-flights-on-june-15"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "noida_ncr",
+      "title": "Microsoft IDC campus, Noida Sector 145",
+      "status": "under construction",
+      "expected": null,
+      "detail": "15-acre, 1.1 million sq ft AI, cloud and security campus; headcount not stated.",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "software engineering",
+        "AI/ML",
+        "cybersecurity",
+        "facility management"
+      ],
+      "source": {
+        "label": "Analytics India Magazine, Microsoft lays foundation for new India Development Centre in Noida",
+        "url": "https://analyticsindiamag.com/ai-news-updates/microsoft-lays-foundation-for-new-india-development-centre-in-noida-to-double-down-on-ai-and-cloud-capabilities"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "noida_ncr",
+      "title": "AdaniConneX data centres, Noida Sectors 62 and 80",
+      "status": "under construction",
+      "expected": null,
+      "detail": "AdaniConneX facility under construction in Sector 62; Noida Authority agreed to sublease a 10-acre Sector 80 plot under the 2021 data centre policy.",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "data centre technician",
+        "HVAC and electrical",
+        "network operations"
+      ],
+      "source": {
+        "label": "DatacenterDynamics, Noida Authority to sublease 10-acre plot to AdaniConneX",
+        "url": "https://www.datacenterdynamics.com/en/news/noida-authority-to-sublease-10-acre-plot-to-adaniconnex/"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "noida_ncr",
+      "title": "YEIDA Medical Device Park common facility and skill centre",
+      "status": "announced",
+      "expected": null,
+      "detail": "Central government allotted Rs 100 crore for a common facility centre; YEIDA lists a Centre of Excellence, Skill Development and Incubation Centre among common facilities.",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "biomedical testing",
+        "sterilisation and QA",
+        "medical device assembly"
+      ],
+      "source": {
+        "label": "YEIDA, Medical Device Park",
+        "url": "https://www.yamunaexpresswayauthority.com/projects/medical-device-park"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "uttar_pradesh",
+      "title": "GCC expansion under UP GCC Policy",
+      "status": "announced",
+      "expected": null,
+      "detail": "Policy targets over 2 lakh jobs in five years with payroll and internship incentives; MAQ Software 3,000-seat centre cited.",
+      "jobs_claimed": "over 2 lakh jobs (target)",
+      "skills_implied": [
+        "software engineering",
+        "analytics",
+        "finance operations"
+      ],
+      "source": {
+        "label": "India Briefing, Uttar Pradesh's bid to become India's next GCC hub",
+        "url": "https://www.india-briefing.com/news/uttar-pradeshs-bid-to-become-indias-next-gcc-hub-38210.html/"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "kalyani",
+      "title": "Kalyani greenfield airport",
+      "status": "proposed",
+      "expected": null,
+      "detail": "Land identification for about 2,000 acres across nine Nadia mouzas began September 2026.",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "civil construction",
+        "aviation operations",
+        "land survey"
+      ],
+      "source": {
+        "label": "Swarajya, West Bengal govt restricts land registrations in nine mouzas for proposed Kalyani greenfield airport",
+        "url": "https://swarajyamag.com/news-brief/west-bengal-govt-restricts-land-registrations-in-nine-mouzas-for-proposed-kalyani-greenfield-airport"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "kalyani",
+      "title": "IIIT Kalyani permanent campus",
+      "status": "under construction",
+      "expected": null,
+      "detail": "Campus 95-98% complete; institute to move from Webel IT Park building; offers M.Tech in VLSI.",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "VLSI design",
+        "computer science"
+      ],
+      "source": {
+        "label": "IIIT Kalyani, B.Tech Admission 2026 brochure",
+        "url": "https://iiitkalyani.ac.in/api/serve/2026/06/05/IIIT_Kalyani_B.Tech._Admission_2026.pdf"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "kalyani",
+      "title": "Dhubulia (Nadia) industrial park under Bhavya scheme",
+      "status": "proposed",
+      "expected": null,
+      "detail": "118.5 acres shortlisted for a centrally supported industrial park.",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "manufacturing operators",
+        "industrial maintenance"
+      ],
+      "source": {
+        "label": "Swarajya, West Bengal identifies land in Nadia, Paschim Burdwan for industrial parks under Bhavya scheme",
+        "url": "https://swarajyamag.com/news-brief/west-bengal-identifies-land-in-nadia-paschim-burdwan-for-industrial-parks-under-rs-33660-crore-bhavya-scheme"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "kalyani",
+      "title": "Bengal Silicon Valley Tech Hub, New Town (Kolkata)",
+      "status": "under construction",
+      "expected": null,
+      "detail": "Expanded from 100 to 200 acres with Rs 27,000 crore investment potential; LoIs to 38 companies, construction at nine; TCS holds a 20-acre plot.",
+      "jobs_claimed": "75,000 jobs potential",
+      "skills_implied": [
+        "software engineering",
+        "data centre operations",
+        "IT support"
+      ],
+      "source": {
+        "label": "PropNewsTime, Bengal Silicon Valley expands to 200 acres, set to create 75,000 jobs",
+        "url": "https://propnewstime.com/latestnewsstories/MTUxMTQ=/bengal-silicon-valley-expands-to-200-acres-set-to-create-75-000-jobs-in-new-town-it-hub"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "kalyani",
+      "title": "Semiconductor design/test or fab near Kalyani-Barrackpore Expressway",
+      "status": "proposed",
+      "expected": null,
+      "detail": "One report claims a fab site with cleanroom and packaging near the Kalyani-Barrackpore Expressway, but GlobalFoundries India said it is not announcing a new expansion.",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "semiconductor test",
+        "cleanroom operations"
+      ],
+      "source": {
+        "label": "Convergence India, West Bengal eyes a semicon ecosystem by GlobalFoundries",
+        "url": "https://convergenceindia.org/industry-news/embedded-tech/west-bengal-eyes-a-semicon-ecosystem-by-global-foundries-118717"
+      },
+      "evidence": "search_result",
+      "confidence": "low"
+    },
+    {
+      "area": "west_bengal",
+      "title": "New West Bengal industrial policy",
+      "status": "announced",
+      "expected": "2026",
+      "detail": "CM said a new industrial policy covering land, incentives and reuse of closed-unit land will be unveiled after Diwali 2026; direct land purchase replaces forced acquisition.",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "manufacturing",
+        "MSME"
+      ],
+      "source": {
+        "label": "ThePrint, New industrial policy after Diwali: WB CM",
+        "url": "https://theprint.in/india/new-industrial-policy-after-diwali-wb-cm-seeks-to-make-state-top-investment-destination-in-a-year/3071967/"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "siliguri",
+      "title": "Bagdogra Airport new terminal",
+      "status": "under construction",
+      "expected": "2027",
+      "detail": "Rs 1,560 crore terminal for 10 million passengers a year, ten-bay apron and multi-level parking; target March 2027.",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "airport operations",
+        "ground handling",
+        "retail and hospitality"
+      ],
+      "source": {
+        "label": "Swarajya, West Bengal's Bagdogra airport to get 10 times bigger new terminal",
+        "url": "https://swarajyamag.com/amp/story/news-brief%2Fwest-bengals-bagdogra-airport-to-get-10-times-bigger-new-terminal-rs-1560-crore-project-set-for-march-2027-completion"
+      },
+      "evidence": "search_result",
+      "confidence": "high"
+    },
+    {
+      "area": "siliguri",
+      "title": "Sevoke-Rangpo railway to Sikkim",
+      "status": "under construction",
+      "expected": "2027",
+      "detail": "45 km line with 14 tunnels; officials expect operation around March 2027, official target December 2027; WB cabinet transferred 20 acres in Jalpaiguri (June 2026).",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "tunnelling",
+        "railway operations",
+        "tourism services"
+      ],
+      "source": {
+        "label": "ETV Bharat, Sevoke-Rangpo rail project likely to miss deadline",
+        "url": "https://www.etvbharat.com/en/!bharat/sevoke-rangpo-rail-project-likely-to-miss-deadline-enn25020404855"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "siliguri",
+      "title": "Siliguri regional logistics and trade hub",
+      "status": "announced",
+      "expected": null,
+      "detail": "Rs 200 crore in the 2026-27 state budget for integrated logistics parks, warehousing, cold chain and connectivity.",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "warehouse operations",
+        "cold chain technician",
+        "freight forwarding"
+      ],
+      "source": {
+        "label": "Cargo Connect, West Bengal allocates 200 crore to transform Siliguri into regional logistics and trade hub",
+        "url": "https://cargoconnect.co.in/logistics/west-bengal-allocates-200-crore-to-transform-siliguri-into-regional-logistics-and-trade-hub"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "siliguri",
+      "title": "Siliguri IT park (50,000 sq ft)",
+      "status": "announced",
+      "expected": null,
+      "detail": "Budget 2026-27 proposed a 50,000 sq ft IT park in Siliguri; cost figure not confirmed.",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "IT support",
+        "BPO/ITeS",
+        "software development"
+      ],
+      "source": {
+        "label": "The Week, West Bengal budget: investment and employment",
+        "url": "https://www.theweek.in/news/india/2026/06/22/west-bengal-budget-investment-employment.html"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "siliguri",
+      "title": "TVS ILP Grade A logistics park, Siliguri",
+      "status": "announced",
+      "expected": null,
+      "detail": "10-acre logistics park under MoU (May 2026); separately a Rs 50 crore 5.66-acre facility in Fulbari reported (date unclear).",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "warehouse operations",
+        "material handling"
+      ],
+      "source": {
+        "label": "Indian Transport & Logistics News, TVS ILP invests 50 crore to acquire industrial park in Siliguri",
+        "url": "https://www.itln.in/warehousing/tvs-ilp-invests-50-crore-to-acquire-industrial-park-in-siliguri-1353798"
+      },
+      "evidence": "search_result",
+      "confidence": "medium"
+    },
+    {
+      "area": "siliguri",
+      "title": "Revival of closed North Bengal tea gardens",
+      "status": "proposed",
+      "expected": null,
+      "detail": "State government says it is committed to reviving shut gardens; dues review under way (July 2026).",
+      "jobs_claimed": null,
+      "skills_implied": [
+        "tea plantation work",
+        "tea processing",
+        "estate management"
+      ],
+      "source": {
+        "label": "All India Radio News, West Bengal Labour Minister holds meeting at Uttarkanya secretariat",
+        "url": "https://newsonair.gov.in/west-bengal-labour-transport-minister-arjun-singh-holds-meeting-at-uttarkanya-secretariat/"
+      },
+      "evidence": "search_result",
+      "confidence": "low"
+    }
+  ]
+}
