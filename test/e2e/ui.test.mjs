@@ -223,6 +223,7 @@ test('mobile navigation offers five destinations and keeps all institution pages
   assert.equal(await page.locator('#mobileNav .mobile-tab').count(), 5);
   assert.ok(await page.locator('#subTabs').isHidden(), 'desktop secondary tabs are hidden on mobile');
   await page.click('#mobileNav [data-action=mobile-more]');
+  assert.ok(await page.locator('#modalTitle').count(), JSON.stringify({ errors: page.errors, modal: await page.locator('#modalBody').innerHTML(), view: await page.locator('html').getAttribute('data-view') }));
   assert.match(await text(page, '#modalTitle'), /More pages/);
   await page.click('#modal [data-action=mobile-more-tab][data-tab=regions]');
   assert.ok(await page.locator('#modal').isHidden());
@@ -249,7 +250,7 @@ test('mobile internal navigation never exposes restricted review and verificatio
   await page.click('#mobileNav [data-action=mobile-more]');
   assert.equal(await page.locator('#modal [data-tab=review]').count(), 0);
   assert.equal(await page.locator('#modal [data-tab=verify]').count(), 0);
-  assert.ok(await page.locator('#modal [data-tab=evidence]').count() > 0);
+  assert.ok(await page.locator('#modal [data-tab=evidence]').count() > 0, JSON.stringify({ errors: page.errors, modal: await page.locator('#modalBody').innerHTML(), view: await page.locator('html').getAttribute('data-view') }));
   assert.deepEqual(page.errors, []);
 });
 
