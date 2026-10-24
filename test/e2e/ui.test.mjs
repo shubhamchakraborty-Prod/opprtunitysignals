@@ -476,6 +476,7 @@ test('internal data quality allows read-only filtering without publishing or ver
 test('internal access matrix is read-only; administrator rights are not granted to researchers', async () => {
   const page = await newPage(browser);
   await page.goto(srv.url + '/?noguide&view=internal&tab=iaccess');
+  await page.waitForFunction(() => document.querySelector('#iaccess')?.textContent?.includes('authorised team role'));
   assert.match(await text(page,'#iaccess'),/authorised team role/);
   await signIn(page,'dev-researcher-token');
   await page.waitForSelector('#iaccess .iro-access-table');
