@@ -476,6 +476,7 @@ test('internal data quality allows read-only filtering without publishing or ver
 test('internal access matrix is read-only; administrator rights are not granted to researchers', async () => {
   const page = await newPage(browser);
   await page.goto(srv.url + '/?noguide&view=internal&tab=iaccess');
+  await page.waitForFunction(() => document.querySelector('#iaccess')?.textContent?.includes('authorised team role'));
   assert.match(await text(page,'#iaccess'),/authorised team role/);
   await signIn(page,'dev-researcher-token');
   await page.waitForSelector('#iaccess .iro-access-table');
@@ -502,7 +503,7 @@ test('future-state intelligence demo displays simulation and explainable confide
   assert.match(score,/Why the example is scored this way/);
   await page.click('#idemo [data-action=fd-select][data-id=DM-006] >> nth=0');
   assert.match(await text(page,'#idemo .fd-evidence-panel'),/Unconfirmed social-only claim/);
-  await page.click('#idemo [data-action=fd-persona][data-persona=institution]');
+  await page.click('#idemo .fd-evidence-panel [data-action=fd-persona][data-persona=institution]');
   assert.match(await text(page,'#idemo .fd-persona-result'),/Institution interpretation/);
   await page.click('#idemo [data-action=fd-sync]');
   assert.match(await text(page,'#idemo .fd-sync-status'),/Demo sync #1/);
@@ -529,4 +530,29 @@ test('future-state demo region, confidence and source filters remain separate fr
   assert.ok(await page.locator('#idemo .fd-marker').count()>3);
   assert.match(await text(page,'#idemo'),/This preview uses entirely synthetic/);
   assert.deepEqual(page.errors,[]);
+});
+
+test('simple briefing provides three next steps with evidence and useful feedback',async()=>{
+ const page=await newPage(browser);
+ await page.setViewportSize({width:390,height:844});
+ await page.goto(srv.url+'/?noguide&view=internal&tab=idemo');
+ await page.waitForSelector('#idemo .engage-brief');
+ assert.match(await text(page,'#idemo .engage-brief'),/What matters to you today/);
+ assert.equal(await page.locator('#idemo .engage-item').count(),3);
+ assert.match(await text(page,'#idemo .engage-brief'),/No endless scrolling/);
+ assert.match(await text(page,'#idemo .engage-counter'),/0 \/ 3/);
+ await page.click('#idemo .engage-item [data-action=fd-brief-save] >> nth=0');
+ assert.match(await text(page,'#idemo .engage-message'),/Saved for this visit/);
+ assert.equal(await page.locator('#idemo .engage-item [data-action=fd-brief-save][aria-pressed=true]').count(),1);
+ await page.click('#idemo .engage-item [data-action=fd-brief-open] >> nth=0');
+ assert.match(await text(page,'#idemo .engage-counter'),/1 \/ 3/);
+ assert.match(await text(page,'#idemo .fd-evidence-panel'),/Why the example is scored this way/);
+ await page.click('#idemo .engage-item [data-action=fd-brief-hide] >> nth=0');
+ assert.equal(await page.locator('#idemo .engage-item').count(),3,'next finite item fills visible slot');
+ assert.match(await text(page,'#idemo .engage-message'),/Hidden for this visit/);
+ await page.click('#idemo [data-action=fd-brief-restore]');
+ assert.equal(await page.locator('#idemo .engage-item').count(),3);
+ await page.click('#idemo .engage-roles [data-persona=industry]');
+ assert.match(await text(page,'#idemo .engage-item >> nth=0'),/Discover a possible training partner/);
+ assert.deepEqual(page.errors,[]);
 });
