@@ -74,8 +74,8 @@ export function instituteEmployerLeads(ads, asOf) {
     if (isValidConfirmed(r, asOf)) group.confirmed += Number(r.vacancy_count_verified) || 0;
     if ((r.captured_at || '') > group.lastSeen) group.lastSeen = r.captured_at;
   }
-  return [...byName.values()].map((g) => ({
-    id: g.sources[0].id, name: g.name, sources: g.sources, adCount: g.sources.length,
+  return [...byName.entries()].map(([key, g]) => ({
+    id: key, name: g.name, sources: g.sources, adCount: g.sources.length,
     sectors: [...g.sectors].sort(), confirmedOpenings: g.confirmed, lastSeen: g.lastSeen,
   })).sort((a, b) => b.confirmedOpenings - a.confirmedOpenings || b.adCount - a.adCount || a.name.localeCompare(b.name));
 }

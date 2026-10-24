@@ -342,6 +342,12 @@ test('institution outreach saves, updates and erases only local planning actions
   assert.equal(await page.locator('#ioutreach .inst-pipeline-item').count(), 1);
   const stored = await page.evaluate(() => JSON.parse(localStorage.getItem('opx-inst-outreach-v1')));
   assert.deepEqual(stored.map((x) => x.stage), ['saved']);
+  // Sector filters should not erase a saved lead from another sector.
+  await page.selectOption('#location', '62');
+  assert.equal(await page.locator('#ioutreach .inst-pipeline-item').count(), 1);
+  await page.selectOption('#location', '63');
+  assert.equal(await page.locator('#ioutreach .inst-pipeline-item').count(), 1);
+  await page.selectOption('#location', 'all');
   await page.selectOption('#ioutreach [data-inst-stage]', 'followup');
   assert.match(await text(page, '#ioutreach'), /Follow-up needed/);
   await page.reload();

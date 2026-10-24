@@ -106,7 +106,9 @@ export function renderInstitutionOutreach() {
   const ads = sample();
   const leads = instituteEmployerLeads(ads, app.data.asOf);
   const own = entries();
-  const valid = new Map(leads.map((lead) => [lead.id, lead]));
+  // Track every saved employer even while the user filters the source list by sector.
+  const allLeads = instituteEmployerLeads(comparisonBase(app.data.records, 'all'), app.data.asOf);
+  const valid = new Map(allLeads.map((lead) => [lead.id, lead]));
   const tracked = own.map((x) => ({ ...x, lead: valid.get(x.id) })).filter((x) => !!x.lead);
   const q = leadQuery.trim().toLowerCase();
   const show = leads.filter((l) => !q || l.name.toLowerCase().includes(q) || l.sources.some((s) => s.role.toLowerCase().includes(q))).slice(0, 18);
@@ -157,7 +159,7 @@ app.actions['inst-type-switch'] = (el) => {
 };
 app.actions['inst-programme'] = (el) => { focusProgramme = el.dataset.id; renderInstitutionDemand(); };
 app.actions['inst-lead-toggle'] = (el) => {
-  const valid = instituteEmployerLeads(sample(), app.data.asOf).some((lead) => lead.id === el.dataset.id);
+  const valid = instituteEmployerLeads(comparisonBase(app.data.records, 'all'), app.data.asOf).some((lead) => lead.id === el.dataset.id);
   if (!valid) return;
   const current = entries();
   const found = current.some((x) => x.id === el.dataset.id);

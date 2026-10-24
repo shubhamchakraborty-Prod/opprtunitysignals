@@ -22,6 +22,7 @@ test('employer leads are named and any verified opening comes from authorised ev
   const leads = instituteEmployerLeads(ads, seed.asOf);
   assert.ok(leads.length > 0);
   assert.ok(leads.every((l) => l.adCount === l.sources.length && l.sources.every((s) => s.url.startsWith('https://'))));
+  assert.ok(leads.every((l) => !!l.id && l.id === l.name.toLocaleLowerCase('en-IN')));
   assert.ok(leads.every((l) => l.confirmedOpenings >= 0));
   const noEmployer = { ...ads[0], employer_identity: '' };
   assert.deepEqual(instituteEmployerLeads([noEmployer], seed.asOf), []);
