@@ -92,7 +92,7 @@ export function renderInternalQuality() {
       <div class="iro-issues">${matches.length ? matches.slice(0,30).map((x)=>`<article class="iro-issue">
         <div><strong>${esc(x.role)}</strong><span class="note">${esc(x.employer)} · ${esc(x.sector ? 'Sector '+x.sector : 'Area not established')} · ${esc(x.id)}</span></div>
         <ul>${x.reasons.map((r)=>`<li>${esc(r)}</li>`).join('')}</ul>
-        <div class="iro-issue-link">${/^https:\\/\\//.test(x.sourceUrl) ? `<a href="${esc(x.sourceUrl)}" target="_blank" rel="noopener">Open public source ${icon('open_in_new')}</a>` : '<span class="note">No HTTPS source link available</span>'}</div></article>`).join('') : '<p class="empty">No records match this diagnostic in the current approved ad sample.</p>'}</div>
+        <div class="iro-issue-link">${String(x.sourceUrl || '').startsWith('https://') ? `<a href="${esc(x.sourceUrl)}" target="_blank" rel="noopener">Open public source ${icon('open_in_new')}</a>` : '<span class="note">No HTTPS source link available</span>'}</div></article>`).join('') : '<p class="empty">No records match this diagnostic in the current approved ad sample.</p>'}</div>
       <div class="iro-footer-actions">${acts([['review','Open authorised review queue','inbox'],['evidence','Published evidence register','source_notes']])}</div>
     </section>
     <p class="note">Showing ${Math.min(30,matches.length)} of ${matches.length} records with selected diagnostics. Results use the dataset as of ${esc(fmtDate(q.asOf))}; this screen never auto-rejects or auto-approves records.</p>`;
