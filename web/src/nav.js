@@ -11,7 +11,7 @@ export const VIEWS = [
   { id: 'institution', label: 'Institutions', icon: 'apartment', home: 'ihome', who: 'ITIs, polytechnics and colleges',
     tabs: [['ihome', 'Overview', 'home'], ['idemand', 'Demand & skills', 'bar_chart'], ['ioutreach', 'Employer outreach', 'handshake'], ['trades', 'Trades and programmes', 'construction'], ['discover', 'Jobs near you', 'map'], ['plan', 'Placement steps', 'checklist'], ['institutes', 'Institutes nearby', 'location_city'], ['market', 'Market', 'timeline'], ['compare', 'Compare 62 and 63', 'compare_arrows'], ['regions', 'Kalyani and Siliguri', 'travel_explore'], ['voice', "Workers' views", 'forum']] },
   { id: 'industry', label: 'Industry', icon: 'factory', home: 'talent', who: 'Employers hiring talent',
-    tabs: [['talent', 'Talent near you', 'groups'], ['hire', 'Hire for a role', 'work'], ['apprentice', 'Apprentices and interns', 'school'], ['market', 'Market and competition', 'timeline'], ['partner', 'Request candidates', 'handshake']] },
+    tabs: [['talent', 'Talent overview', 'groups'], ['isupply', 'Institution supply', 'location_city'], ['hire', 'Match role & skills', 'work'], ['partner', 'Partnership plans', 'handshake'], ['apprentice', 'Apprentices and interns', 'school'], ['market', 'Market and competition', 'timeline']] },
   { id: 'internal', label: 'Internal', icon: 'hub', home: 'signals', who: 'Swift AI Academy team',
     tabs: [['signals', 'Market signals', 'trending_up'], ['feeds', 'Government data', 'cell_tower'], ['discover', 'Job ads', 'map'], ['market', 'Market', 'timeline'], ['match', 'Match a learner', 'handshake'], ['evidence', 'Sources', 'source_notes'], ['review', 'Review queue', 'inbox'], ['verify', 'Record an employer call', 'call']] },
 ];
