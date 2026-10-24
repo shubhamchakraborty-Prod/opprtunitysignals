@@ -2,7 +2,7 @@
 import { app } from '../app.js';
 import { esc, $, $$, toast, errorBox, fmtDate } from '../ui.js';
 import { ROLE_LABELS } from '../../../src/core/rbac.js';
-import { renderNav } from '../nav.js';
+import { renderNav, mobileNavigation, viewOf } from '../nav.js';
 
 const ROLE_HINT = {
   observer: 'Look at jobs, maps and sources. Nothing to sign in.',
@@ -90,6 +90,25 @@ export function openGuide() {
   <div class="actions"><button class="btn primary" data-action="guide-go">Show me the jobs</button><button class="btn ghost" data-action="guide-skip">Skip</button></div>
   <p class="note">These are a small set of real ads from public websites, not every job in the area.</p>`);
 }
+
+/** Overflow pages remain reachable without crowding the mobile navigation bar. */
+export function openMobileMore() {
+  const { overflow } = mobileNavigation();
+  if (!overflow.length) return;
+  const v = viewOf(app.state.view);
+  openModal(`<div><div class="eyebrow">${esc(v.label)}</div><h2 id="modalTitle">More pages</h2><p>Choose another page in this interface.</p></div>
+    <div class="mobile-more-list">${overflow.map(([tab, label, ic]) => {
+      const active = app.state.tab === tab;
+      return `<button class="mobile-more-link ${active ? 'active' : ''}" type="button" data-action="mobile-more-tab" data-tab="${tab}" ${active ? 'aria-current="page"' : ''}>${icon(ic)}<span>${esc(label)}</span>${active ? '<strong>Current</strong>' : icon('arrow_forward')}</button>`;
+    }).join('')}</div>
+    <div class="actions"><button class="btn ghost" type="button" data-action="close-modal">Close</button></div>`);
+}
+
+app.actions['mobile-more'] = openMobileMore;
+app.actions['mobile-more-tab'] = (el) => {
+  closeModal();
+  app.actions.tab(el);
+};
 
 app.actions['close-modal'] = closeModal;
 app.actions['open-signin'] = openRoleDialog;

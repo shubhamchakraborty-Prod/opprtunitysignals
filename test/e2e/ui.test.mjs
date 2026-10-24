@@ -213,3 +213,42 @@ test('live demo mode is labelled, never changes real counts, and the guided demo
   assert.equal(await text(page, '#mCount'), '29', 'demo activity never touches real counts');
   assert.deepEqual(page.errors, []);
 });
+
+
+test('mobile navigation offers five destinations and keeps all institution pages reachable', async () => {
+  const page = await newPage(browser);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(srv.url + '/?noguide&view=institution&tab=ihome');
+  await page.waitForSelector('#mobileNav .mobile-tab');
+  assert.equal(await page.locator('#mobileNav .mobile-tab').count(), 5);
+  assert.ok(await page.locator('#subTabs').isHidden(), 'desktop secondary tabs are hidden on mobile');
+  await page.click('#mobileNav [data-action=mobile-more]');
+  assert.match(await text(page, '#modalTitle'), /More pages/);
+  await page.click('#modal [data-action=mobile-more-tab][data-tab=regions]');
+  assert.ok(await page.locator('#modal').isHidden());
+  assert.match(await text(page, '#regions'), /Kalyani|Siliguri/);
+  assert.equal(await page.getAttribute('#mobileNav [data-action=mobile-more]', 'aria-current'), 'page');
+
+  await page.click('.aud-tab[data-view=learners]');
+  assert.equal(await page.locator('#mobileNav .mobile-tab').count(), 5);
+  assert.equal(await page.locator('#mobileNav [data-action=mobile-more]').count(), 0);
+  await page.click('#mobileNav [data-tab=learn]');
+  assert.match(await text(page, '#learn'), /Your skill plan/);
+  await page.setViewportSize({ width: 1280, height: 800 });
+  assert.ok(await page.locator('#mobileNav').isHidden());
+  assert.ok(await page.locator('#subTabs .tab[data-tab=learn]').isVisible());
+  assert.deepEqual(page.errors, []);
+});
+
+test('mobile internal navigation never exposes restricted review and verification pages', async () => {
+  const page = await newPage(browser);
+  await page.setViewportSize({ width: 375, height: 812 });
+  await page.goto(srv.url + '/?noguide&view=internal&tab=signals');
+  await page.waitForSelector('#mobileNav .mobile-tab');
+  assert.equal(await page.locator('#mobileNav .mobile-tab').count(), 5);
+  await page.click('#mobileNav [data-action=mobile-more]');
+  assert.equal(await page.locator('#modal [data-tab=review]').count(), 0);
+  assert.equal(await page.locator('#modal [data-tab=verify]').count(), 0);
+  assert.ok(await page.locator('#modal [data-tab=evidence]').count() > 0);
+  assert.deepEqual(page.errors, []);
+});

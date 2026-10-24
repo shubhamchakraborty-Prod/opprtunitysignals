@@ -34,6 +34,14 @@ export function pageLabel(tab) {
 
 const visible = (tab) => (tab === 'review' ? app.can('read:review') : tab === 'verify' ? app.can('verify:submit') : true);
 
+/** At most five mobile destinations. Longer menus reserve one slot for More. */
+export function mobileNavigation(v = viewOf(app.state.view)) {
+  const tabs = v.tabs.filter(([tab]) => visible(tab));
+  return tabs.length > 5
+    ? { primary: tabs.slice(0, 4), overflow: tabs.slice(4) }
+    : { primary: tabs, overflow: [] };
+}
+
 export function renderNav() {
   const v = viewOf(app.state.view);
   const home = app.state.tab === 'home';
@@ -48,6 +56,15 @@ export function renderNav() {
       const extra = t === 'feeds' ? '<span class="nav-badge">Demo</span>' : t === 'review' ? '<span class="tab-count" id="reviewCount"></span>' : '';
       return `<button class="tab ${on ? 'active' : ''}" data-tab="${t}" ${on ? 'aria-current="page"' : ''}>${icon(ic + (on ? '-fill' : '')) || icon(ic)}<span class="tl">${esc(label)}</span>${extra}</button>`;
     }).join('');
+  const { primary, overflow } = mobileNavigation(v);
+  const activeInMore = overflow.some(([tab]) => tab === app.state.tab);
+  $('#mobileNav').innerHTML = home ? '' : [
+    ...primary.map(([tab, label, ic]) => {
+      const on = tab === app.state.tab;
+      return `<button class="mobile-tab ${on ? 'active' : ''}" type="button" data-action="tab" data-tab="${tab}" aria-label="${esc(label)}" ${on ? 'aria-current="page"' : ''}>${icon(ic + (on ? '-fill' : '')) || icon(ic)}<span>${esc(label)}</span></button>`;
+    }),
+    ...(overflow.length ? [`<button class="mobile-tab ${activeInMore ? 'active' : ''}" type="button" data-action="mobile-more" aria-haspopup="dialog" aria-label="More pages" ${activeInMore ? 'aria-current="page"' : ''}>${icon('menu')}<span>More</span></button>`] : []),
+  ].join('');
   document.documentElement.dataset.view = home ? 'home' : v.id;
   $('#searchBox').hidden = !SEARCHABLE.includes(app.state.tab);
 }
