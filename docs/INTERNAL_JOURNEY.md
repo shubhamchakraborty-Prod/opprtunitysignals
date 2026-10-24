@@ -13,7 +13,7 @@ This update builds new **read-only operational interfaces** on existing Opportun
 - Links directly to the existing review queue and evidence, data-quality and signals views. All writes stay in the audited review and verification screens.
 
 ### 2. Evidence quality (`iquality`)
-- Explicit denominator: *distinct, current, approved job advertisements*, using existing dedupe rules.
+- Explicit denominator: *deduplicated, approved, nonclosed job advertisements including records with unclear sector*, using existing dedupe rules. This is broader than the public Noida in-scope KPI.
 - Diagnostics for source URL, publication date, area precision, stated experience, stated education, advertised pay, recheck freshness and expired employer confirmation.
 - Filters and source-backed issue list support researcher investigation.
 - Missing pay, location or date is shown as missing, **not invented**. Incomplete records are not automatically rejected.

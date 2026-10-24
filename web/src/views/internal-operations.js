@@ -41,7 +41,7 @@ export async function renderInternalOperations() {
     ${notes()}
     <div class="iro-kpis">
       ${metric('Research records',q.allRecords,'Including pending and unpublished records')}
-      ${metric('Distinct current ads',q.distinctAds,'Deduplicated approved ads, not vacancies')}
+      ${metric('Deduplicated nonclosed ads',q.distinctAds,'Includes records with unclear locations; not vacancies')}
       ${metric('Verified openings',q.confirmedOpenings,'Independent current employer confirmation only')}
       ${metric('Pending review',queue.pendingReview,'Research records awaiting approval')}
     </div>
@@ -77,12 +77,12 @@ export function renderInternalQuality() {
     ${notes()}
     <div class="iro-kpis">
       ${metric('Approved records',q.approvedRecords,'Including older and non-ad evidence')}
-      ${metric('Current distinct ads',q.distinctAds,'Denominator for diagnostics below')}
+      ${metric('Deduplicated nonclosed ads',q.distinctAds,'Includes location-unclear approved advertisements')}
       ${metric('Mirrored listings',q.mirrorRecords,'Collapsed by existing deduplication rules')}
       ${metric('Published confirmed openings',q.confirmedOpenings,'Only currently valid approvals')}
     </div>
     <section class="card iro-quality">
-      <div class="card-head"><h3>Field coverage</h3><small>Distinct current approved ads, n=${q.denominator}</small></div>
+      <div class="card-head"><h3>Field coverage</h3><small>Deduplicated nonclosed approved ads (including unclear areas), n=${q.denominator}</small></div>
       <div class="iro-quality-grid">${q.metrics.map((x)=>`<button data-action="iro-quality-filter" data-filter="${x.key}" class="iro-quality-tile ${qualityFilter===x.key?'active':''}" aria-pressed="${qualityFilter===x.key}"><span>${esc(x.label)}</span><strong>${x.count}<small> / ${q.denominator}</small></strong>
         <span class="iro-quality-meter" aria-hidden="true"><i style="width:${q.denominator?Math.round(x.count/q.denominator*100):0}%"></i></span></button>`).join('')}</div>
       <p class="note iro-footnote">Missing fields are not necessarily inaccurate: for example, an employer may not publish pay. A missing item must not be imputed from another source.</p>

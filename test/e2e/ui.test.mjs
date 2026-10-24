@@ -449,6 +449,7 @@ test('internal research operations refuse public access and provide actionable a
   assert.match(await text(page, '#iops'), /Second-person approval/);
   assert.ok(await page.locator('#iops .iro-queue-row').count()>3);
   await page.click('#iops .iro-queue-row >> nth=0');
+  await page.waitForSelector('#review .section-head');
   assert.match(await text(page, '#review'), /Review queue/);
   assert.deepEqual(page.errors,[]);
 });
@@ -462,7 +463,7 @@ test('internal data quality allows read-only filtering without publishing or ver
   await signIn(page,'dev-researcher-token');
   await page.waitForSelector('#iquality .iro-quality-tile');
   assert.equal(await page.locator('#mobileNav .mobile-tab').count(),5);
-  assert.match(await text(page,'#iquality'),/Distinct current ads/);
+  assert.match(await text(page,'#iquality'),/Deduplicated nonclosed ads/);
   assert.match(await text(page,'#iquality'),/diagnostics only/);
   await page.selectOption('#iroQualityFilter','pay');
   assert.match(await text(page,'#iquality'),/Advertised pay/);
