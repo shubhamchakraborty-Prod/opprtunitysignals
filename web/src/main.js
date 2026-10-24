@@ -26,6 +26,7 @@ import './views/learner-home.js';
 import './views/institution-home.js';
 import './views/institution-intelligence.js';
 import './views/talent.js';
+import './views/industry-workflows.js';
 import { openRoleDialog, openHelp, closeModal } from './views/chrome.js';
 import { initLive } from './live.js';
 import { startTour } from './tour.js';
@@ -73,7 +74,7 @@ app.actions.view = (el) => {
 };
 
 
-const AREA_PAGES = ['market', 'institutes', 'path', 'home', 'regions', 'lhome', 'ihome', 'idemand', 'ioutreach', 'talent', 'hire', 'apprentice', 'partner'];
+const AREA_PAGES = ['market', 'institutes', 'path', 'home', 'regions', 'lhome', 'ihome', 'idemand', 'ioutreach', 'talent', 'isupply', 'hire', 'apprentice', 'partner'];
 function onLocation(v) {
   app.state.place = v;
   if (REGIONS.includes(v)) {
@@ -164,7 +165,7 @@ async function start() {
   app.renderAll();
   initMap();
   const params = new URLSearchParams(location.search);
-  const want = params.get('tab') || location.hash.slice(1);
+  const want = location.hash.slice(1) || params.get('tab');
   const wantView = params.get('view');
   if (wantView && VIEWS.some((v) => v.id === wantView)) app.state.view = wantView;
   app.actions.tab({ dataset: { tab: ALL_TABS.includes(want) ? want : 'home' } });

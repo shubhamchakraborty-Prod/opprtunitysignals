@@ -998,3 +998,56 @@ button.inst-chart-row:hover,button.inst-chart-row.active{background:var(--primar
 .inst-quicklink:hover{background:var(--surface-1)}
 @media(max-width:1000px){.inst-panels,.inst-outreach-grid{grid-template-columns:1fr}.inst-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.inst-head-art{display:none}.inst-head p{font-size:14px}.inst-metrics,.inst-quicklinks,.inst-detail-grid{grid-template-columns:1fr}.inst-metric{padding:14px}.inst-metric>strong{font-size:24px}.inst-chart{padding:2px 10px 10px}.inst-chart-row{grid-template-columns:minmax(100px,1fr) minmax(54px,.75fr) 28px;gap:7px}.inst-chart-note{padding:0 14px 15px}.inst-detail-stats span{max-width:none}.inst-select-label,.inst-select-label select{width:100%}.inst-lead{padding:15px}.inst-lead-search{padding:0 14px 14px}.inst-lead-actions .btn{flex:1}}
+
+/* Industry: responsive supply intelligence and local-only partnership planner. */
+.ind-evidence{border:1px solid var(--line-2);border-radius:14px;background:var(--surface-1);padding:17px 20px;font-size:13px;display:grid;gap:8px}
+.ind-evidence strong{display:flex;gap:8px;align-items:center}
+.ind-evidence p{color:var(--ink-2);line-height:1.5}
+.ind-supply-grid{display:grid;grid-template-columns:minmax(240px,.72fr) minmax(0,1.45fr);gap:16px;align-items:start}
+.ind-pool-list{display:grid;gap:7px;padding:4px 18px 14px}
+.ind-pool{display:flex;align-items:center;justify-content:space-between;min-height:47px;gap:12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:8px 14px;color:var(--ink);text-align:left;cursor:pointer;font:inherit;font-size:13px}
+.ind-pool strong{font-variant-numeric:tabular-nums;font-weight:700}
+.ind-pool:hover,.ind-pool.active{background:var(--primary-container);border-color:transparent}
+.ind-pool:focus-visible,.ind-institute .linkbtn:focus-visible,.ind-plan button:focus-visible{outline:3px solid var(--primary);outline-offset:2px}
+.ind-note{margin:0;padding:8px 18px 18px;line-height:1.5}
+.ind-query{display:grid;gap:8px;padding:0 18px 14px;font-size:12px;font-weight:600}
+.ind-query input{min-height:44px;width:100%;border:1px solid var(--line-2);border-radius:10px;padding:9px 12px;color:var(--ink);background:var(--surface);font:inherit;font-size:14px}
+.ind-supply-list{max-height:750px;overflow:auto}
+.ind-institute{display:grid;gap:8px;border-top:1px solid var(--line);padding:16px 18px}
+.ind-institute h4{font-size:15px;font-weight:650}
+.ind-institute>p:not(.note){font-size:13px;color:var(--ink-2)}
+.ind-institute-title,.ind-institute-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.ind-institute-foot{font-size:12.5px}
+.ind-institute-foot .ico{width:15px;height:15px}
+.ind-overview-next{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.ind-partner-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:16px;align-items:start}
+.ind-partner-grid .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.ind-partner-grid label:not(.check){display:grid;gap:7px;font-size:12.5px;font-weight:600}
+.ind-partner-grid .form-grid input,.ind-partner-grid .form-grid select,.ind-plan select{max-width:100%;width:100%;min-height:43px;border:1px solid var(--line-2);border-radius:10px;padding:9px 10px;color:var(--ink);background:var(--surface);font:inherit;font-size:13px}
+.ind-partner-grid .form-grid .full{grid-column:1/-1}
+.ind-partner-grid .form-grid label p{font-size:12px;color:var(--ink-2);font-weight:400}
+.ind-match-note{border-radius:12px;background:var(--surface-1);padding:13px;display:grid;gap:7px;font-size:13px;line-height:1.5}
+.ind-match-note p{color:var(--ink-2)}
+.ind-saved-plan{overflow:hidden}
+.ind-plan-list{display:grid;gap:0}
+.ind-plan{border-top:1px solid var(--line);padding:17px 20px;display:grid;gap:9px;font-size:13px}
+.ind-plan-top{display:flex;align-items:start;justify-content:space-between;gap:12px}
+.ind-plan h4{font-size:14px;font-weight:650}
+.ind-plan label{font-size:12px;font-weight:600;max-width:320px}
+.ind-plan .note{font-size:12px}
+.ind-plan-clear{padding:14px 20px}
+.ind-evidence-sources .card-body{display:grid;gap:12px}
+.ind-evidence-sources .inst-source-list{max-width:900px}
+@media(max-width:1000px){.ind-supply-grid,.ind-partner-grid{grid-template-columns:1fr}}
+@media(max-width:760px){
+.ind-evidence{padding:14px}
+.ind-partner-grid .form-grid{grid-template-columns:1fr}
+.ind-pool-list{padding:0 12px 12px}
+.ind-institute{padding:14px}
+.ind-institute-foot{align-items:flex-start}
+.ind-institute-foot .linkbtn{width:100%;text-align:left}
+.ind-supply-list{max-height:none}
+.ind-overview-next .btn{width:100%}
+.ind-plan{padding:14px}
+.ind-plan-top{flex-wrap:wrap}
+}

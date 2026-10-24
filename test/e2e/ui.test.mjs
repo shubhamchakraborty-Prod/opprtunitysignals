@@ -151,7 +151,7 @@ test('four separate interfaces: learners, institutions, industry (talent, not jo
   await page.click('#subTabs .tab[data-tab=path]');
   assert.match(await text(page, '#path'), /National Apprenticeship Training Scheme|NATS/);
   await go(page, 'industry');
-  assert.match(await text(page, '#talent'), /Hire trained people near your site/);
+  assert.match(await text(page, '#talent'), /Explore local training institutions/);
   assert.equal(await page.$$eval('#subTabs .tab[data-tab=discover]', (x) => x.length), 0, 'no job-ads page in the industry interface');
   await page.click('#talent [data-action=hire-role][data-role=support]');
   assert.match(await text(page, '#hire'), /ITI trades[\s\S]*Diplomas[\s\S]*Degrees/);
@@ -372,5 +372,65 @@ test('mobile institution navigation exposes priority screens and region evidence
   assert.match(await text(page, '#idemand'), /not evidence about your selected region/);
   await page.click('#mobileNav [data-tab=ioutreach]');
   assert.match(await text(page, '#ioutreach'), /Noida figures below are a method demonstration/);
+  assert.deepEqual(page.errors, []);
+});
+
+test('industry institution supply explorer exposes research counts and regional caveats', async () => {
+  const page = await newPage(browser);
+  await page.setViewportSize({ width: 1366, height: 900 });
+  await page.goto(srv.url + '/?noguide&view=industry&tab=isupply');
+  await page.waitForSelector('#industryInstituteQuery');
+  assert.match(await text(page, '#isupply'), /Where are relevant courses taught/);
+  assert.match(await text(page, '#isupply'), /not a count of available candidates/i);
+  assert.ok(await page.locator('#isupply .ind-institute').count() > 0);
+  await page.click('#isupply [data-action=ind-pool][data-pool=electronics]');
+  assert.match(await text(page, '#isupply'), /Institutes may appear in several groups/);
+  await page.selectOption('#location', 'kalyani');
+  assert.match(await text(page, '#isupply'), /Noida job advertisements and pay data cannot be projected/);
+  assert.deepEqual(page.errors, []);
+});
+
+test('industry role screen separates indicative qualification coverage from local job ads', async () => {
+  const page = await newPage(browser);
+  await page.goto(srv.url + '/?noguide&view=industry&tab=hire');
+  assert.match(await text(page, '#hire'), /Catalogue-based qualification comparisons/);
+  assert.match(await text(page, '#hire'), /Public advertisements behind this comparison/);
+  assert.ok(await page.locator('#hire .ind-evidence-sources a[href^="https://"]').count() > 0);
+  await page.selectOption('#location','siliguri');
+  assert.match(await text(page, '#hire'), /Comparable regional data unavailable/);
+  assert.match(await text(page, '#hire'), /No comparable local advertised-pay evidence available/);
+  assert.deepEqual(page.errors, []);
+});
+
+test('industry local partnership workflow saves and erases a proposal on mobile', async () => {
+  const page = await newPage(browser);
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(srv.url + '/?noguide&view=industry&tab=isupply');
+  await page.waitForSelector('#industryInstituteQuery');
+  assert.equal(await page.locator('#mobileNav .mobile-tab').count(), 5);
+  await page.click('#isupply .ind-institute [data-action=ind-plan-institute] >> nth=0');
+  assert.equal(await page.locator('#partner').isVisible(), true);
+  assert.match(await text(page, '#partner'), /Demo planning mode/);
+  const chosen = await page.inputValue('#hrInstitute');
+  assert.ok(chosen);
+  await page.selectOption('#hrPurpose','apprenticeship');
+  await page.fill('#hrN','12');
+  await page.fill('#hrWhen','2026-12');
+  await page.click('#industryPartnerForm button[type=submit]');
+  assert.equal(await page.locator('#partner .ind-plan').count(),1);
+  const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('opx-industry-partnerships-v1')));
+  assert.equal(saved[0].institute,chosen);
+  assert.equal(saved[0].purpose,'apprenticeship');
+  assert.equal(saved[0].n,12);
+  assert.equal(saved[0].stage,'saved');
+  assert.match(await text(page, '#partner'), /No institution has been contacted through this platform/);
+  await page.selectOption('#partner [data-ind-partner-stage]','contact_planned');
+  const updated = await page.evaluate(() => JSON.parse(localStorage.getItem('opx-industry-partnerships-v1')));
+  assert.equal(updated[0].stage,'contact_planned');
+  await page.reload();
+  await page.waitForSelector('#industryPartnerForm');
+  assert.equal(await page.locator('#partner .ind-plan').count(),1);
+  await page.click('#partner [data-action=hire-clear]');
+  assert.equal(await page.evaluate(() => localStorage.getItem('opx-industry-partnerships-v1')),null);
   assert.deepEqual(page.errors, []);
 });
