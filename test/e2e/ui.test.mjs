@@ -163,8 +163,10 @@ test('four separate interfaces: learners, institutions, industry (talent, not jo
   await page.click('[data-action=inst-home-type][data-type=polytechnic]');
   assert.match(await text(page, '#ihome'), /Demand for your programmes/);
   await go(page, 'internal');
-  assert.match(await text(page, '#signals'), /Team sign-in needed/, 'internal interface is gated on the live server');
+  assert.match(await text(page, '#iops'), /authorised team role|Research operations/i, 'internal overview is gated on the live server');
   await signIn(page, 'dev-researcher-token');
+  await page.waitForSelector('#iops .iro-kpis');
+  await page.click('#subTabs .tab[data-tab=signals]');
   assert.match(await text(page, '#signals'), /What should we build next\?/);
   assert.match(await text(page, '#signals'), /Demand by learner type[\s\S]*Partner leads/);
   assert.match(await text(page, '.matrix'), /NSQF \(NQR\)[\s\S]*NPTEL/);
@@ -433,4 +435,54 @@ test('industry local partnership workflow saves and erases a proposal on mobile'
   await page.click('#partner [data-action=hire-clear]');
   assert.equal(await page.evaluate(() => localStorage.getItem('opx-industry-partnerships-v1')),null);
   assert.deepEqual(page.errors, []);
+});
+
+test('internal research operations refuse public access and provide actionable authorised queues', async () => {
+  const page = await newPage(browser);
+  await page.goto(srv.url + '/?noguide&view=internal&tab=iops');
+  await page.waitForSelector('#iops');
+  assert.match(await text(page, '#iops'), /require an authorised team role/);
+  assert.equal(await page.locator('#iops .iro-kpis').count(),0);
+  await signIn(page,'dev-researcher-token');
+  await page.waitForSelector('#iops .iro-queue');
+  assert.match(await text(page, '#iops'), /Deduplicated nonclosed ads/);
+  assert.match(await text(page, '#iops'), /Second-person approval/);
+  assert.ok(await page.locator('#iops .iro-queue-row').count()>3);
+  await page.click('#iops .iro-queue-row >> nth=0');
+  await page.waitForSelector('#review .section-head');
+  assert.match(await text(page, '#review'), /Review queue/);
+  assert.deepEqual(page.errors,[]);
+});
+
+test('internal data quality allows read-only filtering without publishing or verifying ads', async () => {
+  const page = await newPage(browser);
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(srv.url + '/?noguide&view=internal&tab=iquality');
+  assert.match(await text(page,'#iquality'),/authorised team role/);
+  assert.equal(await page.locator('#iquality .iro-quality-tile').count(),0);
+  await signIn(page,'dev-researcher-token');
+  await page.waitForSelector('#iquality .iro-quality-tile');
+  assert.equal(await page.locator('#mobileNav .mobile-tab').count(),5);
+  assert.match(await text(page,'#iquality'),/Deduplicated nonclosed ads/);
+  assert.match(await text(page,'#iquality'),/diagnostics only/);
+  await page.selectOption('#iroQualityFilter','pay');
+  assert.match(await text(page,'#iquality'),/Advertised pay/);
+  assert.ok(await page.locator('#iquality .iro-issue').count()>0);
+  await page.click('#iquality [data-action=iro-quality-filter][data-filter=stale]');
+  assert.equal(await page.inputValue('#iroQualityFilter'),'stale');
+  assert.deepEqual(page.errors,[]);
+});
+
+test('internal access matrix is read-only; administrator rights are not granted to researchers', async () => {
+  const page = await newPage(browser);
+  await page.goto(srv.url + '/?noguide&view=internal&tab=iaccess');
+  assert.match(await text(page,'#iaccess'),/authorised team role/);
+  await signIn(page,'dev-researcher-token');
+  await page.waitForSelector('#iaccess .iro-access-table');
+  assert.match(await text(page,'#iaccess'),/Current role: Researcher/);
+  assert.match(await text(page,'#iaccess'),/Approving employer verification|Approve employer verification/);
+  assert.match(await text(page,'#iaccess'),/does not grant roles or change access settings/);
+  await page.click('#iaccess [data-tab=verify]');
+  assert.match(await text(page,'#verify'),/not permitted|team member|for the team/i);
+  assert.deepEqual(page.errors,[]);
 });
