@@ -142,6 +142,23 @@ export function initMap() {
   });
 }
 
+/** Demo ripple in a sector: on the street map if loaded, else on the sketch. */
+export function pulseSector(sector) {
+  const geo = app.data?.geometry?.sectors?.[sector];
+  const j = () => (Math.random() - 0.5) * 0.004;
+  if (street && geo) return street.pulse(geo.centre[0] + j(), geo.centre[1] + j(), 'p' + sector);
+  const svg = document.querySelector('#fallback svg');
+  const c = SCHEMATIC_CENTRES[sector];
+  if (!svg || !c) return;
+  const ns = 'http://www.w3.org/2000/svg';
+  const g = document.createElementNS(ns, 'g');
+  g.setAttribute('class', 'ripple r' + sector);
+  const x = c[0] + (Math.random() - 0.5) * 90, y = c[1] + (Math.random() - 0.5) * 70;
+  g.innerHTML = `<circle cx="${x}" cy="${y}" r="6"/><circle class="ring" cx="${x}" cy="${y}" r="6"/>`;
+  svg.appendChild(g);
+  setTimeout(() => g.remove(), 2600);
+}
+
 /** Highlight the pin that holds a record (list hover maps to the map). */
 export function highlightRecord(id) {
   const g = id ? currentGroups().find((x) => x.records.some((r) => r.source_id === id)) : null;

@@ -100,6 +100,13 @@ export async function createStreetMap(container, opts) {
         return new maplibregl.Marker({ element: el }).setLngLat([p.lon, p.lat]).addTo(map);
       });
     },
+    /** A short ripple at a point, for demo activity. */
+    pulse(lat, lon, cls = '') {
+      const el = document.createElement('div');
+      el.className = 'pulse ' + cls;
+      const mk = new maplibregl.Marker({ element: el }).setLngLat([lon, lat]).addTo(map);
+      setTimeout(() => mk.remove(), 2600);
+    },
     resize: () => map.resize(),
     flyTo: (c, z) => map.jumpTo({ center: [c[1], c[0]], zoom: z }),
   };

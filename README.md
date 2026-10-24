@@ -66,6 +66,8 @@ Four views, chosen from the home page or the switcher at the top of the navigati
 | Industry, Internal | Sources | Every ad linked, freshness, confidence, CSV export | `15-sources.png` |
 | Internal (team) | Review queue, Record an employer call | Uploads, calls, repeats, approvals, change log | `16-review-queue.png`, `17-record-employer-call.png` |
 
+**Live demo mode.** The offline copy, the claude.ai page and Netlify start with simulated live activity: new ads ripple onto the map, notifications arrive, and a "Happening now" feed and counters move on the home page. Every item is labelled Demo, names no real employer, institute or learner, and never changes a real count. Toggle it with the "Live demo" pill in the top bar; it is off by default on the live server. **Watch the demo** on the home page plays a 70-second guided tour with captions (`?tour=1` starts it automatically). Recorded walkthrough: `docs/demo/opportunity-explorer-demo.mp4`.
+
 Internal pages need a team sign-in on the live server; the offline copy shows them for the demo. Screenshots show the zoomable sketch because street tiles were blocked in the capture environment.
 
 ## Architecture

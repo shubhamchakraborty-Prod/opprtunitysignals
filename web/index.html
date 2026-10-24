@@ -23,6 +23,7 @@
     <div class="searchbar" role="search"><!--ICON:search--><label for="query" class="screenreader">Search job ads</label><input id="query" type="search" placeholder="Search jobs, employers or skills" autocomplete="off"/></div>
   </div>
   <div class="appbar-right">
+    <button class="pill live-pill" id="livePill" type="button" aria-pressed="false" title="Simulated live activity for the demo. Click to pause or resume."><span class="live-dot"></span>Live demo</button>
     <span class="pill" id="modePill"><span class="dot"></span>Research pilot</span>
     <span class="pill subtle" id="scanDate">Data checked 16 Oct 2026</span>
     <button class="icon-btn" id="helpBtn" type="button" aria-haspopup="dialog" aria-label="How to read this page" title="How to read this page"><!--ICON:help--></button>
@@ -75,12 +76,13 @@
       <button class="btn outlined small" id="exportBtn"><!--ICON:download-->Download this list (CSV)</button>
     </div>
     <div class="active-filters" id="activeFilters" aria-live="polite"></div>
+    <div class="live-new" id="liveNewAds"></div>
     <div class="suits-note hide" id="suitsNote"></div>
   </div>
 
   <div class="explore">
     <div class="card map-card">
-      <div class="card-head"><h2>Where the jobs are</h2><small>Scroll or use + and − to zoom · drag to move · tap a dot</small></div>
+      <div class="card-head"><h2>Where the jobs are</h2><small><span class="live-upd" id="liveUpdated"></span> · Scroll or use + and − to zoom · tap a dot</small></div>
       <div class="mapwrap"><div class="fallback" id="fallback"><svg viewBox="0 0 700 380" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Simplified sketch of Noida Sectors 62 and 63, not geographically exact, with clickable job dots"><rect class="sch-bg" width="700" height="380"/><path class="sch-road" d="M-10 60L720 175M-20 260L720 310" stroke-width="34" fill="none"/><path class="sch-road" d="M330 -10L435 390M60 -10L148 390M560 -10L630 390" stroke-width="25" fill="none"/><path class="sch-dash" d="M-10 62L720 176M-20 260L720 310M330 -10L435 390M60 -10L148 390M560 -10L630 390" stroke-width="2" stroke-dasharray="5 5" fill="none"/><path class="sch-62" d="M162 94L312 117L343 287L188 273Z" stroke-width="2"/><path class="sch-63" d="M393 135L546 149L564 296L434 297Z" stroke-width="2"/><text class="sch-t62" x="190" y="140" font-size="17" font-weight="600">SECTOR 62</text><text class="sch-t63" x="428" y="172" font-size="17" font-weight="600">SECTOR 63</text><g id="svgPins"></g></svg><div class="fallback-banner" id="fallbackBanner"><strong>Simplified sketch, not geographically exact.</strong> <span id="fallbackReason">The street map has not loaded.</span></div></div><div id="leafletMap" class="map" aria-label="Street map of Noida Sector 62 and Sector 63"></div><div class="map-label" id="mapLabel">Dots show the sector, not the exact office.</div></div>
       <div class="map-foot">
         <div class="legend"><span><i style="background:var(--s62)"></i>Sector 62</span><span><i style="background:var(--s63)"></i>Sector 63</span><span><i style="background:var(--old)"></i>Old ad</span><span><i class="sq" style="background:var(--ink)"></i>Exact address checked</span><span><i style="background:var(--warn)"></i>Number = several jobs at one employer</span></div>
@@ -114,6 +116,7 @@
 <aside class="drawer" id="detailPanel" aria-label="Job details" aria-hidden="true"></aside>
 <div class="modal-backdrop hide" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal" id="modalBody"></div></div>
 <div class="toast hide" id="toast" role="status" aria-live="polite"></div>
+<div class="live-toasts" id="liveToasts" aria-live="off"></div>
 <script id="seed" type="application/json"><!--SEED--></script>
 <!--SCRIPT-->
 </body>

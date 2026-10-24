@@ -23,6 +23,8 @@ import './views/institutes.js';
 import './views/market.js';
 import './views/signals.js';
 import { openRoleDialog, openHelp, closeModal } from './views/chrome.js';
+import { initLive } from './live.js';
+import { startTour } from './tour.js';
 
 app.views.discover = renderExplore;
 app.views.syncFilters = syncFilterControls;
@@ -160,6 +162,8 @@ async function start() {
   const wantView = params.get('view');
   if (wantView && VIEWS.some((v) => v.id === wantView)) app.state.view = wantView;
   app.actions.tab({ dataset: { tab: ALL_TABS.includes(want) ? want : 'home' } });
+  initLive();
+  if (params.has('tour')) setTimeout(startTour, 600);
 }
 
 start();

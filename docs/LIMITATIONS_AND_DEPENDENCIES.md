@@ -31,6 +31,7 @@
 | Item | Note |
 |---|---|
 | Government data live panel | Every number, event and connection status in the top panel is generated in the browser from a fixed seed, to show how live feeds would look. The real source status is shown below it. |
+| Live demo mode (top-bar pill, notifications, map ripples, “Happening now”) | Random activity generated in the browser, labelled Demo. Generic roles and learner types only; no real employer, institute or person is named. Real counts are never changed. Off by default on the live server. |
 
 ## Inferred (labelled as inference in the app)
 

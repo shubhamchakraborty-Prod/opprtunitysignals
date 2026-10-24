@@ -178,3 +178,23 @@ test('offline single-file build works from disk without a server', async () => {
   assert.equal(await text(page, '#mCount'), '29');
   assert.deepEqual(page.errors, []);
 });
+
+test('live demo mode is labelled, never changes real counts, and the guided demo can be stopped', async () => {
+  const page = await newPage(browser);
+  await page.goto(pathToFileURL(join(ROOT, 'dist/explorer-offline.html')).href + '?noguide');
+  await page.waitForSelector('#homeLive .hl-feed li');
+  assert.match(await text(page, '#livePill'), /Live demo/);
+  assert.match(await text(page, '.home-live'), /Demo activity[\s\S]*never changes the real counts/);
+  await page.waitForSelector('.live-toast', { timeout: 15000 });
+  assert.match(await text(page, '.live-toast'), /Demo/);
+  await page.click('#livePill');
+  assert.match(await text(page, '#livePill'), /Demo paused/);
+  await page.click('[data-action=tour]');
+  await page.waitForSelector('#tourBar');
+  assert.match(await text(page, '#tourBar'), /Demo · 1 of 9/);
+  await page.click('#tourExit');
+  assert.equal(await page.$('#tourBar'), null);
+  await page.click('.vbtn[data-view=industry]');
+  assert.equal(await text(page, '#mCount'), '29', 'demo activity never touches real counts');
+  assert.deepEqual(page.errors, []);
+});

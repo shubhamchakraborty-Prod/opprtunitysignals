@@ -2,6 +2,7 @@
 import { app } from '../app.js';
 import { esc, $, artBox, icon, fmtDate } from '../ui.js';
 import { VIEWS, PAGES } from '../nav.js';
+import { renderLive } from '../live.js';
 
 const DOORS = {
   learners: { title: 'I am a learner', text: 'College, ITI or polytechnic. See jobs you can apply for, where to apply, and the skills that open more doors.', tasks: ['Where to apply', 'Close my skill gaps', 'Jobs map'] },
@@ -23,7 +24,7 @@ export function renderHome() {
       <div class="eyebrow">Noida · Kalyani · Siliguri</div>
       <h1>Skills that lead to real jobs, mapped for your area</h1>
       <p class="lead">We track job ads, investments and government data around each area, check them with employers, and turn them into a plan: which jobs learners can apply for, which skills they still need, and where to learn them.</p>
-      <div class="actions"><button class="btn primary" data-action="view" data-view="learners">${icon('school')}I am a learner</button><button class="btn tonal" data-action="tab" data-tab="discover">${icon('map')}See the jobs map</button></div>
+      <div class="actions"><button class="btn primary" data-action="tour">${icon('play_arrow')}Watch the demo</button><button class="btn tonal" data-action="view" data-view="learners">${icon('school')}I am a learner</button><button class="btn outlined" data-action="tab" data-tab="discover">${icon('map')}See the jobs map</button></div>
     </div>
     ${artBox('home')}
   </section>
@@ -38,6 +39,12 @@ export function renderHome() {
     <div><span class="big">${ann.length + (app.data.market?.future?.length || 0)}</span><span>announced projects that could create work</span></div>
     <div><span class="big">${saa?.courses?.length || 0}</span><span>Swift AI Academy courses mapped to local skills</span></div>
     <div><span class="big">${scan?.offerings?.length || 0}</span><span>courses from other providers checked</span></div>
+  </section>
+
+  <section class="home-live" aria-labelledby="liveTitle">
+    <div class="card-head" style="padding:0"><h2 id="liveTitle"><span class="live-dot"></span>Happening now</h2><span class="demo-tag">Demo activity</span></div>
+    <div id="homeLive"></div>
+    <p class="note">Simulated activity that shows how the live service will look. It never changes the real counts above, and names no real employer, institute or learner.</p>
   </section>
 
   <section class="how" aria-labelledby="howTitle">
@@ -56,6 +63,7 @@ export function renderHome() {
   </section>
 
   <section class="trust-strip" aria-label="Where the data comes from"><span class="note">Data from</span>${['Job portals and company career pages', 'MoSPI and data.gov.in', 'National Career Service', 'NSQF (NQR)', 'NPTEL and SWAYAM', 'nasscom', 'WBIIDC and YEIDA', 'OpenStreetMap'].map((s) => `<span class="src-chip">${esc(s)}</span>`).join('')}</section>`;
+  renderLive();
 }
 
 app.views.home = renderHome;
