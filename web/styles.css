@@ -1051,3 +1051,53 @@ button.inst-chart-row:hover,button.inst-chart-row.active{background:var(--primar
 .ind-plan{padding:14px}
 .ind-plan-top{flex-wrap:wrap}
 }
+
+/* Read-only research operations, evidence diagnostics and permission matrix. */
+.iro-head .ph-art{max-width:185px}
+.iro-note{display:grid;gap:9px;border:1px solid var(--line-2);border-radius:14px;background:var(--surface-1);padding:15px 18px;font-size:13px}
+.iro-note strong{display:flex;align-items:center;gap:9px}
+.iro-note p{color:var(--ink-2);line-height:1.6}
+.iro-kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.iro-kpi{display:grid;gap:7px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;min-width:0}
+.iro-kpi span{font-size:12px;color:var(--ink-2)}
+.iro-kpi strong{font-size:clamp(20px,2.5vw,31px);font-weight:650;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.iro-kpi small{font-size:11.5px;color:var(--muted);line-height:1.45}
+.iro-main-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:16px;align-items:start}
+.iro-queue{display:grid}
+.iro-queue-row{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:transparent;color:var(--ink);padding:15px 19px;border:0;border-top:1px solid var(--line);cursor:pointer;font:inherit}
+.iro-queue-row:hover,.iro-queue-row:focus-visible{background:var(--surface-1)}
+.iro-queue-row>span{flex:1;display:grid;gap:5px}
+.iro-queue-row strong{font-weight:650;font-size:14px}
+.iro-queue-row small{font-size:12px;color:var(--ink-2)}
+.iro-queue-row b{font-size:19px;min-width:28px;text-align:right;font-variant-numeric:tabular-nums}
+.iro-queue-row .ico{width:20px;height:20px;color:var(--primary)}
+.iro-steps{display:grid;gap:16px;padding:17px 20px;list-style:none;margin:0}
+.iro-steps li{display:flex;gap:11px}
+.iro-steps li>span{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;background:var(--primary-container);color:var(--primary);font-size:12px;font-weight:750;flex:none}
+.iro-steps strong{font-size:13.5px}
+.iro-steps p{font-size:12.5px;color:var(--ink-2);margin-top:5px;line-height:1.5}
+.iro-actions{display:flex;flex-wrap:wrap;gap:9px;padding:12px 19px}
+.iro-quality-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;padding:2px 17px 15px}
+.iro-quality-tile{display:grid;gap:11px;text-align:left;min-height:134px;background:var(--surface-1);border:1px solid var(--line-2);border-radius:12px;padding:14px;cursor:pointer;color:var(--ink);font:inherit}
+.iro-quality-tile:hover,.iro-quality-tile.active{border-color:var(--primary);background:var(--primary-container)}
+.iro-quality-tile span:first-child{font-size:12px;color:var(--ink-2)}
+.iro-quality-tile strong{font-size:23px;font-variant-numeric:tabular-nums}
+.iro-quality-tile strong small{font-size:12px;font-weight:400;color:var(--muted)}
+.iro-quality-meter{height:7px;border-radius:8px;background:var(--surface-2);overflow:hidden}
+.iro-quality-meter i{display:block;height:100%;border-radius:8px;background:var(--primary)}
+.iro-footnote{padding:0 17px 16px;line-height:1.5}
+.iro-filter-label{font-size:12px;font-weight:600;display:grid;gap:7px}
+.iro-filter-label select{max-width:100%;border:1px solid var(--line-2);border-radius:10px;background:var(--surface);color:var(--ink);padding:8px 12px;min-height:40px;font:inherit}
+.iro-issues{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:4px 18px 17px}
+.iro-issue{min-width:0;display:grid;gap:9px;border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--surface-1)}
+.iro-issue>div:first-child{display:grid;gap:4px}
+.iro-issue strong{font-size:14px}
+.iro-issue .note{line-height:1.5}
+.iro-issue ul{list-style:disc;margin:0;padding-left:20px;font-size:12px;color:var(--ink-2);line-height:1.6}
+.iro-issue-link{font-size:12px}
+.iro-issue-link .ico{width:14px;height:14px}
+.iro-footer-actions{border-top:1px solid var(--line)}
+.iro-access-table th,.iro-access-table td{min-width:120px}
+.iro-access-table th:first-child,.iro-access-table td:first-child{min-width:245px}
+@media(max-width:1050px){.iro-main-grid{grid-template-columns:1fr}.iro-quality-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.iro-head .ph-art{display:none}.iro-kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.iro-kpi{padding:14px}.iro-issues{grid-template-columns:1fr;padding:4px 12px 13px}.iro-quality-grid{padding:0 12px 14px;gap:8px}.iro-quality-tile{padding:12px;min-height:120px}.iro-queue-row{padding:13px}.iro-actions .btn{flex:1;white-space:normal}.iro-filter-label{width:100%}.iro-filter-label select{width:100%}}

@@ -22,6 +22,7 @@ import './views/path.js';
 import './views/institutes.js';
 import './views/market.js';
 import './views/signals.js';
+import './views/internal-operations.js';
 import './views/learner-home.js';
 import './views/institution-home.js';
 import './views/institution-intelligence.js';
