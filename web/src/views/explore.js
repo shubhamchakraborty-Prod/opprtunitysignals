@@ -4,6 +4,7 @@ import { esc, $, $$, icon, fmtDate, trustBadge, staleBadge, postedText, sectorTa
 import { explainRecord, wageText } from '../../../src/core/decisions.js';
 import { extractEmploymentTerms } from '../../../src/core/terms.js';
 import { matchRecord } from '../../../src/core/matching.js';
+import { fitNow, profile, learnerEvidence } from './learner-profile.js';
 import { freshness } from '../../../src/core/analytics.js';
 import { isOlder, isInScope, filterOpportunities } from '../../../src/core/filters.js';
 import { representatives } from '../../../src/core/dedupe.js';
@@ -63,16 +64,24 @@ function chips() {
   if (p) {
     note.innerHTML = `Showing ads that may suit an <strong>${esc(p.label)}</strong>: they share some skills and no stated rule (experience, qualification, language) rules this learner out. The employer still decides. <button class="linkbtn" data-action="tab" data-tab="match">See why in Match a learner →</button>`;
     note.classList.remove('hide');
+  } else if (app.state.view === 'learners') {
+    const lp = profile();
+    note.innerHTML = `<strong>Your background:</strong> ${esc(lp.programme.name)} (${esc(lp.type === 'iti' ? 'ITI' : lp.type === 'polytechnic' ? 'Diploma' : 'Degree')}). Ads below are study-related signals, not verified vacancies. <button class="linkbtn" data-action="tab" data-tab="lprofile">${lp.saved ? 'Edit' : 'Complete'} my profile</button>`;
+    note.classList.remove('hide');
   } else note.classList.add('hide');
 }
 
-function card(r) {
+function card(r, learnerFit = null) {
+  const studyMatch = learnerFit?.related?.some((x) => x.source_id === r.source_id);
+  const bridge = !studyMatch && learnerFit?.bridges?.some((x) => x.source_id === r.source_id);
+  const studyLabel = studyMatch ? '<span class="tag suit">Related to your studies</span>' : bridge ? '<span class="tag suit">May need additional skills</span>' : '';
   const mirrors = app.mirrorsOf(r).length;
   const suits = app.suitsFor(r).map((id) => app.profile(id)?.label.replace(/ \(.*\)$/, '')).filter(Boolean);
   return `<article tabindex="0" role="button" aria-pressed="${app.state.selected === r.source_id}" data-action="select" data-id="${esc(r.source_id)}" class="job ${app.state.selected === r.source_id ? 'selected' : ''}">
   <div class="job-top"><div class="badges">${trustBadge(r, app.data.asOf)}${staleBadge(r, app.data.asOf)}</div>${sectorTag(r)}</div>
   <div><h4>${esc(r.role_title_raw)}</h4><div class="who">${esc(r.employer_identity || 'Employer not named')}${r.recruiter_identity ? ' · via ' + esc(r.recruiter_identity) : ''}</div></div>
   <div class="facts"><span>Pay <strong>${esc(wageText(r.wage))}</strong></span><span>Experience <strong>${esc(r.experience.raw)}</strong></span><span>${esc(familyLabel(r.occupation_family))}</span></div>
+  ${studyLabel ? `<div class="badges">${studyLabel}</div>` : ''}
   ${suits.length || mirrors ? `<div class="badges">${suits.map((s) => `<span class="tag suit">May suit: ${esc(s)}</span>`).join('')}${mirrors ? '<span class="tag dup">Same ad on another site, counted once</span>' : ''}</div>` : ''}
   </article>`;
 }
@@ -80,6 +89,7 @@ function card(r) {
 function list() {
   const reps = app.derived.reps;
   const box = $('#jobCards');
+  const learnerFit = app.state.view === 'learners' ? fitNow().fit : null;
   if (!box.dataset.hover) {
     box.dataset.hover = '1';
     box.addEventListener('mouseover', (e) => highlightRecord(/** @type {HTMLElement} */ (e.target).closest('.job')?.dataset.id || null));
@@ -88,7 +98,7 @@ function list() {
   }
   $('#listCount').textContent = `${reps.length} shown`;
   const p = app.state.suits && app.profile(app.state.suits);
-  $('#jobCards').innerHTML = reps.length ? reps.map(card).join('') : p
+  $('#jobCards').innerHTML = reps.length ? reps.map((r) => card(r, learnerFit)).join('') : p
     ? `<div class="empty"><strong>No current ads suit an ${esc(p.label.replace(/ \(.*\)$/, ''))} as written.</strong><br/>Most ask for more experience or different skills. <button class="linkbtn" data-action="tab" data-tab="match">See the gaps in Match a learner</button> or <button class="linkbtn" data-action="clear-filters">show all ads</button>.</div>`
     : `<div class="empty"><strong>No ads match these filters.</strong><br/>Try another area or type of work, or <button class="linkbtn" data-action="clear-filters">clear all filters</button>.</div>`;
 }
@@ -147,7 +157,7 @@ export function renderDetail() {
   </dl>
   <div><div class="section-label">Is this a real, open job?</div>${stepper(r)}</div>
   ${terms.length ? `<div class="terms-box"><strong>Working conditions in the ad:</strong> ${terms.map((t) => esc(t.label)).join(' · ')}. These are the employer’s terms, not what workers think of them.</div>` : ''}
-  <div><div class="section-label">Who could do this job?</div>${fitList(r)}<p class="note" style="margin-top:6px">Example learner profiles. Sharing skills does not mean the employer will hire.</p></div>
+  ${app.state.view === 'learners' ? learnerEvidence(r) : `<div><div class="section-label">Who could do this job?</div>${fitList(r)}<p class="note" style="margin-top:6px">Example learner profiles. Sharing skills does not mean the employer will hire.</p></div>`}
   <div class="fir"><div class="fact"><h5>What the ad says</h5><ul>${e.facts.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div><div class="infer"><h5>What we think</h5><ul>${e.inferences.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div><div class="rec"><h5>What to do next · ${esc(e.tierLabel)}</h5><p>${esc(e.recommendation)}</p></div></div>
   ${mirrors.length ? `<p class="note"><strong>Same ad on another site:</strong> ${mirrors.map((m) => `<a href="${esc(m.source_url)}" target="_blank" rel="noopener">${esc(m.platform)} ↗</a>`).join(', ')}. Counted once.</p>` : ''}
   <div class="actions"><a class="btn primary" href="${esc(r.source_url)}" target="_blank" rel="noopener">Open the original ad ↗</a><button class="btn" data-action="shortlist" data-id="${esc(r.source_id)}">${saved ? 'Remove from my list' : 'Save to my list'}</button>
