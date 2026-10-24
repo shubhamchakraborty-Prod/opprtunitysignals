@@ -289,7 +289,7 @@ test('learner profile: explicit local consent, study match and erase', async () 
   assert.match(await text(page, '#lprofile'), /I agree to save these preferences/);
 
   await page.click('.aud-tab[data-view=learners]');
-  await page.click('#subTabs .tab[data-tab=discover]', { force: true });
+  await page.click('#mobileNav [data-tab=discover]');
   await page.waitForSelector('#jobCards .job');
   await page.click('#jobCards .job >> nth=0');
   assert.match(await text(page, '#detailPanel'), /How this advert relates to your profile/);
@@ -304,7 +304,7 @@ test('learner profile editor on desktop retains existing programme selection flo
   await page.waitForSelector('#lpProg');
   await page.selectOption('#lpProg', 'Fitter');
   assert.match(await text(page, '#lhome'), /Fitter/);
-  await page.click('#lhome [data-tab=lprofile]');
+  await page.click('#lhome .profile-bar [data-tab=lprofile]');
   assert.equal(await page.inputValue('#learnerProfileForm [name=programme]'), 'Fitter');
   await page.click('#subTabs .tab[data-tab=learn]');
   assert.match(await text(page, '#learn'), /Your skill plan/);
