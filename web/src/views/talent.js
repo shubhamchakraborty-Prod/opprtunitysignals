@@ -6,6 +6,7 @@ import { esc, $, artBox, icon, toast } from '../ui.js';
 import { ROLES, talentForRole, talentPools } from '../../../src/core/talent.js';
 import { comparisonBase } from '../../../src/core/analytics.js';
 import { roleEvidenceSummary } from '../../../src/core/industry-intelligence.js';
+import { actionFirst } from './action-first.js';
 
 const ui = { role: 'smt' };
 const AREA = { noida_ncr: 'Noida and NCR', kalyani: 'Kalyani', siliguri: 'Siliguri' };
@@ -27,7 +28,26 @@ export function renderTalent() {
   const local = d.institutes.filter((i) => i.area === d.area);
   const pools = talentPools(d.institutes, d.area);
   const count = (t) => local.filter((i) => i.type === t || (t === 'college' && i.type === 'university')).length;
-  $('#talent').innerHTML = `${head('institutes', `Industry · ${AREA[d.area]}`, 'Explore local training institutions', 'See institutions in the research list, their listed course areas and potential links to different role skills. Actual student availability is not yet known.')}
+  const quick = actionFirst({
+    scope:'industry',
+    title:'Find a starting point for your hiring plan',
+    lead:'Choose one practical task. The platform distinguishes course listings from actual people available to hire.',
+    context:d.area==='noida_ncr' ? 'The institute list is preliminary and the observed job ads cover the Noida pilot. Graduates, seats and available candidates are not verified.' : 'Institution listings here are research starting points. Noida vacancy and pay evidence cannot be used to estimate hiring or training supply in this region.',
+    items:[
+      {id:'define-role',tag:'1 · Define',title:'What skills does your role need?',
+        summary:'Compare a role with typical ITI, diploma and degree programme skills.',
+        reason:'Role-to-programme overlaps are catalogue-based; they are not assessments of individual applicants or a promise of available talent.',action:'Match skills',tab:'hire',icon:'work'},
+      {id:'find-institute',tag:'2 · Discover',title:'Explore possible training partners',
+        summary:local.length+' institutions are listed for '+AREA[d.area]+' in the research starting list.',
+        reason:'Counts come from listed institutions, not currently enrolled students, pass-outs, verified capacity or a census.',action:'Explore institutions',tab:'isupply',icon:'location_city'},
+      {id:'plan-outreach',tag:'3 · Plan',title:'Save your next partnership step',
+        summary:'Choose an institution and record a follow-up idea on this device.',
+        reason:'The partnership form stores a local draft. Saving does not contact an institution, submit a demand request or share candidate information.',action:'Plan a partnership',tab:'partner',icon:'handshake'},
+    ],
+  });
+  $('#talent').innerHTML = `${quick}
+  <div class="af-deeper"><span class="eyebrow">Explore the full evidence</span><p>Institution listings, role comparisons and research limitations are available below.</p></div>
+  ${head('institutes', `Industry · ${AREA[d.area]}`, 'Explore local training institutions', 'See institutions in the research list, their listed course areas and potential links to different role skills. Actual student availability is not yet known.')}
   <div class="answers">
     <div class="answer"><span class="label">${icon('location_city')}Training institutes nearby</span><span class="big">${local.length}</span><span class="sub">Research-list institutions around ${esc(AREA[d.area])}, not an official census</span></div>
     <div class="answer"><span class="label">${icon('construction')}ITIs</span><span class="big">${count('iti')}</span><span class="sub">Trade-trained technicians and operators</span></div>

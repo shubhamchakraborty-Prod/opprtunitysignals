@@ -556,3 +556,52 @@ test('simple briefing provides three next steps with evidence and useful feedbac
  assert.match(await text(page,'#idemo .engage-item >> nth=0'),/Discover a possible training partner/);
  assert.deepEqual(page.errors,[]);
 });
+
+test('learner action-first home shows three honest next steps on mobile',async()=>{
+  const page=await newPage(browser);
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(srv.url+'/?noguide&view=learners&tab=lhome');
+  await page.waitForSelector('#lhome .af-home');
+  assert.equal(await page.locator('#lhome .af-step').count(),3);
+  assert.match(await text(page,'#lhome .af-home'),/Your next three steps/);
+  assert.match(await text(page,'#lhome .af-context'),/Noida Sectors 62\/63 sample/);
+  await page.click('#lhome .af-step [data-action=af-save] >> nth=0');
+  assert.equal(await page.locator('#lhome .af-step [data-action=af-save][aria-pressed=true]').count(),1);
+  await page.click('#lhome .af-step [data-action=af-open][data-tab=learn]');
+  assert.equal(await page.locator('#learn').isVisible(),true);
+  await page.click('#mobileNav [data-tab=lhome]');
+  assert.match(await text(page,'#lhome .af-progress'),/1\/3/);
+  await page.selectOption('#location','siliguri');
+  assert.match(await text(page,'#lhome .af-context'),/no comparable local job-ad coverage/);
+  assert.deepEqual(page.errors,[]);
+});
+
+test('institution action-first home responds to type and preserves outreach caveats',async()=>{
+  const page=await newPage(browser);
+  await page.goto(srv.url+'/?noguide&view=institution&tab=ihome');
+  await page.waitForSelector('#ihome .af-home');
+  assert.equal(await page.locator('#ihome .af-step').count(),3);
+  assert.match(await text(page,'#ihome .af-home'),/Three useful decisions/);
+  await page.click('#ihome [data-action=inst-home-type][data-type=college]');
+  assert.match(await text(page,'#ihome .af-home'),/programmes/);
+  await page.click('#ihome .af-step [data-action=af-open][data-tab=ioutreach]');
+  assert.equal(await page.locator('#ioutreach').isVisible(),true);
+  assert.match(await text(page,'#ioutreach'),/stored only in your browser/);
+  assert.deepEqual(page.errors,[]);
+});
+
+test('industry action-first home permits dismissal and restoring without implying hiring',async()=>{
+  const page=await newPage(browser);
+  await page.goto(srv.url+'/?noguide&view=industry&tab=talent');
+  await page.waitForSelector('#talent .af-home');
+  assert.equal(await page.locator('#talent .af-step').count(),3);
+  assert.match(await text(page,'#talent .af-context'),/not verified/);
+  await page.click('#talent .af-step [data-action=af-hide] >> nth=0');
+  assert.equal(await page.locator('#talent .af-step').count(),2);
+  await page.click('#talent [data-action=af-restore]');
+  assert.equal(await page.locator('#talent .af-step').count(),3);
+  await page.click('#talent .af-step [data-action=af-open][data-tab=partner]');
+  assert.equal(await page.locator('#partner').isVisible(),true);
+  assert.match(await text(page,'#partner'),/private planning workspace/);
+  assert.deepEqual(page.errors,[]);
+});

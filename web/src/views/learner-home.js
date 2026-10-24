@@ -6,6 +6,7 @@ import { esc, $, artBox, icon } from '../ui.js';
 import { profileBar, fitNow } from './learner-profile.js';
 import { planCards, adRow } from './learn.js';
 import { LEARNER_TYPES } from '../../../src/core/learners.js';
+import { actionFirst } from './action-first.js';
 
 const FIRST_ROUTE = { iti: 'naps', polytechnic: 'nats', college: 'pmis' };
 
@@ -22,7 +23,27 @@ export function renderLearnerHome() {
   const area = app.area();
   const future = (app.data.market?.future || []).filter((f) => f.area === area).slice(0, 3);
   const T = LEARNER_TYPES[p.type];
+  const isNoida = area === 'noida_ncr';
+  const quick = actionFirst({
+    scope:'learner',
+    title:'Your next three steps',
+    lead:p.saved ? 'Choose one useful action based on the course and preferences you saved.' : 'Explore examples first. Save a short profile when you want tailored suggestions.',
+    context:isNoida ? 'Current recommendations use a limited Noida Sectors 62/63 sample of public job advertisements, not confirmed vacancies or eligibility decisions.' : 'Your region has no comparable local job-ad coverage here. Any advertisement match described below is from the Noida pilot, not local hiring.',
+    items:[
+      {id:'roles',tag:'1 · Explore',title:isNoida ? (fit.related.length ? 'See roles related to your studies' : 'Explore role requirements') : 'Explore the Noida pilot example',
+        summary:isNoida ? (fit.related.length+' related advertisements in our limited sample; check each source before considering an application.') : 'A research example only: this region does not yet have comparable vacancy data.',
+        reason:'Based on '+p.programme.name+(p.saved?' in your saved profile.':' in the example learner profile.')+' Ad matches are not employer-confirmed openings.',action:'See opportunities',tab:'discover',icon:'search'},
+      {id:'skills',tag:'2 · Learn',title:course?'Explore a skill to develop':'Review what your course already covers',
+        summary:course?'A possible learning option: '+course.title+'. Compare it with actual role requirements.':'See typical skills for your programme and possible next steps.',
+        reason:'The learning suggestion comes from the programme catalogue and skills mentioned in the Noida pilot ads, not an assessment of your actual ability.',action:'Explore my skill plan',tab:'learn',icon:'school'},
+      {id:'route',tag:'3 · Apply safely',title:'Find an official application route',
+        summary:route?'Check '+route.name.split(' - ')[0]+' and its current eligibility rules.':'Review the available official routes and check current requirements.',
+        reason:'Routes are displayed by learner qualification type. Opening a portal is not submitting an application or establishing eligibility.',action:'Where to apply',tab:'path',icon:'open_in_new'},
+    ],
+  });
   root.innerHTML = `
+  ${quick}
+  <div class="af-deeper"><span class="eyebrow">Explore more detail</span><p>Profiles, advertisements, courses and announcements are available below. They are not required to understand your first next step.</p></div>
   <section class="lh-hero">
     <div class="ph-text"><div class="eyebrow">For you</div><h1>Your next step, in three moves</h1><p class="lead">Tell us what you studied once. Every page in this interface then shows jobs, courses and portals for you.</p></div>
     ${artBox('path')}

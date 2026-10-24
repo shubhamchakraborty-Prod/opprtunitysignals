@@ -1235,3 +1235,36 @@ button.inst-chart-row:hover,button.inst-chart-row.active{background:var(--primar
 @media(max-width:1080px){.engage-items{grid-template-columns:1fr}.engage-next{min-height:0}}
 @media(max-width:760px){.engage-brief{padding:14px;gap:12px}.engage-head{align-items:start}.engage-counter{min-width:78px;padding:9px}.engage-counter strong{font-size:20px}.engage-head h2{font-size:24px}.engage-roles button{flex:1}.engage-item{padding:14px}.engage-actions .btn{flex:1}}
 @media(prefers-reduced-motion:reduce){.engage-brief *{transition:none!important;animation:none!important}}
+
+/* Evidence-grounded, finite role landing. No attention-driven recommendations. */
+.af-home{display:grid;gap:14px;padding:20px;border:1px solid #D2DBEE;border-radius:18px;background:linear-gradient(150deg,#F6F9FF,#FFFFFF 70%);margin-bottom:18px}
+.af-header{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.af-header>div:first-child{display:grid;gap:7px;max-width:690px}
+.af-header h2{font-size:clamp(22px,2.5vw,33px);font-weight:650;line-height:1.2;color:var(--ink)}
+.af-header p{font-size:13.5px;line-height:1.6;color:var(--ink-2)}
+.af-progress{display:grid;text-align:center;gap:5px;background:#ECF0FF;border-radius:13px;padding:12px;min-width:104px;flex:none}
+.af-progress strong{font-size:22px;line-height:1.1;font-variant-numeric:tabular-nums;color:#0E1B5C}
+.af-progress small{font-size:10.5px;color:#48608B}
+.af-context{display:flex;align-items:flex-start;gap:8px;padding:11px 13px;background:#EDF3FF;border-radius:11px;color:#3A526F;font-size:12px;line-height:1.6}
+.af-context .ico{flex:none;margin-top:1px}
+.af-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.af-step{display:grid;align-content:start;gap:10px;background:#FFFFFF;border:1px solid #DAE2F0;border-radius:15px;padding:17px;min-width:0}
+.af-tag{color:#4259A8;font-size:11px;font-weight:750;letter-spacing:.035em}
+.af-step h3{font-size:18px;font-weight:675;line-height:1.25;color:#17244C}
+.af-summary{font-size:12.5px;color:var(--ink-2);line-height:1.55}
+.af-why{font-size:12px;line-height:1.5;color:var(--ink-2)}
+.af-why summary{cursor:pointer;color:#3753AE;font-weight:650;min-height:28px}
+.af-why p{padding:6px 0 0}
+.af-buttons{display:flex;flex-wrap:wrap;gap:8px;align-items:center;align-self:end}
+.af-buttons .btn{min-height:44px;white-space:normal;text-align:center}
+.af-hide{justify-self:start;border:0;background:transparent;padding:8px 0;min-height:40px;color:var(--muted);text-decoration:underline;text-underline-offset:3px;font:inherit;font-size:12px;cursor:pointer}
+.af-seen{font-size:11px;color:#176F52;font-weight:650}
+.af-bottom{display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:wrap;border-top:1px solid #E1E7F1;padding-top:11px}
+.af-bottom p{font-size:11.5px;color:var(--ink-2);line-height:1.55;max-width:75ch}
+.af-empty{padding:14px;border:1px dashed #C9D6EB;border-radius:12px;color:var(--ink-2);font-size:13px}
+.af-deeper{margin:12px 3px 14px;padding:12px 0 0;border-top:1px solid var(--line);display:grid;gap:5px}
+.af-deeper p{color:var(--muted);font-size:12.5px;line-height:1.55}
+.af-step button:focus-visible,.af-bottom button:focus-visible{outline:3px solid var(--primary);outline-offset:2px}
+@media(max-width:1080px){.af-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.af-home{padding:13px}.af-header h2{font-size:24px}.af-progress{min-width:76px;padding:9px}.af-progress strong{font-size:18px}.af-step{padding:14px}.af-buttons .btn{flex:1}}
+@media(prefers-reduced-motion:reduce){.af-home *{animation:none!important;transition:none!important}}

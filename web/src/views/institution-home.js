@@ -6,6 +6,7 @@ import { esc, $, artBox, icon } from '../ui.js';
 import { mapCatalogue } from '../../../src/core/trades.js';
 import { learnerFit, demandByType, LEARNER_TYPES } from '../../../src/core/learners.js';
 import { comparisonBase } from '../../../src/core/analytics.js';
+import { actionFirst } from './action-first.js';
 
 const OFFER = {
   iti: ['Workplace Communication Pro for every trade batch', 'Spreadsheets to SQL for COPA and office-bound learners', 'Interview practice before campus drives'],
@@ -35,7 +36,27 @@ export function renderInstitutionHome() {
   const topSkills = [...skillCount.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
   const saaFor = (s) => { const m = app.data.saa?.skill_map?.[s]; return m && m.fit !== 'none' ? app.data.saa.courses.find((c) => c.id === m.courses[0]) : null; };
   const calls = (app.derived.board?.outreach_priority || []).slice(0, 5);
-  $('#ihome').innerHTML = `<div class="section-head">${artBox('institutes')}<div><div class="eyebrow">Institutions · Overview</div><h2>How well do your programmes match local demand?</h2><p>Explore how programmes relate to the Noida Sector 62 and 63 pilot ad sample. Regional announcements are shown separately from verified openings.</p></div></div>
+  const localEvidence = area === 'noida_ncr';
+  const quick = actionFirst({
+    scope:'institution',
+    title:'Three useful decisions for your institution',
+    lead:'Start with a source-backed question before opening charts and reports.',
+    context:localEvidence ? 'Programme matches are from a limited Noida Sectors 62/63 advertising sample, not confirmed openings or a complete demand map.' : 'Only announcements and institution listings are available for this selected region. Job-ad comparisons shown deeper in this page are Noida pilot examples, not local demand.',
+    items:[
+      {id:'role-demand',tag:'1 · Understand',title:'Which roles relate to your programmes?',
+        summary:localEvidence ? (rows.filter(x=>x.demand).length+' tracked '+(type==='iti'?'trades':'programmes')+' have related Noida pilot advertisements.') : 'Explore the Noida evidence method; regional vacancy coverage has not been established.',
+        reason:'Programme relevance is calculated from typical course skills and distinct public job advertisements. It is not local placement demand or current learner readiness.',action:'Explore roles and skills',tab:'idemand',icon:'bar_chart'},
+      {id:'skill-review',tag:'2 · Improve',title:'Which skills deserve a closer look?',
+        summary:topSkills.length ? ('Review '+topSkills.slice(0,2).map(x=>x[0]).join(' and ')+' against your actual curriculum.') : 'Review programme and job skills before proposing a curriculum change.',
+        reason:'Skills come from the research sample and typical programme descriptions. Verify against the real syllabus and employers before changing courses.',action:'Review programme evidence',tab:'idemand',icon:'fact_check'},
+      {id:'employer',tag:'3 · Connect',title:'Plan an employer conversation',
+        summary:'Review source-backed employer leads and keep a private follow-up plan.',
+        reason:'The outreach board is browser-only. A saved lead has not been contacted, and public advertisements do not prove open vacancies.',action:'Plan outreach',tab:'ioutreach',icon:'handshake'},
+    ],
+  });
+  $('#ihome').innerHTML = `${quick}
+  <div class="af-deeper"><span class="eyebrow">Evidence and detailed planning</span><p>Explore the programme comparisons and source records below when you need more detail.</p></div>
+  <div class="section-head">${artBox('institutes')}<div><div class="eyebrow">Institutions · Overview</div><h2>How well do your programmes match local demand?</h2><p>Explore how programmes relate to the Noida Sector 62 and 63 pilot ad sample. Regional announcements are shown separately from verified openings.</p></div></div>
   <div class="type-tabs" role="tablist" aria-label="Type of institute">${Object.entries(LEARNER_TYPES).map(([k, t]) => `<button role="tab" class="type-tab ${type === k ? 'active' : ''}" aria-selected="${type === k}" data-action="inst-home-type" data-type="${k}">${icon(k === 'iti' ? 'construction' : k === 'polytechnic' ? 'engineering' : 'school')}<span><b>${k === 'iti' ? 'ITI' : k === 'polytechnic' ? 'Polytechnic' : 'College or university'}</b><small>${esc(t.long.replace('student or holder', 'programmes').replace('trainee or pass-out', 'trades').replace('student or graduate', 'programmes'))}</small></span></button>`).join('')}</div>
   <div class="inst-quicklinks">
     <button type="button" class="inst-quicklink" data-action="tab" data-tab="idemand"><span>${icon("bar_chart")}</span><strong>Demand & skills</strong><small>Explore programme relevance with supporting advertisements</small>${icon("arrow_forward")}</button>
