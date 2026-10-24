@@ -18,7 +18,7 @@ test('PgStore: migrate, seed, verify, history, append-only audit, spatial check'
     const seed = loadSeed();
     await store.loadSeed({ ...seed, records: [...seed.records, CLAIMS_FIVE()] });
     const service = createService(store, { now: () => AS_OF, profiles: seed.profiles });
-    assert.equal((await service.listRecords(actors.observer, {})).length, 18);
+    assert.equal((await service.listRecords(actors.observer, {})).length, seed.records.length + 1, 'all seeded records plus the test claim are visible');
     const v = await service.submitVerification(actors.verifier, verificationPayload());
     await service.decideVerification(actors.admin, v.id, { decision: 'approve' });
     const a = await service.analytics(actors.observer, {});

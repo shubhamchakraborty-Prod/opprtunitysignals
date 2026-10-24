@@ -7,7 +7,7 @@ import { esc, $, icon } from './ui.js';
 
 export const VIEWS = [
   { id: 'learners', label: 'Learners', icon: 'school', home: 'lhome', who: 'College, ITI and polytechnic learners',
-    tabs: [['lhome', 'For you', 'home'], ['path', 'Where to apply', 'route'], ['learn', 'My skill plan', 'school'], ['discover', 'Jobs for me', 'map'], ['upcoming', 'Coming up', 'event_upcoming']] },
+    tabs: [['lhome', 'For you', 'home'], ['path', 'Where to apply', 'route'], ['learn', 'My skill plan', 'school'], ['discover', 'Jobs for me', 'map'], ['upcoming', 'Coming up', 'event_upcoming'], ['lprofile', 'My profile', 'person']] },
   { id: 'institution', label: 'Institutions', icon: 'apartment', home: 'ihome', who: 'ITIs, polytechnics and colleges',
     tabs: [['ihome', 'Overview', 'home'], ['trades', 'Trades and programmes', 'construction'], ['discover', 'Jobs near you', 'map'], ['plan', 'Placement steps', 'checklist'], ['institutes', 'Institutes nearby', 'location_city'], ['market', 'Market', 'timeline'], ['compare', 'Compare 62 and 63', 'compare_arrows'], ['regions', 'Kalyani and Siliguri', 'travel_explore'], ['voice', "Workers' views", 'forum']] },
   { id: 'industry', label: 'Industry', icon: 'factory', home: 'talent', who: 'Employers hiring talent',
