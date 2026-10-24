@@ -165,7 +165,7 @@ async function start() {
   app.renderAll();
   initMap();
   const params = new URLSearchParams(location.search);
-  const want = params.get('tab') || location.hash.slice(1);
+  const want = location.hash.slice(1) || params.get('tab');
   const wantView = params.get('view');
   if (wantView && VIEWS.some((v) => v.id === wantView)) app.state.view = wantView;
   app.actions.tab({ dataset: { tab: ALL_TABS.includes(want) ? want : 'home' } });
