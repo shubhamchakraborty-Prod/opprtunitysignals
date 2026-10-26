@@ -141,7 +141,7 @@ test('four audience interfaces plus a separate leadership vision demo', async ()
   await page.goto(srv.url + '/?noguide');
   await page.waitForSelector('.door');
   assert.equal(await page.$$eval('.door', (x) => x.length), 4);
-  assert.equal(await page.$eval('.aud-tab', (x) => x.length), 5);
+  assert.equal(await page.locator('.aud-tab').count(), 5);
   await page.click('.door[data-view=learners]');
   assert.match(await text(page, '#lhome'), /Your next step, in three moves/);
   await page.click('[data-action=lp-type][data-type=polytechnic]');
