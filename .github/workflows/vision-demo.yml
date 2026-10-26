@@ -1,0 +1,33 @@
+name: Build Leadership Vision Demo
+
+on:
+  push:
+    branches:
+      - feature/leadership-vision-demo-v1
+  workflow_dispatch:
+
+jobs:
+  offline-vision:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build
+      - name: Verify offline vision is self-contained and explicitly simulated
+        run: |
+          test -s dist/explorer-offline.html
+          grep -q 'FUTURE-STATE SIMULATION' dist/explorer-offline.html
+          grep -q 'No external API keys are connected' dist/explorer-offline.html
+      - uses: actions/upload-artifact@v4
+        with:
+          name: opportunity-explorer-vision-demo
+          path: dist/explorer-offline.html
+          if-no-files-found: error
+          retention-days: 30

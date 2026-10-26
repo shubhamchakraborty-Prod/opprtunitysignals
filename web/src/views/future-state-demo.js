@@ -6,6 +6,7 @@ import { FUTURE_DEMO_MAP_SVG } from './future-state-map.generated.js';
 import { DEMO_AREAS, DEMO_ASOF, DEMO_CONNECTORS, DEMO_SIGNALS, DEMO_STORY } from './future-state-demo-data.js';
 import { demoConfidence, demoSignalCounts } from '../../../src/core/demo-confidence.js';
 import { demoBriefHtml } from './future-state-brief.js';
+import { visionTourHtml } from './vision-tour.js';
 
 let area='noida', band='all', selected='DM-002', category='all', persona='learner', syncCounter=0;
 const LABEL = {job_ad:'Job advertisement',employer_confirmation:'Employer-confirmed opening · simulated',social_signal:'Unverified social signal',training_supply:'Institution supply signal',project_announcement:'Project announcement'};
@@ -53,7 +54,8 @@ export function renderFutureDemo(){
  $('#idemo').innerHTML=`
   <div class="fd-simulation-header"><span>${icon('auto_awesome')} FUTURE-STATE SIMULATION</span>
     <p>This preview uses entirely synthetic source data, integration statuses and map positions. <strong>No external API keys are connected.</strong> No values on this page are production statistics.</p></div>
-  <div class="fd-hero"><div><div class="eyebrow">Opportunity Explorer · Connected intelligence concept</div>
+  ${visionTourHtml()}
+  <div class="fd-hero" id="vision-promise"><div><div class="eyebrow">Opportunity Explorer · Connected intelligence concept</div>
     <h1>One intelligence layer. Four ways to act.</h1>
     <p>See how approved government datasets, licensed jobs feeds, permitted media signals and verified employer inputs could come together—without confusing observations with confirmed openings.</p></div>
     <button class="btn primary" type="button" data-action="fd-sync">${icon('refresh')} Run simulated sync</button>
@@ -70,23 +72,34 @@ export function renderFutureDemo(){
     <div><span>Mock-confirmed openings</span><strong>${data.filter(s=>s.mockVerification==='approved').reduce((sum,s)=>sum+(s.illustrativeOpenings||0),0)}</strong><small>Simulation only; real total unchanged</small></div>
     <div><span>Average sample confidence</span><strong>${data.length?avg+'/100':'–'}</strong><small>Illustrative claim scoring</small></div>
   </div>
-  <div class="fd-map-grid">
+  <div class="fd-map-grid" id="vision-map">
     <section class="fd-map-card"><div class="fd-card-header"><div><h2>Opportunity intelligence map</h2><p>${esc(DEMO_AREAS.find(x=>x.id===area)?.label)} · synthetic markers</p></div><span class="fd-map-warning">${icon('info')} Illustrative · not to scale</span></div>
       <div class="fd-map-art"><div class="fd-map-background">${FUTURE_DEMO_MAP_SVG}</div>
         ${data.map(s=>`<button type="button" class="fd-marker ${s.id===selected?'active':''} fd-marker-${signalKind(s)}" style="left:${s.x}%;top:${s.y}%" data-action="fd-select" data-id="${s.id}" aria-label="${esc(s.title)}; ${trust(s).band} confidence" aria-pressed="${selected===s.id}"><span>${icon(ICON[s.kind])}</span></button>`).join('')}
         <div class="fd-map-key"><span><i class="fd-dot jobs"></i>Job / direct</span><span><i class="fd-dot institutes"></i>Institution</span><span><i class="fd-dot projects"></i>Projects</span><span><i class="fd-dot social"></i>Social</span></div>
       </div><p class="note fd-map-foot">The generated background is a schematic illustration. Pins are positioned for storytelling only; no actual addresses, sectors or employers are being mapped. A real product should retain MapLibre with verified coordinates and geographic uncertainty.</p>
     </section>
-    <section class="fd-signal-card"><div class="fd-card-header"><div><h2>Unified signals</h2><p>${data.length} visible synthetic records</p></div><span class="fd-sync-status">Demo sync ${syncCounter? '#'+syncCounter:'snapshot'}</span></div>
+    <section class="fd-signal-card" id="vision-signals"><div class="fd-card-header"><div><h2>Unified signals</h2><p>${data.length} visible synthetic records</p></div><span class="fd-sync-status">Demo sync ${syncCounter? '#'+syncCounter:'snapshot'}</span></div>
       <div class="fd-signal-list">${data.length?data.map(s=>`<button class="fd-signal ${s.id===selected?'active':''}" data-action="fd-select" data-id="${s.id}">
        <span class="fd-signal-top">${label(s)} ${badge(s)}</span><strong>${esc(s.title)}</strong><span class="fd-signal-desc">${esc(s.detail)}</span><small>${esc(s.source)} · demo ${esc(s.fresh)}</small></button>`).join(''):'<div class="fd-no-matches">No sample records meet the current demo filters. Clear one filter to explore other signals.</div>'}</div></section>
   </div>
-  ${current?evidence(current):'<div class="fd-no-matches">Select a visible signal to view its evidence explanation.</div>'}
-  <section class="fd-connectors"><div class="fd-card-header"><div><h2>Simulated integration hub</h2><p>These are planned connector capabilities, not active APIs.</p></div><span class="fd-map-warning">0 real keys configured by this demo</span></div>
+  <div id="vision-evidence">${current?evidence(current):'<div class="fd-no-matches">Select a visible signal to view its evidence explanation.</div>'}</div>
+  <section class="vision-role-doors" id="vision-people" aria-label="Open each audience experience">
+    <div class="fd-card-header"><div><h2>Four people, one intelligence foundation</h2><p>Experience the same evidence from each user's point of view, then explore the role-specific sample screens.</p></div></div>
+    <div class="vision-role-grid">
+      ${[
+        ['learners','Learner','Discover roles, skills and appropriate application routes','school'],
+        ['institution','Institution','Understand programme relevance and employer outreach','apartment'],
+        ['industry','Industry','Explore role requirements, institutes and partnerships','factory'],
+        ['internal','Research team','Check reliability, verify claims and approve evidence','fact_check']
+      ].map(([v,title,body,ic])=>`<article><span class="vision-role-icon">${icon(ic)}</span><h3>${title}</h3><p>${body}</p>${v!=='internal'?`<button class="btn outlined small" data-action="view" data-view="${v}">Open ${title.toLowerCase()} example ${icon('arrow_forward')}</button>`:'<p class="note">The operational research workbench remains permission-controlled. Use the Research perspective in this demo for a preview.</p>'}</article>`).join('')}
+    </div>
+  </section>
+  <section class="fd-connectors" id="vision-sources"><div class="fd-card-header"><div><h2>Simulated integration hub</h2><p>These are planned connector capabilities, not active APIs.</p></div><span class="fd-map-warning">0 real keys configured by this demo</span></div>
    <div class="fd-connector-grid">${connectors.map(c=>`<article><div class="fd-connector-top"><strong>${esc(c.name)}</strong><span>DEMO FEED</span></div>
     <p>${esc(c.use)}</p><dl><div><dt>Category</dt><dd>${esc(c.group)}</dd></div><div><dt>Access model</dt><dd>${esc(c.access)}</dd></div><div><dt>Illustrative rows</dt><dd>${c.demoRows}</dd></div><div><dt>Simulated last sync</dt><dd>${esc(c.age)}</dd></div></dl><p class="fd-connector-real"><strong>Actual access:</strong> ${esc(c.real)}</p></article>`).join('')}</div>
   </section>
-  <section class="fd-pipeline"><h2>How one signal becomes a decision</h2><ol>${DEMO_STORY.map((s,i)=>`<li><b>${i+1}</b><strong>${esc(s.title)}</strong><p>${esc(s.body)}</p></li>`).join('')}</ol></section>
+  <section class="fd-pipeline" id="vision-pipeline"><h2>How one signal becomes a decision</h2><ol>${DEMO_STORY.map((s,i)=>`<li><b>${i+1}</b><strong>${esc(s.title)}</strong><p>${esc(s.body)}</p></li>`).join('')}</ol></section>
   <div class="fd-endnote"><strong>For the team demo</strong> · Start with the simulated integrations, select a map marker, open its confidence breakdown, switch user perspectives and run the simulated sync. No data on this page is used by the live research KPIs.</div>
  `;
  $('#fdArea').onchange=(e)=>{area=e.target.value;selected='';renderFutureDemo()};

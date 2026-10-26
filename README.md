@@ -1,4 +1,4 @@
-# Noida Sector 62 / 63 Industry Opportunity Explorer (research pilot)
+# Opportunity Explorer — Leadership Vision Demonstrator & Noida Research Pilot
 
 ConveGenius.AI research pilot. Public hiring signals, employer verification, ten years of investment and policy change, and skill plans for learners, for **Noida Sectors 62 and 63 (Gautam Buddh Nagar, Uttar Pradesh)**, with **Kalyani** and **Siliguri (West Bengal)** for comparison. Four separate interfaces on the same data: **Learners** (ITI, polytechnic, college), **Institutions**, **Industry** (talent, not job ads) and **Internal** (Swift AI Academy product signals). Design: Material 3 with Google Sans, following the principles in `docs/PRODUCT_PRINCIPLES.md`.
 
