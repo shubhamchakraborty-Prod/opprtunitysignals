@@ -136,12 +136,12 @@ test('Government data tab lists every tracked source with an honest status', asy
   assert.deepEqual(page.errors, []);
 });
 
-test('four separate interfaces: learners, institutions, industry (talent, not jobs) and internal', async () => {
+test('four audience interfaces plus a separate leadership vision demo', async () => {
   const page = await newPage(browser);
   await page.goto(srv.url + '/?noguide');
   await page.waitForSelector('.door');
   assert.equal(await page.$$eval('.door', (x) => x.length), 4);
-  assert.equal(await page.$$eval('.aud-tab', (x) => x.length), 4);
+  assert.equal(await page.$eval('.aud-tab', (x) => x.length), 5);
   await page.click('.door[data-view=learners]');
   assert.match(await text(page, '#lhome'), /Your next step, in three moves/);
   await page.click('[data-action=lp-type][data-type=polytechnic]');
@@ -603,5 +603,52 @@ test('industry action-first home permits dismissal and restoring without implyin
   await page.click('#talent .af-step [data-action=af-open][data-tab=partner]');
   assert.equal(await page.locator('#partner').isVisible(),true);
   assert.match(await text(page,'#partner'),/private planning workspace/);
+  assert.deepEqual(page.errors,[]);
+});
+
+test('leadership vision is one public, self-contained guided product story',async()=>{
+  const page=await newPage(browser);
+  await page.setViewportSize({width:1440,height:900});
+  await page.goto(srv.url+'/?noguide&view=vision&tab=idemo');
+  await page.waitForSelector('#vision-tour');
+  assert.match(await text(page,'#vision-tour'),/Walk through the complete product vision/);
+  assert.match(await text(page,'#idemo'),/FUTURE-STATE SIMULATION/);
+  assert.equal(await page.locator('#vision-tour .vision-tour-track button').count(),7);
+  assert.equal(await page.locator('.aud-tab').count(),5);
+  assert.equal(await page.locator('#vision-tour .vision-tour-count').textContent(),'1 / 7');
+  await page.click('#vision-tour [data-action=vision-step][data-step="1"] >> nth=0');
+  assert.equal(await page.locator('#vision-tour .vision-tour-count').textContent(),'2 / 7');
+  assert.ok(await page.locator('#vision-sources .fd-connector-grid article').count()>7);
+  await page.click('#vision-tour [data-action=vision-step][data-step="2"] >> nth=0');
+  assert.match(await text(page,'#vision-signals'),/Unified signals/);
+  await page.click('#vision-tour [data-action=vision-step][data-step="3"] >> nth=0');
+  assert.match(await text(page,'#vision-evidence'),/Unconfirmed social-only claim/);
+  await page.click('#vision-tour [data-action=vision-step][data-step="4"] >> nth=0');
+  assert.match(await text(page,'#vision-map'),/Illustrative · not to scale/);
+  await page.click('#vision-tour [data-action=vision-step][data-step="5"] >> nth=0');
+  assert.match(await text(page,'#vision-people'),/Four people, one intelligence foundation/);
+  assert.equal(await page.locator('#vision-people .vision-role-grid article').count(),4);
+  await page.click('#vision-tour [data-action=vision-step][data-step="6"] >> nth=0');
+  assert.match(await text(page,'#vision-pipeline'),/How one signal becomes a decision/);
+  await page.click('#vision-tour [data-action=vision-step][data-step="0"] >> nth=0');
+  assert.equal(await page.locator('#vision-tour .vision-tour-count').textContent(),'1 / 7');
+  assert.deepEqual(page.errors,[]);
+});
+
+test('leadership demo enters from home and links to real example roles without showing internal data',async()=>{
+  const page=await newPage(browser);
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(srv.url+'/?noguide&tab=home');
+  await page.waitForSelector('.home-hero');
+  await page.click('.home-hero [data-view=vision]');
+  await page.waitForSelector('#vision-tour');
+  assert.equal(await page.locator('#mobileNav .mobile-tab').count(),1);
+  assert.match(await text(page,'#idemo'),/No external API keys are connected/);
+  await page.click('#vision-people [data-view=learners]');
+  await page.waitForSelector('#lhome .af-home');
+  assert.equal(await page.locator('#lhome .af-step').count(),3);
+  await page.click('.aud-tab[data-view=vision]');
+  await page.waitForSelector('#vision-tour');
+  assert.match(await text(page,'#idemo .fd-simulation-header'),/entirely synthetic/);
   assert.deepEqual(page.errors,[]);
 });

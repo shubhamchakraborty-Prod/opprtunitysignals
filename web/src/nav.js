@@ -6,6 +6,8 @@ import { app } from './app.js';
 import { esc, $, icon } from './ui.js';
 
 export const VIEWS = [
+  { id: 'vision', label: 'Vision demo', icon: 'auto_awesome', home: 'idemo', who: 'Leadership and team: explore the full future-state simulation',
+    tabs: [['idemo', 'Guided product tour', 'slideshow']] },
   { id: 'learners', label: 'Learners', icon: 'school', home: 'lhome', who: 'College, ITI and polytechnic learners',
     tabs: [['lhome', 'For you', 'home'], ['path', 'Where to apply', 'route'], ['learn', 'My skill plan', 'school'], ['discover', 'Jobs for me', 'map'], ['upcoming', 'Coming up', 'event_upcoming'], ['lprofile', 'My profile', 'person']] },
   { id: 'institution', label: 'Institutions', icon: 'apartment', home: 'ihome', who: 'ITIs, polytechnics and colleges',

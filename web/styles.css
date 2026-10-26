@@ -1268,3 +1268,41 @@ button.inst-chart-row:hover,button.inst-chart-row.active{background:var(--primar
 @media(max-width:1080px){.af-grid{grid-template-columns:1fr}}
 @media(max-width:760px){.af-home{padding:13px}.af-header h2{font-size:24px}.af-progress{min-width:76px;padding:9px}.af-progress strong{font-size:18px}.af-step{padding:14px}.af-buttons .btn{flex:1}}
 @media(prefers-reduced-motion:reduce){.af-home *{animation:none!important;transition:none!important}}
+
+/* Leadership presentation shell: a polished finite narrative over the same synthetic fixtures. */
+.vision-tour{display:grid;gap:14px;border:1px solid #BAC9E8;background:linear-gradient(125deg,#F1F5FF,#FFFFFF 68%);border-radius:19px;padding:20px;margin-bottom:5px}
+.vision-tour-top{display:flex;align-items:start;justify-content:space-between;gap:18px}
+.vision-tour-top>div{display:grid;gap:8px}
+.vision-tour-kicker{font-size:10.5px;letter-spacing:.085em;font-weight:800;color:#3055B4;display:flex;align-items:center;gap:6px}
+.vision-tour-kicker .ico{width:17px;height:17px}
+.vision-tour-top h2{font-size:clamp(21px,2.7vw,29px);font-weight:680;line-height:1.2;color:#0E1B5C}
+.vision-tour-top p{font-size:12.5px;line-height:1.5;color:#405375;max-width:77ch}
+.vision-tour-count{font-size:21px;font-variant-numeric:tabular-nums;font-weight:740;color:#0E1B5C;background:#DDE7FF;border-radius:14px;padding:10px 13px;white-space:nowrap}
+.vision-tour-track{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;overflow:auto}
+.vision-tour-track button{display:grid;align-content:start;justify-items:start;gap:7px;padding:10px 9px;min-height:80px;border-radius:11px;border:1px solid #D5DFF0;background:#FFFFFF;color:#425473;text-align:left;cursor:pointer;font:inherit}
+.vision-tour-track button span{width:27px;height:27px;display:grid;place-items:center;background:#EFF3FF;color:#244B9C;border-radius:50%;font-size:12px;font-weight:720}
+.vision-tour-track button small{font-size:10px;line-height:1.3;overflow-wrap:anywhere}
+.vision-tour-track button.active{border-color:#3D5AFE;background:#E7EDFF;color:#0E1B5C}
+.vision-tour-track button.active span{background:#3D5AFE;color:#FFFFFF}
+.vision-tour-track button:focus-visible,.vision-tour-buttons button:focus-visible,.vision-role-grid button:focus-visible{outline:3px solid #3D5AFE;outline-offset:2px}
+.vision-tour-current{display:flex;align-items:center;justify-content:space-between;gap:20px;border:1px solid #DDE5F4;border-radius:14px;background:#FFFFFF;padding:16px}
+.vision-tour-current>div:first-child{display:grid;gap:7px;max-width:80ch}
+.vision-tour-current>div:first-child>span{font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;font-weight:800;color:#365ABE}
+.vision-tour-current h3{font-size:20px;line-height:1.2;font-weight:680;color:#1C2D54}
+.vision-tour-current p{font-size:13px;line-height:1.55;color:#52617A}
+.vision-tour-buttons{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:8px;flex:none;max-width:260px}
+.vision-tour-buttons .btn{min-height:42px}
+.vision-tour-hint{font-size:11px;color:#68778E;max-width:20ch}
+.vision-tour-disclaimer{font-size:11.5px;line-height:1.5;color:#64748B}
+.vision-role-doors{display:grid;gap:8px;border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden}
+.vision-role-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;padding:0 17px 18px}
+.vision-role-grid article{display:grid;align-content:start;gap:10px;background:var(--surface-1);border-radius:12px;padding:15px}
+.vision-role-icon{color:#3D5AFE}
+.vision-role-icon .ico{width:24px;height:24px}
+.vision-role-grid h3{font-size:15px;font-weight:670}
+.vision-role-grid p{font-size:12px;color:var(--ink-2);line-height:1.5}
+.vision-role-grid .btn{align-self:end}
+#vision-promise,#vision-map,#vision-signals,#vision-evidence,#vision-sources,#vision-people,#vision-pipeline{scroll-margin-top:32px}
+@media(max-width:1080px){.vision-tour-current{display:grid}.vision-tour-buttons{max-width:none;justify-content:flex-start}.vision-role-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.vision-tour{padding:13px}.vision-tour-top h2{font-size:21px}.vision-tour-count{font-size:17px;padding:9px}.vision-tour-track{grid-template-columns:repeat(7,minmax(85px,1fr));gap:6px;overflow-x:auto;padding-bottom:3px}.vision-tour-track button{min-height:65px}.vision-tour-current{padding:12px}.vision-tour-current h3{font-size:17px}.vision-role-grid{grid-template-columns:1fr;padding:0 12px 12px}.vision-tour-current .btn{flex:1}}
+@media print{.vision-tour-track,.vision-tour-buttons,.vision-role-grid .btn,.fd-marker{display:none}.vision-tour{break-inside:avoid}.fd-map-art{break-inside:avoid}}

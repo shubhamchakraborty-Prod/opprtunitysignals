@@ -22,15 +22,15 @@ export function renderHome() {
   <section class="home-hero">
     <div class="ph-text">
       <div class="eyebrow">Noida · Kalyani · Siliguri</div>
-      <h1>Skills that lead to real jobs, mapped for your area</h1>
-      <p class="lead">We track job ads, investments and government data around each area, check them with employers, and turn them into a plan: which jobs learners can apply for, which skills they still need, and where to learn them.</p>
-      <div class="actions"><button class="btn primary" data-action="tour">${icon('play_arrow')}Watch the demo</button><button class="btn tonal" data-action="view" data-view="learners">${icon('school')}I am a learner</button><button class="btn outlined" data-action="view" data-view="industry">${icon('groups')}I am hiring</button></div>
+      <h1>See how labour market intelligence becomes useful action</h1>
+      <p class="lead">Explore the future-state vision in one guided walkthrough, then inspect separate learner, institution, employer and research experiences. The connected-data demonstration is simulated; real research records have their own evidence and coverage limits.</p>
+      <div class="actions"><button class="btn primary" data-action="view" data-view="vision">${icon("auto_awesome")}Explore the complete vision</button><button class="btn tonal" data-action="tour">${icon('play_arrow')}Watch the demo</button><button class="btn tonal" data-action="view" data-view="learners">${icon('school')}I am a learner</button><button class="btn outlined" data-action="view" data-view="industry">${icon('groups')}I am hiring</button></div>
     </div>
     ${artBox('home')}
   </section>
 
   <section class="doors" aria-label="Choose your view">
-    ${VIEWS.map((v) => `<button class="door door-${v.id}" data-action="view" data-view="${v.id}"><span class="door-ico">${icon(v.icon + '-fill')}</span><span class="door-title">${esc(DOORS[v.id].title)}</span><span class="door-text">${esc(DOORS[v.id].text)}</span><span class="door-tasks">${DOORS[v.id].tasks.map((t) => `<span>${esc(t)}</span>`).join('')}</span><span class="door-go">Open the ${esc(v.label.toLowerCase())} interface${icon('arrow_forward')}</span></button>`).join('')}
+    ${VIEWS.filter(v=>v.id!=="vision").map((v) => `<button class="door door-${v.id}" data-action="view" data-view="${v.id}"><span class="door-ico">${icon(v.icon + '-fill')}</span><span class="door-title">${esc(DOORS[v.id].title)}</span><span class="door-text">${esc(DOORS[v.id].text)}</span><span class="door-tasks">${DOORS[v.id].tasks.map((t) => `<span>${esc(t)}</span>`).join('')}</span><span class="door-go">Open the ${esc(v.label.toLowerCase())} interface${icon('arrow_forward')}</span></button>`).join('')}
   </section>
 
   <section class="home-stats" aria-label="Right now">
