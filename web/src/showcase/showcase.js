@@ -5,7 +5,7 @@ import {icon} from '../ui.js';
 export const demoState={page:'overview',area:'noida',query:'',kind:'all',confidence:'all',selected:'',
   programme:'Electrician',institutionType:'ITI',sourceGroup:'all',role:'quality',saved:new Set(),drafts:[],
   notice:'',modal:'',sync:0,openNav:false,period:'30'};
-export const allRecords=()=>SIGNALS.filter(x=>x.area===demoState.area);
+export const allRecords=()=>SIGNALS.filter(x=>x.area===demoState.area && Date.parse(x.posted+'T00:00:00Z') >= Date.UTC(2026,9,26)-(Number(demoState.period)-1)*86400000);
 export const canonical=()=>distinct(allRecords());
 export const roles=()=>canonical().filter(x=>['job_ad','employer_confirmation'].includes(x.kind));
 export const confirmed=()=>roles().filter(x=>x.employerVerified);

@@ -716,3 +716,17 @@ test('realistic demo covers all four audiences and fictional integrations on a p
   assert.match(await text(page,'.show-drawer'),/fabricated for demonstration/);
   assert.deepEqual(page.errors,[]);
 });
+
+test('time window changes fictional source coverage across the real-looking workspace', async()=>{
+ const page=await newPage(browser);
+ await page.goto(pathToFileURL(join(ROOT,'dist','platform-demo.html')).href);
+ await page.waitForSelector('.show-kpis');
+ const n30=Number((await text(page,'.show-tile strong')).replaceAll(',',''));
+ await page.selectOption('#showPeriod','7');
+ const n7=Number((await text(page,'.show-tile strong')).replaceAll(',',''));
+ assert.ok(n7<n30,'7-day window has fewer records than the 30-day window');
+ await page.selectOption('#showPeriod','90');
+ const n90=Number((await text(page,'.show-tile strong')).replaceAll(',',''));
+ assert.equal(n90,n30,'entire bounded fixture falls within 90-day range');
+ assert.deepEqual(page.errors,[]);
+});
