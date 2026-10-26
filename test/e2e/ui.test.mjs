@@ -395,6 +395,7 @@ test('industry institution supply explorer exposes research counts and regional 
 test('industry role screen separates indicative qualification coverage from local job ads', async () => {
   const page = await newPage(browser);
   await page.goto(srv.url + '/?noguide&view=industry&tab=hire');
+  await page.waitForFunction(() => document.querySelector('#hire')?.textContent?.includes('Catalogue-based qualification comparisons'));
   assert.match(await text(page, '#hire'), /Catalogue-based qualification comparisons/);
   assert.match(await text(page, '#hire'), /Public advertisements behind this comparison/);
   assert.ok(await page.locator('#hire .ind-evidence-sources a[href^="https://"]').count() > 0);
