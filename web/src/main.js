@@ -32,6 +32,7 @@ import './views/industry-workflows.js';
 import { openRoleDialog, openHelp, closeModal } from './views/chrome.js';
 import { initLive } from './live.js';
 import { startTour } from './tour.js';
+import { initShowcase } from './showcase/showcase.js';
 
 app.views.discover = renderExplore;
 app.views.syncFilters = syncFilterControls;
@@ -175,4 +176,5 @@ async function start() {
   if (params.has('tour')) setTimeout(startTour, 600);
 }
 
-start();
+if (window.__OPX_SHOWCASE__) initShowcase();
+else start();

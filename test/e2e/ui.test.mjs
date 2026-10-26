@@ -653,3 +653,66 @@ test('leadership demo enters from home and links to real example roles without s
   assert.match(await text(page,'#idemo .fd-simulation-header'),/entirely synthetic/);
   assert.deepEqual(page.errors,[]);
 });
+
+test('fully fictional platform demo opens as a normal operational dashboard from disk',async()=>{
+  const page=await newPage(browser);
+  await page.setViewportSize({width:1440,height:900});
+  await page.goto(pathToFileURL(join(ROOT,'dist','platform-demo.html')).href);
+  await page.waitForSelector('#showMain .show-kpis');
+  assert.match(await text(page,'.show-intro'),/Overview/);
+  assert.equal(await page.locator('.show-tile').count(),4);
+  assert.equal(await page.locator('.show-sidebar nav button').count(),8);
+  assert.ok(await page.locator('.show-map-pin').count()>2);
+  assert.match(await text(page,'.show-topbar'),/DEMO/);
+  assert.equal(await page.locator('#vision-tour').count(),0,'no presentation tour');
+  await page.click('.show-map-pin >> nth=0');
+  await page.waitForSelector('.show-drawer');
+  assert.match(await text(page,'.show-drawer'),/confidence/i);
+  await page.click('.show-close');
+  assert.deepEqual(page.errors,[]);
+});
+
+test('realistic demo opportunity, regional and confidence filters share one fictional dataset',async()=>{
+  const page=await newPage(browser);
+  await page.goto(pathToFileURL(join(ROOT,'dist','platform-demo.html')).href);
+  await page.waitForSelector('#showMain .show-kpis');
+  await page.click('.show-sidebar nav [data-id=opportunities]');
+  await page.waitForSelector('.show-op-row');
+  const start=await page.locator('.show-op-row').count();
+  assert.ok(start>10);
+  await page.click('[data-do=kind][data-id=employer_confirmation]');
+  assert.ok(await page.locator('.show-op-row').count()>0);
+  assert.ok((await text(page,'.show-selected-detail')).includes('Confirmed'));
+  await page.click('.show-selected-detail [data-do=save]');
+  assert.match(await text(page,'.show-notice'),/Saved to your watchlist/);
+  await page.click('[data-do=kind][data-id=all]');
+  await page.selectOption('#showRegion','kalyani');
+  assert.match(await text(page,'.show-intro'),/Kalyani/);
+  assert.ok(await page.locator('.show-op-row').count()>10);
+  assert.deepEqual(page.errors,[]);
+});
+
+test('realistic demo covers all four audiences and fictional integrations on a phone',async()=>{
+  const page=await newPage(browser);
+  await page.setViewportSize({width:390,height:844});
+  await page.goto(pathToFileURL(join(ROOT,'dist','platform-demo.html')).href);
+  await page.waitForSelector('#showMain .show-kpis');
+  await page.click('.show-menu');
+  await page.click('.show-sidebar nav [data-id=learners]');
+  assert.match(await text(page,'.show-intro'),/My career explorer/);
+  await page.selectOption('#showProgramme','COPA');
+  assert.match(await text(page,'.show-learner-hero'),/COPA/);
+  await page.click('.show-menu');
+  await page.click('.show-sidebar nav [data-id=industry]');
+  await page.fill('#showHiringForm input[name=count]','18');
+  await page.click('#showHiringForm button[type=submit]');
+  assert.match(await text(page,'.show-notice'),/saved to this demo session/);
+  await page.click('.show-menu');
+  await page.click('.show-sidebar nav [data-id=sources]');
+  assert.equal(await page.locator('.show-source').count(),11);
+  await page.click('[data-do=sync]');
+  assert.match(await text(page,'.show-notice'),/synchronised/);
+  await page.click('.show-topactions [data-do=help]');
+  assert.match(await text(page,'.show-drawer'),/fictional product demonstration/);
+  assert.deepEqual(page.errors,[]);
+});
