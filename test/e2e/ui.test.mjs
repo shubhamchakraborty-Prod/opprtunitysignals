@@ -682,7 +682,7 @@ test('realistic demo opportunity, regional and confidence filters share one fict
   assert.ok(start>10);
   await page.click('[data-do=kind][data-id=employer_confirmation]');
   assert.ok(await page.locator('.show-op-row').count()>0);
-  assert.ok((await text(page,'.show-selected-detail')).includes('Confirmed'));
+  assert.match(await text(page,'.show-selected-detail'),/employer confirmed/i);
   await page.click('.show-selected-detail [data-do=save]');
   assert.match(await text(page,'.show-notice'),/Saved to your watchlist/);
   await page.click('[data-do=kind][data-id=all]');
@@ -713,6 +713,6 @@ test('realistic demo covers all four audiences and fictional integrations on a p
   await page.click('[data-do=sync]');
   assert.match(await text(page,'.show-notice'),/synchronised/);
   await page.click('.show-topactions [data-do=help]');
-  assert.match(await text(page,'.show-drawer'),/fictional product demonstration/);
+  assert.match(await text(page,'.show-drawer'),/fabricated for demonstration/);
   assert.deepEqual(page.errors,[]);
 });

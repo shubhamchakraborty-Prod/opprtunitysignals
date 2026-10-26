@@ -1,3 +1,13 @@
+# Opportunity Explorer — Realistic Connected Platform Demo
+
+**Leadership and team demonstration:** The new standalone, interactive application is **`dist/platform-demo.html`**. It opens directly into an operational-looking intelligence workspace, not a guided tour. All job records, institutional profiles, integration statuses, employer requirements, trend figures and map pins are fictional but internally consistent across the eight screens. No external credentials or network calls are needed. A discreet DEMO label remains in the header; details are available under Help.
+
+**To run locally:** `npm ci && npm run build`, then open `dist/platform-demo.html`. GitHub Actions publishes it as **opportunity-explorer-platform-demo** under **Build Leadership Vision Demo**. See [Realistic Platform Demo documentation](docs/REALISTIC_PLATFORM_DEMO.md).
+
+The previous bounded Noida research pilot, the eight development batches, generated SVG map, logos, earlier vision walkthrough and all original assets remain preserved in this same repository.
+
+---
+
 # Opportunity Explorer — Leadership Vision Demonstrator & Noida Research Pilot
 
 ConveGenius.AI research pilot. Public hiring signals, employer verification, ten years of investment and policy change, and skill plans for learners, for **Noida Sectors 62 and 63 (Gautam Buddh Nagar, Uttar Pradesh)**, with **Kalyani** and **Siliguri (West Bengal)** for comparison. Four separate interfaces on the same data: **Learners** (ITI, polytechnic, college), **Institutions**, **Industry** (talent, not job ads) and **Internal** (Swift AI Academy product signals). Design: Material 3 with Google Sans, following the principles in `docs/PRODUCT_PRINCIPLES.md`.

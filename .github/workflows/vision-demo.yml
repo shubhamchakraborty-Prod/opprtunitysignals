@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - feature/leadership-vision-demo-v1
+      - feature/realistic-connected-platform-demo
   workflow_dispatch:
 
 jobs:
