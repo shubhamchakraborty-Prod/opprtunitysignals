@@ -44,6 +44,7 @@ const mapConfig = `<script>window.__MAP_CONFIG__=${JSON.stringify({ provider: pr
 
 const fill = (styles, logoSrc, script) => tpl.replace('<!--STYLES-->', () => styles).replace('<!--LOGO-->', logoSrc).replace('<!--SEED-->', () => seedJson).replace('<!--SCRIPT-->', () => mapConfig + '\n' + script);
 const cssInline = inlineFonts(css);
+const showcaseCss = readFileSync(join(root, 'web/styles-showcase.css'), 'utf8');
 
 writeFileSync(join(dist, 'app.js'), js);
 writeFileSync(join(dist, 'styles.css'), css);
@@ -52,6 +53,14 @@ writeFileSync(join(dist, 'index.html'), fill('<link rel="stylesheet" href="style
 mkdirSync(join(dist, 'fonts'), { recursive: true });
 for (const [name, src] of Object.entries(FONTS)) cpSync(join(root, src), join(dist, 'fonts', name));
 writeFileSync(join(dist, 'explorer-offline.html'), fill(`<style>\n${cssInline}\n</style>`, 'data:image/png;base64,' + logo.toString('base64'), `<script>\n${js.replace(/<\/script/gi, '<\\/script')}\n</script>`));
+
+// Primary leadership handover: a fully integrated-looking, fictional, offline product.
+// The existing research pilot, assets, screenshots and older guided demo remain in dist.
+writeFileSync(join(dist, 'platform-demo.html'), fill(
+  '<style>\n' + cssInline + '\n' + showcaseCss + '\n</style>',
+  'data:image/png;base64,' + logo.toString('base64'),
+  '<script>window.__OPX_SHOWCASE__=true;</script>\n<script>\n' + js.replace(/<\/script/gi, '<\\/script') + '\n</script>'
+));
 // Artifact page for claude.ai: content only (the viewer adds the document skeleton), no street map (tiles are blocked there).
 const artifact = fill(`<style>\n${cssInline}\n</style>`, 'data:image/png;base64,' + logo.toString('base64'), `<script>window.__NO_STREET_MAP__='The street map is not available in this viewer.';</script>\n<script>\n${js.replace(/<\/script/gi, '<\\/script')}\n</script>`)
   .replace(/<!doctype html>\s*/i, '').replace(/<html[^>]*>\s*/i, '').replace(/<\/html>\s*/i, '').replace(/<head>\s*/i, '').replace(/<\/head>\s*/i, '').replace(/<body>\s*/i, '').replace(/<\/body>\s*/i, '')
